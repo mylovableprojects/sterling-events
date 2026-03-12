@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Claude / AI development files
+.claude/
+.agents/
+skills-lock.json
+mds/
+sterlingcontext/
