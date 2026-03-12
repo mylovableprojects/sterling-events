@@ -93,7 +93,7 @@ export function Hero() {
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.7, duration: 0.9, ease: "easeOut" }}
-          className="mt-10 flex flex-1 justify-end md:mt-0"
+          className="mt-10 hidden md:flex flex-1 justify-end md:mt-0"
         >
           <div className="relative h-72 w-full max-w-sm overflow-hidden rounded-[2rem] border border-white/10 bg-[url('https://picsum.photos/seed/sterling-hero-portrait/800/1200')] bg-cover bg-center shadow-[0_30px_90px_rgba(0,0,0,0.8)]">
             <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
