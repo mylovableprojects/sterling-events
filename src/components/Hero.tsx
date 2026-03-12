@@ -21,10 +21,8 @@ export function Hero() {
       <div className="gradient-orb -left-24 top-10 h-64 w-64" />
       <div className="gradient-orb bottom-[-5rem] right-[-3rem] h-80 w-80 opacity-60" />
 
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(11,31,58,0.8)_0,_transparent_55%)]" />
-
       <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 md:flex-row md:items-center">
-        <div className="flex-1 space-y-6">
+        <div className="flex-1 space-y-4 md:space-y-6">
           {/* Eyebrow carries the geo-modified keyword so the H1 can lead with the value proposition */}
           <motion.div
             custom={0}
