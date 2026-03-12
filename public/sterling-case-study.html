@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sterling Event Rentals — Project Case Study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:      #1a2340;
+      --navy-deep: #0f1525;
+      --gold:      #c9a84c;
+      --gold-light:#e8c97a;
+      --cream:     #fdfaf5;
+      --sand:      #f5f0e8;
+      --champagne: #e8d5a3;
+      --charcoal:  #2d3142;
+      --slate:     #4a5568;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--navy-deep);
+      color: var(--cream);
+      line-height: 1.7;
+      font-size: 19px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center;
+      padding: 32px 24px 40px;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(ellipse at 50% -10%, rgba(201,168,76,.18) 0%, transparent 60%),
+                  radial-gradient(ellipse at 90% 90%, rgba(201,168,76,.08) 0%, transparent 50%),
+                  var(--navy-deep);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-size: .7rem;
+      font-weight: 500;
+      letter-spacing: .35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+      position: relative;
+    }
+
+    .hero-rule {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+    .hero-rule span {
+      display: block;
+      height: 1px;
+      width: 60px;
+      background: var(--gold);
+      opacity: .4;
+    }
+    .hero-rule i {
+      width: 6px; height: 6px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+      display: block;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 4.5vw, 3.4rem);
+      font-weight: 300;
+      letter-spacing: .06em;
+      line-height: 1.05;
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-weight: 300;
+      color: rgba(232,213,163,.7);
+      max-width: 560px;
+      margin: 0 auto 48px;
+      letter-spacing: .02em;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: flex-start;
+    }
+    .hero-meta span {
+      font-size: .7rem;
+      font-weight: 500;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.35);
+    }
+    .hero-meta span strong {
+      color: rgba(255,255,255,.6);
+      font-weight: 500;
+    }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: var(--navy);
+      border-top: 1px solid rgba(201,168,76,.2);
+      border-bottom: 1px solid rgba(201,168,76,.2);
+      padding: 48px 24px;
+    }
+    .stats-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px 32px;
+    }
+    @media(min-width: 640px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
+
+    .stat {
+      text-align: center;
+    }
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      font-weight: 300;
+      line-height: 1;
+      color: var(--gold);
+      display: block;
+    }
+    .stat-label {
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.45);
+      margin-top: 8px;
+      display: block;
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 96px 24px; }
+
+    .inner { max-width: 1040px; margin: 0 auto; }
+    .inner-sm { max-width: 760px; margin: 0 auto; }
+
+    .section-eyebrow {
+      font-size: .68rem;
+      font-weight: 500;
+      letter-spacing: .35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    h2.section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .section-lead {
+      font-size: 1.1rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: rgba(232,213,163,.75);
+      max-width: 680px;
+    }
+
+    /* ── RESEARCH SECTION (cream bg) ── */
+    .bg-cream {
+      background: var(--cream);
+      color: var(--charcoal);
+    }
+    .bg-cream h2.section-title { color: var(--navy); }
+    .bg-cream .section-eyebrow { color: var(--gold); }
+    .bg-cream .section-lead { color: var(--slate); }
+
+    .bg-sand {
+      background: var(--sand);
+      color: var(--charcoal);
+    }
+    .bg-sand h2.section-title { color: var(--navy); }
+    .bg-sand .section-eyebrow { color: var(--gold); }
+    .bg-sand .section-lead { color: var(--slate); }
+
+    .bg-navy { background: var(--navy); }
+
+    /* ── 3-COL RESEARCH CARDS ── */
+    .research-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-top: 48px;
+    }
+    @media(min-width: 700px) { .research-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .research-card {
+      background: white;
+      border: 1px solid rgba(201,168,76,.25);
+      border-top: 3px solid var(--gold);
+      border-radius: 2px;
+      padding: 32px 28px;
+      box-shadow: 0 2px 20px rgba(26,35,64,.06);
+    }
+
+    .research-card h3 {
+      font-family: 'Jost', sans-serif;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    .research-card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .research-card ul li {
+      font-size: .9rem;
+      font-weight: 300;
+      color: var(--slate);
+      line-height: 1.6;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(201,168,76,.12);
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .research-card ul li:last-child { border-bottom: none; }
+    .research-card ul li::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 4px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+
+    /* gap owned — competitor table */
+    .gap-card {
+      background: white;
+      border: 1px solid rgba(201,168,76,.2);
+      border-radius: 2px;
+      padding: 24px 28px;
+      margin-top: 12px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      box-shadow: 0 2px 16px rgba(26,35,64,.05);
+    }
+    .gap-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(201,168,76,.1);
+      border: 1px solid rgba(201,168,76,.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .gap-text strong {
+      display: block;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .gap-text p {
+      font-size: .85rem;
+      font-weight: 300;
+      color: var(--slate);
+      line-height: 1.6;
+    }
+
+    /* ── ARCHITECTURE ── */
+    .arch-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 48px;
+    }
+    @media(min-width: 700px) { .arch-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .arch-hub {
+      background: var(--navy);
+      border: 1px solid rgba(201,168,76,.3);
+      border-radius: 4px;
+      padding: 28px 24px;
+    }
+    .arch-hub h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--gold-light);
+      margin-bottom: 16px;
+    }
+    .arch-hub .spoke {
+      font-size: .82rem;
+      font-weight: 300;
+      color: rgba(232,213,163,.6);
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .arch-hub .spoke:last-child { border-bottom: none; }
+    .arch-hub .spoke::before {
+      content: '→';
+      color: var(--gold);
+      opacity: .6;
+      font-size: .75rem;
+    }
+
+    .arch-note {
+      margin-top: 40px;
+      background: rgba(201,168,76,.06);
+      border-left: 3px solid var(--gold);
+      padding: 20px 24px;
+      border-radius: 0 4px 4px 0;
+    }
+    .arch-note p {
+      font-size: .9rem;
+      font-weight: 300;
+      color: rgba(232,213,163,.75);
+      line-height: 1.7;
+    }
+    .arch-note strong { color: var(--gold-light); font-weight: 500; }
+
+    /* ── SEO/GEO CARDS ── */
+    .seo-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-top: 48px;
+    }
+    @media(min-width: 700px) { .seo-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .seo-card {
+      background: var(--navy);
+      border: 1px solid rgba(201,168,76,.4);
+      border-radius: 4px;
+      padding: 36px 32px;
+    }
+    .seo-card .seo-icon {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .seo-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--gold-light);
+      margin-bottom: 14px;
+    }
+    .seo-card p {
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.8;
+      color: rgba(253,250,245,.9);
+    }
+    .seo-card .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 20px;
+    }
+    .tag {
+      font-size: .65rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      background: rgba(201,168,76,.1);
+      color: var(--gold);
+      border: 1px solid rgba(201,168,76,.25);
+      border-radius: 20px;
+      padding: 3px 10px;
+    }
+
+    /* ── COPY PRINCIPLES ── */
+    .principles-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 48px;
+    }
+    @media(min-width: 600px) { .principles-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    .principle {
+      background: white;
+      border: 1px solid rgba(26,35,64,.08);
+      border-radius: 4px;
+      padding: 28px;
+      box-shadow: 0 2px 16px rgba(26,35,64,.05);
+    }
+    .principle-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 300;
+      color: rgba(201,168,76,.25);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .principle h3 {
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .principle p {
+      font-size: .88rem;
+      font-weight: 300;
+      color: var(--slate);
+      line-height: 1.7;
+    }
+    .principle .example {
+      margin-top: 14px;
+      padding: 12px 16px;
+      background: rgba(201,168,76,.06);
+      border-left: 2px solid var(--gold);
+      font-size: .82rem;
+      color: var(--charcoal);
+      font-style: italic;
+    }
+
+    /* ── BUILD INVENTORY ── */
+    .build-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 48px;
+    }
+    @media(min-width: 700px) { .build-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media(min-width: 960px) { .build-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .build-card {
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(201,168,76,.12);
+      border-radius: 4px;
+      padding: 24px;
+    }
+    .build-card h3 {
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(201,168,76,.2);
+    }
+    .build-card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .build-card ul li {
+      font-size: .95rem;
+      font-weight: 400;
+      color: rgba(253,250,245,.8);
+      padding: 6px 0;
+      line-height: 1.5;
+    }
+
+    /* ── SCHEMA TABLE ── */
+    .schema-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 40px;
+      font-size: .85rem;
+    }
+    .schema-table th {
+      background: var(--navy-deep);
+      color: var(--gold-light);
+      font-size: .68rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      padding: 12px 20px;
+      text-align: left;
+    }
+    .schema-table td {
+      padding: 12px 20px;
+      color: var(--slate);
+      border-bottom: 1px solid rgba(201,168,76,.1);
+      background: white;
+    }
+    .schema-table tr:nth-child(even) td {
+      background: rgba(245,240,232,.5);
+    }
+    .schema-table td strong {
+      color: var(--navy);
+      font-weight: 500;
+    }
+
+    /* ── CLOSING ── */
+    .closing {
+      background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,.15) 0%, transparent 65%), var(--navy-deep);
+      text-align: center;
+      padding: 120px 24px;
+    }
+    .closing h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--cream);
+      max-width: 700px;
+      margin: 0 auto 24px;
+    }
+    .closing h2 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+    .closing p {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(232,213,163,.6);
+      max-width: 520px;
+      margin: 0 auto 48px;
+      line-height: 1.75;
+    }
+    .closing-stack {
+      font-size: .68rem;
+      font-weight: 500;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.2);
+    }
+
+    .closing-signoff {
+      margin-top: 24px;
+      font-size: .8rem;
+      color: rgba(232,213,163,.7);
+    }
+    .closing-signoff a {
+      color: var(--gold-light);
+      text-decoration: none;
+    }
+    .closing-signoff a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── DIVIDER ── */
+    .gold-rule {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 0;
+      margin: 0 auto;
+    }
+    .gold-rule span {
+      display: block;
+      height: 1px;
+      flex: 1;
+      max-width: 100px;
+      background: var(--gold);
+      opacity: .3;
+    }
+    .gold-rule i {
+      width: 5px; height: 5px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      opacity: .6;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    /* ── PRINT / SHARE ── */
+    @media print {
+      .hero { min-height: auto; padding: 60px 24px; }
+      section { padding: 48px 24px; }
+      body { background: white; color: #1a2340; }
+    }
+
+    /* ── FADE IN ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero > * { animation: fadeUp .7s ease both; }
+    .hero > *:nth-child(2) { animation-delay: .1s; }
+    .hero > *:nth-child(3) { animation-delay: .2s; }
+    .hero > *:nth-child(4) { animation-delay: .3s; }
+    .hero > *:nth-child(5) { animation-delay: .4s; }
+    .hero > *:nth-child(6) { animation-delay: .5s; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════ -->
+<section class="hero">
+  <span class="hero-eyebrow">Case Study</span>
+  <div class="hero-rule"><span></span><i></i><span></span></div>
+  <h1>Sterling<br><em>Event Rentals</em></h1>
+  <p class="hero-sub">A full website build — strategy, copy, SEO, GEO, and code — for a Chicago event rental company ready to compete on more than price.</p>
+  <div class="hero-meta">
+    <span><strong>Client</strong> Steve Rangel, Sterling Event Rentals</span>
+    <span><strong>Location</strong> Chicago & Chicagoland</span>
+    <span><strong>Stack</strong> Next.js 15 · TypeScript · Tailwind</span>
+    <span><strong>Site</strong> sterlingeventrentals.com</span>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     STATS BAR
+════════════════════════════════════════════════ -->
+<div class="stats-bar">
+  <div class="stats-grid">
+    <div class="stat">
+      <span class="stat-number">20+</span>
+      <span class="stat-label">Pages Built</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">25+</span>
+      <span class="stat-label">Components</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">15+</span>
+      <span class="stat-label">AEO Answer Pages</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">9</span>
+      <span class="stat-label">Schema Types</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     THE BRIEF
+════════════════════════════════════════════════ -->
+<section class="bg-cream">
+  <div class="inner">
+    <span class="section-eyebrow">The Brief</span>
+    <h2 class="section-title">Real differentiators.<br>No website to show them.</h2>
+    <p class="section-lead">Sterling had what most rental companies don't — SIOTO Safety Seal certification, upfront transparent pricing, and a crew that actually shows up. What they didn't have was a website that communicated any of that. The goal was to build a site that earns trust before the phone rings, shows up where buyers search (including AI tools like ChatGPT and Google AI Overviews), and converts browsers into booked events.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     RESEARCH
+════════════════════════════════════════════════ -->
+<section class="bg-cream">
+  <div class="inner">
+    <span class="section-eyebrow">Customer Research</span>
+    <h2 class="section-title">Built on what buyers actually think.</h2>
+    <p class="section-lead" style="color:var(--slate)">Before a single page was written, research mapped the pain points, decision triggers, and objections that determine whether a buyer books or keeps looking. Every copy and architecture decision traces back to something specific in that research.</p>
+
+    <div class="research-grid">
+      <div class="research-card">
+        <h3>Top Pain Points</h3>
+        <ul>
+          <li>Vendor doesn't show up on time</li>
+          <li>Hidden fees, pricing not clear upfront</li>
+          <li>Equipment arrives dirty or damaged</li>
+          <li>Hard to get a quote or a response</li>
+          <li>Unclear cancellation terms</li>
+          <li>Weather anxiety for outdoor events</li>
+          <li>Permit confusion</li>
+          <li>Date availability pressure in peak season</li>
+        </ul>
+      </div>
+      <div class="research-card">
+        <h3>Decision Triggers</h3>
+        <ul>
+          <li>Date urgency — peak weekends book out</li>
+          <li>Transparent pricing that matches the invoice</li>
+          <li>Licensed, insured, and independently certified</li>
+          <li>Delivery and setup handled — no self-assembly</li>
+          <li>Fast response time to a quote request</li>
+          <li>Reviews mentioning punctuality</li>
+          <li>Clear $500 minimum — removes hesitation</li>
+          <li>Simple booking process</li>
+        </ul>
+      </div>
+      <div class="research-card">
+        <h3>Objections Addressed</h3>
+        <ul>
+          <li>"It's too expensive" → anchored vs. buying once for one event</li>
+          <li>"Do you serve my area?" → suburb names throughout, not just one page</li>
+          <li>"Bad experience before" → verifiable credentials, not just claims</li>
+          <li>"What if it rains?" → weather policy on every outdoor page</li>
+          <li>"I don't know what I need" → guide-first content reduces friction</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top:48px">
+      <span class="section-eyebrow">Competitor Gaps Sterling Owns</span>
+      <div class="gap-card">
+        <div class="gap-icon">🏢</div>
+        <div class="gap-text"><strong>Corporate-first positioning</strong><p>Every competitor is built visually and tonally for kids' birthday parties. Sterling's site speaks directly to corporate event planners from the first line.</p></div>
+      </div>
+      <div class="gap-card">
+        <div class="gap-icon">🔍</div>
+        <div class="gap-text"><strong>Operational transparency</strong><p>No competitor explains delivery windows, what the crew does day-of, or what the client doesn't have to touch. Sterling's site explains all of it.</p></div>
+      </div>
+      <div class="gap-card">
+        <div class="gap-icon">⛈️</div>
+        <div class="gap-text"><strong>Weather policy stated plainly</strong><p>No competitor addresses Chicago weather as a buying factor. Sterling's weather policy appears on every outdoor-relevant page — not buried in a FAQ.</p></div>
+      </div>
+      <div class="gap-card">
+        <div class="gap-icon">🛡️</div>
+        <div class="gap-text"><strong>SIOTO Safety Seal — unclaimed by any competitor</strong><p>Sterling is independently safety-certified. No competitor has claimed this. It appears in the hero, trust bar, about page, and every service page.</p></div>
+      </div>
+      <div class="gap-card">
+        <div class="gap-icon">📋</div>
+        <div class="gap-text"><strong>No surprise fees</strong><p>One competitor has 700 words of fine print. Another is cash-only at checkout. Sterling's pricing structure is stated plainly on every relevant page.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SITE ARCHITECTURE
+════════════════════════════════════════════════ -->
+<section class="bg-navy">
+  <div class="inner">
+    <span class="section-eyebrow">Site Architecture</span>
+    <h2 class="section-title">Hub-and-spoke.<br>Every page earns its place.</h2>
+    <p class="section-lead">Three content systems — Services, Resources, and Answers — all feed into a central conversion path. Every page links sideways to related content and inward toward a quote request. No orphan pages. No dead ends.</p>
+
+    <div class="arch-grid">
+      <div class="arch-hub">
+        <h3>Services Hub → 6 Spokes</h3>
+        <div class="spoke">Tents & Structures</div>
+        <div class="spoke">Tables & Seating</div>
+        <div class="spoke">Stages & Presentation</div>
+        <div class="spoke">Games & Entertainment</div>
+        <div class="spoke">Event Extras <em style="font-size:.75rem;color:rgba(201,168,76,.5)">(new category)</em></div>
+        <div class="spoke">Delivery, Setup & Teardown</div>
+      </div>
+      <div class="arch-hub">
+        <h3>Resources Hub → 4 Articles</h3>
+        <div class="spoke">Tent Sizing Guide</div>
+        <div class="spoke">Chicago Tent Permits</div>
+        <div class="spoke">Outdoor Event Planning</div>
+        <div class="spoke">Corporate Event Checklist</div>
+      </div>
+      <div class="arch-hub">
+        <h3>Answers Hub → 15+ Pages</h3>
+        <div class="spoke">How much does tent rental cost?</div>
+        <div class="spoke">What size tent for 100 guests?</div>
+        <div class="spoke">Do I need a permit in Chicago?</div>
+        <div class="spoke">What is the SIOTO Safety Seal?</div>
+        <div class="spoke">How far in advance should I book?</div>
+        <div class="spoke" style="opacity:.5">+ 10 more answer pages</div>
+      </div>
+    </div>
+
+    <div class="arch-note">
+      <p><strong>Dynamic routing:</strong> All 6 service pages are driven by a single <code style="font-size:.85em;color:var(--gold-light);background:rgba(255,255,255,.05);padding:2px 6px;border-radius:3px">[slug]/page.tsx</code> template and a central data file. Adding a service page means editing one file — the page, schema, sitemap, nav, and footer all update automatically.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SEO / GEO
+════════════════════════════════════════════════ -->
+<section class="bg-sand">
+  <div class="inner">
+    <span class="section-eyebrow">SEO & GEO Strategy</span>
+    <h2 class="section-title">Visible everywhere buyers search — including AI.</h2>
+    <p class="section-lead" style="color:var(--slate)">Search strategy covers three layers, because buyers in 2025 don't search in just one place. Traditional search, local intent, and AI-powered tools each required a different approach — all built into the same site.</p>
+
+    <div class="seo-grid">
+      <div class="seo-card">
+        <span class="seo-icon">🔎</span>
+        <h3>Traditional SEO</h3>
+        <p>Unique meta titles and descriptions on every page. Canonical URLs, XML sitemap, robots.txt, OG images, Twitter cards, and legal pages correctly noindexed. The complete foundation — nothing skipped.</p>
+        <div class="tag-row">
+          <span class="tag">Meta</span><span class="tag">Canonical</span><span class="tag">Sitemap</span><span class="tag">OG Tags</span>
+        </div>
+      </div>
+      <div class="seo-card">
+        <span class="seo-icon">📍</span>
+        <h3>Local SEO</h3>
+        <p>Five Chicagoland suburbs — Evanston, Oak Park, Naperville, Schaumburg, Orland Park — appear in body copy, meta descriptions, and <code style="font-size:.9em;color:var(--gold-light);background:rgba(255,255,255,.1);padding:2px 6px;border-radius:3px">areaServed</code> schema on every relevant page. Not just the service area page.</p>
+        <div class="tag-row">
+          <span class="tag">LocalBusiness</span><span class="tag">areaServed</span><span class="tag">GeoCoords</span>
+        </div>
+      </div>
+      <div class="seo-card">
+        <span class="seo-icon">🤖</span>
+        <h3>AEO + GEO</h3>
+        <p>15+ answer pages built to be cited by Google AI Overviews, ChatGPT, and Perplexity. Each has a quick-answer box at the top, full FAQPage schema, and question-format H2s. An <code style="font-size:.9em;color:var(--gold-light);background:rgba(255,255,255,.1);padding:2px 6px;border-radius:3px">llms.txt</code> file was created for AI crawler discovery.</p>
+        <div class="tag-row">
+          <span class="tag">FAQPage</span><span class="tag">HowTo</span><span class="tag">llms.txt</span><span class="tag">AI Overviews</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:48px">
+      <span class="section-eyebrow" style="color:var(--gold)">JSON-LD Schema — 9 Types Implemented</span>
+      <table class="schema-table">
+        <thead>
+          <tr>
+            <th>Schema Type</th>
+            <th>Where Applied</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>LocalBusiness</strong></td><td>Homepage — name, address, phone, geo, service area</td></tr>
+          <tr><td><strong>FAQPage</strong></td><td>Every FAQ section across all pages</td></tr>
+          <tr><td><strong>BreadcrumbList</strong></td><td>Every page</td></tr>
+          <tr><td><strong>HowTo</strong></td><td>Outdoor Event Planning guide</td></tr>
+          <tr><td><strong>Article</strong></td><td>All four resource articles</td></tr>
+          <tr><td><strong>ItemList</strong></td><td>Packages page</td></tr>
+          <tr><td><strong>Service + OfferCatalog</strong></td><td>Services hub</td></tr>
+          <tr><td><strong>ContactPage / AboutPage</strong></td><td>Contact and About pages</td></tr>
+          <tr><td><strong>WebPage</strong></td><td>Legal pages</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     COPY APPROACH
+════════════════════════════════════════════════ -->
+<section class="bg-cream">
+  <div class="inner">
+    <span class="section-eyebrow">Copy Approach</span>
+    <h2 class="section-title">Every word tied to research.</h2>
+    <p class="section-lead" style="color:var(--slate)">The copy brief started with one question: what is the person reading this page actually worried about right now? These four principles governed every page.</p>
+
+    <div class="principles-grid">
+      <div class="principle">
+        <div class="principle-num">01</div>
+        <h3>Specific Numbers Over Vague Claims</h3>
+        <p>Buyers don't trust adjectives. They trust data. Specific figures appear everywhere a decision is being made.</p>
+        <div class="example">"$500 minimum · 50% deposit holds your date · 21-day cancellation window · 21–30 days for corporate · 12–18 months for weddings"</div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">02</div>
+        <h3>Address the Objection at the Moment It Arises</h3>
+        <p>The weather policy isn't on a FAQ page you have to find. It's in the tent page, the outdoor planning guide, the packages page, and the contact page — because that's when the buyer is thinking about it.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-num">03</div>
+        <h3>No Filler Language</h3>
+        <p>A specific list of phrases was excluded from the entire site: "hassle-free," "premier," "best in Chicago," "above and beyond," "seamless experience." Every sentence that wanted to say we're the best was rewritten to prove it instead.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-num">04</div>
+        <h3>Three Audiences, One Page</h3>
+        <p>Each service page has a "Who this is for" section that speaks to corporate planners, wedding couples, and private hosts — in priority order — without making any of them feel like an afterthought.</p>
+        <div class="example">Corporate → credibility and invoicing. Weddings → weather policy and setup. Private hosts → transparent pricing and low pressure.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     THE BUILD
+════════════════════════════════════════════════ -->
+<section class="bg-navy">
+  <div class="inner">
+    <span class="section-eyebrow">The Build</span>
+    <h2 class="section-title">What was created.</h2>
+    <p class="section-lead">20+ pages, 25+ components, a complete design system, six reorganized service categories, and a full SEO/GEO layer — all TypeScript-clean and statically generated at build time.</p>
+
+    <div class="build-grid">
+      <div class="build-card">
+        <h3>Core Pages</h3>
+        <ul>
+          <li>Homepage</li>
+          <li>Services hub + 6 service pages</li>
+          <li>Packages (3 tiers)</li>
+          <li>Service Area</li>
+          <li>Event Rental Pricing</li>
+          <li>About</li>
+          <li>Reviews</li>
+          <li>Contact (working form)</li>
+          <li>Gallery / Collection</li>
+        </ul>
+      </div>
+      <div class="build-card">
+        <h3>Content & AEO</h3>
+        <ul>
+          <li>Resources hub</li>
+          <li>Tent Sizing Guide</li>
+          <li>Chicago Tent Permits guide</li>
+          <li>Outdoor Event Planning guide</li>
+          <li>Corporate Event Checklist</li>
+          <li>Answers hub</li>
+          <li>15+ individual answer pages</li>
+          <li>llms.txt · robots.txt · sitemap.xml</li>
+        </ul>
+      </div>
+      <div class="build-card">
+        <h3>Legal (Custom Styled)</h3>
+        <ul>
+          <li>Cancellation Policy</li>
+          <li>Privacy Policy</li>
+          <li>Terms of Service</li>
+          <li>Dark navy header, cream body</li>
+          <li>Color-coded policy badges</li>
+          <li>SMS compliance terms</li>
+          <li>Shared CSS module across all 3</li>
+          <li>All correctly noindexed</li>
+        </ul>
+      </div>
+      <div class="build-card">
+        <h3>Inventory Reorganized</h3>
+        <ul>
+          <li>Tents & Structures</li>
+          <li>Tables & Seating (full range)</li>
+          <li>Stages, Podiums, Pipe & Drape</li>
+          <li>Games & Entertainment</li>
+          <li>Event Extras <em style="opacity:.6">(new category)</em></li>
+          <li>Delivery, Setup & Teardown</li>
+          <li>Slug rename across 8 source files</li>
+        </ul>
+      </div>
+      <div class="build-card">
+        <h3>Design System</h3>
+        <ul>
+          <li>Navy · Gold · Cream · Champagne</li>
+          <li>Cormorant Garamond + Jost</li>
+          <li>Dark gradient heroes + gold orbs</li>
+          <li>ScrollReveal animations</li>
+          <li>Mobile nav with animated dropdown</li>
+          <li>Gold star SVG favicon</li>
+          <li>Fully responsive</li>
+        </ul>
+      </div>
+      <div class="build-card">
+        <h3>Components (25+)</h3>
+        <ul>
+          <li>FAQAccordion (UI + schema)</li>
+          <li>ServicePageContent (dynamic)</li>
+          <li>PackageCard · TrustBar</li>
+          <li>Navbar + Footer</li>
+          <li>Breadcrumbs · CTABlock</li>
+          <li>ContactForm · ScrollReveal</li>
+          <li>SectionIntro · Hero</li>
+          <li>+ 16 more</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     CLOSING
+════════════════════════════════════════════════ -->
+<section class="closing">
+  <div class="gold-rule" style="margin-bottom:64px"><span></span><i></i><span></span></div>
+  <h2>A website that works as hard<br>as the <em>crew does.</em></h2>
+  <p>Sterling's site is built to compound. Each answer page captures a question asked every week. Each resource attracts research-stage traffic that converts once the buyer is ready. Each service page earns rankings for a specific product and geography. The Answers section alone targets dozens of high-intent searches competitors have left unaddressed — including the AI-powered tools that are replacing traditional search results.</p>
+  <div class="gold-rule" style="margin:48px auto;max-width:200px"><span></span><i></i><span></span></div>
+  <p class="closing-stack">Next.js 15 · TypeScript · Tailwind CSS · sterlingeventrentals.com</p>
+  <p class="closing-signoff">
+    Built with ❤️
+    <a href="https://www.facebook.com/judyparkeronline/" target="_blank" rel="noopener noreferrer">Judy Parker</a>
+  </p>
+</section>
+
+</body>
+</html>
