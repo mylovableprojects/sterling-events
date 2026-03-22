@@ -10,11 +10,11 @@ const canonical = `${BASE}/answers/${slug}`;
 
 export const metadata: Metadata = {
   title: "How Much Does Table & Chair Rental Cost for 100 Guests? | Sterling Event Rentals",
-  description: "Quick answer: how table and chair rental pricing works for a 100-guest event in Chicago.",
+  description: "Table and chair rental for 100 guests in Chicago typically includes round tables and folding or chiavari chairs. Sterling quotes equipment plus delivery and setup as named line items — no surprises.",
   alternates: { canonical },
   openGraph: {
     title: "How Much Does Table & Chair Rental Cost for 100 Guests? | Sterling Event Rentals",
-    description: "Quick answer: how table and chair rental pricing works for a 100-guest event in Chicago.",
+    description: "Table and chair rental for 100 guests in Chicago typically includes round tables and folding or chiavari chairs. Sterling quotes equipment plus delivery and setup as named line items — no surprises.",
     url: canonical,
     images: [
       {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "How Much Does Table & Chair Rental Cost for 100 Guests? | Sterling Event Rentals",
-    description: "Quick answer: how table and chair rental pricing works for a 100-guest event in Chicago.",
+    description: "Table and chair rental for 100 guests in Chicago typically includes round tables and folding or chiavari chairs. Sterling quotes equipment plus delivery and setup as named line items — no surprises.",
   },
 };
 

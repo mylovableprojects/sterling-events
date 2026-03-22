@@ -10,11 +10,11 @@ const canonical = `${BASE}/answers/${slug}`;
 
 export const metadata: Metadata = {
   title: "What Do I Need Ready Before Rental Delivery & Setup? | Sterling Event Rentals",
-  description: "Quick answer: what to prepare before Sterling’s crew arrives for delivery and setup in Chicago.",
+  description: "Clear truck access, a designated on-site contact, and confirmed permit if required. Sterling's crew handles the rest. Prep checklist for Chicago and Chicagoland delivery and setup.",
   alternates: { canonical },
   openGraph: {
     title: "What Do I Need Ready Before Rental Delivery & Setup? | Sterling Event Rentals",
-    description: "Quick answer: what to prepare before Sterling’s crew arrives for delivery and setup in Chicago.",
+    description: "Clear truck access, a designated on-site contact, and confirmed permit if required. Sterling's crew handles the rest. Prep checklist for Chicago and Chicagoland delivery and setup.",
     url: canonical,
     images: [
       {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "What Do I Need Ready Before Rental Delivery & Setup? | Sterling Event Rentals",
-    description: "Quick answer: what to prepare before Sterling’s crew arrives for delivery and setup in Chicago.",
+    description: "Clear truck access, a designated on-site contact, and confirmed permit if required. Sterling's crew handles the rest. Prep checklist for Chicago and Chicagoland delivery and setup.",
   },
 };
 

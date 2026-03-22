@@ -10,11 +10,11 @@ const canonical = `${BASE}/answers/${slug}`;
 
 export const metadata: Metadata = {
   title: "Is It Safe to Have a Tent Up During a Thunderstorm? | Sterling Event Rentals",
-  description: "Quick answer: tent safety and severe weather for Chicago-area outdoor events.",
+  description: "No — Sterling will not leave tents up in active thunderstorm conditions in Chicago. High winds and lightning are grounds to take down or delay setup. Know the weather policy before your event.",
   alternates: { canonical },
   openGraph: {
     title: "Is It Safe to Have a Tent Up During a Thunderstorm? | Sterling Event Rentals",
-    description: "Quick answer: tent safety and severe weather for Chicago-area outdoor events.",
+    description: "No — Sterling will not leave tents up in active thunderstorm conditions in Chicago. High winds and lightning are grounds to take down or delay setup. Know the weather policy before your event.",
     url: canonical,
     images: [
       {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Is It Safe to Have a Tent Up During a Thunderstorm? | Sterling Event Rentals",
-    description: "Quick answer: tent safety and severe weather for Chicago-area outdoor events.",
+    description: "No — Sterling will not leave tents up in active thunderstorm conditions in Chicago. High winds and lightning are grounds to take down or delay setup. Know the weather policy before your event.",
   },
 };
 

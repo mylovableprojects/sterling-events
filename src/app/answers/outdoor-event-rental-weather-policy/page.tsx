@@ -35,11 +35,11 @@ const breadcrumbSchema = {
 
 export const metadata: Metadata = {
   title: "Outdoor Event Rental Weather Policy | Sterling Event Rentals",
-  description: "Quick answer: how weather affects outdoor event rentals and our policy in Chicago.",
+  description: "Sterling will not set up in forecasted unsafe conditions. Full refund if cancelled 21+ days out. Once setup is complete, no refund. Know the policy before you book your Chicago outdoor event.",
   alternates: { canonical },
   openGraph: {
     title: "Outdoor Event Rental Weather Policy | Sterling Event Rentals",
-    description: "Quick answer: how weather affects outdoor event rentals and our policy in Chicago.",
+    description: "Sterling will not set up in forecasted unsafe conditions. Full refund if cancelled 21+ days out. Once setup is complete, no refund. Know the policy before you book your Chicago outdoor event.",
     url: canonical,
     images: [
       {
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Outdoor Event Rental Weather Policy | Sterling Event Rentals",
-    description: "Quick answer: how weather affects outdoor event rentals and our policy in Chicago.",
+    description: "Sterling will not set up in forecasted unsafe conditions. Full refund if cancelled 21+ days out. Once setup is complete, no refund. Know the policy before you book your Chicago outdoor event.",
   },
 };
 

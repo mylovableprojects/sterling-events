@@ -36,11 +36,11 @@ const breadcrumbSchema = {
 
 export const metadata: Metadata = {
   title: "Do I Need a Permit for a Tent in Chicago? | Sterling Event Rentals",
-  description: "Quick answer: when tent permits are required for events in Chicago and Chicagoland.",
+  description: "Tents over 400 sq ft or 15 ft tall require a Chicago building permit. Permits are the customer's responsibility — Sterling provides vendor documentation (COI, SIOTO cert) for your application.",
   alternates: { canonical },
   openGraph: {
     title: "Do I Need a Permit for a Tent in Chicago? | Sterling Event Rentals",
-    description: "Quick answer: when tent permits are required for events in Chicago and Chicagoland.",
+    description: "Tents over 400 sq ft or 15 ft tall require a Chicago building permit. Permits are the customer's responsibility — Sterling provides vendor documentation (COI, SIOTO cert) for your application.",
     url: canonical,
     images: [
       {
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Do I Need a Permit for a Tent in Chicago? | Sterling Event Rentals",
-    description: "Quick answer: when tent permits are required for events in Chicago and Chicagoland.",
+    description: "Tents over 400 sq ft or 15 ft tall require a Chicago building permit. Permits are the customer's responsibility — Sterling provides vendor documentation (COI, SIOTO cert) for your application.",
   },
 };
 

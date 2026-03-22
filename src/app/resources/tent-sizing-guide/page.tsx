@@ -8,23 +8,25 @@ import { TentSizingDiagram } from "@/components/TentSizingDiagram";
 const BASE = "https://sterlingeventrentals.com";
 const canonical = `${BASE}/resources/tent-sizing-guide`;
 
+const tentSizingTitle = "Tent Sizing Guide for Chicago Events | Sterling Event Rentals";
+const tentSizingDescription =
+  "Choose the right tent size by guest count: 20×20 for up to 50 guests, 20×40 for up to 100, 30×60 for 150, 40×80+ for 200+ guests. Chicago and Chicagoland. Get a recommendation.";
+
 export function generateMetadata(): Metadata {
   return {
-    title: "What Size Tent Do I Need? Chicago Tent Sizing Guide | Sterling Event Rentals",
-    description:
-      "Choose the right tent size by guest count: 20×20 for up to 50, 20×40 for up to 100, 30×60 for 150, 40×80+ for 200+. Chicago and Chicagoland. Get a recommendation.",
+    title: tentSizingTitle,
+    description: tentSizingDescription,
     alternates: { canonical },
     openGraph: {
-      title: "What Size Tent Do I Need? Chicago Tent Sizing Guide | Sterling Event Rentals",
-      description:
-        "Choose the right tent size by guest count: 20×20 for up to 50, 20×40 for up to 100, 30×60 for 150, 40×80+ for 200+. Chicago and Chicagoland.",
+      title: tentSizingTitle,
+      description: tentSizingDescription,
       url: canonical,
-      images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Sterling Event Rentals — Tent Sizing Guide" }],
+      images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Sterling Event Rentals — Tent Sizing Guide for Chicago Events" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: "What Size Tent Do I Need? Chicago Tent Sizing Guide | Sterling Event Rentals",
-      description: "Choose the right tent size by guest count for Chicago-area events.",
+      title: tentSizingTitle,
+      description: tentSizingDescription,
     },
   };
 }

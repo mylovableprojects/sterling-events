@@ -10,11 +10,11 @@ const canonical = `${BASE}/answers/${slug}`;
 
 export const metadata: Metadata = {
   title: "How Much Does Event Rental Delivery Cost in Chicago? | Sterling Event Rentals",
-  description: "Quick answer: what affects delivery and setup pricing for Chicago-area event rentals.",
+  description: "Delivery and setup are quoted as separate named line items on every Sterling estimate — not bundled. Cost varies by location, tent size, and access. Chicago and inner suburbs have standard rates.",
   alternates: { canonical },
   openGraph: {
     title: "How Much Does Event Rental Delivery Cost in Chicago? | Sterling Event Rentals",
-    description: "Quick answer: what affects delivery and setup pricing for Chicago-area event rentals.",
+    description: "Delivery and setup are quoted as separate named line items on every Sterling estimate — not bundled. Cost varies by location, tent size, and access. Chicago and inner suburbs have standard rates.",
     url: canonical,
     images: [
       {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "How Much Does Event Rental Delivery Cost in Chicago? | Sterling Event Rentals",
-    description: "Quick answer: what affects delivery and setup pricing for Chicago-area event rentals.",
+    description: "Delivery and setup are quoted as separate named line items on every Sterling estimate — not bundled. Cost varies by location, tent size, and access. Chicago and inner suburbs have standard rates.",
   },
 };
 

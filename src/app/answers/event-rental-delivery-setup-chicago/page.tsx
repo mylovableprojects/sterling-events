@@ -35,11 +35,11 @@ const breadcrumbSchema = {
 
 export const metadata: Metadata = {
   title: "Event Rental Delivery & Setup in Chicago | Sterling Event Rentals",
-  description: "Quick answer: how delivery and setup work for event rentals in Chicago.",
+  description: "Sterling Event Rentals delivers, sets up, and tears down every order in Chicago and Chicagoland. Your crew arrives before your event and disappears after — you never lift a chair. Setup quoted upfront.",
   alternates: { canonical },
   openGraph: {
     title: "Event Rental Delivery & Setup in Chicago | Sterling Event Rentals",
-    description: "Quick answer: how delivery and setup work for event rentals in Chicago.",
+    description: "Sterling Event Rentals delivers, sets up, and tears down every order in Chicago and Chicagoland. Your crew arrives before your event and disappears after — you never lift a chair. Setup quoted upfront.",
     url: canonical,
     images: [
       {
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Event Rental Delivery & Setup in Chicago | Sterling Event Rentals",
-    description: "Quick answer: how delivery and setup work for event rentals in Chicago.",
+    description: "Sterling Event Rentals delivers, sets up, and tears down every order in Chicago and Chicagoland. Your crew arrives before your event and disappears after — you never lift a chair. Setup quoted upfront.",
   },
 };
 

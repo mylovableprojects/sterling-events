@@ -59,7 +59,7 @@ const PACKAGE_FAQS = [
 ];
 
 const description =
-  "Three event rental packages for 25–300+ guests in Chicago, Naperville, Evanston, Oak Park, Schaumburg, and across Chicagoland. Tent, tables, chairs, delivery, setup, and teardown included. $500 minimum. Get a quote.";
+  "Three event rental packages for 25–300+ guests in Chicago and Chicagoland. Tent, tables, chairs, delivery, setup, and teardown included. $500 minimum. Get an itemized quote.";
 const canonical = `${BASE}/packages`;
 
 const ADDONS = [
@@ -159,8 +159,7 @@ export default function PackagesPage() {
             "@type": "BreadcrumbList",
             itemListElement: [
               { "@type": "ListItem", position: 1, name: "Home", item: "https://sterlingeventrentals.com" },
-              { "@type": "ListItem", position: 2, name: "Services", item: "https://sterlingeventrentals.com/services" },
-              { "@type": "ListItem", position: 3, name: "Packages", item: "https://sterlingeventrentals.com/packages" },
+              { "@type": "ListItem", position: 2, name: "Packages", item: "https://sterlingeventrentals.com/packages" },
             ],
           }),
         }}
@@ -174,7 +173,6 @@ export default function PackagesPage() {
           <Breadcrumbs
             items={[
               { href: "/", label: "Home" },
-              { href: "/services", label: "Services" },
               { href: canonical, label: "Packages" },
             ]}
           />

@@ -48,10 +48,20 @@ const aboutPageSchema = {
   },
 };
 
+const aboutBreadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: BASE },
+    { "@type": "ListItem", position: 2, name: "About", item: `${BASE}/about` },
+  ],
+};
+
 export default function AboutPage() {
   return (
     <>
       <Script id="ld-about" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }} />
+      <Script id="ld-bc-about" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutBreadcrumbSchema) }} />
       <section className="gradient-hero relative min-h-[75vh]">
         <div className="gradient-orb -left-32 top-6 h-56 w-56" />
         <div className="gradient-orb bottom-[-5rem] right-[-4rem] h-72 w-72 opacity-60" />

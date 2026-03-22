@@ -35,11 +35,11 @@ const breadcrumbSchema = {
 
 export const metadata: Metadata = {
   title: "How Far in Advance to Book Event Rentals? | Sterling Event Rentals",
-  description: "Quick answer: when to book event rentals for Chicago-area events.",
+  description: "Book corporate event rentals 21–30 days out. Weddings: 3–6 months. Private parties: 2–3 weeks. Peak summer weekends in Chicago fill fast — the sooner you confirm with a deposit, the better.",
   alternates: { canonical },
   openGraph: {
     title: "How Far in Advance to Book Event Rentals? | Sterling Event Rentals",
-    description: "Quick answer: when to book event rentals for Chicago-area events.",
+    description: "Book corporate event rentals 21–30 days out. Weddings: 3–6 months. Private parties: 2–3 weeks. Peak summer weekends in Chicago fill fast — the sooner you confirm with a deposit, the better.",
     url: canonical,
     images: [
       {
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "How Far in Advance to Book Event Rentals? | Sterling Event Rentals",
-    description: "Quick answer: when to book event rentals for Chicago-area events.",
+    description: "Book corporate event rentals 21–30 days out. Weddings: 3–6 months. Private parties: 2–3 weeks. Peak summer weekends in Chicago fill fast — the sooner you confirm with a deposit, the better.",
   },
 };
 

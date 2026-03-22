@@ -11,11 +11,11 @@ const canonical = `${BASE}/answers/${slug}`;
 
 export const metadata: Metadata = {
   title: "Can You Set Up a Tent on Concrete or a Driveway? | Sterling Event Rentals",
-  description: "Quick answer: tent setups on concrete, asphalt, and driveways in Chicago and Chicagoland.",
+  description: "Yes. Sterling sets up tents on concrete, asphalt, pavers, and driveways using ballast weights instead of stakes. Common for corporate venues and urban event spaces in Chicago and Chicagoland.",
   alternates: { canonical },
   openGraph: {
     title: "Can You Set Up a Tent on Concrete or a Driveway? | Sterling Event Rentals",
-    description: "Quick answer: tent setups on concrete, asphalt, and driveways in Chicago and Chicagoland.",
+    description: "Yes. Sterling sets up tents on concrete, asphalt, pavers, and driveways using ballast weights instead of stakes. Common for corporate venues and urban event spaces in Chicago and Chicagoland.",
     url: canonical,
     images: [
       {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Can You Set Up a Tent on Concrete or a Driveway? | Sterling Event Rentals",
-    description: "Quick answer: tent setups on concrete, asphalt, and driveways in Chicago and Chicagoland.",
+    description: "Yes. Sterling sets up tents on concrete, asphalt, pavers, and driveways using ballast weights instead of stakes. Common for corporate venues and urban event spaces in Chicago and Chicagoland.",
   },
 };
 

@@ -35,11 +35,11 @@ const breadcrumbSchema = {
 
 export const metadata: Metadata = {
   title: "What Is the SIOTO Safety Seal? | Sterling Event Rentals",
-  description: "Quick answer: what the SIOTO safety certification means for tent and event rentals.",
+  description: "The SIOTO Safety Seal is an independent third-party certification for tent and event rental safety. Sterling Event Rentals is SIOTO-certified — a credential corporate venues and park districts recognize.",
   alternates: { canonical },
   openGraph: {
     title: "What Is the SIOTO Safety Seal? | Sterling Event Rentals",
-    description: "Quick answer: what the SIOTO safety certification means for tent and event rentals.",
+    description: "The SIOTO Safety Seal is an independent third-party certification for tent and event rental safety. Sterling Event Rentals is SIOTO-certified — a credential corporate venues and park districts recognize.",
     url: canonical,
     images: [
       {
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "What Is the SIOTO Safety Seal? | Sterling Event Rentals",
-    description: "Quick answer: what the SIOTO safety certification means for tent and event rentals.",
+    description: "The SIOTO Safety Seal is an independent third-party certification for tent and event rental safety. Sterling Event Rentals is SIOTO-certified — a credential corporate venues and park districts recognize.",
   },
 };
 

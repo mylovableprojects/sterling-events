@@ -10,11 +10,11 @@ const canonical = `${BASE}/answers/${slug}`;
 
 export const metadata: Metadata = {
   title: "Do You Rent Dance Floors in Chicago? | Sterling Event Rentals",
-  description: "Quick answer: dance floor rentals and how to request them for Chicago-area events.",
+  description: "Yes — portable modular dance floors are available for weddings, corporate events, and private parties in Chicago and Chicagoland. Sized to your guest count. Quoted with your rental package.",
   alternates: { canonical },
   openGraph: {
     title: "Do You Rent Dance Floors in Chicago? | Sterling Event Rentals",
-    description: "Quick answer: dance floor rentals and how to request them for Chicago-area events.",
+    description: "Yes — portable modular dance floors are available for weddings, corporate events, and private parties in Chicago and Chicagoland. Sized to your guest count. Quoted with your rental package.",
     url: canonical,
     images: [
       {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Do You Rent Dance Floors in Chicago? | Sterling Event Rentals",
-    description: "Quick answer: dance floor rentals and how to request them for Chicago-area events.",
+    description: "Yes — portable modular dance floors are available for weddings, corporate events, and private parties in Chicago and Chicagoland. Sized to your guest count. Quoted with your rental package.",
   },
 };
 

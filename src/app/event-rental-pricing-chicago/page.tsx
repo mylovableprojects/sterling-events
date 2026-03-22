@@ -6,9 +6,9 @@ import { ImageBreak } from "@/components/ImageBreak";
 import { SectionIntro } from "@/components/SectionIntro";
 
 const BASE = "https://sterlingeventrentals.com";
-const title = "Event Rental Pricing in Chicago";
+const title = "Event Rental Pricing Chicago | Sterling Event Rentals";
 const description =
-  "How event rental pricing works in Chicago and Chicagoland: minimums, deposit structure, and what affects cost for tents, tables, stages, and packages.";
+  "How event rental pricing works in Chicago and Chicagoland: $500 minimum, deposit structure, and what affects cost for tent, table, stage, and package rentals.";
 const canonical = `${BASE}/event-rental-pricing-chicago`;
 
 export const metadata: Metadata = {

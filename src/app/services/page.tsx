@@ -16,15 +16,17 @@ import {
 
 const BASE = "https://sterlingeventrentals.com";
 
+const servicesTitle = "Chicagoland Event Rental Services | Sterling Event Rentals";
+const servicesDescription =
+  "Tents, tables, stages, and entertainment rentals for Chicago and Chicagoland — delivered, set up, and torn down by our crew. Serving Evanston, Oak Park, Naperville, Schaumburg, and beyond. Licensed, SIOTO-certified.";
+
 export const metadata: Metadata = {
-  title: "Event Rental Services Chicago | Tents, Tables, Stages | Sterling Event Rentals",
-  description:
-    "Professional event rental services for Chicago and Chicagoland — tents, tables, stages, interactive installations, and full delivery and setup. Serving Evanston, Oak Park, Naperville, Schaumburg, Orland Park, and surrounding suburbs. Licensed, SIOTO-certified.",
+  title: servicesTitle,
+  description: servicesDescription,
   alternates: { canonical: `${BASE}/services` },
   openGraph: {
-    title: "Event Rental Services Chicago | Tents, Tables, Stages | Sterling Event Rentals",
-    description:
-      "Professional event rental services for Chicago and Chicagoland — tents, tables, stages, interactive installations, and full delivery and setup. Serving Evanston, Oak Park, Naperville, Schaumburg, Orland Park, and surrounding suburbs. Licensed, SIOTO-certified.",
+    title: servicesTitle,
+    description: servicesDescription,
     url: `${BASE}/services`,
     images: [
       {
@@ -37,10 +39,18 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Event Rental Services Chicago | Tents, Tables, Stages | Sterling Event Rentals",
-    description:
-      "Professional event rental services for Chicago and Chicagoland — tents, tables, stages, interactive installations, and full delivery and setup. Serving Evanston, Oak Park, Naperville, Schaumburg, Orland Park, and surrounding suburbs. Licensed, SIOTO-certified.",
+    title: servicesTitle,
+    description: servicesDescription,
   },
+};
+
+const servicesBreadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: BASE },
+    { "@type": "ListItem", position: 2, name: "Services", item: `${BASE}/services` },
+  ],
 };
 
 const serviceHubSchema = {
@@ -114,6 +124,11 @@ const SERVICE_CARDS = [
 export default function ServicesPage() {
   return (
     <>
+      <Script
+        id="ld-bc-services"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesBreadcrumbSchema) }}
+      />
       <Script
         id="ld-service-hub"
         type="application/ld+json"

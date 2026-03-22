@@ -10,11 +10,11 @@ const canonical = `${BASE}/answers/${slug}`;
 
 export const metadata: Metadata = {
   title: "Can You Heat or Cool a Tent? | Sterling Event Rentals",
-  description: "Quick answer: heating and cooling options for tented events in Chicago and Chicagoland.",
+  description: "Heating and cooling options are available for tented events in Chicago and Chicagoland. Ask Sterling about heaters for spring and fall events, and cooling solutions for hot summer dates.",
   alternates: { canonical },
   openGraph: {
     title: "Can You Heat or Cool a Tent? | Sterling Event Rentals",
-    description: "Quick answer: heating and cooling options for tented events in Chicago and Chicagoland.",
+    description: "Heating and cooling options are available for tented events in Chicago and Chicagoland. Ask Sterling about heaters for spring and fall events, and cooling solutions for hot summer dates.",
     url: canonical,
     images: [
       {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Can You Heat or Cool a Tent? | Sterling Event Rentals",
-    description: "Quick answer: heating and cooling options for tented events in Chicago and Chicagoland.",
+    description: "Heating and cooling options are available for tented events in Chicago and Chicagoland. Ask Sterling about heaters for spring and fall events, and cooling solutions for hot summer dates.",
   },
 };
 

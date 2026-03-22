@@ -10,11 +10,11 @@ const canonical = `${BASE}/answers/${slug}`;
 
 export const metadata: Metadata = {
   title: "Do I Have to Sign a Contract for Event Rentals? | Sterling Event Rentals",
-  description: "Quick answer: how booking works for Sterling Event Rentals in Chicago and Chicagoland.",
+  description: "Yes. Sterling Event Rentals uses a rental agreement that covers equipment, delivery, setup, weather policy, and cancellation terms. You review the full contract before paying your deposit.",
   alternates: { canonical },
   openGraph: {
     title: "Do I Have to Sign a Contract for Event Rentals? | Sterling Event Rentals",
-    description: "Quick answer: how booking works for Sterling Event Rentals in Chicago and Chicagoland.",
+    description: "Yes. Sterling Event Rentals uses a rental agreement that covers equipment, delivery, setup, weather policy, and cancellation terms. You review the full contract before paying your deposit.",
     url: canonical,
     images: [
       {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Do I Have to Sign a Contract for Event Rentals? | Sterling Event Rentals",
-    description: "Quick answer: how booking works for Sterling Event Rentals in Chicago and Chicagoland.",
+    description: "Yes. Sterling Event Rentals uses a rental agreement that covers equipment, delivery, setup, weather policy, and cancellation terms. You review the full contract before paying your deposit.",
   },
 };
 

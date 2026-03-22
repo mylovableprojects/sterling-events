@@ -4,15 +4,17 @@ import { ContactForm } from "@/components/ContactForm";
 
 const BASE = "https://sterlingeventrentals.com";
 
+const contactTitle = "Get a Quote for Chicago Event Rentals | Sterling Event Rentals";
+const contactDescription =
+  "Request a quote for tent, table, stage, and event rentals in Chicago, Evanston, Oak Park, Naperville, Schaumburg, and across Chicagoland. Share your date, venue, and guest count — full itemized quote within one business day.";
+
 export const metadata: Metadata = {
-  title: "Contact Sterling Event Rentals | Get a Quote",
-  description:
-    "Get a quote for tent, table, stage, and event rentals in Chicago, Evanston, Oak Park, Naperville, Schaumburg, and across Chicagoland. Share your date, venue, and guest count — full itemized quote within one business day.",
+  title: contactTitle,
+  description: contactDescription,
   alternates: { canonical: `${BASE}/contact` },
   openGraph: {
-    title: "Contact Sterling Event Rentals | Get a Quote",
-    description:
-      "Get a quote for tent, table, stage, and event rentals in Chicago, Evanston, Oak Park, Naperville, Schaumburg, and across Chicagoland. Share your date, venue, and guest count — full itemized quote within one business day.",
+    title: contactTitle,
+    description: contactDescription,
     url: `${BASE}/contact`,
     images: [
       {
@@ -25,9 +27,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Sterling Event Rentals | Get a Quote",
-    description:
-      "Get a quote for tent, table, stage, and event rentals in Chicago, Evanston, Oak Park, Naperville, Schaumburg, and across Chicagoland. Share your date, venue, and guest count — full itemized quote within one business day.",
+    title: contactTitle,
+    description: contactDescription,
   },
 };
 
@@ -49,10 +50,20 @@ const contactPageSchema = {
   },
 };
 
+const contactBreadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: BASE },
+    { "@type": "ListItem", position: 2, name: "Contact", item: `${BASE}/contact` },
+  ],
+};
+
 export default function ContactPage() {
   return (
     <>
       <Script id="ld-contact" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageSchema) }} />
+      <Script id="ld-bc-contact" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contactBreadcrumbSchema) }} />
       <section className="gradient-hero relative min-h-[75vh]">
         <div className="gradient-orb -left-28 top-6 h-56 w-56" />
         <div className="gradient-orb bottom-[-4rem] right-[-3rem] h-72 w-72 opacity-60" />

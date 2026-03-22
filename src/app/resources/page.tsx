@@ -5,9 +5,9 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 const BASE = "https://sterlingeventrentals.com";
-const title = "Event Planning Resources | Tent Sizing, Permits & Outdoor Events in Chicago";
+const title = "Chicago Event Planning Resources | Sterling Event Rentals";
 const description =
-  "Guides on tent sizing, Chicago tent permits, outdoor event planning, and corporate event checklists — for events in Chicago, Evanston, Oak Park, Naperville, Schaumburg, and across Chicagoland.";
+  "Free guides on tent sizing, Chicago tent permits, outdoor event planning, and corporate event checklists for events in Chicago, Evanston, Oak Park, Naperville, Schaumburg, and across Chicagoland.";
 const canonical = `${BASE}/resources`;
 
 export const metadata: Metadata = {

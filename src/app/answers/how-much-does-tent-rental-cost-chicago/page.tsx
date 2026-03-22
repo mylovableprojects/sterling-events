@@ -11,11 +11,11 @@ const canonical = `${BASE}/answers/${slug}`;
 
 export const metadata: Metadata = {
   title: "How Much Does Tent Rental Cost in Chicago? | Sterling Event Rentals",
-  description: "Quick answer: typical tent rental pricing in Chicago and Chicagoland.",
+  description: "Tent rental in Chicago starts at $500. A 20x20 for small parties, 20x40 for 50–100 guests. Every Sterling quote includes equipment, setup, and delivery as named line items — no surprises.",
   alternates: { canonical },
   openGraph: {
     title: "How Much Does Tent Rental Cost in Chicago? | Sterling Event Rentals",
-    description: "Quick answer: typical tent rental pricing in Chicago and Chicagoland.",
+    description: "Tent rental in Chicago starts at $500. A 20x20 for small parties, 20x40 for 50–100 guests. Every Sterling quote includes equipment, setup, and delivery as named line items — no surprises.",
     url: canonical,
     images: [
       {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "How Much Does Tent Rental Cost in Chicago? | Sterling Event Rentals",
-    description: "Quick answer: typical tent rental pricing in Chicago and Chicagoland.",
+    description: "Tent rental in Chicago starts at $500. A 20x20 for small parties, 20x40 for 50–100 guests. Every Sterling quote includes equipment, setup, and delivery as named line items — no surprises.",
   },
 };
 

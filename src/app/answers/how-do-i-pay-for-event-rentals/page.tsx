@@ -10,11 +10,11 @@ const canonical = `${BASE}/answers/${slug}`;
 
 export const metadata: Metadata = {
   title: "How Do I Pay for Event Rentals? | Sterling Event Rentals",
-  description: "Quick answer: deposits, balances, and payment steps for Sterling Event Rentals.",
+  description: "50% deposit holds your date. Balance due at or before delivery. Sterling Event Rentals accepts standard payment methods — ask when you get your quote for Chicago and Chicagoland events.",
   alternates: { canonical },
   openGraph: {
     title: "How Do I Pay for Event Rentals? | Sterling Event Rentals",
-    description: "Quick answer: deposits, balances, and payment steps for Sterling Event Rentals.",
+    description: "50% deposit holds your date. Balance due at or before delivery. Sterling Event Rentals accepts standard payment methods — ask when you get your quote for Chicago and Chicagoland events.",
     url: canonical,
     images: [
       {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "How Do I Pay for Event Rentals? | Sterling Event Rentals",
-    description: "Quick answer: deposits, balances, and payment steps for Sterling Event Rentals.",
+    description: "50% deposit holds your date. Balance due at or before delivery. Sterling Event Rentals accepts standard payment methods — ask when you get your quote for Chicago and Chicagoland events.",
   },
 };
 

@@ -1,34 +1,36 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { ImageBreak } from "@/components/ImageBreak";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { RentalCard, RentalCategory, RentalItem } from "@/components/RentalCard";
 
 const BASE = "https://sterlingeventrentals.com";
 
+const collectionTitle = "Rental Collection | Tables, Chairs, Linens & Décor | Sterling";
+const collectionDescription =
+  "Browse Sterling Event Rentals' collection of tables, chairs, linens, lighting, décor, and tableware for Chicago and Chicagoland events. Full inventory available on request.";
+
 export const metadata: Metadata = {
-  title: "Rental Collection | Tables, Chairs, Linens, Décor | Sterling Event Rentals",
-  description:
-    "Browse Sterling Event Rentals' collection of tables, chairs, linens, lighting, décor, and tableware for Chicago and Chicagoland events.",
+  title: collectionTitle,
+  description: collectionDescription,
   alternates: { canonical: `${BASE}/collection` },
   openGraph: {
-    title: "Rental Collection | Sterling Event Rentals",
-    description:
-      "Browse our collection of tables, chairs, linens, lighting, décor, and tableware for Chicago and Chicagoland events.",
+    title: collectionTitle,
+    description: collectionDescription,
     url: `${BASE}/collection`,
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Sterling Event Rentals — Event rentals in Chicago and Chicagoland",
+        alt: "Sterling Event Rentals — Rental Collection Chicago",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rental Collection | Sterling Event Rentals",
-    description:
-      "Browse our collection of tables, chairs, linens, lighting, décor, and tableware for Chicago and Chicagoland events.",
+    title: collectionTitle,
+    description: collectionDescription,
   },
 };
 
@@ -80,9 +82,19 @@ const sampleItems: RentalItem[] = [
   },
 ];
 
+const collectionBreadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: BASE },
+    { "@type": "ListItem", position: 2, name: "Collection", item: `${BASE}/collection` },
+  ],
+};
+
 export default function CollectionPage() {
   return (
     <>
+      <Script id="ld-bc-collection" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionBreadcrumbSchema) }} />
       <section className="gradient-hero relative min-h-[75vh]">
         <div className="gradient-orb -left-28 top-4 h-56 w-56" />
         <div className="gradient-orb bottom-[-4rem] right-[-3rem] h-72 w-72 opacity-60" />

@@ -1,34 +1,36 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import Image from "next/image";
 import { ImageBreak } from "@/components/ImageBreak";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 const BASE = "https://sterlingeventrentals.com";
 
+const galleryTitle = "Event Gallery | Weddings, Corporate & Social Events | Sterling";
+const galleryDescription =
+  "See setups from weddings, corporate events, and social celebrations across Chicago and Chicagoland — tents, tables, stages, and entertainment installed by Sterling Event Rentals.";
+
 export const metadata: Metadata = {
-  title: "Event Gallery | Weddings, Corporate, Social | Sterling Event Rentals",
-  description:
-    "See moments from weddings, corporate events, and social celebrations we've supported across Chicago and Chicagoland.",
+  title: galleryTitle,
+  description: galleryDescription,
   alternates: { canonical: `${BASE}/gallery` },
   openGraph: {
-    title: "Event Gallery | Sterling Event Rentals",
-    description:
-      "See moments from weddings, corporate events, and social celebrations we've supported across Chicago and Chicagoland.",
+    title: galleryTitle,
+    description: galleryDescription,
     url: `${BASE}/gallery`,
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Sterling Event Rentals — Event rentals in Chicago and Chicagoland",
+        alt: "Sterling Event Rentals — Event Gallery Chicago",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Event Gallery | Sterling Event Rentals",
-    description:
-      "See moments from weddings, corporate events, and social celebrations we've supported across Chicago and Chicagoland.",
+    title: galleryTitle,
+    description: galleryDescription,
   },
 };
 
@@ -43,9 +45,19 @@ const galleryItems = [
   { seed: "sterling-gallery-8", category: "Styled Shoots" },
 ];
 
+const galleryBreadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: BASE },
+    { "@type": "ListItem", position: 2, name: "Gallery", item: `${BASE}/gallery` },
+  ],
+};
+
 export default function GalleryPage() {
   return (
     <>
+      <Script id="ld-bc-gallery" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(galleryBreadcrumbSchema) }} />
       <section className="gradient-hero relative min-h-[75vh]">
         <div className="gradient-orb -left-28 top-8 h-56 w-56" />
         <div className="gradient-orb bottom-[-4rem] right-[-3rem] h-72 w-72 opacity-60" />

@@ -10,11 +10,11 @@ const canonical = `${BASE}/answers/${slug}`;
 
 export const metadata: Metadata = {
   title: "Is There a Security Deposit for Event Rentals? | Sterling Event Rentals",
-  description: "Quick answer: deposits vs. damage responsibility for event rentals in Chicago.",
+  description: "Sterling Event Rentals does not charge a separate security deposit. A 50% deposit holds your date. You are responsible for equipment damage beyond normal wear. Full terms stated in your contract.",
   alternates: { canonical },
   openGraph: {
     title: "Is There a Security Deposit for Event Rentals? | Sterling Event Rentals",
-    description: "Quick answer: deposits vs. damage responsibility for event rentals in Chicago.",
+    description: "Sterling Event Rentals does not charge a separate security deposit. A 50% deposit holds your date. You are responsible for equipment damage beyond normal wear. Full terms stated in your contract.",
     url: canonical,
     images: [
       {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Is There a Security Deposit for Event Rentals? | Sterling Event Rentals",
-    description: "Quick answer: deposits vs. damage responsibility for event rentals in Chicago.",
+    description: "Sterling Event Rentals does not charge a separate security deposit. A 50% deposit holds your date. You are responsible for equipment damage beyond normal wear. Full terms stated in your contract.",
   },
 };
 

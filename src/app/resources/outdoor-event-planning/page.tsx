@@ -8,23 +8,25 @@ import { FAQAccordion } from "@/components/FAQAccordion";
 const BASE = "https://sterlingeventrentals.com";
 const canonical = `${BASE}/resources/outdoor-event-planning`;
 
+const outdoorPlanningTitle = "Outdoor Event Planning in Chicago: A Complete Guide | Sterling";
+const outdoorPlanningDescription =
+  "A practical guide to planning outdoor events in Chicago: lead times by event type, equipment needs, weather and seasons, space planning, and what to ask your rental vendor.";
+
 export function generateMetadata(): Metadata {
   return {
-    title: "How to Plan an Outdoor Event in Chicago: A Complete Guide | Sterling Event Rentals",
-    description:
-      "A practical guide to planning outdoor events in Chicago: lead times by event type, equipment, weather and seasons, space planning, and what to ask your rental vendor.",
+    title: outdoorPlanningTitle,
+    description: outdoorPlanningDescription,
     alternates: { canonical },
     openGraph: {
-      title: "How to Plan an Outdoor Event in Chicago: A Complete Guide | Sterling Event Rentals",
-      description:
-        "Lead times, equipment, weather, space, and vendor questions for outdoor events in Chicago and Chicagoland.",
+      title: outdoorPlanningTitle,
+      description: outdoorPlanningDescription,
       url: canonical,
       images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Outdoor Event Planning Guide — Sterling Event Rentals" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: "How to Plan an Outdoor Event in Chicago: A Complete Guide | Sterling Event Rentals",
-      description: "Planning an outdoor event in Chicago. Lead times, equipment, weather, and more.",
+      title: outdoorPlanningTitle,
+      description: outdoorPlanningDescription,
     },
   };
 }

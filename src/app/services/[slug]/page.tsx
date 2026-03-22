@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { notFound } from "next/navigation";
 import { ServicePageContent } from "@/components/ServicePageContent";
 import {
@@ -50,7 +51,7 @@ export default async function ServiceSlugPage({ params }: Props) {
   const data = SERVICE_PAGE_DATA[slug as ServiceSlug];
   if (!data) notFound();
 
-  const canonical = `/services/${slug}`;
+  const canonical = `${BASE}/services/${slug}`;
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -67,9 +68,20 @@ export default async function ServiceSlugPage({ params }: Props) {
     },
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: BASE },
+      { "@type": "ListItem", position: 2, name: "Services", item: `${BASE}/services` },
+      { "@type": "ListItem", position: 3, name: data.label, item: canonical },
+    ],
+  };
+
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <Script id={`ld-service-${slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <Script id={`ld-bc-service-${slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <ServicePageContent data={data} slug={slug} />
     </>
   );

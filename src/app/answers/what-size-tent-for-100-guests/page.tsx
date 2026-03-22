@@ -39,11 +39,11 @@ const breadcrumbSchema = {
 
 export const metadata: Metadata = {
   title: "What Size Tent for 100 Guests? | Sterling Event Rentals",
-  description: "Quick answer: tent size recommendations for 100 guests for Chicago-area events.",
+  description: "For 100 guests, plan on a 20x40 tent minimum. Add a stage or dance floor? Size up to 30x60. Sterling Event Rentals sizes your tent to your guest count and layout in Chicago and Chicagoland.",
   alternates: { canonical },
   openGraph: {
     title: "What Size Tent for 100 Guests? | Sterling Event Rentals",
-    description: "Quick answer: tent size recommendations for 100 guests for Chicago-area events.",
+    description: "For 100 guests, plan on a 20x40 tent minimum. Add a stage or dance floor? Size up to 30x60. Sterling Event Rentals sizes your tent to your guest count and layout in Chicago and Chicagoland.",
     url: canonical,
     images: [
       {
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "What Size Tent for 100 Guests? | Sterling Event Rentals",
-    description: "Quick answer: tent size recommendations for 100 guests for Chicago-area events.",
+    description: "For 100 guests, plan on a 20x40 tent minimum. Add a stage or dance floor? Size up to 30x60. Sterling Event Rentals sizes your tent to your guest count and layout in Chicago and Chicagoland.",
   },
 };
 

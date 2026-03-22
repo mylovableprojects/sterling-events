@@ -16,23 +16,25 @@ const IMG_ELEGANT_OUTDOOR_WEDDING_WEBP =
 const IMG_PREPARING_TENT_PERMIT_ESSENTIALS_WEBP =
   "/images/outdoor-event-planning/preparing-chicago-tent-permit-essentials.webp";
 
+const tentPermitsTitle = "Chicago Tent Permit Guide for Event Renters | Sterling Event Rentals";
+const tentPermitsDescription =
+  "In Chicago, tents over 400 sq ft or 15 ft tall require a permit. 401–600 sq ft: standard permit. 600+ sq ft: permit plus engineered drawings. Permits are the customer's responsibility. Full guide.";
+
 export function generateMetadata(): Metadata {
   return {
-    title: "Do You Need a Tent Permit in Chicago? A Renter's Guide | Sterling Event Rentals",
-    description:
-      "In Chicago, tents over 400 sq ft or 15 ft tall require a permit. 401–600 sq ft: standard permit. 600+ sq ft: permit plus engineered drawings. Permits are the customer's responsibility. Full guide.",
+    title: tentPermitsTitle,
+    description: tentPermitsDescription,
     alternates: { canonical },
     openGraph: {
-      title: "Do You Need a Tent Permit in Chicago? A Renter's Guide | Sterling Event Rentals",
-      description:
-        "Tents over 400 sq ft or 15 ft tall require a Chicago building permit. Full breakdown of thresholds, who applies, and how.",
+      title: tentPermitsTitle,
+      description: tentPermitsDescription,
       url: canonical,
       images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Chicago Tent Permit Guide — Sterling Event Rentals" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Do You Need a Tent Permit in Chicago? A Renter's Guide | Sterling Event Rentals",
-      description: "Chicago tent permit thresholds, who applies, and how. Full guide for event renters.",
+      title: tentPermitsTitle,
+      description: tentPermitsDescription,
     },
   };
 }

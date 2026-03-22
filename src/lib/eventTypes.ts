@@ -41,7 +41,7 @@ export const EVENT_TYPE_DATA: Record<EventTypeSlug, EventTypeData> = {
     slug: "corporate-events",
     name: "Corporate Events & Company Picnics",
     tagline: "Tents, tables, stages, and entertainment for outdoor company events across the Chicago area.",
-    title: "Corporate Event Rentals Chicago, IL | Company Picnic Tent & Table Rental — Sterling",
+    title: "Corporate Event Rentals Chicago IL | Sterling Event Rentals",
     description:
       "Sterling Event Rentals delivers corporate event rentals throughout the Chicago area — tents, tables, chairs, stages, and entertainment for company picnics, team-building events, and outdoor corporate gatherings. SIOTO-certified, $500 minimum. Call (773) 692-7576.",
     h1: "Corporate event & company picnic rentals — Chicago, IL",
@@ -180,7 +180,7 @@ export const EVENT_TYPE_DATA: Record<EventTypeSlug, EventTypeData> = {
     slug: "weddings",
     name: "Weddings",
     tagline: "Tent, table, and décor rentals for outdoor weddings across the Chicago metro.",
-    title: "Wedding Tent & Table Rentals Chicago, IL | Outdoor Wedding Rentals — Sterling",
+    title: "Wedding Tent & Table Rentals Chicago IL | Sterling Event Rentals",
     description:
       "Sterling Event Rentals provides wedding tent, table, chair, and décor rentals throughout the Chicago area. Full delivery, setup, and teardown on every order. SIOTO-certified, $500 minimum. Call (773) 692-7576.",
     h1: "Wedding rentals — tent, tables & décor for Chicago area outdoor weddings",
@@ -319,7 +319,7 @@ export const EVENT_TYPE_DATA: Record<EventTypeSlug, EventTypeData> = {
     slug: "private-parties",
     name: "Private Parties & Social Events",
     tagline: "Backyard parties, milestone birthdays, graduations, and social gatherings across the Chicago area.",
-    title: "Private Party & Social Event Rentals Chicago, IL | Backyard Party Tent Rental — Sterling",
+    title: "Private Party & Backyard Tent Rental Chicago IL | Sterling",
     description:
       "Sterling Event Rentals delivers tent, table, chair, and entertainment rentals for private parties and social events across the Chicago area — backyard graduations, milestone birthdays, quinceañeras, and outdoor gatherings. $500 minimum. Call (773) 692-7576.",
     h1: "Private party & social event rentals — Chicago area backyard & outdoor events",

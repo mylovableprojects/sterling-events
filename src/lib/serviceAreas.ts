@@ -38,7 +38,7 @@ export const SERVICE_AREA_DATA: Record<ServiceAreaSlug, ServiceAreaData> = {
     name: "Chicago & Near Suburbs",
     tagline: "Chicago city, Oak Park, Evanston, Berwyn, and the inner ring.",
     title:
-      "Event Rentals Chicago, IL | Tent, Table & Stage Rentals — Sterling Event Rentals",
+      "Event Rentals Chicago IL | Tent, Table & Stage Rentals | Sterling",
     description:
       "Sterling Event Rentals delivers tents, tables, chairs, stages, and entertainment rentals throughout Chicago, IL and near suburbs — Oak Park, Evanston, Berwyn, Skokie. SIOTO-certified, $500 minimum, upfront pricing. Call (773) 692-7576.",
     h1: "Event rentals in Chicago, IL — delivery, setup & teardown included",
@@ -209,7 +209,7 @@ export const SERVICE_AREA_DATA: Record<ServiceAreaSlug, ServiceAreaData> = {
     tagline:
       "Schaumburg, Arlington Heights, Palatine, Des Plaines, Wilmette, and the north shore.",
     title:
-      "Event Rentals North & Northwest Suburbs Chicago, IL | Schaumburg, Arlington Heights — Sterling",
+      "Event Rentals North Suburbs Chicago | Schaumburg | Sterling",
     description:
       "Sterling Event Rentals delivers tents, tables, chairs, stages, and entertainment rentals to the north and northwest suburbs of Chicago, IL — Schaumburg, Arlington Heights, Palatine, Wilmette, Northbrook, Glenview. SIOTO-certified, $500 minimum. Call (773) 692-7576.",
     h1: "Event rentals in the north and northwest suburbs of Chicago, IL",
@@ -366,7 +366,7 @@ export const SERVICE_AREA_DATA: Record<ServiceAreaSlug, ServiceAreaData> = {
     tagline:
       "Naperville, Orland Park, Downers Grove, Bolingbrook, Joliet, and the southwest corridor.",
     title:
-      "Event Rentals South & Southwest Suburbs Chicago, IL | Naperville, Orland Park — Sterling",
+      "Event Rentals Southwest Suburbs Chicago | Naperville | Sterling",
     description:
       "Sterling Event Rentals delivers tents, tables, chairs, stages, and entertainment rentals to the south and southwest suburbs of Chicago, IL — Naperville, Orland Park, Downers Grove, Bolingbrook, Joliet, Tinley Park. SIOTO-certified, $500 minimum. Call (773) 692-7576.",
     h1: "Event rentals in the south and southwest suburbs of Chicago, IL",

@@ -59,9 +59,9 @@ const REGION_CARDS = [
   },
 ] as const;
 
-const metaTitle = "Service Area | Event Rentals Chicago, Evanston, Naperville, Oak Park & Chicagoland";
+const metaTitle = "Event Rental Service Area | Chicagoland | Sterling Event Rentals";
 const metaDescription =
-  "Sterling Event Rentals delivers to Chicago and across Chicagoland — including Evanston, Oak Park, Naperville, Schaumburg, Orland Park, and surrounding suburbs. Call (773) 692-7576 to confirm delivery to your zip code or venue.";
+  "Sterling Event Rentals delivers to Chicago and across Chicagoland — Evanston, Oak Park, Naperville, Schaumburg, Orland Park, and surrounding suburbs. Call (773) 692-7576 to confirm delivery to your zip code or venue.";
 
 export const metadata: Metadata = {
   title: metaTitle,
@@ -381,7 +381,7 @@ export default function ServiceAreaPage() {
           <h2 className="heading-2 mb-6 text-[var(--charcoal)]">
             Common questions about our service area
           </h2>
-          <FAQAccordion items={[...SERVICE_AREA_FAQS]} schemaId="ld-faq-service-area" variant="light" />
+          <FAQAccordion items={[...SERVICE_AREA_FAQS]} withSchema schemaId="ld-faq-service-area" variant="light" />
           <p className="mt-8 text-center text-base" style={{ color: "rgba(26,26,26,0.8)" }}>
             Ready to confirm?{" "}
             <Link

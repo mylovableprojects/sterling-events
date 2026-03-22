@@ -15,13 +15,25 @@ const breadcrumbSchema = {
   ],
 };
 
+const answersCollectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Chicago Event Rental Questions Answered — Sterling Event Rentals",
+  description: "Quick answers to common event rental questions for Chicago and Chicagoland.",
+  url: canonical,
+  publisher: { "@type": "LocalBusiness", name: "Sterling Event Rentals", url: BASE },
+};
+
+const answersTitle = "Chicago Event Rental Questions Answered | Sterling Event Rentals";
+const answersDescription = "Quick answers to common event rental questions — tent sizing, permits, booking lead times, delivery, weather policy, and pricing for Chicago, Evanston, Oak Park, Naperville, and across Chicagoland.";
+
 export const metadata: Metadata = {
-  title: "Event Rental Questions Answered | Chicago & Chicagoland | Sterling Event Rentals",
-  description: "Quick answers to common event rental questions — tent sizing, permits, booking lead times, delivery, weather policy, and pricing for Chicago, Evanston, Oak Park, Naperville, and across Chicagoland.",
+  title: answersTitle,
+  description: answersDescription,
   alternates: { canonical },
   openGraph: {
-    title: "Event Rental Questions Answered | Chicago & Chicagoland | Sterling Event Rentals",
-    description: "Quick answers to common event rental questions — tent sizing, permits, booking lead times, delivery, weather policy, and pricing for Chicago, Evanston, Oak Park, Naperville, and across Chicagoland.",
+    title: answersTitle,
+    description: answersDescription,
     url: canonical,
     images: [
       {
@@ -34,8 +46,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Event Rental Questions Answered | Chicago & Chicagoland | Sterling Event Rentals",
-    description: "Quick answers to common event rental questions — tent sizing, permits, booking lead times, delivery, weather policy, and pricing for Chicago, Evanston, Oak Park, Naperville, and across Chicagoland.",
+    title: answersTitle,
+    description: answersDescription,
   },
 };
 
@@ -65,6 +77,7 @@ export default function AnswersHubPage() {
   return (
     <>
       <Script id="ld-breadcrumbs" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <Script id="ld-collection-answers" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(answersCollectionSchema) }} />
       <section className="gradient-hero relative min-h-[75vh]">
         <div className="gradient-orb -left-24 top-10 h-56 w-56" />
         <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-6 px-6">

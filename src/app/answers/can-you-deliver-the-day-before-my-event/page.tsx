@@ -10,11 +10,11 @@ const canonical = `${BASE}/answers/${slug}`;
 
 export const metadata: Metadata = {
   title: "Can You Deliver the Day Before My Event? | Sterling Event Rentals",
-  description: "Quick answer: day-before delivery for Chicago and Chicagoland event rentals.",
+  description: "Yes — day-before delivery is available for Chicago and Chicagoland events. Ask when booking. An extended rental window may apply. Confirm delivery timing when you get your quote.",
   alternates: { canonical },
   openGraph: {
     title: "Can You Deliver the Day Before My Event? | Sterling Event Rentals",
-    description: "Quick answer: day-before delivery for Chicago and Chicagoland event rentals.",
+    description: "Yes — day-before delivery is available for Chicago and Chicagoland events. Ask when booking. An extended rental window may apply. Confirm delivery timing when you get your quote.",
     url: canonical,
     images: [
       {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Can You Deliver the Day Before My Event? | Sterling Event Rentals",
-    description: "Quick answer: day-before delivery for Chicago and Chicagoland event rentals.",
+    description: "Yes — day-before delivery is available for Chicago and Chicagoland events. Ask when booking. An extended rental window may apply. Confirm delivery timing when you get your quote.",
   },
 };
 

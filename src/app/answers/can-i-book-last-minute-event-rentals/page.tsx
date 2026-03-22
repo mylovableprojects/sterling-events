@@ -10,11 +10,11 @@ const canonical = `${BASE}/answers/${slug}`;
 
 export const metadata: Metadata = {
   title: "Can I Book Last-Minute Event Rentals in Chicago? | Sterling Event Rentals",
-  description: "Quick answer: last-minute booking for tents, tables, and event rentals in Chicago and Chicagoland.",
+  description: "Yes — Sterling Event Rentals can often accommodate last-minute bookings in Chicago and Chicagoland. Call (773) 692-7576 to check availability. Deposit required to confirm your date and equipment.",
   alternates: { canonical },
   openGraph: {
     title: "Can I Book Last-Minute Event Rentals in Chicago? | Sterling Event Rentals",
-    description: "Quick answer: last-minute booking for tents, tables, and event rentals in Chicago and Chicagoland.",
+    description: "Yes — Sterling Event Rentals can often accommodate last-minute bookings in Chicago and Chicagoland. Call (773) 692-7576 to check availability. Deposit required to confirm your date and equipment.",
     url: canonical,
     images: [
       {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Can I Book Last-Minute Event Rentals in Chicago? | Sterling Event Rentals",
-    description: "Quick answer: last-minute booking for tents, tables, and event rentals in Chicago and Chicagoland.",
+    description: "Yes — Sterling Event Rentals can often accommodate last-minute bookings in Chicago and Chicagoland. Call (773) 692-7576 to check availability. Deposit required to confirm your date and equipment.",
   },
 };
 

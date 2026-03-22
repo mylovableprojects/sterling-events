@@ -16,23 +16,25 @@ const IMG_CORPORATE_PICNIC =
 const IMG_CITYSCAPE_GALA =
   "/images/outdoor-event-planning/Elegant%20Cityscape%20Event%20Setup.webp";
 
+const corpChecklistTitle = "Corporate Outdoor Event Checklist Chicago | Sterling Event Rentals";
+const corpChecklistDescription =
+  "Week-by-week checklist for corporate outdoor events in Chicago and Chicagoland: 6 weeks, 3 weeks, 1 week, and day-of. Venue, permits, vendor credentials, and logistics included.";
+
 export function generateMetadata(): Metadata {
   return {
-    title: "Corporate Event Planning Checklist: Outdoor Events in Chicago | Sterling Event Rentals",
-    description:
-      "Timeline checklist for corporate outdoor events in Chicago and Chicagoland: 6 weeks, 3 weeks, 1 week, and day-of. Venue, permits, vendor credentials, and logistics so nothing falls through the cracks.",
+    title: corpChecklistTitle,
+    description: corpChecklistDescription,
     alternates: { canonical },
     openGraph: {
-      title: "Corporate Event Planning Checklist: Outdoor Events in Chicago | Sterling Event Rentals",
-      description:
-        "Checklist for corporate outdoor events in Chicago — venue, permits, equipment, credentials, and day-of logistics.",
+      title: corpChecklistTitle,
+      description: corpChecklistDescription,
       url: canonical,
-      images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Sterling Event Rentals — Event rentals in Chicago and Chicagoland" }],
+      images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Sterling Event Rentals — Corporate Event Planning Checklist Chicago" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Corporate Event Planning Checklist: Outdoor Events in Chicago | Sterling Event Rentals",
-      description: "Corporate event checklist for outdoor events in Chicago. Timeline, credentials, and logistics.",
+      title: corpChecklistTitle,
+      description: corpChecklistDescription,
     },
   };
 }

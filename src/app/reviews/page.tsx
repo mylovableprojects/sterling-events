@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
@@ -29,9 +30,19 @@ export const metadata: Metadata = {
   },
 };
 
+const reviewsBreadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: BASE },
+    { "@type": "ListItem", position: 2, name: "Reviews", item: canonical },
+  ],
+};
+
 export default function ReviewsPage() {
   return (
     <>
+      <Script id="ld-bc-reviews" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsBreadcrumbSchema) }} />
       <section className="gradient-hero relative min-h-[75vh]">
         <div className="gradient-orb -left-24 top-10 h-56 w-56" />
         <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-6 px-6">

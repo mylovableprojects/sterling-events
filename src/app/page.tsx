@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import Link from "next/link";
 import { Hero } from "../components/Hero";
 import { ScrollReveal } from "../components/ScrollReveal";
@@ -10,7 +11,7 @@ const BASE = "https://sterlingeventrentals.com";
 
 const title = "Event Rentals Chicago | Sterling Event Rentals";
 const description =
-  "Chicago's full-service event rental company. Tents, tables, stages, and specialty installations for corporate events, weddings, and private parties in Naperville, Oak Park, Evanston, Schaumburg, and across Chicagoland. Licensed, SIOTO-certified. Get a quote.";
+  "Chicago's full-service event rental company. Tents, tables, stages, and specialty rentals for corporate events, weddings, and parties across Chicagoland. Licensed, SIOTO-certified. Get a quote.";
 
 export const metadata: Metadata = {
   title,
@@ -83,9 +84,51 @@ const HOME_FAQS = [
   },
 ];
 
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Sterling Event Rentals",
+  url: BASE,
+  telephone: "+17736927576",
+  email: "info@sterlingeventrentals.com",
+  image: `${BASE}/og-image.jpg`,
+  priceRange: "$$",
+  foundingDate: "2021",
+  hasCredential: "SIOTO Safety Seal",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Chicago",
+    addressRegion: "IL",
+    addressCountry: "US",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 41.8781,
+    longitude: -87.6298,
+  },
+  areaServed: [
+    { "@type": "City", name: "Chicago", containedInPlace: { "@type": "State", name: "Illinois" } },
+    { "@type": "AdministrativeArea", name: "Chicagoland" },
+  ],
+  sameAs: [
+    "https://www.instagram.com/sterlingeventrental",
+    "https://www.facebook.com/profile.php?id=61582710860825",
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: BASE },
+  ],
+};
+
 export default function Home() {
   return (
     <>
+      <Script id="ld-home-localbusiness" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <Script id="ld-home-breadcrumb" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Hero />
 
       {/* 2. Trust bar */}
