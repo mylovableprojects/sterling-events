@@ -561,6 +561,7 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       note: "Setup fee is separate from the equipment rental cost and is quoted upfront. No hidden fees added after booking.",
     },
     ctaFooterLinks: [
+      { href: "/packages/pricing", label: "Full price list (PDF)" },
       { href: "/resources/corporate-event-checklist", label: "Corporate event checklist" },
       { href: "/services", label: "See all services" },
     ],

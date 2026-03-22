@@ -166,6 +166,7 @@ export const EVENT_TYPE_DATA: Record<EventTypeSlug, EventTypeData> = {
     ],
     resourceLinks: [
       { href: "/resources/corporate-event-checklist", label: "Corporate event planning checklist" },
+      { href: "/packages/pricing", label: "Download price list (PDF)" },
       { href: "/event-rental-pricing-chicago", label: "Event rental pricing" },
       { href: "/packages", label: "View event packages" },
       { href: "/services/stages-presentation", label: "Stages & presentation rentals" },
@@ -306,6 +307,7 @@ export const EVENT_TYPE_DATA: Record<EventTypeSlug, EventTypeData> = {
     resourceLinks: [
       { href: "/resources/tent-sizing-guide", label: "Wedding tent sizing guide" },
       { href: "/resources/outdoor-event-planning", label: "Outdoor event planning guide" },
+      { href: "/packages/pricing", label: "Download price list (PDF)" },
       { href: "/event-rental-pricing-chicago", label: "Event rental pricing" },
       { href: "/packages", label: "View rental packages" },
       { href: "/services/event-extras", label: "Champagne walls & event extras" },

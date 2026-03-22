@@ -198,6 +198,14 @@ export default function PackagesPage() {
               Browse Individual Services
             </a>
           </div>
+          <p className="mt-5 text-sm text-[var(--champagne)]/70">
+            <Link
+              href="/packages/pricing"
+              className="border-b border-[var(--gold)]/25 pb-0.5 text-[var(--gold-light)] transition-colors hover:border-[var(--gold)]"
+            >
+              Full itemized price list (PDF) →
+            </Link>
+          </p>
         </div>
       </section>
 

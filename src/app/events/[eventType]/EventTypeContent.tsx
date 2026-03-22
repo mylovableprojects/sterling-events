@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { RentalHighlightGrid } from "@/components/RentalHighlightGrid";
 import type { EventTypeData } from "@/lib/eventTypes";
 
 function reveal(delay = 0) {
@@ -192,6 +193,13 @@ export function EventTypeContent({ data, slug }: Props) {
           </motion.div>
         </div>
       </section>
+
+      {/* ── Price list highlights (weddings + corporate) ── */}
+      {(slug === "weddings" || slug === "corporate-events") && (
+        <RentalHighlightGrid
+          audience={slug === "weddings" ? "weddings" : "corporate-events"}
+        />
+      )}
 
       {/* ── IMAGE BREAK ── */}
       <section className="bg-[var(--cream)] py-12">

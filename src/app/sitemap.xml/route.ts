@@ -17,6 +17,7 @@ const urls = [
   "/collection",
   "/gallery",
   "/packages",
+  "/packages/pricing",
   "/event-rental-pricing-chicago",
   "/service-area",
   "/resources",

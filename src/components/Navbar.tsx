@@ -36,6 +36,11 @@ const resourceLinks = [
   { href: "/resources/corporate-event-checklist", label: "Corporate Event Checklist" },
 ];
 
+const packageLinks = [
+  { href: "/packages", label: "Package tiers" },
+  { href: "/packages/pricing", label: "Pricing & price list" },
+];
+
 export function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
@@ -44,6 +49,7 @@ export function Navbar() {
   const [eventsOpenMobile, setEventsOpenMobile] = useState(false);
   const [serviceAreaOpenMobile, setServiceAreaOpenMobile] = useState(false);
   const [resourcesOpenMobile, setResourcesOpenMobile] = useState(false);
+  const [packagesOpenMobile, setPackagesOpenMobile] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -144,14 +150,37 @@ export function Navbar() {
               </div>
             </div>
 
-            <Link
-              href="/packages"
-              className={`nav-link-underline text-xs tracking-[0.28em] uppercase ${
-                pathname === "/packages" ? "nav-link-underline-active text-[var(--gold)]" : "text-[var(--champagne)]/80"
-              }`}
-            >
-              Packages
-            </Link>
+            <div className="relative group">
+              <button
+                type="button"
+                className={`nav-link-underline text-xs tracking-[0.28em] uppercase ${
+                  pathname.startsWith("/packages")
+                    ? "nav-link-underline-active text-[var(--gold)]"
+                    : "text-[var(--champagne)]/80"
+                }`}
+              >
+                Packages ▾
+              </button>
+              <div className="invisible absolute left-0 top-full mt-3 w-64 rounded-2xl border border-white/10 bg-black/90 p-3 text-[0.75rem] opacity-0 shadow-[0_18px_60px_rgba(0,0,0,0.8)] transition-all group-hover:visible group-hover:opacity-100">
+                <ul className="space-y-1">
+                  {packageLinks.map((link) => {
+                    const active = pathname === link.href;
+                    return (
+                      <li key={link.href}>
+                        <Link
+                          href={link.href}
+                          className={`flex items-center rounded-md px-2 py-1.5 ${
+                            active ? "text-[var(--gold)]" : "text-[var(--champagne)]/80 hover:text-[var(--gold)]"
+                          }`}
+                        >
+                          <span className="text-[0.7rem] tracking-[0.18em] uppercase">{link.label}</span>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </div>
 
             <div className="relative group">
               <button
@@ -326,14 +355,32 @@ export function Navbar() {
                   </ul>
                 )}
 
-                <Link
-                  href="/packages"
-                  className={`block text-lg tracking-[0.25em] uppercase ${
-                    pathname === "/packages" ? "text-[var(--gold)]" : "text-[var(--champagne)]"
+                <button
+                  type="button"
+                  onClick={() => setPackagesOpenMobile((prev) => !prev)}
+                  className={`flex w-full items-center justify-between text-lg tracking-[0.25em] uppercase ${
+                    pathname.startsWith("/packages") ? "text-[var(--gold)]" : "text-[var(--champagne)]"
                   }`}
                 >
-                  Packages
-                </Link>
+                  <span>Packages</span>
+                  <span>{packagesOpenMobile ? "−" : "+"}</span>
+                </button>
+                {packagesOpenMobile && (
+                  <ul className="ml-4 space-y-2 text-[0.8rem]">
+                    {packageLinks.map((link) => (
+                      <li key={link.href}>
+                        <Link
+                          href={link.href}
+                          className={`block tracking-[0.2em] uppercase ${
+                            pathname === link.href ? "text-[var(--gold)]" : "text-[var(--champagne)]/85"
+                          }`}
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
 
                 <button
                   type="button"

@@ -8,6 +8,7 @@ import { CTABlock } from "@/components/CTABlock";
 import { ServicePageLayout, type ServicePageSections } from "@/components/ServicePageLayout";
 import { ServiceImagePlaceholder } from "@/components/ServiceImagePlaceholder";
 import { PhotoGrid } from "@/components/PhotoGrid";
+import { RentalHighlightGrid } from "@/components/RentalHighlightGrid";
 import Link from "next/link";
 import type { ServicePageData } from "@/lib/servicePages";
 
@@ -77,6 +78,11 @@ export function ServicePageContent({ data, slug }: Props) {
         )}
         {data.section2PhotoGridLabels && (
           <PhotoGrid count={3} labels={data.section2PhotoGridLabels} />
+        )}
+        {slug === "games-entertainment" && (
+          <div className="mt-10">
+            <RentalHighlightGrid audience="games-entertainment" />
+          </div>
         )}
       </div>
     ),
