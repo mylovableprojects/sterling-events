@@ -138,8 +138,8 @@ export function ServicesBentoSection() {
           <motion.div {...reveal(0.05)}>
             <Link href="/services/tents-structures" className={CARD}>
               <CardTopImage
-                src="/images/outdoor-event-planning/Elegant%20Cityscape%20Event%20Setup.webp"
-                alt="Outdoor event tent and structure setup with city views"
+                src="/images/outdoor-event-planning/backyard-chicago-wedding.webp"
+                alt="Backyard event with tent, tables, and seating in the Chicago area"
                 placeholderLabel="Tents & Structures Photo"
                 gradFrom="#0b1f3a"
                 gradTo="#040c1c"
