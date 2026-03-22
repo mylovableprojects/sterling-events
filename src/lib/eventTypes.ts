@@ -34,6 +34,12 @@ export type EventTypeData = {
   /** Gradient colors for placeholder images */
   heroGradient: { from: string; to: string };
   midGradient: { from: string; to: string };
+  /** Optional photo for the “About This Service” intro (replaces placeholder on the right) */
+  aboutSectionImage?: { src: string; alt: string };
+  /** Optional full-width image between equipment packages and FAQ */
+  midBreakImage?: { src: string; alt: string };
+  /** Optional image above “Helpful resources” in the bottom split */
+  detailsSectionImage?: { src: string; alt: string };
 };
 
 export const EVENT_TYPE_DATA: Record<EventTypeSlug, EventTypeData> = {
@@ -175,6 +181,18 @@ export const EVENT_TYPE_DATA: Record<EventTypeSlug, EventTypeData> = {
     schemaEventType: "BusinessEvent",
     heroGradient: { from: "#0b1f3a", to: "#020810" },
     midGradient: { from: "#1a2e50", to: "#071020" },
+    aboutSectionImage: {
+      src: "/images/outdoor-event-planning/Elegant%20Outdoor%20Event%20with%20City%20Views.webp",
+      alt: "White event tent with dining setup on a lawn, Chicago skyline and Lake Michigan in the background.",
+    },
+    midBreakImage: {
+      src: "/images/outdoor-event-planning/Global%20Corp%20Picnic%20Bash.png",
+      alt: "Company picnic under a white tent with catering and guests, Chicago skyline beyond the park.",
+    },
+    detailsSectionImage: {
+      src: "/images/outdoor-event-planning/Elegant%20Outdoor%20Event%20Tent.webp",
+      alt: "Formal corporate banquet under a white peak tent with long dining tables and Chicago skyline in the distance.",
+    },
   },
 
   weddings: {
@@ -315,6 +333,18 @@ export const EVENT_TYPE_DATA: Record<EventTypeSlug, EventTypeData> = {
     schemaEventType: "SocialEvent",
     heroGradient: { from: "#1a0a2e", to: "#060210" },
     midGradient: { from: "#2a1540", to: "#0d0620" },
+    aboutSectionImage: {
+      src: "/images/outdoor-event-planning/Elegant%20Outdoor%20Wedding%20Scene.webp",
+      alt: "Elegant outdoor wedding tent with dining tables on a lawn, Chicago skyline and Lake Michigan in the background.",
+    },
+    midBreakImage: {
+      src: "/images/outdoor-event-planning/Elegant%20Cityscape%20Event%20Setup.webp",
+      alt: "Formal wedding reception space with banquet tables and Chicago skyline visible through floor-to-ceiling windows at dusk.",
+    },
+    detailsSectionImage: {
+      src: "/images/outdoor-event-planning/Elegant%20Outdoor%20Event%20Tent.webp",
+      alt: "Outdoor wedding reception under a white peak tent with long dining tables and the Chicago skyline in the distance.",
+    },
   },
 
   "private-parties": {
@@ -450,5 +480,17 @@ export const EVENT_TYPE_DATA: Record<EventTypeSlug, EventTypeData> = {
     schemaEventType: "SocialEvent",
     heroGradient: { from: "#1f0a0a", to: "#080202" },
     midGradient: { from: "#2e1010", to: "#120404" },
+    aboutSectionImage: {
+      src: "/images/outdoor-event-planning/backyard-chicago-wedding.webp",
+      alt: "Backyard wedding or private celebration setup with tent and tables in a Chicago-area residential outdoor space.",
+    },
+    midBreakImage: {
+      src: "/images/outdoor-event-planning/Outdoor%20Graduation%20Celebration%202024.webp",
+      alt: "Outdoor graduation ceremony with Class of 2024 marquee, tent, and seating on a turf field with Chicago skyline beyond.",
+    },
+    detailsSectionImage: {
+      src: "/images/outdoor-event-planning/graduation-chicago.webp",
+      alt: "Outdoor graduation ceremony setup in Chicago with tent, stage, and seating for guests.",
+    },
   },
 };

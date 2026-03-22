@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -79,6 +80,40 @@ function ImgPlaceholder({
   );
 }
 
+/** Top-of-card or banner-side photo; falls back to gradient placeholder when src is null. */
+function CardTopImage({
+  src,
+  alt,
+  placeholderLabel,
+  gradFrom,
+  gradTo,
+  className = "h-40 w-full",
+  sizes,
+}: {
+  src: string | null;
+  alt: string;
+  placeholderLabel: string;
+  gradFrom: string;
+  gradTo: string;
+  className?: string;
+  sizes?: string;
+}) {
+  if (!src) {
+    return <ImgPlaceholder label={placeholderLabel} gradFrom={gradFrom} gradTo={gradTo} className={className} />;
+  }
+  return (
+    <div className={`relative flex-shrink-0 overflow-hidden ${className}`}>
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className="object-cover"
+        sizes={sizes ?? "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"}
+      />
+    </div>
+  );
+}
+
 const CARD =
   "group flex flex-col overflow-hidden rounded-2xl border border-[var(--navy)]/10 bg-white transition-all duration-200 hover:border-[var(--gold)]/40 hover:shadow-lg hover:-translate-y-0.5";
 
@@ -102,8 +137,10 @@ export function ServicesBentoSection() {
           {/* ── 1. TENTS — Tall feature card, spans 2 rows on lg ── */}
           <motion.div {...reveal(0.05)}>
             <Link href="/services/tents-structures" className={CARD}>
-              <ImgPlaceholder
-                label="Tents & Structures Photo"
+              <CardTopImage
+                src="/images/outdoor-event-planning/Elegant%20Cityscape%20Event%20Setup.webp"
+                alt="Outdoor event tent and structure setup with city views"
+                placeholderLabel="Tents & Structures Photo"
                 gradFrom="#0b1f3a"
                 gradTo="#040c1c"
                 className="h-40"
@@ -127,8 +164,10 @@ export function ServicesBentoSection() {
           {/* ── 2. TABLES — Image top, text bottom ── */}
           <motion.div {...reveal(0.12)}>
             <Link href="/services/tables-seating" className={CARD}>
-              <ImgPlaceholder
-                label="Tables & Seating Photo"
+              <CardTopImage
+                src="/images/outdoor-event-planning/Elegant%20Outdoor%20Event%20Tent.webp"
+                alt="Outdoor event under a tent with tables and seating arranged for guests"
+                placeholderLabel="Tables & Seating Photo"
                 gradFrom="#2a1e12"
                 gradTo="#130d06"
                 className="h-40"
@@ -151,8 +190,10 @@ export function ServicesBentoSection() {
           {/* ── 3. GAMES — Image top, text bottom ── */}
           <motion.div {...reveal(0.19)}>
             <Link href="/services/games-entertainment" className={CARD}>
-              <ImgPlaceholder
-                label="Games & Entertainment Photo"
+              <CardTopImage
+                src="/images/outdoor-event-planning/mini-mila-pink-bounce-house.webp"
+                alt="Pink bounce house rental for parties and events"
+                placeholderLabel="Games & Entertainment Photo"
                 gradFrom="#3d1800"
                 gradTo="#1b0900"
                 className="h-40"
@@ -176,8 +217,10 @@ export function ServicesBentoSection() {
           {/* ── 4. STAGES — Image top, text bottom ── */}
           <motion.div {...reveal(0.26)}>
             <Link href="/services/stages-presentation" className={CARD}>
-              <ImgPlaceholder
-                label="Stages & Presentation Photo"
+              <CardTopImage
+                src="/images/outdoor-event-planning/Stage%2001.webp"
+                alt="Portable stage and riser setup for presentations and performances"
+                placeholderLabel="Stages & Presentation Photo"
                 gradFrom="#1a1a2e"
                 gradTo="#0d0d1a"
                 className="h-40"
@@ -200,8 +243,10 @@ export function ServicesBentoSection() {
           {/* ── 5. EVENT EXTRAS — Image top, text bottom ── */}
           <motion.div {...reveal(0.33)}>
             <Link href="/services/event-extras" className={CARD}>
-              <ImgPlaceholder
-                label="Event Extras Photo"
+              <CardTopImage
+                src="/images/outdoor-event-planning/champagne-wall.webp"
+                alt="Champagne wall display for receptions and celebrations"
+                placeholderLabel="Event Extras Photo"
                 gradFrom="#3a2800"
                 gradTo="#1c1200"
                 className="h-40"
@@ -243,11 +288,14 @@ export function ServicesBentoSection() {
                   Learn more →
                 </span>
               </div>
-              <ImgPlaceholder
-                label="Delivery & Setup Photo"
+              <CardTopImage
+                src="/images/outdoor-event-planning/delivery-setup.webp"
+                alt="Sterling crew delivering and setting up rental equipment at a venue"
+                placeholderLabel="Delivery & Setup Photo"
                 gradFrom="#0d2240"
                 gradTo="#050f20"
-                className="hidden w-56 md:block lg:w-72"
+                className="hidden min-h-[168px] w-56 shrink-0 md:block lg:min-h-[192px] lg:w-72"
+                sizes="(max-width: 1024px) 224px, 288px"
               />
             </Link>
           </motion.div>

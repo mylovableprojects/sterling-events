@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -148,13 +149,26 @@ export function EventTypeContent({ data, slug }: Props) {
                 </Link>
               </div>
             </motion.div>
-            <motion.div {...reveal(0.12)}>
-              <ImgPlaceholder
-                label={`${data.name} Photo`}
-                gradFrom={data.heroGradient.from}
-                gradTo={data.heroGradient.to}
-                className="w-full h-80 rounded-2xl"
-              />
+            <motion.div {...reveal(0.12)} className="min-h-0">
+              {data.aboutSectionImage ? (
+                <div className="relative h-80 w-full overflow-hidden rounded-2xl">
+                  <Image
+                    src={data.aboutSectionImage.src}
+                    alt={data.aboutSectionImage.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 560px"
+                    priority
+                  />
+                </div>
+              ) : (
+                <ImgPlaceholder
+                  label={`${data.name} Photo`}
+                  gradFrom={data.heroGradient.from}
+                  gradTo={data.heroGradient.to}
+                  className="w-full h-80 rounded-2xl"
+                />
+              )}
             </motion.div>
           </div>
         </div>
@@ -204,13 +218,25 @@ export function EventTypeContent({ data, slug }: Props) {
       {/* ── IMAGE BREAK ── */}
       <section className="bg-[var(--cream)] py-12">
         <div className="mx-auto max-w-6xl px-4">
-          <motion.div {...reveal(0)}>
-            <ImgPlaceholder
-              label={`${data.name} Setup Photo`}
-              gradFrom={data.midGradient.from}
-              gradTo={data.midGradient.to}
-              className="w-full h-64 rounded-2xl md:h-72"
-            />
+          <motion.div {...reveal(0)} className="min-h-0">
+            {data.midBreakImage ? (
+              <div className="relative h-64 w-full overflow-hidden rounded-2xl md:h-72">
+                <Image
+                  src={data.midBreakImage.src}
+                  alt={data.midBreakImage.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1152px) 100vw, 1152px"
+                />
+              </div>
+            ) : (
+              <ImgPlaceholder
+                label={`${data.name} Setup Photo`}
+                gradFrom={data.midGradient.from}
+                gradTo={data.midGradient.to}
+                className="w-full h-64 rounded-2xl md:h-72"
+              />
+            )}
           </motion.div>
         </div>
       </section>
@@ -276,12 +302,24 @@ export function EventTypeContent({ data, slug }: Props) {
         <div className="mx-auto max-w-6xl px-4">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-start">
             <motion.div {...reveal(0)} className="flex flex-col gap-6">
-              <ImgPlaceholder
-                label={`${data.name} Details Photo`}
-                gradFrom={data.midGradient.from}
-                gradTo={data.midGradient.to}
-                className="w-full h-56 rounded-2xl"
-              />
+              {data.detailsSectionImage ? (
+                <div className="relative h-56 w-full overflow-hidden rounded-2xl">
+                  <Image
+                    src={data.detailsSectionImage.src}
+                    alt={data.detailsSectionImage.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 560px"
+                  />
+                </div>
+              ) : (
+                <ImgPlaceholder
+                  label={`${data.name} Details Photo`}
+                  gradFrom={data.midGradient.from}
+                  gradTo={data.midGradient.to}
+                  className="w-full h-56 rounded-2xl"
+                />
+              )}
               <div
                 className="rounded-xl p-5"
                 style={{ backgroundColor: "#0b1f3a", border: "1px solid rgba(201,168,76,0.3)" }}
