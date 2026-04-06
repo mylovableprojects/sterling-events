@@ -67,6 +67,7 @@ export type ServicePageData = {
   /** Optional image slot labels for 8-section layout (placeholder overlays). */
   heroImageLabel?: string;
   section2PhotoGridLabels?: [string, string, string];
+  section2PhotoGridSrcs?: [string | null, string | null, string | null];
   section3ImageLabel?: string;
   section4InlinePhotoLabel?: string;
   section6ImageLabel?: string;
@@ -536,9 +537,14 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       "We offer mechanical bulls, white bounce houses, soft play equipment, bubble houses, foam machines, giant Jenga, cornhole, and photo booths for corporate events, weddings, and private parties across Chicago and Chicagoland. Add one or more to your tent or package for guest engagement and memorable moments. Our crew delivers, sets up, and tears down.",
     heroImageLabel: "Interactive game — corporate event",
     section2PhotoGridLabels: [
-      "Giant Jenga — outdoor event",
-      "Photo activation — wedding",
+      "Mini Mila pink bounce house — kids event",
+      "Soft play — micro wedding",
       "Cornhole and games — picnic",
+    ],
+    section2PhotoGridSrcs: [
+      "/images/outdoor-event-planning/mini-mila-pink-bounce-house.webp",
+      "/images/outdoor-event-planning/soft-play-micro-weddings.webp",
+      null,
     ],
     section3ImageLabel: "Interactive installation setup",
     section6ImageLabel: "Crew setting up game installation",
@@ -682,6 +688,11 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       "Champagne wall — wedding reception",
       "Portable bar setup — event",
       "Lounge furniture — corporate event",
+    ],
+    section2PhotoGridSrcs: [
+      "/images/outdoor-event-planning/champagne-wall.webp",
+      "/images/outdoor-event-planning/Portable Bar.webp",
+      "/images/outdoor-event-planning/Lounge Furniture.webp",
     ],
     section3ImageLabel: "Event extras — specialty rental setup",
     section6ImageLabel: "Crew setting up event extras",

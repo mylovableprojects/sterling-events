@@ -21,8 +21,8 @@ export function Hero() {
       <div className="gradient-orb -left-24 top-10 h-64 w-64" />
       <div className="gradient-orb bottom-[-5rem] right-[-3rem] h-80 w-80 opacity-60" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 md:flex-row md:items-center">
-        <div className="flex-1 space-y-4 md:space-y-6">
+      <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col gap-6 px-6">
+        <div className="space-y-4 md:space-y-6">
           {/* Eyebrow carries the geo-modified keyword so the H1 can lead with the value proposition */}
           <motion.div
             custom={0}
@@ -88,24 +88,6 @@ export function Hero() {
             </a>
           </motion.div>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.7, duration: 0.9, ease: "easeOut" }}
-          className="mt-10 hidden md:flex flex-1 justify-end md:mt-0"
-        >
-          <div className="relative h-72 w-full max-w-sm overflow-hidden rounded-[2rem] border border-white/10 bg-[url('https://picsum.photos/seed/sterling-hero-portrait/800/1200')] bg-cover bg-center shadow-[0_30px_90px_rgba(0,0,0,0.8)]">
-            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-            <div className="absolute bottom-6 left-6 space-y-1 text-xs text-[var(--champagne)]/85">
-              <div className="section-eyebrow">Sterling Event Rentals</div>
-              <p className="max-w-[14rem]">
-                Licensed · Insured · SIOTO Safety Seal Certified<br />
-                Serving Chicagoland since 2021.
-              </p>
-            </div>
-          </div>
-        </motion.div>
       </div>
 
       <div className="pointer-events-none absolute inset-x-0 bottom-8 flex justify-center">

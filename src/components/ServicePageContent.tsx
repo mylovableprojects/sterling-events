@@ -33,37 +33,28 @@ export function ServicePageContent({ data, slug }: Props) {
       <>
         <div className="gradient-orb -left-24 top-10 h-56 w-56" />
         <div className="gradient-orb bottom-[-5rem] right-[-4rem] h-72 w-72 opacity-60" />
-        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 md:flex-row md:items-center md:gap-12">
-          <div className="flex-1 space-y-6">
-            <BreadcrumbNav items={crumbs} baseUrl={BASE} schemaId="ld-breadcrumbs-service" />
-            <p className="section-eyebrow">Services · {data.label}</p>
-            <h1 className="hero-headline text-[var(--cream)]">
-              {data.h1}
-            </h1>
-            {data.heroSubheadline && (
-              <p className="hero-subheadline text-[var(--champagne)]/90">
-                {data.heroSubheadline}
-              </p>
-            )}
-            <QuickAnswerBox>{data.quickAnswer}</QuickAnswerBox>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/contact" className="btn-primary">
-                {data.ctaCopy}
-              </Link>
-              <Link
-                href="/packages"
-                className="btn-outline border-[var(--cream)]/30 text-[var(--cream)] hover:border-[var(--gold)]/50 hover:bg-[var(--gold)]/10"
-              >
-                {data.packagesCta}
-              </Link>
-            </div>
-          </div>
-          <div className="flex-shrink-0 md:max-w-lg">
-            <ServiceImagePlaceholder
-              label={data.heroImageLabel ?? `${data.label} — hero`}
-              aspectRatio="4/3"
-              className="rounded-2xl"
-            />
+        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 md:max-w-3xl">
+          <BreadcrumbNav items={crumbs} baseUrl={BASE} schemaId="ld-breadcrumbs-service" />
+          <p className="section-eyebrow">Services · {data.label}</p>
+          <h1 className="hero-headline text-[var(--cream)]">
+            {data.h1}
+          </h1>
+          {data.heroSubheadline && (
+            <p className="hero-subheadline text-[var(--champagne)]/90">
+              {data.heroSubheadline}
+            </p>
+          )}
+          <QuickAnswerBox>{data.quickAnswer}</QuickAnswerBox>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/contact" className="btn-primary">
+              {data.ctaCopy}
+            </Link>
+            <Link
+              href="/packages"
+              className="btn-outline border-[var(--cream)]/30 text-[var(--cream)] hover:border-[var(--gold)]/50 hover:bg-[var(--gold)]/10"
+            >
+              {data.packagesCta}
+            </Link>
           </div>
         </div>
       </>
@@ -77,7 +68,7 @@ export function ServicePageContent({ data, slug }: Props) {
           </p>
         )}
         {data.section2PhotoGridLabels && (
-          <PhotoGrid count={3} labels={data.section2PhotoGridLabels} />
+          <PhotoGrid count={3} labels={data.section2PhotoGridLabels} srcs={data.section2PhotoGridSrcs} />
         )}
         {slug === "games-entertainment" && (
           <div className="mt-10">
