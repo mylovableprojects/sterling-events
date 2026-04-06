@@ -12,7 +12,6 @@ const serviceLinks = [
   { href: "/services/stages-presentation", label: "Stages & Presentation" },
   { href: "/services/games-entertainment", label: "Games & Entertainment" },
   { href: "/services/event-extras", label: "Event Extras" },
-  { href: "/services/delivery-setup-teardown", label: "Delivery, Setup & Teardown" },
 ];
 
 const serviceAreaLinks = [
