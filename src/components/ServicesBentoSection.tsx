@@ -94,7 +94,7 @@ const services = [
     href: "/services/games-entertainment",
     title: "Games & Entertainment",
     description:
-      "Mechanical bulls, bounce houses, photo booths, foam machines, and more. Built for events people actually remember.",
+      "Mechanical bulls and photo booths for corporate events, weddings, and private parties. Built for events people actually remember.",
     src: "/images/outdoor-event-planning/mini-mila-pink-bounce-house.webp",
     alt: "Pink bounce house rental for parties and events",
     gradFrom: "#3d1800",

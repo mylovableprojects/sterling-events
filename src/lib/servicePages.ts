@@ -66,8 +66,8 @@ export type ServicePageData = {
   ctaSubheadline?: string;
   /** Optional image slot labels for 8-section layout (placeholder overlays). */
   heroImageLabel?: string;
-  section2PhotoGridLabels?: [string, string, string];
-  section2PhotoGridSrcs?: [string | null, string | null, string | null];
+  section2PhotoGridLabels?: string[];
+  section2PhotoGridSrcs?: (string | null)[];
   section3ImageLabel?: string;
   section4InlinePhotoLabel?: string;
   section6ImageLabel?: string;
@@ -524,7 +524,7 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
   "games-entertainment": {
     title: "Games & Entertainment Rentals in Chicago | Sterling Event Rentals",
     description:
-      "Giant Jenga, cornhole, inflatables, photo activations, and branded arches for corporate events and private parties in Chicago, Oak Park, Naperville, Evanston, and across Chicagoland. Delivery and setup included.",
+      "Mechanical bull and photo booth rentals for corporate events and private parties in Chicago, Oak Park, Naperville, Evanston, and across Chicagoland. Delivery and setup included.",
     label: "Games & Entertainment",
     h1: "Games & Entertainment Rentals in Chicago",
     serviceName: "Games & Entertainment Rentals Chicago",
@@ -532,18 +532,16 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
     heroSubheadline:
       "Give your guests something to do — and something to talk about after.",
     quickAnswer:
-      "Sterling Event Rentals provides games and entertainment rentals for corporate events, private parties, and weddings across Chicago and Chicagoland. We offer mechanical bulls, white bounce houses, soft play equipment, bubble houses, foam machines, giant Jenga, cornhole, photo booths, and other activations — available as standalone rentals or as add-ons to any package. Every order includes delivery, setup, and teardown.",
+      "Sterling Event Rentals provides games and entertainment rentals for corporate events, private parties, and weddings across Chicago and Chicagoland. We offer mechanical bulls and photo booths — available as standalone rentals or as add-ons to any package. Every order includes delivery, setup, and teardown.",
     introParagraph:
-      "We offer mechanical bulls, white bounce houses, soft play equipment, bubble houses, foam machines, giant Jenga, cornhole, and photo booths for corporate events, weddings, and private parties across Chicago and Chicagoland. Add one or more to your tent or package for guest engagement and memorable moments. Our crew delivers, sets up, and tears down.",
+      "We offer mechanical bulls and photo booths for corporate events, weddings, and private parties across Chicago and Chicagoland. Add one or both to your tent or package for guest engagement and memorable moments. Our crew delivers, sets up, and tears down.",
     heroImageLabel: "Interactive game — corporate event",
     section2PhotoGridLabels: [
-      "Mini Mila pink bounce house — kids event",
-      "Soft play — micro wedding",
-      "Cornhole and games — picnic",
+      "Mechanical bull — corporate event",
+      "Photo booth — wedding reception",
     ],
     section2PhotoGridSrcs: [
-      "/images/outdoor-event-planning/mini-mila-pink-bounce-house.webp",
-      "/images/outdoor-event-planning/soft-play-micro-weddings.webp",
+      null,
       null,
     ],
     section3ImageLabel: "Interactive installation setup",
@@ -583,12 +581,12 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       {
         question: "What games and entertainment does Sterling rent in Chicago?",
         answer:
-          "We offer mechanical bulls, white bounce houses, soft play equipment, bubble houses, foam machines, giant Jenga, cornhole, and photo booths. Options work for outdoor and tented events — from corporate picnics and family events to weddings and private parties. You can book one or several. We’ll recommend what fits your space, guest count, and audience.",
+          "We offer mechanical bulls and photo booths. Both work for outdoor and tented events — from corporate picnics and private parties to weddings. You can book one or both. We’ll recommend what fits your space, guest count, and audience.",
       },
       {
         question: "Are games and entertainment rentals available for corporate events?",
         answer:
-          "Yes. Corporate picnics, team events, and client gatherings are a strong fit. Games like giant Jenga and cornhole drive engagement and social sharing; photo activations can be branded for your company. Interactive event rentals Chicago corporate planners book often sit alongside the tent, stage, and seating so guests can move between formal program and casual play.",
+          "Yes. Corporate picnics, team events, and client gatherings are a strong fit. Mechanical bulls make a high-energy centerpiece; photo booths drive engagement and social sharing and can be branded for your company. These sit alongside the tent, stage, and seating so guests can move between the formal program and the fun.",
       },
       {
         question: "Can I add games or activations to my existing package?",
@@ -602,12 +600,12 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       },
     ],
     whoItsFor: [
-      "Corporate event planners who want guest engagement beyond the program—games and photo activations that fit team events, picnics, and client gatherings, often with branding options.",
-      "Wedding couples and coordinators who want a photo activation (flower wall, arch) or lawn games for the cocktail hour and reception so guests have something to do and share.",
-      "Private hosts (birthdays, reunions, block parties) who want one or two fun elements—giant Jenga, cornhole, or a photo backdrop—without building a full program.",
+      "Corporate event planners who want guest engagement beyond the program — a mechanical bull or photo booth that fits team events, picnics, and client gatherings, often with branding options.",
+      "Wedding couples and coordinators who want a photo booth for the cocktail hour or reception so guests have something to do and a memory to take home.",
+      "Private hosts (birthdays, reunions, block parties) who want a high-energy centerpiece or photo moment without building a full program.",
     ],
     whatsIncluded: [
-      "Games and entertainment rentals: mechanical bulls, white bounce houses, soft play equipment, bubble houses, foam machines, giant Jenga, cornhole, and photo booths.",
+      "Games and entertainment rentals: mechanical bulls and photo booths.",
       "Available as standalone rentals or as add-ons to any tent or package.",
       "Delivery, setup, and teardown by Sterling's crew (setup fee is separate from unit cost and quoted upfront).",
     ],
@@ -621,7 +619,7 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       {
         question: "What game options are available?",
         answer:
-          "Giant Jenga and cornhole are available for outdoor and tented events. Mechanical bull rentals are available for corporate events, private parties, and anyone who wants a high-engagement centerpiece. We can suggest options based on your event type and space when you request a quote.",
+          "We offer mechanical bull rentals and photo booths. Mechanical bulls work for corporate events, private parties, and anyone who wants a high-engagement centerpiece. Photo booths are a popular add-on for weddings and corporate gatherings. We can suggest what fits your event type and space when you request a quote.",
       },
       {
         question: "Do you rent mechanical bulls in Chicago?",
@@ -632,11 +630,6 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
         question: "Can I add a photo booth to my event?",
         answer:
           "Yes. Photo booth rentals are available and work well for weddings, corporate events, and private parties. We’ll quote placement and setup with your order.",
-      },
-      {
-        question: "Do you rent bounce houses or inflatables?",
-        answer:
-          "Yes. White bounce houses are available for private parties and family events. We also offer soft play equipment for younger kids and bubble houses for a unique atmosphere element. Ask when you request a quote and we’ll recommend based on your guest ages and event format.",
       },
       {
         question: "Do interactive installations require extra space under the tent?",
@@ -688,11 +681,21 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       "Champagne wall — wedding reception",
       "Portable bar setup — event",
       "Lounge furniture — corporate event",
+      "Mini Mila pink bounce house — kids event",
+      "Soft play — micro wedding",
+      "Bubble house — event",
+      "Wedding bounce house",
+      "Soft play setup",
     ],
     section2PhotoGridSrcs: [
       "/images/outdoor-event-planning/champagne-wall.webp",
       "/images/outdoor-event-planning/Portable Bar.webp",
       "/images/outdoor-event-planning/Lounge Furniture.webp",
+      "/images/outdoor-event-planning/mini-mila-pink-bounce-house.webp",
+      "/images/outdoor-event-planning/soft-play-micro-weddings.webp",
+      "/images/outdoor-event-planning/Bubble House 01 (1).webp",
+      "/images/outdoor-event-planning/Wedding Bounce House (1).webp",
+      "/images/outdoor-event-planning/Soft Play 02 (1).webp",
     ],
     section3ImageLabel: "Event extras — specialty rental setup",
     section6ImageLabel: "Crew setting up event extras",

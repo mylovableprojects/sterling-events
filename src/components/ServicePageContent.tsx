@@ -68,7 +68,7 @@ export function ServicePageContent({ data, slug }: Props) {
           </p>
         )}
         {data.section2PhotoGridLabels && (
-          <PhotoGrid count={3} labels={data.section2PhotoGridLabels} srcs={data.section2PhotoGridSrcs} />
+          <PhotoGrid count={data.section2PhotoGridLabels.length} labels={data.section2PhotoGridLabels} srcs={data.section2PhotoGridSrcs} />
         )}
         {slug === "games-entertainment" && (
           <div className="mt-10">
