@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const siteUrl = "https://sterlingeventrentals.com";
+const siteUrl = "https://sterlingevents.com";
 
 // Indexable pages only (legal pages are noindex and excluded)
 const urls = [

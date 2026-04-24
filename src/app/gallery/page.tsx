@@ -4,7 +4,7 @@ import Image from "next/image";
 import { ImageBreak } from "@/components/ImageBreak";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
-const BASE = "https://sterlingeventrentals.com";
+const BASE = "https://sterlingevents.com";
 
 const galleryTitle = "Event Gallery | Weddings, Corporate & Social Events | Sterling";
 const galleryDescription =

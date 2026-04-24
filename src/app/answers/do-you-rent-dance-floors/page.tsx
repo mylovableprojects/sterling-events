@@ -5,7 +5,7 @@ import { AnswerSpokeLinks } from "@/components/AnswerSpokeLinks";
 import { ANSWER_SPOKE_CONFIG } from "@/lib/answerPages";
 
 const slug = "do-you-rent-dance-floors";
-const BASE = "https://sterlingeventrentals.com";
+const BASE = "https://sterlingevents.com";
 const canonical = `${BASE}/answers/${slug}`;
 
 export const metadata: Metadata = {

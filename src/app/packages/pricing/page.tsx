@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import Link from "next/link";
 
-const BASE = "https://sterlingeventrentals.com";
+const BASE = "https://sterlingevents.com";
 const canonical = `${BASE}/packages/pricing`;
 const PDF_PATH = "/documents/sterling-event-rentals-price-list.pdf";
 

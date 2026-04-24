@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { EventsHubContent } from "./EventsHubContent";
 
-const BASE = "https://sterlingeventrentals.com";
+const BASE = "https://sterlingevents.com";
 const canonical = `${BASE}/events`;
 
 const eventsTitle = "Event Rentals by Event Type Chicago | Sterling Event Rentals";

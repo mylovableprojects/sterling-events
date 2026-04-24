@@ -12,7 +12,7 @@ import { RentalHighlightGrid } from "@/components/RentalHighlightGrid";
 import Link from "next/link";
 import type { ServicePageData } from "@/lib/servicePages";
 
-const BASE = "https://sterlingeventrentals.com";
+const BASE = "https://sterlingevents.com";
 
 type Props = {
   data: ServicePageData;
@@ -135,6 +135,7 @@ export function ServicePageContent({ data, slug }: Props) {
                 ? "rounded-2xl"
                 : "h-full min-h-[280px] rounded-2xl object-cover lg:min-h-full"
             }
+            src={data.section3ImageSrc}
           />
         </div>
       </div>
@@ -234,6 +235,7 @@ export function ServicePageContent({ data, slug }: Props) {
             label={data.section6ImageLabel ?? `${data.label} — process`}
             aspectRatio="4/3"
             className="rounded-2xl"
+            src={data.section6ImageSrc}
           />
         </div>
       </div>

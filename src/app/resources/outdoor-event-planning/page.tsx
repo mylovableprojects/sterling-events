@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FAQAccordion } from "@/components/FAQAccordion";
 
-const BASE = "https://sterlingeventrentals.com";
+const BASE = "https://sterlingevents.com";
 const canonical = `${BASE}/resources/outdoor-event-planning`;
 
 const outdoorPlanningTitle = "Outdoor Event Planning in Chicago: A Complete Guide | Sterling";

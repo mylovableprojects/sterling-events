@@ -5,7 +5,7 @@ import { AnswerSpokeLinks } from "@/components/AnswerSpokeLinks";
 import { ANSWER_SPOKE_CONFIG } from "@/lib/answerPages";
 
 const slug = "is-it-safe-to-have-a-tent-up-in-a-thunderstorm";
-const BASE = "https://sterlingeventrentals.com";
+const BASE = "https://sterlingevents.com";
 const canonical = `${BASE}/answers/${slug}`;
 
 export const metadata: Metadata = {

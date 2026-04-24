@@ -14,7 +14,7 @@ import {
   Truck,
 } from "lucide-react";
 
-const BASE = "https://sterlingeventrentals.com";
+const BASE = "https://sterlingevents.com";
 
 const servicesTitle = "Chicagoland Event Rental Services | Sterling Event Rentals";
 const servicesDescription =

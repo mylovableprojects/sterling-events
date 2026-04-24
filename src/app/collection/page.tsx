@@ -4,7 +4,7 @@ import { ImageBreak } from "@/components/ImageBreak";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { RentalCard, RentalCategory, RentalItem } from "@/components/RentalCard";
 
-const BASE = "https://sterlingeventrentals.com";
+const BASE = "https://sterlingevents.com";
 
 const collectionTitle = "Rental Collection | Tables, Chairs, Linens & Décor | Sterling";
 const collectionDescription =

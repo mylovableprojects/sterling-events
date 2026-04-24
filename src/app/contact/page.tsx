@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { ContactForm } from "@/components/ContactForm";
 
-const BASE = "https://sterlingeventrentals.com";
+const BASE = "https://sterlingevents.com";
 
 const contactTitle = "Get a Quote for Chicago Event Rentals | Sterling Event Rentals";
 const contactDescription =

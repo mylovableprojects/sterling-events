@@ -7,7 +7,7 @@ export type Crumb = {
 
 type Props = {
   items: Crumb[];
-  /** Base URL for schema (e.g. https://sterlingeventrentals.com). If provided, outputs BreadcrumbList JSON-LD. */
+  /** Base URL for schema (e.g. https://sterlingevents.com). If provided, outputs BreadcrumbList JSON-LD. */
   baseUrl?: string;
   /** Optional id for the schema script. */
   schemaId?: string;
@@ -18,7 +18,7 @@ type Props = {
  */
 export function BreadcrumbNav({
   items,
-  baseUrl = "https://sterlingeventrentals.com",
+  baseUrl = "https://sterlingevents.com",
   schemaId = "ld-breadcrumbs",
 }: Props) {
   if (!items.length) return null;

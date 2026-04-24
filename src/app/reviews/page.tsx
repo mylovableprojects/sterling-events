@@ -3,7 +3,7 @@ import Script from "next/script";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
-const BASE = "https://sterlingeventrentals.com";
+const BASE = "https://sterlingevents.com";
 const canonical = `${BASE}/reviews`;
 
 export const metadata: Metadata = {

@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { TentSizingDiagram } from "@/components/TentSizingDiagram";
 
-const BASE = "https://sterlingeventrentals.com";
+const BASE = "https://sterlingevents.com";
 const canonical = `${BASE}/resources/tent-sizing-guide`;
 
 const tentSizingTitle = "Tent Sizing Guide for Chicago Events | Sterling Event Rentals";

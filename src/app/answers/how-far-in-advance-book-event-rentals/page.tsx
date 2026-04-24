@@ -5,7 +5,7 @@ import { AnswerSpokeLinks } from "@/components/AnswerSpokeLinks";
 import { ANSWER_SPOKE_CONFIG } from "@/lib/answerPages";
 
 const slug = "how-far-in-advance-book-event-rentals";
-const BASE = "https://sterlingeventrentals.com";
+const BASE = "https://sterlingevents.com";
 const canonical = `${BASE}/answers/${slug}`;
 
 const faqSchema = {

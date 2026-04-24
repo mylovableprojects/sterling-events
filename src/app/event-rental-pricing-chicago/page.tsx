@@ -5,7 +5,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { ImageBreak } from "@/components/ImageBreak";
 import { SectionIntro } from "@/components/SectionIntro";
 
-const BASE = "https://sterlingeventrentals.com";
+const BASE = "https://sterlingevents.com";
 const title = "Event Rental Pricing Chicago | Sterling Event Rentals";
 const description =
   "How event rental pricing works in Chicago and Chicagoland: $500 minimum, deposit structure, and what affects cost for tent, table, stage, and package rentals.";
@@ -66,12 +66,12 @@ export default function EventRentalPricingChicagoPage() {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://sterlingeventrentals.com" },
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://sterlingevents.com" },
               {
                 "@type": "ListItem",
                 position: 2,
                 name: "Pricing",
-                item: "https://sterlingeventrentals.com/event-rental-pricing-chicago",
+                item: "https://sterlingevents.com/event-rental-pricing-chicago",
               },
             ],
           }),

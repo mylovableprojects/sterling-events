@@ -1,7 +1,4 @@
-"use client";
-
 import Script from "next/script";
-import { useId } from "react";
 
 export type FAQItem = {
   question: string;
@@ -27,7 +24,7 @@ export function FAQAccordion({
   schemaId = "ld-faq",
   variant = "default",
 }: Props) {
-  const baseId = useId();
+  const baseId = schemaId;
   const isLight = variant === "light";
   const isResourceArticle = variant === "resourceArticle";
 

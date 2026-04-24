@@ -6,7 +6,7 @@ import { AnswerSpokeLinks } from "@/components/AnswerSpokeLinks";
 import { ANSWER_SPOKE_CONFIG } from "@/lib/answerPages";
 
 const slug = "do-i-need-permit-tent-chicago";
-const BASE = "https://sterlingeventrentals.com";
+const BASE = "https://sterlingevents.com";
 const canonical = `${BASE}/answers/${slug}`;
 
 const faqSchema = {
@@ -18,7 +18,7 @@ const faqSchema = {
       name: "Do I need a permit for a tent in Chicago?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "In Chicago, tents over a certain size typically require a permit from the Department of Buildings (private property) or the Chicago Park District (park venues). The permit is the customer's responsibility — Sterling Event Rentals does not pull permits on behalf of clients. Apply as early as possible; processing can take several weeks. See the Chicago tent permit guide at sterlingeventrentals.com/resources/chicago-tent-permits for the full breakdown of when you need one and how to apply.",
+        text: "In Chicago, tents over a certain size typically require a permit from the Department of Buildings (private property) or the Chicago Park District (park venues). The permit is the customer's responsibility — Sterling Event Rentals does not pull permits on behalf of clients. Apply as early as possible; processing can take several weeks. See the Chicago tent permit guide at sterlingevents.com/resources/chicago-tent-permits for the full breakdown of when you need one and how to apply.",
       },
     },
   ],

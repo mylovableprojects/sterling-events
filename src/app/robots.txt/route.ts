@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const siteUrl = "https://sterlingeventrentals.com";
+const siteUrl = "https://sterlingevents.com";
 
 export function GET() {
   const body = `User-agent: *

@@ -69,8 +69,10 @@ export type ServicePageData = {
   section2PhotoGridLabels?: string[];
   section2PhotoGridSrcs?: (string | null)[];
   section3ImageLabel?: string;
+  section3ImageSrc?: string | null;
   section4InlinePhotoLabel?: string;
   section6ImageLabel?: string;
+  section6ImageSrc?: string | null;
   /** Optional footer text links below CTA (e.g. Tent Sizing Guide, See all services). */
   ctaFooterLinks?: { href: string; label: string }[];
 };
@@ -146,8 +148,15 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       "Crew installing structure",
       "Guests under tent — corporate event",
     ],
+    section2PhotoGridSrcs: [
+      "/images/outdoor-event-planning/tent-rentals-in-chicago-area.webp",
+      "/images/outdoor-event-planning/south-chicago-tent-rentals.webp",
+      "/images/outdoor-event-planning/Setting-up-for-an-outdoor%20event.webp",
+    ],
     section3ImageLabel: "Tent interior — tables and chairs setup",
+    section3ImageSrc: "/images/outdoor-event-planning/Global%20Corp%20Picnic%20Bash.png",
     section6ImageLabel: "Crew setup — tent installation in progress",
+    section6ImageSrc: "/images/outdoor-event-planning/tent-setup.webp",
     ctaFooterLinks: [
       { href: "/resources/tent-sizing-guide", label: "Tent Sizing Guide" },
       { href: "/resources/chicago-tent-permits", label: "Chicago Permit Guide" },
@@ -395,8 +404,15 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       "Riser and presentation setup",
       "Stage with seating — event",
     ],
+    section2PhotoGridSrcs: [
+      "/images/outdoor-event-planning/tent-stage-rentals-chicago.webp",
+      "/images/outdoor-event-planning/stage-rentals-chicago.webp",
+      "/images/outdoor-event-planning/chicago-stair-rentals.webp",
+    ],
     section3ImageLabel: "Stage and riser configuration",
+    section3ImageSrc: "/images/outdoor-event-planning/Urban%20Stage%20by%20the%20Water.webp",
     section6ImageLabel: "Crew installing stage",
+    section6ImageSrc: "/images/outdoor-event-planning/stage-setup-chicago.webp",
     processBlock: {
       headline: "Here's exactly what happens when you book",
       steps: [
@@ -541,8 +557,8 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       "Photo booth — wedding reception",
     ],
     section2PhotoGridSrcs: [
-      null,
-      null,
+      "/images/outdoor-event-planning/chicago-bull-rental.webp",
+      "/images/outdoor-event-planning/360-photobooth-chicago.webp",
     ],
     section3ImageLabel: "Interactive installation setup",
     section6ImageLabel: "Crew setting up game installation",
