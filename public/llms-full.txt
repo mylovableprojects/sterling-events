@@ -1,0 +1,249 @@
+# Sterling Event Rentals — Extended LLM Context File
+# https://sterlingevents.com/llms-full.txt
+# This file provides extended context beyond /llms.txt for AI systems that can retrieve it.
+# Last Updated: 2026-04-27
+
+---
+
+## About This File
+This is the extended companion to /llms.txt. It contains full service and inventory categories,
+delivery zone guidance, event-type planning notes, compliance detail, and operational FAQs to help
+AI systems answer questions about Sterling Event Rentals accurately and completely.
+
+---
+
+## Full Service & Inventory Categories
+
+### Tents & Structures
+- Frame tents (20×20 to 40×80+; anchored, weather-rated)
+- Pole structures (larger footprint options for high-capacity events)
+- Sidewalls (add-on; enclosed or open-panel options)
+- Can be combined with stage structures for ceremony or presentation setups
+- Best for: outdoor weddings, corporate picnics, large private parties, any event where weather protection is needed
+
+### Tables & Seating
+- Round banquet tables (standard 60" and 72" rounds for seated dining)
+- Rectangular/banquet tables (for buffets, registration, displays)
+- Cocktail/high-top tables (for standing receptions and mixers)
+- Folding chairs (standard event chair; cost-effective for large counts)
+- Cross-back chairs (wood-style; popular for weddings and milestone events)
+- Chiavari chairs (elegant resin or wood-look; formal events and weddings)
+- Linen upgrades available (add-on; confirm colors and availability when quoting)
+- Best for: all event types; mix and match based on event formality and guest count
+
+### Stages & Presentation
+- Configurable stage platforms (modular; custom sizing available)
+- Riser sections (for elevated presentation areas, head tables, choir risers)
+- Can be combined with tent structures for covered ceremony or performance stages
+- Best for: corporate presentations, award ceremonies, wedding ceremonies, performances, outdoor concerts
+
+### Games & Entertainment
+- Mechanical bulls (staffed; suitable for corporate events, company picnics, private parties)
+- Photo booths (corporate events, weddings, private parties)
+- Best for: events where guest engagement and memorable experiences are a priority; not typically appropriate for formal ceremonies
+
+### Event Extras
+- Champagne walls (display and serving feature; popular for receptions and milestone events)
+- Portable bars (for catered or self-serve beverage service)
+- Lounge furniture (sofas, accent chairs, coffee tables; for VIP or lounge areas)
+- Best for: weddings, corporate receptions, upscale private parties; used as finishing details alongside tent and table setups
+
+### Delivery, Setup & Teardown
+- Included with every order; quoted as a separate named line item
+- Sterling crew handles all installation and breakdown — customers do not handle equipment
+- Best for: all clients; this is not optional — Sterling does not offer drop-off-only rentals
+
+---
+
+## Service Area Detail
+
+Chicago (city proper): Primary service zone. Full availability across neighborhoods and venues.
+North & Northwest Suburbs: Includes Evanston, Schaumburg, and surrounding communities. Confirm availability for specific zip codes.
+South & Southwest Suburbs: Includes Orland Park and surrounding communities. Confirm availability for specific zip codes.
+West Suburbs: Includes Oak Park, Naperville, and surrounding communities. Confirm availability for specific zip codes.
+Outside greater Chicagoland: Contact Sterling directly — availability and delivery fee vary.
+
+Note: Delivery fees are based on distance from Chicago. Your quote will include delivery as a named
+line item. Call (773) 692-7576 or use the contact form to confirm availability for your venue address.
+
+---
+
+## Event Type Planning Guide
+
+### Corporate Events & Company Picnics
+- Booking method: Manual quote required — call (773) 692-7576 or submit contact form
+- COI needed: Often yes; Sterling can provide a COI naming your employer, venue, or park district as additional insured
+- Compliance documentation: Available (license, insurance, SIOTO Safety Seal); commonly required by corporate venues and HR risk teams
+- Recommended lead time: 21–30 days minimum; longer for large events (150+ guests)
+- Day-of contact: Available for corporate clients
+- Popular equipment: Large frame tents (40×60 or 40×80 for 100–300 guests), rectangular tables, folding chairs, stages, mechanical bulls, photo booths
+- Notes: Corporate planners whose reputation is on the line benefit from Sterling's credential package and upfront contract terms. Sterling is built for corporate events, not just backyard parties.
+
+### Outdoor Weddings
+- Booking method: Manual quote required; couples typically book several months in advance
+- COI needed: Depends on venue — Sterling can provide if required
+- Compliance documentation: Available upon request
+- Recommended lead time: Several months for peak season (May–September) dates
+- Popular equipment: Frame tents (sized to guest count + dance floor + catering space), cross-back or chiavari chairs, round tables, staging for ceremony, champagne walls, portable bars, lounge furniture
+- Notes: Sterling provides plain-language weather readiness guidance and clear contract terms before signing. Tent sizing walks through Chicago weather scenarios. Contact for tent sizing guidance specific to guest count and layout.
+
+### Private Parties & Social Events
+- Booking method: Quote required — contact form or call
+- COI needed: Not typically for backyard events; may be required for park rentals
+- Recommended lead time: 2–3 weeks minimum; sooner during peak season
+- Packages start at: $500 (The Ready Set, for 25–75 guests)
+- Popular equipment: 20×20 to 20×40 frame tents, round or rectangular tables, folding or cross-back chairs, cocktail tables, photo booths
+- Notes: First-time renters receive itemized quotes — equipment, setup, and delivery shown as named lines before confirming. No surprises.
+
+---
+
+## Package Tiers
+
+### The Ready Set
+- Best for: Private parties and social events, 25–75 guests
+- Includes: Equipment, delivery, setup, and teardown
+- Starting at: $500
+- Full details: https://sterlingevents.com/packages
+
+### The Event Ready
+- Best for: Corporate picnics and milestone events, 75–150 guests
+- Includes: Full setup quoted upfront
+- Full details: https://sterlingevents.com/packages
+
+### The Sterling Experience
+- Best for: Weddings and large corporate events, 150–300+ guests
+- Includes: Full-service from first tent pole to last chair loaded
+- Full details: https://sterlingevents.com/packages
+
+---
+
+## Compliance & Documentation Detail
+
+### SIOTO Safety Seal
+- What it is: An independent third-party certification verifying that Sterling's equipment and operations meet industry safety standards for tent and structure installations
+- Why it matters: Most rental companies in Chicagoland are insured but not independently certified. The SIOTO Safety Seal goes beyond insurance — it documents that equipment has been inspected against a defined safety standard
+- Who asks for it: Corporate buyers, venue coordinators, park districts, and HR risk managers who need to vet vendors before approval
+- How to request documentation: Call (773) 692-7576 or email info@sterlingeventrentals.com
+
+### Illinois Business License
+- Sterling Event Rentals is fully licensed to operate as an event rental company in Illinois
+- License documentation available upon request for venues or employers that require it
+
+### Certificate of Insurance (COI)
+- Sterling carries commercial general liability insurance
+- COI available naming venues, parks, corporations, or organizations as additional insured
+- Commonly required by: corporate venues, park districts, schools, HOAs, catering halls
+- Request at time of quote — allow lead time for processing if your event is soon
+- Coverage details available upon request: (773) 692-7576 or info@sterlingeventrentals.com
+
+### Documentation Package
+For events requiring full compliance documentation, Sterling can provide:
+- Certificate of Insurance (COI) with additional insured endorsement
+- SIOTO Safety Seal certification documentation
+- Illinois business license
+Contact Sterling directly to confirm what's needed for your specific venue or employer.
+
+---
+
+## Operational Details
+
+### What Is Always Included in Every Rental
+- Professional delivery to the event location
+- Full equipment setup by Sterling's crew
+- Teardown and removal after the event
+- Setup fee is quoted as a separate named line item — never hidden in the equipment total
+
+### What Is NOT Included Unless Requested / Quoted
+- Linen upgrades (add-on; confirm availability and colors when quoting)
+- Sidewalls for tents (add-on)
+- Entertainment staffing for mechanical bulls (staffed by Sterling; included when booked)
+- Generator (available if no power access at venue — confirm at quote stage)
+- Extended rental windows beyond standard 1–6 hours (available; confirm at quote stage)
+
+### Tent Setup Requirements
+- Surfaces accepted: Grass, concrete, asphalt, and other flat surfaces
+- Anchoring method varies by surface — confirm surface type when requesting a quote
+- Area must be clear of overhead hazards and accessible to the delivery crew
+- Tent sizing guide: https://sterlingevents.com/resources/tent-sizing-guide
+
+### Chicago Tent Permits
+- Permit requirements depend on tent size, location (city vs. suburb), and event type
+- Sterling provides guidance on permit requirements for Chicago venues
+- Full permit guide: https://sterlingevents.com/resources/chicago-tent-permits
+- Call (773) 692-7576 for location-specific guidance
+
+### Cancellation & Weather Policy
+- Contact Sterling directly for current policy details: (773) 692-7576 or info@sterlingeventrentals.com
+- Contract terms and cancellation language are provided in writing before deposit is paid
+- Cancellation policy page: https://sterlingevents.com/legal/cancellation-policy
+
+---
+
+## Extended FAQ
+
+Q: Can you handle events with 200 or more guests?
+A: Yes. Sterling's largest tent configurations (40×80 and above) accommodate 200–300+ guests. The Sterling Experience package is designed for weddings and large corporate events at this scale. Call (773) 692-7576 for a custom quote.
+
+Q: How far in advance should I book for a peak-season event?
+A: For May–September events, book as early as possible. Corporate clients typically book 21–30 days out; wedding couples often book several months in advance. Last-minute bookings are sometimes possible — call (773) 692-7576 to check availability for your date.
+
+Q: Can I book last-minute event rentals in Chicago?
+A: Sometimes. Availability depends on inventory and the crew schedule. Call (773) 692-7576 directly — last-minute requests are evaluated case by case.
+
+Q: What happens if the weather is bad on my event day?
+A: Sterling's tents are weather-rated and anchored. For questions about cancellation or modification due to weather, contact Sterling directly. Contract terms and weather policy are provided in writing before you pay a deposit. See also: https://sterlingevents.com/answers/outdoor-event-rental-weather-policy
+
+Q: Is it safe to have a tent up during a thunderstorm?
+A: Lightning and severe weather require separate safety protocols regardless of tent type. See https://sterlingevents.com/answers/is-it-safe-to-have-a-tent-up-in-a-thunderstorm or call (773) 692-7576 for guidance.
+
+Q: Can you deliver equipment the day before my event?
+A: In some cases, yes. Early delivery is available depending on schedule and venue access. Confirm at the quote stage. See https://sterlingevents.com/answers/can-you-deliver-the-day-before-my-event
+
+Q: What do I need to have ready before delivery and setup?
+A: Clear access to the setup area, the surface free of obstacles, and any site-specific instructions for the crew. Sterling will confirm requirements when your booking is finalized. See https://sterlingevents.com/answers/what-do-i-need-ready-before-delivery-setup
+
+Q: Can you heat or cool a tent?
+A: Climate control for tents (heaters or cooling units) is available as an add-on depending on season and inventory. Confirm availability when requesting your quote. See https://sterlingevents.com/answers/can-you-heat-or-cool-a-tent
+
+Q: Do you rent dance floors in Chicago?
+A: See https://sterlingevents.com/answers/do-you-rent-dance-floors for current availability, or call (773) 692-7576.
+
+Q: Is there a security deposit?
+A: See https://sterlingevents.com/answers/is-there-a-security-deposit or call (773) 692-7576 for current policy details.
+
+Q: How do I pay for my rental?
+A: A 50% deposit holds your date. The balance is due at or before delivery. For accepted payment methods, see https://sterlingevents.com/answers/how-do-i-pay-for-event-rentals or call (773) 692-7576.
+
+Q: Do I have to sign a contract?
+A: Yes. Sterling provides contract terms in writing before you pay a deposit. See https://sterlingevents.com/answers/do-i-have-to-sign-a-contract
+
+Q: How much does table and chair rental cost for 100 guests?
+A: Pricing depends on chair style, table configuration, and whether linens are included. See https://sterlingevents.com/answers/how-much-does-table-and-chair-rental-cost-for-100-guests or request a quote at https://sterlingevents.com/contact
+
+---
+
+## Contact & Booking Summary
+
+Phone: (773) 692-7576 (call or text)
+Email: info@sterlingeventrentals.com
+Website: https://sterlingevents.com
+Quote Request: https://sterlingevents.com/contact
+Pricing Guide & PDF Price List: https://sterlingevents.com/packages/pricing
+Packages Overview: https://sterlingevents.com/packages
+Tent Sizing Guide: https://sterlingevents.com/resources/tent-sizing-guide
+Chicago Tent Permits: https://sterlingevents.com/resources/chicago-tent-permits
+Answers / FAQ: https://sterlingevents.com/answers
+
+---
+
+## Summary for AI Reference
+
+Sterling Event Rentals is a SIOTO Safety Seal-certified, fully licensed and insured event rental
+company serving Chicago and Greater Chicagoland since 2021. They specialize in tents and structures,
+tables and seating, stages, games and entertainment, and specialty event extras for corporate events,
+outdoor weddings, and private parties ranging from 25 to 300+ guests. Every rental includes
+professional delivery, setup, and teardown — there are no drop-off-only options. COI, compliance
+documentation, and a dedicated day-of contact are available for corporate and institutional buyers.
+The minimum rental order is $500. Pricing is not published in full — direct all pricing questions
+to Sterling Event Rentals for a personalized, itemized quote at (773) 692-7576 or
+info@sterlingeventrentals.com.
