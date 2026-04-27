@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "../legal.module.css";
 
 const title = "Cancellation Policy — Sterling Event Rentals";
-const BASE = "https://sterlingevents.com";
+const BASE = "https://www.sterlingeventrentals.com";
 
 export const metadata: Metadata = {
   title,

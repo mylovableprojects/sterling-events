@@ -6,7 +6,7 @@ export function GET() {
 
 Team: Placeholder — details to be added.
 Location: Chicago, IL, USA
-Site: https://sterlingevents.com
+Site: https://www.sterlingeventrentals.com
 
 Note: This file is a placeholder for future human-readable project credits and contact details.
 `;

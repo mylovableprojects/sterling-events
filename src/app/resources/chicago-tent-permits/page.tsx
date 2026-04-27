@@ -6,7 +6,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { TentPermitPathDiagram } from "@/components/TentPermitPathDiagram";
 
-const BASE = "https://sterlingevents.com";
+const BASE = "https://www.sterlingeventrentals.com";
 const canonical = `${BASE}/resources/chicago-tent-permits`;
 
 /** WebP in public/images/outdoor-event-planning/Elegant Outdoor Wedding Scene.webp */

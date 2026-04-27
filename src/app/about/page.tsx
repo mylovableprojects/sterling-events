@@ -6,7 +6,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { TrustBar } from "@/components/TrustBar";
 import { CTABlock } from "@/components/CTABlock";
 
-const BASE = "https://sterlingevents.com";
+const BASE = "https://www.sterlingeventrentals.com";
 
 export const metadata: Metadata = {
   title: "About Sterling Event Rentals | Chicago Event Rentals",

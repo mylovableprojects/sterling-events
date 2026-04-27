@@ -1,6 +1,6 @@
 import Script from "next/script";
 
-const BASE = "https://sterlingevents.com";
+const BASE = "https://www.sterlingeventrentals.com";
 
 type SchemaObject = Record<string, unknown>;
 

@@ -17,7 +17,7 @@ const body = Jost({
 });
 
 const siteName = "Sterling Event Rentals";
-const siteUrl = "https://sterlingevents.com";
+const siteUrl = "https://www.sterlingeventrentals.com";
 const defaultTitle = "Sterling Event Rentals | Event Rentals in Chicagoland";
 const defaultDescription =
   "Chicago's full-service event rental company. Tents, tables, stages, and specialty installations for corporate events, weddings, and private parties in Naperville, Oak Park, Evanston, Schaumburg, and across Chicagoland. Licensed, SIOTO-certified. Get a quote.";
@@ -65,44 +65,6 @@ export default function RootLayout({
       <head>
         {IS_PROD && (
           <>
-            <Script
-              id="ld-localbusiness"
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify({
-                  "@context": "https://schema.org",
-                  "@type": "LocalBusiness",
-                  name: siteName,
-                  url: siteUrl,
-                  telephone: "+17736927576",
-                  email: "info@sterlingeventrentals.com",
-                  address: {
-                    "@type": "PostalAddress",
-                    addressLocality: "Chicago",
-                    addressRegion: "IL",
-                    addressCountry: "US",
-                  },
-                  areaServed: {
-                    "@type": "GeoCircle",
-                    geoMidpoint: {
-                      "@type": "GeoCoordinates",
-                      latitude: 41.8781,
-                      longitude: -87.6298,
-                    },
-                    geoRadius: "50000",
-                  },
-                  foundingDate: "2021",
-                  priceRange: "$$",
-                  hasCredential: "SIOTO Safety Seal",
-                  image: `${siteUrl}/og-image.jpg`,
-                  sameAs: [
-                    "https://www.instagram.com/sterlingeventrental",
-                    "https://www.facebook.com/profile.php?id=61582710860825",
-                  ],
-                }),
-              }}
-            />
-
             {/* Google Tag Manager */}
             <Script
               id="gtm-datalayer"

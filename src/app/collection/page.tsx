@@ -4,7 +4,7 @@ import { ImageBreak } from "@/components/ImageBreak";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { RentalCard, RentalCategory, RentalItem } from "@/components/RentalCard";
 
-const BASE = "https://sterlingevents.com";
+const BASE = "https://www.sterlingeventrentals.com";
 
 const collectionTitle = "Rental Collection | Tables, Chairs, Linens & Décor | Sterling";
 const collectionDescription =
@@ -82,6 +82,20 @@ const sampleItems: RentalItem[] = [
   },
 ];
 
+const collectionItemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Sterling Event Rentals — Rental Collection",
+  description: "Tables, chairs, linens, lighting, décor, and tableware available for events in Chicago and Chicagoland.",
+  url: `${BASE}/collection`,
+  itemListElement: sampleItems.map((item, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: item.name,
+    description: item.description,
+  })),
+};
+
 const collectionBreadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -94,6 +108,7 @@ const collectionBreadcrumbSchema = {
 export default function CollectionPage() {
   return (
     <>
+      <Script id="ld-collection-items" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionItemListSchema) }} />
       <Script id="ld-bc-collection" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionBreadcrumbSchema) }} />
       <section className="gradient-hero relative min-h-[75vh]">
         <div className="gradient-orb -left-28 top-4 h-56 w-56" />

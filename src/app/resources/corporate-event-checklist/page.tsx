@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FAQAccordion } from "@/components/FAQAccordion";
 
-const BASE = "https://sterlingevents.com";
+const BASE = "https://www.sterlingeventrentals.com";
 const canonical = `${BASE}/resources/corporate-event-checklist`;
 
 /** Assets in public/images/outdoor-event-planning/ */
@@ -41,6 +41,22 @@ export function generateMetadata(): Metadata {
 
 const quickAnswerText =
   "Planning a corporate outdoor event in Chicago? This checklist covers everything from venue and permits to equipment, vendor credentials, and day-of logistics — so nothing falls through the cracks.";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Corporate Outdoor Event Checklist for Chicago Events",
+  description: "Week-by-week checklist for corporate outdoor events in Chicago and Chicagoland: 6 weeks, 3 weeks, 1 week, and day-of responsibilities.",
+  author: { "@type": "Organization", name: "Sterling Event Rentals" },
+  publisher: {
+    "@type": "Organization",
+    name: "Sterling Event Rentals",
+    logo: { "@type": "ImageObject", url: `${BASE}/og-image.jpg` },
+  },
+  datePublished: "2026-03-01",
+  dateModified: "2026-04-27",
+  mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+};
 
 const howToSchema = {
   "@context": "https://schema.org",
@@ -170,6 +186,7 @@ const timelinePhases = [
 export default function CorporateEventChecklistPage() {
   return (
     <>
+      <Script id="ld-article" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <Script id="ld-howto" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <Script id="ld-faq" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Script id="ld-breadcrumbs" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />

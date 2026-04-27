@@ -7,7 +7,7 @@ import { SectionIntro } from "@/components/SectionIntro";
 import { PackageCard } from "@/components/PackageCard";
 import { FAQAccordion } from "@/components/FAQAccordion";
 
-const BASE = "https://sterlingevents.com";
+const BASE = "https://www.sterlingeventrentals.com";
 const title = "Event Rental Packages in Chicago | Sterling Event Rentals";
 
 const PACKAGE_FAQS = [
@@ -158,8 +158,8 @@ export default function PackagesPage() {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://sterlingevents.com" },
-              { "@type": "ListItem", position: 2, name: "Packages", item: "https://sterlingevents.com/packages" },
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.sterlingeventrentals.com" },
+              { "@type": "ListItem", position: 2, name: "Packages", item: "https://www.sterlingeventrentals.com/packages" },
             ],
           }),
         }}

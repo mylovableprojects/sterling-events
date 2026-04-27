@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FAQAccordion } from "@/components/FAQAccordion";
 
-const BASE = "https://sterlingevents.com";
+const BASE = "https://www.sterlingeventrentals.com";
 const canonical = `${BASE}/resources/outdoor-event-planning`;
 
 const outdoorPlanningTitle = "Outdoor Event Planning in Chicago: A Complete Guide | Sterling";
@@ -33,6 +33,22 @@ export function generateMetadata(): Metadata {
 
 const quickAnswer =
   "Planning an outdoor event in Chicago means accounting for weather, lead times, permits, and equipment — all before your guests arrive. This guide covers when to start, what you need, how Chicago seasons affect your plans, and what to ask your rental vendor. Whether it's a corporate picnic, wedding, or backyard party, here's what to know.";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Outdoor Event Planning in Chicago: A Complete Guide",
+  description: "A practical guide to planning outdoor events in Chicago: lead times, equipment needs, weather and seasons, space planning, and what to ask your rental vendor.",
+  author: { "@type": "Organization", name: "Sterling Event Rentals" },
+  publisher: {
+    "@type": "Organization",
+    name: "Sterling Event Rentals",
+    logo: { "@type": "ImageObject", url: `${BASE}/og-image.jpg` },
+  },
+  datePublished: "2026-02-15",
+  dateModified: "2026-04-27",
+  mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+};
 
 const howToSchema = {
   "@context": "https://schema.org",
@@ -112,6 +128,7 @@ const BODY = "text-base leading-relaxed text-[var(--charcoal)]/82";
 export default function OutdoorEventPlanningPage() {
   return (
     <>
+      <Script id="ld-article" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <Script id="ld-howto" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <Script id="ld-faq" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Script id="ld-bc" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />

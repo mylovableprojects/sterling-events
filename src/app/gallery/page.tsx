@@ -4,7 +4,7 @@ import Image from "next/image";
 import { ImageBreak } from "@/components/ImageBreak";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
-const BASE = "https://sterlingevents.com";
+const BASE = "https://www.sterlingeventrentals.com";
 
 const galleryTitle = "Event Gallery | Weddings, Corporate & Social Events | Sterling";
 const galleryDescription =
@@ -45,6 +45,15 @@ const galleryItems = [
   { seed: "sterling-gallery-8", category: "Styled Shoots" },
 ];
 
+const galleryPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Event Gallery — Sterling Event Rentals",
+  description: "Photos from weddings, corporate events, and social celebrations across Chicago and Chicagoland set up by Sterling Event Rentals.",
+  url: `${BASE}/gallery`,
+  provider: { "@type": "LocalBusiness", name: "Sterling Event Rentals", url: BASE },
+};
+
 const galleryBreadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -57,6 +66,7 @@ const galleryBreadcrumbSchema = {
 export default function GalleryPage() {
   return (
     <>
+      <Script id="ld-gallery-page" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(galleryPageSchema) }} />
       <Script id="ld-bc-gallery" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(galleryBreadcrumbSchema) }} />
       <section className="gradient-hero relative min-h-[75vh]">
         <div className="gradient-orb -left-28 top-8 h-56 w-56" />

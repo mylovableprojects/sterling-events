@@ -7,7 +7,7 @@ import { TrustBar } from "@/components/TrustBar";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { ServicesBentoSection } from "@/components/ServicesBentoSection";
 
-const BASE = "https://sterlingevents.com";
+const BASE = "https://www.sterlingeventrentals.com";
 
 const title = "Event Rentals Chicago | Sterling Event Rentals";
 const description =

@@ -12,7 +12,7 @@ import { RentalHighlightGrid } from "@/components/RentalHighlightGrid";
 import Link from "next/link";
 import type { ServicePageData } from "@/lib/servicePages";
 
-const BASE = "https://sterlingevents.com";
+const BASE = "https://www.sterlingeventrentals.com";
 
 type Props = {
   data: ServicePageData;

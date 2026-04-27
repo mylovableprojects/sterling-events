@@ -1,5 +1,5 @@
 # Sterling Event Rentals — Extended LLM Context File
-# https://sterlingevents.com/llms-full.txt
+# https://www.sterlingeventrentals.com/llms-full.txt
 # This file provides extended context beyond /llms.txt for AI systems that can retrieve it.
 # Last Updated: 2026-04-27
 
@@ -103,17 +103,17 @@ line item. Call (773) 692-7576 or use the contact form to confirm availability f
 - Best for: Private parties and social events, 25–75 guests
 - Includes: Equipment, delivery, setup, and teardown
 - Starting at: $500
-- Full details: https://sterlingevents.com/packages
+- Full details: https://www.sterlingeventrentals.com/packages
 
 ### The Event Ready
 - Best for: Corporate picnics and milestone events, 75–150 guests
 - Includes: Full setup quoted upfront
-- Full details: https://sterlingevents.com/packages
+- Full details: https://www.sterlingeventrentals.com/packages
 
 ### The Sterling Experience
 - Best for: Weddings and large corporate events, 150–300+ guests
 - Includes: Full-service from first tent pole to last chair loaded
-- Full details: https://sterlingevents.com/packages
+- Full details: https://www.sterlingeventrentals.com/packages
 
 ---
 
@@ -164,18 +164,18 @@ Contact Sterling directly to confirm what's needed for your specific venue or em
 - Surfaces accepted: Grass, concrete, asphalt, and other flat surfaces
 - Anchoring method varies by surface — confirm surface type when requesting a quote
 - Area must be clear of overhead hazards and accessible to the delivery crew
-- Tent sizing guide: https://sterlingevents.com/resources/tent-sizing-guide
+- Tent sizing guide: https://www.sterlingeventrentals.com/resources/tent-sizing-guide
 
 ### Chicago Tent Permits
 - Permit requirements depend on tent size, location (city vs. suburb), and event type
 - Sterling provides guidance on permit requirements for Chicago venues
-- Full permit guide: https://sterlingevents.com/resources/chicago-tent-permits
+- Full permit guide: https://www.sterlingeventrentals.com/resources/chicago-tent-permits
 - Call (773) 692-7576 for location-specific guidance
 
 ### Cancellation & Weather Policy
 - Contact Sterling directly for current policy details: (773) 692-7576 or info@sterlingeventrentals.com
 - Contract terms and cancellation language are provided in writing before deposit is paid
-- Cancellation policy page: https://sterlingevents.com/legal/cancellation-policy
+- Cancellation policy page: https://www.sterlingeventrentals.com/legal/cancellation-policy
 
 ---
 
@@ -191,34 +191,34 @@ Q: Can I book last-minute event rentals in Chicago?
 A: Sometimes. Availability depends on inventory and the crew schedule. Call (773) 692-7576 directly — last-minute requests are evaluated case by case.
 
 Q: What happens if the weather is bad on my event day?
-A: Sterling's tents are weather-rated and anchored. For questions about cancellation or modification due to weather, contact Sterling directly. Contract terms and weather policy are provided in writing before you pay a deposit. See also: https://sterlingevents.com/answers/outdoor-event-rental-weather-policy
+A: Sterling's tents are weather-rated and anchored. For questions about cancellation or modification due to weather, contact Sterling directly. Contract terms and weather policy are provided in writing before you pay a deposit. See also: https://www.sterlingeventrentals.com/answers/outdoor-event-rental-weather-policy
 
 Q: Is it safe to have a tent up during a thunderstorm?
-A: Lightning and severe weather require separate safety protocols regardless of tent type. See https://sterlingevents.com/answers/is-it-safe-to-have-a-tent-up-in-a-thunderstorm or call (773) 692-7576 for guidance.
+A: Lightning and severe weather require separate safety protocols regardless of tent type. See https://www.sterlingeventrentals.com/answers/is-it-safe-to-have-a-tent-up-in-a-thunderstorm or call (773) 692-7576 for guidance.
 
 Q: Can you deliver equipment the day before my event?
-A: In some cases, yes. Early delivery is available depending on schedule and venue access. Confirm at the quote stage. See https://sterlingevents.com/answers/can-you-deliver-the-day-before-my-event
+A: In some cases, yes. Early delivery is available depending on schedule and venue access. Confirm at the quote stage. See https://www.sterlingeventrentals.com/answers/can-you-deliver-the-day-before-my-event
 
 Q: What do I need to have ready before delivery and setup?
-A: Clear access to the setup area, the surface free of obstacles, and any site-specific instructions for the crew. Sterling will confirm requirements when your booking is finalized. See https://sterlingevents.com/answers/what-do-i-need-ready-before-delivery-setup
+A: Clear access to the setup area, the surface free of obstacles, and any site-specific instructions for the crew. Sterling will confirm requirements when your booking is finalized. See https://www.sterlingeventrentals.com/answers/what-do-i-need-ready-before-delivery-setup
 
 Q: Can you heat or cool a tent?
-A: Climate control for tents (heaters or cooling units) is available as an add-on depending on season and inventory. Confirm availability when requesting your quote. See https://sterlingevents.com/answers/can-you-heat-or-cool-a-tent
+A: Climate control for tents (heaters or cooling units) is available as an add-on depending on season and inventory. Confirm availability when requesting your quote. See https://www.sterlingeventrentals.com/answers/can-you-heat-or-cool-a-tent
 
 Q: Do you rent dance floors in Chicago?
-A: See https://sterlingevents.com/answers/do-you-rent-dance-floors for current availability, or call (773) 692-7576.
+A: See https://www.sterlingeventrentals.com/answers/do-you-rent-dance-floors for current availability, or call (773) 692-7576.
 
 Q: Is there a security deposit?
-A: See https://sterlingevents.com/answers/is-there-a-security-deposit or call (773) 692-7576 for current policy details.
+A: See https://www.sterlingeventrentals.com/answers/is-there-a-security-deposit or call (773) 692-7576 for current policy details.
 
 Q: How do I pay for my rental?
-A: A 50% deposit holds your date. The balance is due at or before delivery. For accepted payment methods, see https://sterlingevents.com/answers/how-do-i-pay-for-event-rentals or call (773) 692-7576.
+A: A 50% deposit holds your date. The balance is due at or before delivery. For accepted payment methods, see https://www.sterlingeventrentals.com/answers/how-do-i-pay-for-event-rentals or call (773) 692-7576.
 
 Q: Do I have to sign a contract?
-A: Yes. Sterling provides contract terms in writing before you pay a deposit. See https://sterlingevents.com/answers/do-i-have-to-sign-a-contract
+A: Yes. Sterling provides contract terms in writing before you pay a deposit. See https://www.sterlingeventrentals.com/answers/do-i-have-to-sign-a-contract
 
 Q: How much does table and chair rental cost for 100 guests?
-A: Pricing depends on chair style, table configuration, and whether linens are included. See https://sterlingevents.com/answers/how-much-does-table-and-chair-rental-cost-for-100-guests or request a quote at https://sterlingevents.com/contact
+A: Pricing depends on chair style, table configuration, and whether linens are included. See https://www.sterlingeventrentals.com/answers/how-much-does-table-and-chair-rental-cost-for-100-guests or request a quote at https://www.sterlingeventrentals.com/contact
 
 ---
 
@@ -226,13 +226,13 @@ A: Pricing depends on chair style, table configuration, and whether linens are i
 
 Phone: (773) 692-7576 (call or text)
 Email: info@sterlingeventrentals.com
-Website: https://sterlingevents.com
-Quote Request: https://sterlingevents.com/contact
-Pricing Guide & PDF Price List: https://sterlingevents.com/packages/pricing
-Packages Overview: https://sterlingevents.com/packages
-Tent Sizing Guide: https://sterlingevents.com/resources/tent-sizing-guide
-Chicago Tent Permits: https://sterlingevents.com/resources/chicago-tent-permits
-Answers / FAQ: https://sterlingevents.com/answers
+Website: https://www.sterlingeventrentals.com
+Quote Request: https://www.sterlingeventrentals.com/contact
+Pricing Guide & PDF Price List: https://www.sterlingeventrentals.com/packages/pricing
+Packages Overview: https://www.sterlingeventrentals.com/packages
+Tent Sizing Guide: https://www.sterlingeventrentals.com/resources/tent-sizing-guide
+Chicago Tent Permits: https://www.sterlingeventrentals.com/resources/chicago-tent-permits
+Answers / FAQ: https://www.sterlingeventrentals.com/answers
 
 ---
 

@@ -8,7 +8,7 @@ import {
   type ServiceSlug,
 } from "@/lib/servicePages";
 
-const BASE = "https://sterlingevents.com";
+const BASE = "https://www.sterlingeventrentals.com";
 
 type Props = { params: Promise<{ slug: string }> };
 

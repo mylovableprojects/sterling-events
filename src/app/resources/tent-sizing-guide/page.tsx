@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { TentSizingDiagram } from "@/components/TentSizingDiagram";
 
-const BASE = "https://sterlingevents.com";
+const BASE = "https://www.sterlingeventrentals.com";
 const canonical = `${BASE}/resources/tent-sizing-guide`;
 
 const tentSizingTitle = "Tent Sizing Guide for Chicago Events | Sterling Event Rentals";
@@ -33,6 +33,22 @@ export function generateMetadata(): Metadata {
 
 const quickAnswer =
   "For 25–50 guests, a 20×20 tent works. For 50–100 guests, plan for a 20×40. For 100–150 guests, a 30×60 is the right fit. For 150–300+ guests, you need a 40×80 or larger. Every size includes delivery, setup, and teardown by Sterling's crew.";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Tent Sizing Guide for Chicago Events",
+  description: "How to choose the right tent size by guest count and layout for Chicago-area events.",
+  author: { "@type": "Organization", name: "Sterling Event Rentals" },
+  publisher: {
+    "@type": "Organization",
+    name: "Sterling Event Rentals",
+    logo: { "@type": "ImageObject", url: `${BASE}/og-image.jpg` },
+  },
+  datePublished: "2026-02-01",
+  dateModified: "2026-04-27",
+  mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+};
 
 const howToSchema = {
   "@context": "https://schema.org",
@@ -117,6 +133,7 @@ const BODY = "text-base leading-relaxed text-[var(--charcoal)]/82";
 export default function TentSizingGuidePage() {
   return (
     <>
+      <Script id="ld-article" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <Script id="ld-howto" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <Script id="ld-faq" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Script id="ld-bc" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />

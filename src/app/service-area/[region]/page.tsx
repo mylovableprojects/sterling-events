@@ -26,7 +26,7 @@ const REGION_IMAGES: Record<string, { src: string; alt: string }> = {
   },
 };
 
-const BASE = "https://sterlingevents.com";
+const BASE = "https://www.sterlingeventrentals.com";
 
 type Props = { params: Promise<{ region: string }> };
 

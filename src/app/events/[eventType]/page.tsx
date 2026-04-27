@@ -8,7 +8,7 @@ import {
 } from "@/lib/eventTypes";
 import { EventTypeContent } from "./EventTypeContent";
 
-const BASE = "https://sterlingevents.com";
+const BASE = "https://www.sterlingeventrentals.com";
 
 type Props = { params: Promise<{ eventType: string }> };
 
