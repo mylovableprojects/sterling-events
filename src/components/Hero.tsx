@@ -1,6 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
+
+const HERO_BG =
+  "/images/outdoor-event-planning/wedding_tent_rentals_chicago.webp";
 
 const stagger = {
   hidden: { opacity: 0, y: 24 },
@@ -18,6 +22,20 @@ const stagger = {
 export function Hero() {
   return (
     <section className="gradient-hero relative min-h-[85vh] overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={HERO_BG}
+          alt="Illuminated event tent at an outdoor evening wedding reception"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+      </div>
+      <div
+        className="absolute inset-0 z-[2] bg-gradient-to-b from-[#050915]/90 via-[#0b1f3a]/75 to-[#02030a]/92"
+        aria-hidden
+      />
       <div className="gradient-orb -left-24 top-10 h-64 w-64" />
       <div className="gradient-orb bottom-[-5rem] right-[-3rem] h-80 w-80 opacity-60" />
 
@@ -90,7 +108,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute inset-x-0 bottom-8 flex justify-center">
+      <div className="pointer-events-none absolute inset-x-0 bottom-8 z-10 flex justify-center">
         <div className="flex flex-col items-center gap-3 text-[0.65rem] tracking-[0.3em] text-[var(--champagne)]/70 uppercase">
           <span>Scroll</span>
           <div className="scroll-indicator" />

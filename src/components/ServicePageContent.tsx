@@ -1,6 +1,7 @@
 "use client";
 
 import { Fragment } from "react";
+import Image from "next/image";
 import { BreadcrumbNav } from "@/components/BreadcrumbNav";
 import { QuickAnswerBox } from "@/components/QuickAnswerBox";
 import { FAQAccordion } from "@/components/FAQAccordion";
@@ -31,6 +32,24 @@ export function ServicePageContent({ data, slug }: Props) {
   const sections: ServicePageSections = {
     hero: (
       <>
+        {data.heroImageSrc ? (
+          <>
+            <div className="absolute inset-0 z-0">
+              <Image
+                src={data.heroImageSrc}
+                alt={data.heroImageAlt ?? `${data.label} — event rental photography`}
+                fill
+                priority
+                sizes="100vw"
+                className="object-cover object-center"
+              />
+            </div>
+            <div
+              className="absolute inset-0 z-[2] bg-gradient-to-b from-[#050915]/90 via-[#0b1f3a]/75 to-[#02030a]/92"
+              aria-hidden
+            />
+          </>
+        ) : null}
         <div className="gradient-orb -left-24 top-10 h-56 w-56" />
         <div className="gradient-orb bottom-[-5rem] right-[-4rem] h-72 w-72 opacity-60" />
         <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 md:max-w-3xl">

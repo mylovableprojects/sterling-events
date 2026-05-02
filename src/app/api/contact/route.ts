@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { connectToDatabase } from "@/lib/mongodb";
 import { Inquiry } from "@/lib/models/Inquiry";
+import { sendContactNotificationEmail } from "@/lib/sendContactEmail";
 
 export async function POST(req: NextRequest) {
   try {
@@ -28,6 +29,22 @@ export async function POST(req: NextRequest) {
       consentTransactional: phone?.trim() ? !!consentTransactional : undefined,
       consentMarketing: !!consentMarketing,
     });
+
+    try {
+      await sendContactNotificationEmail({
+        name,
+        email,
+        phone,
+        eventDate,
+        eventType,
+        guestCount,
+        message,
+        consentTransactional: !!consentTransactional,
+        consentMarketing: !!consentMarketing,
+      });
+    } catch (emailErr) {
+      console.error("Contact notification email failed (inquiry still saved):", emailErr);
+    }
 
     return NextResponse.json({ ok: true });
   } catch (error) {

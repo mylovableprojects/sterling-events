@@ -66,6 +66,9 @@ export type ServicePageData = {
   ctaSubheadline?: string;
   /** Optional image slot labels for 8-section layout (placeholder overlays). */
   heroImageLabel?: string;
+  /** Optional full-bleed hero background (e.g. photography behind headline). */
+  heroImageSrc?: string | null;
+  heroImageAlt?: string;
   section2PhotoGridLabels?: string[];
   section2PhotoGridSrcs?: (string | null)[];
   section3ImageLabel?: string;
@@ -143,6 +146,8 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
     processSteps: [],
     proofCopy: "",
     heroImageLabel: "Tent setup — corporate event",
+    heroImageSrc: "/images/outdoor-event-planning/stage_rentals_chicago.webp",
+    heroImageAlt: "Outdoor event stage and rental setup in Chicago",
     section2PhotoGridLabels: [
       "Exterior tent setup",
       "Crew installing structure",
@@ -247,6 +252,8 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
     introParagraph:
       "We supply tables and chairs for corporate events, weddings, and private parties across Chicago and the suburbs. Round banquet tables, rectangular and high-top options, square tables, kids' tables, and chair upgrades like chiavari and wooden crossback pair with tent and stage rentals. Our crew delivers, sets up, and tears down—you get the layout you need without the logistics.",
     heroImageLabel: "Table and chair setup — event",
+    heroImageSrc: "/images/outdoor-event-planning/wedding_chairs_chicago.webp",
+    heroImageAlt: "Wedding reception tables and chairs set under lighting in Chicago",
     section2PhotoGridLabels: [
       "Round tables and chairs — reception",
       "Cocktail tables and seating",
@@ -399,6 +406,8 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
     introParagraph:
       "We provide stage and riser rentals, podiums, pipe and drape, backdrops, and dance floors for corporate presentations, ceremonies, and outdoor performances across Chicago and Chicagoland. Stages can be set up under a tent or standalone; pipe and drape and backdrops can define the event space or frame a presentation area. Our crew delivers, sets up, and tears down—you get a professional setup without the logistics.",
     heroImageLabel: "Stage setup — corporate event",
+    heroImageSrc: "/images/outdoor-event-planning/stage_in_chicago.webp",
+    heroImageAlt: "Professional stage rental setup for an event in Chicago",
     section2PhotoGridLabels: [
       "Stage under tent — ceremony",
       "Riser and presentation setup",

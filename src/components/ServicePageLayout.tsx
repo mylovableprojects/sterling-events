@@ -25,7 +25,7 @@ export function ServicePageLayout({ sections }: Props) {
   return (
     <>
       {/* Section 1 — Hero (dark) */}
-      <section className="gradient-hero relative min-h-[75vh]">
+      <section className="gradient-hero relative min-h-[75vh] overflow-hidden">
         {sections.hero}
       </section>
 
