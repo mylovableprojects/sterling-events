@@ -6,7 +6,8 @@
     "dev": "next dev --webpack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "check:service-links": "node scripts/check-service-links.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.35.2",

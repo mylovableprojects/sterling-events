@@ -252,22 +252,8 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <div className="flex h-full flex-col justify-between px-8 pb-10 pt-16">
-              <div className="flex items-center justify-between">
-                <Link href="/" className="flex items-center gap-2">
-                  <div className="h-8 w-8 rounded-full border border-[var(--gold)]/60 bg-gradient-to-br from-[var(--gold)]/40 to-transparent" />
-                  <div className="leading-tight">
-                    <div className="text-[0.7rem] tracking-[0.35em] text-[var(--champagne)]/80 uppercase">
-                      Sterling
-                    </div>
-                    <div className="text-[1.15rem] font-semibold tracking-[0.18em] text-[var(--gold)] uppercase">
-                      Events
-                    </div>
-                  </div>
-                </Link>
-              </div>
-
-              <nav className="mt-10 flex-1 space-y-4 text-sm">
+            <div className="flex h-full flex-col px-8 pb-10 pt-20">
+              <nav className="flex-1 space-y-4 overflow-y-auto text-sm">
                 <Link
                   href="/"
                   className={`block text-lg tracking-[0.25em] uppercase ${
