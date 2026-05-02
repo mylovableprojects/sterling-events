@@ -360,7 +360,7 @@ export default function TentSizingGuidePage() {
           <p className="section-eyebrow mb-4 text-[var(--gold)]">You might also find helpful</p>
           <div className="flex flex-wrap gap-3">
             {[
-              { href: "/services/tents-structures", label: "Browse tent rental options" },
+              { href: "/services/tents-structures-chicago", label: "Browse tent rental options" },
               { href: "/resources/chicago-tent-permits", label: "Chicago tent permit guide" },
               { href: "/packages", label: "See tent packages & pricing" },
               { href: "/resources/outdoor-event-planning", label: "Outdoor event planning guide" },

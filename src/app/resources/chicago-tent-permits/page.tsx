@@ -439,7 +439,7 @@ export default function ChicagoTentPermitsPage() {
           <div className="flex flex-wrap gap-3">
             {[
               { href: "/resources/tent-sizing-guide", label: "What size tent do I need?" },
-              { href: "/services/tents-structures", label: "Browse tent options" },
+              { href: "/services/tents-structures-chicago", label: "Browse tent options" },
               { href: "/resources/outdoor-event-planning", label: "Outdoor event planning guide" },
               { href: "/contact", label: "Have questions? Contact us" },
             ].map((link) => (

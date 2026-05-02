@@ -338,12 +338,12 @@ export default async function ServiceAreaRegionPage({ params }: Props) {
               </h2>
               <ul className="space-y-3 text-base leading-relaxed text-[var(--charcoal)]/85">
                 {[
-                  { label: "Tents & Structures", href: "/services/tents-structures" },
-                  { label: "Tables & Seating", href: "/services/tables-seating" },
-                  { label: "Stages & Presentation", href: "/services/stages-presentation" },
-                  { label: "Games & Entertainment", href: "/services/games-entertainment" },
-                  { label: "Event Extras", href: "/services/event-extras" },
-                  { label: "Delivery, Setup & Teardown", href: "/services/delivery-setup" },
+                  { label: "Tents & Structures", href: "/services/tents-structures-chicago" },
+                  { label: "Tables & Seating", href: "/services/tables-seating-chicago" },
+                  { label: "Stages & Presentation", href: "/services/stages-presentation-chicago" },
+                  { label: "Games & Entertainment", href: "/services/games-entertainment-chicago" },
+                  { label: "Event Extras", href: "/services/event-extras-chicago" },
+                  { label: "Delivery, Setup & Teardown", href: "/services/delivery-setup-teardown-chicago" },
                 ].map((s) => (
                   <li key={s.href} className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--gold)]" />

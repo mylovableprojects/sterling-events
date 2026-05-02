@@ -263,7 +263,7 @@ export const SERVICE_AREA_DATA: Record<ServiceAreaSlug, ServiceAreaData> = {
       { href: "/event-rental-pricing-chicago", label: "Event rental pricing" },
       { href: "/resources/tent-sizing-guide", label: "Tent sizing guide" },
       { href: "/packages", label: "View event packages" },
-      { href: "/services/delivery-setup-teardown", label: "How delivery & setup works" },
+      { href: "/services/delivery-setup-teardown-chicago", label: "How delivery & setup works" },
     ],
     venueTypes: [
       {

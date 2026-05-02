@@ -7,11 +7,11 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const serviceLinks = [
   { href: "/services", label: "All Services" },
-  { href: "/services/tents-structures", label: "Tents & Structures" },
-  { href: "/services/tables-seating", label: "Tables & Seating" },
-  { href: "/services/stages-presentation", label: "Stages & Presentation" },
-  { href: "/services/games-entertainment", label: "Games & Entertainment" },
-  { href: "/services/event-extras", label: "Event Extras" },
+  { href: "/services/tents-structures-chicago", label: "Tents & Structures" },
+  { href: "/services/tables-seating-chicago", label: "Tables & Seating" },
+  { href: "/services/stages-presentation-chicago", label: "Stages & Presentation" },
+  { href: "/services/games-entertainment-chicago", label: "Games & Entertainment" },
+  { href: "/services/event-extras-chicago", label: "Event Extras" },
 ];
 
 const serviceAreaLinks = [
@@ -27,14 +27,6 @@ const eventLinks = [
   { href: "/events/private-parties", label: "Private Parties & Social Events" },
 ];
 
-const resourceLinks = [
-  { href: "/resources", label: "All Resources" },
-  { href: "/resources/tent-sizing-guide", label: "Tent Sizing Guide" },
-  { href: "/resources/chicago-tent-permits", label: "Chicago Tent Permits" },
-  { href: "/resources/outdoor-event-planning", label: "Outdoor Event Planning" },
-  { href: "/resources/corporate-event-checklist", label: "Corporate Event Checklist" },
-];
-
 const packageLinks = [
   { href: "/packages", label: "Package tiers" },
   { href: "/packages/pricing", label: "Pricing & price list" },
@@ -47,7 +39,6 @@ export function Navbar() {
   const [servicesOpenMobile, setServicesOpenMobile] = useState(false);
   const [eventsOpenMobile, setEventsOpenMobile] = useState(false);
   const [serviceAreaOpenMobile, setServiceAreaOpenMobile] = useState(false);
-  const [resourcesOpenMobile, setResourcesOpenMobile] = useState(false);
   const [packagesOpenMobile, setPackagesOpenMobile] = useState(false);
 
   useEffect(() => {
@@ -213,42 +204,24 @@ export function Navbar() {
               </div>
             </div>
 
-            <div className="relative group">
-              <button
-                type="button"
-                className="nav-link-underline text-xs tracking-[0.28em] uppercase text-[var(--champagne)]/80"
+            <div className="flex flex-col items-start gap-1">
+              <Link
+                href="/about"
+                className={`nav-link-underline text-xs tracking-[0.28em] uppercase ${
+                  pathname === "/about" ? "nav-link-underline-active text-[var(--gold)]" : "text-[var(--champagne)]/80"
+                }`}
               >
-                Resources ▾
-              </button>
-              <div className="invisible absolute left-0 top-full mt-3 w-72 rounded-2xl border border-white/10 bg-black/90 p-3 text-[0.75rem] opacity-0 shadow-[0_18px_60px_rgba(0,0,0,0.8)] transition-all group-hover:visible group-hover:opacity-100">
-                <ul className="space-y-1">
-                  {resourceLinks.map((link) => {
-                    const active = pathname === link.href;
-                    return (
-                      <li key={link.href}>
-                        <Link
-                          href={link.href}
-                          className={`flex items-center justify-between rounded-md px-2 py-1.5 ${
-                            active ? "text-[var(--gold)]" : "text-[var(--champagne)]/80 hover:text-[var(--gold)]"
-                          }`}
-                        >
-                          <span className="text-[0.7rem] tracking-[0.18em] uppercase">{link.label}</span>
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
+                About
+              </Link>
+              <Link
+                href="/contact"
+                className={`nav-link-underline text-xs tracking-[0.28em] uppercase ${
+                  pathname === "/contact" ? "nav-link-underline-active text-[var(--gold)]" : "text-[var(--champagne)]/80"
+                }`}
+              >
+                Contact
+              </Link>
             </div>
-
-            <Link
-              href="/about"
-              className={`nav-link-underline text-xs tracking-[0.28em] uppercase ${
-                pathname === "/about" ? "nav-link-underline-active text-[var(--gold)]" : "text-[var(--champagne)]/80"
-              }`}
-            >
-              About
-            </Link>
 
           </nav>
 
@@ -392,31 +365,6 @@ export function Navbar() {
                 {serviceAreaOpenMobile && (
                   <ul className="ml-4 space-y-2 text-[0.8rem]">
                     {serviceAreaLinks.map((link) => (
-                      <li key={link.href}>
-                        <Link
-                          href={link.href}
-                          className={`block tracking-[0.2em] uppercase ${
-                            pathname === link.href ? "text-[var(--gold)]" : "text-[var(--champagne)]/85"
-                          }`}
-                        >
-                          {link.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-
-                <button
-                  type="button"
-                  onClick={() => setResourcesOpenMobile((prev) => !prev)}
-                  className="flex w-full items-center justify-between text-lg tracking-[0.25em] uppercase text-[var(--champagne)]"
-                >
-                  <span>Resources</span>
-                  <span>{resourcesOpenMobile ? "−" : "+"}</span>
-                </button>
-                {resourcesOpenMobile && (
-                  <ul className="ml-4 space-y-2 text-[0.8rem]">
-                    {resourceLinks.map((link) => (
                       <li key={link.href}>
                         <Link
                           href={link.href}

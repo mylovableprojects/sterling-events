@@ -69,7 +69,7 @@ const CARD =
 
 const services = [
   {
-    href: "/services/tents-structures",
+    href: "/services/tents-structures-chicago",
     title: "Tents & Structures",
     description:
       "Frame tents and pole structures from 20×20 to 40×80+. Anchored, weather-rated, and sized for your guest count.",
@@ -80,7 +80,7 @@ const services = [
     delay: 0.05,
   },
   {
-    href: "/services/tables-seating",
+    href: "/services/tables-seating-chicago",
     title: "Tables & Seating",
     description:
       "Round, rectangular, and cocktail tables. Folding, cross-back, and chiavari chair options. Linen upgrades available.",
@@ -91,7 +91,7 @@ const services = [
     delay: 0.12,
   },
   {
-    href: "/services/games-entertainment",
+    href: "/services/games-entertainment-chicago",
     title: "Games & Entertainment",
     description:
       "Mechanical bulls and photo booths for corporate events, weddings, and private parties. Built for events people actually remember.",
@@ -102,7 +102,7 @@ const services = [
     delay: 0.19,
   },
   {
-    href: "/services/stages-presentation",
+    href: "/services/stages-presentation-chicago",
     title: "Stages & Presentation",
     description:
       "Configurable stage and riser rentals for presentations, ceremonies, and performances. Custom sizing, combinable with tent structures.",
@@ -113,7 +113,7 @@ const services = [
     delay: 0.26,
   },
   {
-    href: "/services/event-extras",
+    href: "/services/event-extras-chicago",
     title: "Event Extras",
     description:
       "Champagne walls, portable bars, and lounge furniture. The finishing details that make your event look and feel different.",
@@ -179,7 +179,7 @@ export function ServicesBentoSection() {
           {/* ── Delivery — full-width banner ── */}
           <motion.div className="sm:col-span-2 lg:col-span-6" {...reveal(0.4)}>
             <Link
-              href="/services/delivery-setup"
+              href="/services/delivery-setup-teardown-chicago"
               className="group flex overflow-hidden rounded-2xl border border-[var(--navy)]/10 bg-white transition-all duration-200 hover:border-[var(--gold)]/40 hover:shadow-lg hover:-translate-y-0.5"
             >
               <div className="flex flex-1 flex-col justify-center px-6 py-7 md:px-8">

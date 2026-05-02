@@ -124,7 +124,7 @@ export function RentalHighlightGrid({ audience }: Props) {
           </div>
           {audience === "corporate-events" && (
             <Link
-              href="/services/games-entertainment"
+              href="/services/games-entertainment-chicago"
               className={`text-sm font-medium underline underline-offset-4 ${
                 isLight
                   ? "text-[var(--navy)] decoration-[var(--gold)]/50"

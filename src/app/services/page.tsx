@@ -80,42 +80,42 @@ const serviceHubSchema = {
 const SERVICE_CARDS = [
   {
     title: "Tents & Structures",
-    href: "/services/tents-structures",
+    href: "/services/tents-structures-chicago",
     description:
       "Frame tents and pole structures from 20×20 to 40×80+. Anchored, weather-rated, and sized for your guest count. Delivery, setup, and teardown on every order.",
     Icon: Tent,
   },
   {
     title: "Tables & Seating",
-    href: "/services/tables-seating",
+    href: "/services/tables-seating-chicago",
     description:
       "Round, rectangular, and cocktail tables. Folding, cross-back, and chiavari chair options. Linen upgrades available. Clean, matched, and in place before your first guest arrives.",
     Icon: LayoutGrid,
   },
   {
     title: "Stages & Presentation",
-    href: "/services/stages-presentation",
+    href: "/services/stages-presentation-chicago",
     description:
       "Configurable stage and riser rentals for presentations, ceremonies, and performances. Custom sizing, combinable with tent structures.",
     Icon: MonitorSpeaker,
   },
   {
     title: "Games & Entertainment",
-    href: "/services/games-entertainment",
+    href: "/services/games-entertainment-chicago",
     description:
       "Mechanical bulls, bounce houses, soft play, bubble houses, foam machines, cornhole, photo booths, and more. Built for corporate events that need more than tables — and social events people actually remember.",
     Icon: Gamepad2,
   },
   {
     title: "Event Extras",
-    href: "/services/event-extras",
+    href: "/services/event-extras-chicago",
     description:
       "Champagne walls, portable bars, and lounge furniture. The finishing details that make your event look and feel different.",
     Icon: Sparkles,
   },
   {
     title: "Delivery, Setup & Teardown",
-    href: "/services/delivery-setup-teardown",
+    href: "/services/delivery-setup-teardown-chicago",
     description:
       "Every order includes professional delivery, full setup, and teardown by our crew. You don't move a single chair. We arrive on time, build it out, and disappear after.",
     Icon: Truck,

@@ -179,8 +179,8 @@ export const EVENT_TYPE_DATA: Record<EventTypeSlug, EventTypeData> = {
       { href: "/packages/pricing", label: "Download price list (PDF)" },
       { href: "/event-rental-pricing-chicago", label: "Event rental pricing" },
       { href: "/packages", label: "View event packages" },
-      { href: "/services/stages-presentation", label: "Stages & presentation rentals" },
-      { href: "/services/games-entertainment", label: "Games & entertainment rentals" },
+      { href: "/services/stages-presentation-chicago", label: "Stages & presentation rentals" },
+      { href: "/services/games-entertainment-chicago", label: "Games & entertainment rentals" },
     ],
     schemaEventType: "BusinessEvent",
     heroBackgroundImage: {
@@ -337,7 +337,7 @@ export const EVENT_TYPE_DATA: Record<EventTypeSlug, EventTypeData> = {
       { href: "/packages/pricing", label: "Download price list (PDF)" },
       { href: "/event-rental-pricing-chicago", label: "Event rental pricing" },
       { href: "/packages", label: "View rental packages" },
-      { href: "/services/event-extras", label: "Champagne walls & event extras" },
+      { href: "/services/event-extras-chicago", label: "Champagne walls & event extras" },
     ],
     schemaEventType: "SocialEvent",
     heroBackgroundImage: {
@@ -489,7 +489,7 @@ export const EVENT_TYPE_DATA: Record<EventTypeSlug, EventTypeData> = {
       { href: "/resources/outdoor-event-planning", label: "Outdoor event planning guide" },
       { href: "/event-rental-pricing-chicago", label: "Event rental pricing" },
       { href: "/packages", label: "View event packages" },
-      { href: "/services/games-entertainment", label: "Games & entertainment rentals" },
+      { href: "/services/games-entertainment-chicago", label: "Games & entertainment rentals" },
     ],
     schemaEventType: "SocialEvent",
     heroBackgroundImage: {

@@ -1,10 +1,10 @@
 export const SERVICE_SLUGS = [
-  "tents-structures",
-  "tables-seating",
-  "stages-presentation",
-  "games-entertainment",
-  "event-extras",
-  "delivery-setup-teardown",
+  "tents-structures-chicago",
+  "tables-seating-chicago",
+  "stages-presentation-chicago",
+  "games-entertainment-chicago",
+  "event-extras-chicago",
+  "delivery-setup-teardown-chicago",
 ] as const;
 
 export type ServiceSlug = (typeof SERVICE_SLUGS)[number];
@@ -81,7 +81,7 @@ export type ServicePageData = {
 };
 
 export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
-  "tents-structures": {
+  "tents-structures-chicago": {
     title: "Tent Rentals in Chicago | Sterling Event Rentals",
     description:
       "Professional tent rentals for corporate events, weddings, and private parties in Chicago, Evanston, Oak Park, Naperville, Schaumburg, Orland Park, and across Chicagoland. Sizes from 20x20 to 40x80+. Licensed, insured, SIOTO certified. Get a quote.",
@@ -223,16 +223,16 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       { href: "/answers/outdoor-event-rental-weather-policy", label: "Weather policy" },
     ],
     siblingServices: [
-      { href: "/services/tables-seating", label: "Tables & Seating" },
-      { href: "/services/stages-presentation", label: "Stages & Presentation" },
-      { href: "/services/delivery-setup-teardown", label: "Delivery & Setup" },
+      { href: "/services/tables-seating-chicago", label: "Tables & Seating" },
+      { href: "/services/stages-presentation-chicago", label: "Stages & Presentation" },
+      { href: "/services/delivery-setup-teardown-chicago", label: "Delivery & Setup" },
     ],
     crossLinks: [
-      { href: "/services/tables-seating", label: "Most tent events also need tables and seating →" },
-      { href: "/services/delivery-setup-teardown", label: "Every tent rental includes professional delivery and setup →" },
+      { href: "/services/tables-seating-chicago", label: "Most tent events also need tables and seating →" },
+      { href: "/services/delivery-setup-teardown-chicago", label: "Every tent rental includes professional delivery and setup →" },
     ],
   },
-  "tables-seating": {
+  "tables-seating-chicago": {
     title: "Table & Chair Rentals in Chicago | Sterling Event Rentals",
     description:
       "Round, rectangular, and cocktail table rentals with matching chair options for events in Chicago, Evanston, Oak Park, Naperville, Schaumburg, and across Chicagoland. Linen upgrades available. Delivery and setup included.",
@@ -332,9 +332,9 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       "Delivery, setup, and teardown by Sterling's crew (setup fee is separate from unit cost and quoted upfront).",
     ],
     bodyInternalLinks: [
-      { href: "/services/tents-structures", label: "Tent & Structure rentals" },
+      { href: "/services/tents-structures-chicago", label: "Tent & Structure rentals" },
       { href: "/packages", label: "Event packages" },
-      { href: "/services/stages-presentation", label: "Stage & Presentation rentals" },
+      { href: "/services/stages-presentation-chicago", label: "Stage & Presentation rentals" },
       { href: "/contact", label: "Check availability" },
     ],
     faqs: [
@@ -385,15 +385,15 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
     packagesCta: "See table and seating packages →",
     secondaryCta: { href: "/packages", label: "See Our Packages →" },
     siblingServices: [
-      { href: "/services/tents-structures", label: "Tents & Structures" },
-      { href: "/services/stages-presentation", label: "Stages & Presentation" },
-      { href: "/services/delivery-setup-teardown", label: "Delivery & Setup" },
+      { href: "/services/tents-structures-chicago", label: "Tents & Structures" },
+      { href: "/services/stages-presentation-chicago", label: "Stages & Presentation" },
+      { href: "/services/delivery-setup-teardown-chicago", label: "Delivery & Setup" },
     ],
     crossLinks: [
       { href: "/packages", label: "See full package pricing →" },
     ],
   },
-  "stages-presentation": {
+  "stages-presentation-chicago": {
     title: "Stage & Riser Rentals in Chicago | Sterling Event Rentals",
     description:
       "Professional stage and riser rentals for corporate events, ceremonies, and presentations in Chicago, Naperville, Evanston, Schaumburg, and across Chicagoland. Scalable configurations. Delivery and setup included.",
@@ -443,7 +443,7 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       note: "Setup fee is separate from the equipment rental cost and is quoted upfront. No hidden fees added after booking.",
     },
     ctaFooterLinks: [
-      { href: "/services/tents-structures", label: "Tents & Structures" },
+      { href: "/services/tents-structures-chicago", label: "Tents & Structures" },
       { href: "/services", label: "See all services" },
     ],
     trustStrip: [
@@ -492,8 +492,8 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       "Stages can be combined with tent structures for fully covered setups. Delivery, setup, and teardown by Sterling's crew (setup fee is separate from unit cost and quoted upfront).",
     ],
     bodyInternalLinks: [
-      { href: "/services/tents-structures", label: "Tent & Structure rentals" },
-      { href: "/services/games-entertainment", label: "Games & Entertainment" },
+      { href: "/services/tents-structures-chicago", label: "Tent & Structure rentals" },
+      { href: "/services/games-entertainment-chicago", label: "Games & Entertainment" },
       { href: "/packages", label: "Event packages" },
       { href: "/contact", label: "Check availability" },
     ],
@@ -540,15 +540,15 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
     packagesCta: "See stage packages →",
     secondaryCta: { href: "/packages", label: "See Our Packages →" },
     siblingServices: [
-      { href: "/services/tents-structures", label: "Tents & Structures" },
-      { href: "/services/tables-seating", label: "Tables & Seating" },
-      { href: "/services/games-entertainment", label: "Games & Entertainment" },
+      { href: "/services/tents-structures-chicago", label: "Tents & Structures" },
+      { href: "/services/tables-seating-chicago", label: "Tables & Seating" },
+      { href: "/services/games-entertainment-chicago", label: "Games & Entertainment" },
     ],
     crossLinks: [
-      { href: "/services/games-entertainment", label: "Add games & entertainment to your stage setup →" },
+      { href: "/services/games-entertainment-chicago", label: "Add games & entertainment to your stage setup →" },
     ],
   },
-  "games-entertainment": {
+  "games-entertainment-chicago": {
     title: "Games & Entertainment Rentals in Chicago | Sterling Event Rentals",
     description:
       "Mechanical bull and photo booth rentals for corporate events and private parties in Chicago, Oak Park, Naperville, Evanston, and across Chicagoland. Delivery and setup included.",
@@ -637,7 +637,7 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       "Delivery, setup, and teardown by Sterling's crew (setup fee is separate from unit cost and quoted upfront).",
     ],
     bodyInternalLinks: [
-      { href: "/services/tents-structures", label: "Tent & Structure rentals" },
+      { href: "/services/tents-structures-chicago", label: "Tent & Structure rentals" },
       { href: "/packages", label: "The Sterling Experience package" },
       { href: "/resources/corporate-event-checklist", label: "Corporate event planning checklist" },
       { href: "/contact", label: "Check availability" },
@@ -680,16 +680,16 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
     packagesCta: "See packages with add-ons →",
     secondaryCta: { href: "/packages", label: "See Our Packages →" },
     siblingServices: [
-      { href: "/services/event-extras", label: "Event Extras" },
-      { href: "/services/tents-structures", label: "Tents & Structures" },
-      { href: "/services/tables-seating", label: "Tables & Seating" },
+      { href: "/services/event-extras-chicago", label: "Event Extras" },
+      { href: "/services/tents-structures-chicago", label: "Tents & Structures" },
+      { href: "/services/tables-seating-chicago", label: "Tables & Seating" },
     ],
     crossLinks: [
-      { href: "/services/event-extras", label: "Add event extras for a more elevated setup →" },
+      { href: "/services/event-extras-chicago", label: "Add event extras for a more elevated setup →" },
       { href: "/packages", label: "See The Sterling Experience package →" },
     ],
   },
-  "event-extras": {
+  "event-extras-chicago": {
     title: "Event Extras & Specialty Rentals Chicago | Sterling Event Rentals",
     description:
       "Champagne walls, portable bars, and lounge furniture for weddings, corporate events, and private parties in Chicago, Evanston, Oak Park, Naperville, Schaumburg, and across Chicagoland. Delivery and setup included.",
@@ -745,7 +745,7 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       note: "Setup fee is separate from the equipment rental cost and is quoted upfront. No hidden fees added after booking.",
     },
     ctaFooterLinks: [
-      { href: "/services/games-entertainment", label: "Games & Entertainment" },
+      { href: "/services/games-entertainment-chicago", label: "Games & Entertainment" },
       { href: "/services", label: "See all services" },
     ],
     trustStrip: [
@@ -789,7 +789,7 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       "Delivery, setup, and teardown by Sterling's crew (setup fee is separate from unit cost and quoted upfront).",
     ],
     bodyInternalLinks: [
-      { href: "/services/games-entertainment", label: "Games & Entertainment" },
+      { href: "/services/games-entertainment-chicago", label: "Games & Entertainment" },
       { href: "/packages", label: "Event packages" },
       { href: "/contact", label: "Check availability" },
     ],
@@ -826,16 +826,16 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
     packagesCta: "See packages →",
     secondaryCta: { href: "/packages", label: "See Our Packages →" },
     siblingServices: [
-      { href: "/services/games-entertainment", label: "Games & Entertainment" },
-      { href: "/services/tents-structures", label: "Tents & Structures" },
-      { href: "/services/tables-seating", label: "Tables & Seating" },
+      { href: "/services/games-entertainment-chicago", label: "Games & Entertainment" },
+      { href: "/services/tents-structures-chicago", label: "Tents & Structures" },
+      { href: "/services/tables-seating-chicago", label: "Tables & Seating" },
     ],
     crossLinks: [
-      { href: "/services/games-entertainment", label: "Pair with games & entertainment for a complete event →" },
+      { href: "/services/games-entertainment-chicago", label: "Pair with games & entertainment for a complete event →" },
       { href: "/packages", label: "See The Sterling Experience package →" },
     ],
   },
-  "delivery-setup-teardown": {
+  "delivery-setup-teardown-chicago": {
     title: "Delivery, Setup & Teardown | Sterling Event Rentals Chicago",
     description:
       "Every Sterling rental includes professional delivery, full setup, and after-event teardown in Chicago, Evanston, Oak Park, Naperville, Schaumburg, Orland Park, and across Chicagoland. No self-assembly. SIOTO safety-certified crew.",
@@ -1001,8 +1001,8 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       { href: "/answers/outdoor-event-rental-weather-policy", label: "Weather policy" },
     ],
     siblingServices: [
-      { href: "/services/tents-structures", label: "Tents & Structures" },
-      { href: "/services/tables-seating", label: "Tables & Seating" },
+      { href: "/services/tents-structures-chicago", label: "Tents & Structures" },
+      { href: "/services/tables-seating-chicago", label: "Tables & Seating" },
     ],
     crossLinks: [
       { href: "/packages", label: "See full service packages →" },

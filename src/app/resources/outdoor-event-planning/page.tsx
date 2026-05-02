@@ -233,15 +233,15 @@ export default function OutdoorEventPlanningPage() {
               <h2 className={H2}>What equipment do I need for an outdoor event?</h2>
               <p className={BODY}>
                 Most outdoor events need five core categories. A{" "}
-                <Link href="/services/tents-structures" className="font-medium text-[var(--navy)] underline decoration-[var(--gold)]/50 hover:decoration-[var(--gold)]">tent or structure</Link>{" "}
+                <Link href="/services/tents-structures-chicago" className="font-medium text-[var(--navy)] underline decoration-[var(--gold)]/50 hover:decoration-[var(--gold)]">tent or structure</Link>{" "}
                 gives you shade and shelter — sizes from 20×20 for small gatherings to 40×80+ for large ones.{" "}
-                <Link href="/services/tables-seating" className="font-medium text-[var(--navy)] underline decoration-[var(--gold)]/50 hover:decoration-[var(--gold)]">Tables and chairs</Link>{" "}
+                <Link href="/services/tables-seating-chicago" className="font-medium text-[var(--navy)] underline decoration-[var(--gold)]/50 hover:decoration-[var(--gold)]">Tables and chairs</Link>{" "}
                 cover seating and dining, with linen upgrades available. A{" "}
-                <Link href="/services/stages-presentation" className="font-medium text-[var(--navy)] underline decoration-[var(--gold)]/50 hover:decoration-[var(--gold)]">stage or riser</Link>{" "}
+                <Link href="/services/stages-presentation-chicago" className="font-medium text-[var(--navy)] underline decoration-[var(--gold)]/50 hover:decoration-[var(--gold)]">stage or riser</Link>{" "}
                 keeps speakers and performers visible and pairs naturally with tent structures. For corporate picnics and parties,{" "}
-                <Link href="/services/games-entertainment" className="font-medium text-[var(--navy)] underline decoration-[var(--gold)]/50 hover:decoration-[var(--gold)]">games and entertainment</Link>{" "}
+                <Link href="/services/games-entertainment-chicago" className="font-medium text-[var(--navy)] underline decoration-[var(--gold)]/50 hover:decoration-[var(--gold)]">games and entertainment</Link>{" "}
                 — inflatables, photo booths, mechanical bulls — are popular additions. Every order should include{" "}
-                <Link href="/services/delivery-setup-teardown" className="font-medium text-[var(--navy)] underline decoration-[var(--gold)]/50 hover:decoration-[var(--gold)]">delivery, setup, and teardown</Link>{" "}
+                <Link href="/services/delivery-setup-teardown-chicago" className="font-medium text-[var(--navy)] underline decoration-[var(--gold)]/50 hover:decoration-[var(--gold)]">delivery, setup, and teardown</Link>{" "}
                 so you're not managing logistics on the day.
               </p>
             </div>

@@ -224,8 +224,8 @@ export default function PackagesPage() {
                 ctaLabel="Check Availability"
                 ctaHref="/contact"
                 secondaryLinks={[
-                  { href: "/services/tents-structures", label: "Tents & Structures →" },
-                  { href: "/services/tables-seating", label: "Tables & Seating →" },
+                  { href: "/services/tents-structures-chicago", label: "Tents & Structures →" },
+                  { href: "/services/tables-seating-chicago", label: "Tables & Seating →" },
                 ]}
               />
             </ScrollReveal>
@@ -246,8 +246,8 @@ export default function PackagesPage() {
                 ctaLabel="Get a Quote for This Package"
                 ctaHref="/contact"
                 secondaryLinks={[
-                  { href: "/services/tables-seating", label: "Tables & Seating →" },
-                  { href: "/services/stages-presentation", label: "Stages & Presentation →" },
+                  { href: "/services/tables-seating-chicago", label: "Tables & Seating →" },
+                  { href: "/services/stages-presentation-chicago", label: "Stages & Presentation →" },
                 ]}
                 highlight
               />
@@ -269,8 +269,8 @@ export default function PackagesPage() {
                 ctaLabel="Request Custom Quote"
                 ctaHref="/contact"
                 secondaryLinks={[
-                  { href: "/services/stages-presentation", label: "Stages & Presentation →" },
-                  { href: "/services/event-extras", label: "Event Extras →" },
+                  { href: "/services/stages-presentation-chicago", label: "Stages & Presentation →" },
+                  { href: "/services/event-extras-chicago", label: "Event Extras →" },
                 ]}
               />
             </ScrollReveal>

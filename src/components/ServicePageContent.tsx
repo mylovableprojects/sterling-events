@@ -64,7 +64,7 @@ export function ServicePageContent({ data, slug }: Props) {
         {data.section2PhotoGridLabels && (
           <PhotoGrid count={data.section2PhotoGridLabels.length} labels={data.section2PhotoGridLabels} srcs={data.section2PhotoGridSrcs} />
         )}
-        {slug === "games-entertainment" && (
+        {slug === "games-entertainment-chicago" && (
           <div className="mt-10">
             <RentalHighlightGrid audience="games-entertainment" />
           </div>

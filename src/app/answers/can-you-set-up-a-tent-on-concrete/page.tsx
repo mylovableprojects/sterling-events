@@ -99,7 +99,7 @@ export default function AnswerPage() {
         </div>
         <p className="mt-6">
           <Link
-            href="/services/tents-structures"
+            href="/services/tents-structures-chicago"
             className="text-[var(--gold-light)] hover:underline"
           >
             Tent rentals & structures →

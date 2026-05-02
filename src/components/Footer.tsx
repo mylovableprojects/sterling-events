@@ -29,22 +29,22 @@ export function Footer() {
               <Link href="/services" className="hover:text-[var(--gold)]">
                 All Services
               </Link>
-              <Link href="/services/tents-structures" className="hover:text-[var(--gold)]">
+              <Link href="/services/tents-structures-chicago" className="hover:text-[var(--gold)]">
                 Tents &amp; Structures
               </Link>
-              <Link href="/services/tables-seating" className="hover:text-[var(--gold)]">
+              <Link href="/services/tables-seating-chicago" className="hover:text-[var(--gold)]">
                 Tables &amp; Seating
               </Link>
-              <Link href="/services/stages-presentation" className="hover:text-[var(--gold)]">
+              <Link href="/services/stages-presentation-chicago" className="hover:text-[var(--gold)]">
                 Stages &amp; Presentation
               </Link>
-              <Link href="/services/games-entertainment" className="hover:text-[var(--gold)]">
+              <Link href="/services/games-entertainment-chicago" className="hover:text-[var(--gold)]">
                 Games &amp; Entertainment
               </Link>
-              <Link href="/services/event-extras" className="hover:text-[var(--gold)]">
+              <Link href="/services/event-extras-chicago" className="hover:text-[var(--gold)]">
                 Event Extras
               </Link>
-              <Link href="/services/delivery-setup-teardown" className="hover:text-[var(--gold)]">
+              <Link href="/services/delivery-setup-teardown-chicago" className="hover:text-[var(--gold)]">
                 Delivery &amp; Setup
               </Link>
             </div>
@@ -62,11 +62,26 @@ export function Footer() {
               <Link href="/service-area" className="hover:text-[var(--gold)]">
                 Service Area
               </Link>
+            </div>
+          </div>
+
+          <div className="space-y-3">
+            <div className="section-eyebrow">Resources</div>
+            <div className="flex flex-col gap-1 text-[0.8rem]">
+              <Link href="/resources" className="hover:text-[var(--gold)]">
+                All Resources
+              </Link>
               <Link href="/resources/tent-sizing-guide" className="hover:text-[var(--gold)]">
                 Tent Sizing Guide
               </Link>
+              <Link href="/resources/chicago-tent-permits" className="hover:text-[var(--gold)]">
+                Chicago Tent Permits
+              </Link>
+              <Link href="/resources/outdoor-event-planning" className="hover:text-[var(--gold)]">
+                Outdoor Event Planning
+              </Link>
               <Link href="/resources/corporate-event-checklist" className="hover:text-[var(--gold)]">
-                Corporate Checklist
+                Corporate Event Checklist
               </Link>
             </div>
           </div>
@@ -77,11 +92,11 @@ export function Footer() {
               <Link href="/about" className="hover:text-[var(--gold)]">
                 About Sterling
               </Link>
-              <Link href="/reviews" className="hover:text-[var(--gold)]">
-                Client Reviews
-              </Link>
               <Link href="/contact" className="hover:text-[var(--gold)]">
                 Contact
+              </Link>
+              <Link href="/reviews" className="hover:text-[var(--gold)]">
+                Client Reviews
               </Link>
               <Link href="/legal/privacy-policy" className="hover:text-[var(--gold)]">
                 Privacy Policy
