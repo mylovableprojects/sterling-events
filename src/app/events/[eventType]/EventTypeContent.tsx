@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { BelowHeroQuickAnswer } from "@/components/BelowHeroQuickAnswer";
 import { RentalHighlightGrid } from "@/components/RentalHighlightGrid";
 import type { EventTypeData } from "@/lib/eventTypes";
 
@@ -70,16 +71,44 @@ export function EventTypeContent({ data, slug }: Props) {
       {/* ── HERO ── */}
       <section
         className="relative min-h-[65vh] overflow-hidden flex items-end pb-16"
-        style={{ background: `radial-gradient(ellipse at top left, ${data.heroGradient.from} 0%, ${data.heroGradient.to} 70%, #010108 100%)` }}
+        style={
+          data.heroBackgroundImage
+            ? { background: "#03030a" }
+            : { background: `radial-gradient(ellipse at top left, ${data.heroGradient.from} 0%, ${data.heroGradient.to} 70%, #010108 100%)` }
+        }
       >
+        {data.heroBackgroundImage && (
+          <>
+            <div className="absolute inset-0 z-0">
+              <Image
+                src={data.heroBackgroundImage.src}
+                alt={data.heroBackgroundImage.alt}
+                fill
+                className="object-cover object-center"
+                sizes="100vw"
+                priority
+              />
+            </div>
+            <div
+              className="absolute inset-0 z-[1]"
+              style={{
+                background:
+                  data.heroScrim === "light"
+                    ? `radial-gradient(ellipse 120% 100% at 20% 0%, ${data.heroGradient.from}99 0%, ${data.heroGradient.to}b8 50%, rgba(1, 1, 8, 0.52) 100%)`
+                    : `radial-gradient(ellipse 120% 100% at 20% 0%, ${data.heroGradient.from}cc 0%, ${data.heroGradient.to}d9 55%, rgba(1, 1, 8, 0.88) 100%)`,
+              }}
+              aria-hidden
+            />
+          </>
+        )}
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className={`absolute inset-0 opacity-[0.03] ${data.heroBackgroundImage ? "z-[2]" : ""}`}
           style={{
             backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")",
           }}
         />
         <div
-          className="absolute left-0 top-0 h-px w-full opacity-20"
+          className={`absolute left-0 top-0 h-px w-full opacity-20 ${data.heroBackgroundImage ? "z-[3]" : ""}`}
           style={{ background: "linear-gradient(90deg, transparent, #c9a84c 40%, transparent)" }}
         />
 
@@ -103,13 +132,6 @@ export function EventTypeContent({ data, slug }: Props) {
             <h1 className="hero-headline" style={{ color: "#f5f0e8" }}>
               {data.h1}
             </h1>
-            <p
-              className="hero-subheadline mt-5 max-w-2xl"
-              style={{ color: "rgba(245,230,200,0.82)" }}
-              aria-label="Quick answer"
-            >
-              {data.quickAnswer}
-            </p>
           </motion.div>
           <motion.div
             className="mt-8 flex flex-wrap items-center gap-4"
@@ -122,13 +144,23 @@ export function EventTypeContent({ data, slug }: Props) {
           </motion.div>
         </div>
 
-        <div className="pointer-events-none absolute inset-x-0 bottom-8 flex justify-center">
+        <div
+          className={`pointer-events-none absolute inset-x-0 bottom-8 flex justify-center ${data.heroBackgroundImage ? "z-[3]" : ""}`}
+        >
           <div className="flex flex-col items-center gap-3 text-[0.65rem] tracking-[0.3em] uppercase" style={{ color: "rgba(245,230,200,0.5)" }}>
             <span>Scroll</span>
             <div className="scroll-indicator" />
           </div>
         </div>
       </section>
+
+      <BelowHeroQuickAnswer>
+        <div className="quick-answer max-w-2xl rounded-xl border border-[#c9a84c]/25 bg-black/30 p-6">
+          <p className="faq-answer hero-subheadline max-w-2xl" style={{ color: "rgba(245,230,200,0.88)" }}>
+            {data.quickAnswer}
+          </p>
+        </div>
+      </BelowHeroQuickAnswer>
 
       {/* ── INTRO + IMAGE SPLIT ── */}
       <section className="border-t border-[var(--navy)]/10 bg-[var(--cream)] py-20">
@@ -350,7 +382,7 @@ export function EventTypeContent({ data, slug }: Props) {
                   { title: "Full setup by our crew", body: "We assemble everything before your event begins. You don't manage logistics." },
                   { title: "Teardown after your event", body: "We return after your event window and take everything down." },
                   { title: "Upfront itemized pricing", body: "Equipment, delivery, and setup quoted as named line items before you confirm." },
-                  { title: "Licensed & SIOTO-certified", body: "Fully licensed and insured in Illinois. SIOTO Safety Seal certified for tent installations." },
+                  { title: "Licensed & SIOTO-certified", body: "Fully licensed and insured in Illinois. SIOTO Safety Seal certified — SIOTO operator safety training, verifiable at sioto.com." },
                 ].map((item) => (
                   <li key={item.title} className="flex gap-3">
                     <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[var(--gold)]/15 text-[0.6rem] font-bold text-[var(--gold)]">✓</span>

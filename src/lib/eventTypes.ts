@@ -31,6 +31,10 @@ export type EventTypeData = {
   resourceLinks: { href: string; label: string }[];
   /** Schema.org @type for the event */
   schemaEventType: string;
+  /** Optional full-bleed hero photo (gradient scrim layered on top for text contrast) */
+  heroBackgroundImage?: { src: string; alt: string };
+  /** Lighter scrim over hero photo so more of the image shows through (still uses heroGradient colors) */
+  heroScrim?: "default" | "light";
   /** Gradient colors for placeholder images */
   heroGradient: { from: string; to: string };
   midGradient: { from: string; to: string };
@@ -162,7 +166,7 @@ export const EVENT_TYPE_DATA: Record<EventTypeSlug, EventTypeData> = {
       {
         question: "Are you insured for corporate events and vendor requirements?",
         answer:
-          "Yes. Sterling Event Rentals is fully licensed and insured in Illinois, and SIOTO Safety Seal certified for tent installations. We can provide certificates of insurance and vendor documentation for corporate venues, hotels, and park districts that require it.",
+          "Yes. Sterling Event Rentals is fully licensed and insured in Illinois, and SIOTO Safety Seal certified (SIOTO operator safety training; verify at sioto.com). We can provide certificates of insurance and vendor documentation for corporate venues, hotels, and park districts that require it.",
       },
       {
         question: "Do you serve Chicago and suburban corporate locations?",
@@ -179,6 +183,11 @@ export const EVENT_TYPE_DATA: Record<EventTypeSlug, EventTypeData> = {
       { href: "/services/games-entertainment", label: "Games & entertainment rentals" },
     ],
     schemaEventType: "BusinessEvent",
+    heroBackgroundImage: {
+      src: "/images/outdoor-event-planning/corporate_events.webp",
+      alt: "Outdoor corporate event under a white tent with banquet tables and guests.",
+    },
+    heroScrim: "light",
     heroGradient: { from: "#0b1f3a", to: "#020810" },
     midGradient: { from: "#1a2e50", to: "#071020" },
     aboutSectionImage: {
@@ -319,7 +328,7 @@ export const EVENT_TYPE_DATA: Record<EventTypeSlug, EventTypeData> = {
       {
         question: "Are you insured for wedding venue requirements?",
         answer:
-          "Yes. Sterling Event Rentals is fully licensed and insured in Illinois and SIOTO Safety Seal certified. We can provide certificates of insurance and certification documentation for wedding venues, country clubs, and park districts that require vendor verification.",
+          "Yes. Sterling Event Rentals is fully licensed and insured in Illinois and SIOTO Safety Seal certified (SIOTO operator safety training; verify at sioto.com). We can provide certificates of insurance and certification documentation for wedding venues, country clubs, and park districts that require vendor verification.",
       },
     ],
     resourceLinks: [
@@ -331,6 +340,11 @@ export const EVENT_TYPE_DATA: Record<EventTypeSlug, EventTypeData> = {
       { href: "/services/event-extras", label: "Champagne walls & event extras" },
     ],
     schemaEventType: "SocialEvent",
+    heroBackgroundImage: {
+      src: "/images/outdoor-event-planning/outdoor-wedding.webp",
+      alt: "Outdoor wedding reception under a white tent with banquet tables and string lights.",
+    },
+    heroScrim: "light",
     heroGradient: { from: "#1a0a2e", to: "#060210" },
     midGradient: { from: "#2a1540", to: "#0d0620" },
     aboutSectionImage: {
@@ -478,6 +492,11 @@ export const EVENT_TYPE_DATA: Record<EventTypeSlug, EventTypeData> = {
       { href: "/services/games-entertainment", label: "Games & entertainment rentals" },
     ],
     schemaEventType: "SocialEvent",
+    heroBackgroundImage: {
+      src: "/images/outdoor-event-planning/private-parties-backyard.webp",
+      alt: "Backyard private party with a white tent, tables, and seating on a residential lawn.",
+    },
+    heroScrim: "light",
     heroGradient: { from: "#1f0a0a", to: "#080202" },
     midGradient: { from: "#2e1010", to: "#120404" },
     aboutSectionImage: {
