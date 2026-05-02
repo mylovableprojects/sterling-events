@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { SpeakableWebPageScript } from "@/components/SpeakableWebPageScript";
+import { AnswerPageHero } from "@/components/AnswerPageHero";
+import { BelowHeroQuickAnswer } from "@/components/BelowHeroQuickAnswer";
 import { AnswerSpokeLinks } from "@/components/AnswerSpokeLinks";
 import { ANSWER_SPOKE_CONFIG } from "@/lib/answerPages";
 
@@ -9,12 +11,16 @@ const BASE = "https://www.sterlingeventrentals.com";
 const canonical = `${BASE}/answers/${slug}`;
 
 export const metadata: Metadata = {
-  title: "Can I Book Last-Minute Event Rentals in Chicago? | Sterling Event Rentals",
-  description: "Yes — Sterling Event Rentals can often accommodate last-minute bookings in Chicago and Chicagoland. Call (773) 692-7576 to check availability. Deposit required to confirm your date and equipment.",
+  title:
+    "Can I Book Last-Minute Event Rentals in Chicago? | Sterling Event Rentals",
+  description:
+    "Yes — Sterling Event Rentals can often accommodate last-minute bookings in Chicago and Chicagoland. Call (773) 692-7576 to check availability. Deposit required to confirm your date and equipment.",
   alternates: { canonical },
   openGraph: {
-    title: "Can I Book Last-Minute Event Rentals in Chicago? | Sterling Event Rentals",
-    description: "Yes — Sterling Event Rentals can often accommodate last-minute bookings in Chicago and Chicagoland. Call (773) 692-7576 to check availability. Deposit required to confirm your date and equipment.",
+    title:
+      "Can I Book Last-Minute Event Rentals in Chicago? | Sterling Event Rentals",
+    description:
+      "Yes — Sterling Event Rentals can often accommodate last-minute bookings in Chicago and Chicagoland. Call (773) 692-7576 to check availability. Deposit required to confirm your date and equipment.",
     url: canonical,
     images: [
       {
@@ -27,8 +33,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Can I Book Last-Minute Event Rentals in Chicago? | Sterling Event Rentals",
-    description: "Yes — Sterling Event Rentals can often accommodate last-minute bookings in Chicago and Chicagoland. Call (773) 692-7576 to check availability. Deposit required to confirm your date and equipment.",
+    title:
+      "Can I Book Last-Minute Event Rentals in Chicago? | Sterling Event Rentals",
+    description:
+      "Yes — Sterling Event Rentals can often accommodate last-minute bookings in Chicago and Chicagoland. Call (773) 692-7576 to check availability. Deposit required to confirm your date and equipment.",
   },
 };
 
@@ -52,8 +60,18 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: BASE },
-    { "@type": "ListItem", position: 2, name: "Answers", item: `${BASE}/answers` },
-    { "@type": "ListItem", position: 3, name: "Last-minute rentals", item: canonical },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Answers",
+      item: `${BASE}/answers`,
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Last-minute rentals",
+      item: canonical,
+    },
   ],
 };
 
@@ -61,31 +79,25 @@ export default function AnswerPage() {
   const config = ANSWER_SPOKE_CONFIG[slug];
   return (
     <>
-      <Script id="ld-faq" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <Script
+        id="ld-faq"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Script
         id="ld-breadcrumbs"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <section className="gradient-hero relative min-h-[75vh]">
-        <div className="gradient-orb -left-24 top-10 h-56 w-56" />
-        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-6 px-6">
-          <Breadcrumbs
-            items={[
-              { href: "/", label: "Home" },
-              { href: "/answers", label: "Answers" },
-              { href: `/answers/${slug}`, label: config?.breadcrumbLabel ?? "Last-minute rentals" },
-            ]}
-          />
-          <p className="section-eyebrow">Quick answer</p>
-          <h1 className="hero-headline text-[var(--cream)]">Can I book last-minute event rentals in Chicago?</h1>
-          <div className="quick-answer mt-6 max-w-2xl rounded-xl border-l-4 border-[var(--gold)]/50 bg-black/35 p-4 hero-subheadline text-[var(--champagne)]/85">
-            <p className="faq-answer">{quickAnswerText}</p>
-          </div>
-          <AnswerSpokeLinks slug={slug} />
+      <SpeakableWebPageScript pageUrl={canonical} />
+      <AnswerPageHero slug="can-i-book-last-minute-event-rentals" title="Can I book last-minute event rentals in Chicago?" lastCrumbLabel={config.breadcrumbLabel} />
+
+      <BelowHeroQuickAnswer>
+        <div className="quick-answer max-w-2xl rounded-xl border-l-4 border-[var(--gold)]/50 bg-black/35 p-4 hero-subheadline text-[var(--champagne)]/85">
+          <p className="faq-answer">{quickAnswerText}</p>
         </div>
-      </section>
+        <AnswerSpokeLinks slug={slug} />
+      </BelowHeroQuickAnswer>
     </>
   );
 }
-

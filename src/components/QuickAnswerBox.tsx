@@ -1,9 +1,9 @@
 import { ReactNode } from "react";
 
 type Props = {
-  /** Direct answer text or markup. AEO target — no preamble. */
+  /** Direct answer text or markup. AEO target — lead with the answer, no preamble. */
   children: ReactNode;
-  /** Optional label above the answer (e.g. "Quick answer"). */
+  /** Optional visible kicker above the answer (most pages omit this). */
   label?: string;
   /** Visual variant: default (dark), or light for cream/light pages. */
   variant?: "default" | "light";
@@ -13,18 +13,18 @@ type Props = {
 
 /**
  * Styled answer block for AEO pages. Use for featured-snippet / AI Overview target.
- * Includes .quick-answer and .faq-answer for Speakable schema.
+ * Uses `.quick-answer` / `.faq-answer` so optional `SpeakableWebPageScript` (or Article `speakable`) can target the same DOM via cssSelector.
  */
 export function QuickAnswerBox({
   children,
-  label = "Quick answer",
+  label,
   variant = "default",
   accent = false,
 }: Props) {
   const isLight = variant === "light";
   return (
     <div
-      className={`quick-answer max-w-2xl rounded-xl ${
+      className={`quick-answer w-full max-w-2xl rounded-xl md:max-w-3xl ${
         isLight
           ? "bg-[var(--navy)]/10 p-4 text-[var(--charcoal)]/90"
           : "border border-[var(--gold)]/30 bg-[var(--navy)]/60 p-6 text-base leading-relaxed text-[var(--champagne)]"

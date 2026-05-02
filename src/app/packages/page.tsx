@@ -2,8 +2,9 @@ import Script from "next/script";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { BelowHeroQuickAnswer } from "@/components/BelowHeroQuickAnswer";
+import { PageHero } from "@/components/PageHero";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { SectionIntro } from "@/components/SectionIntro";
 import { PackageCard } from "@/components/PackageCard";
 import { FAQAccordion } from "@/components/FAQAccordion";
 
@@ -165,40 +166,19 @@ export default function PackagesPage() {
         }}
       />
 
-      {/* HERO */}
-      <section className="gradient-hero relative min-h-[75vh] overflow-hidden">
-        <div className="gradient-orb -left-24 top-10 h-56 w-56" />
-        <div className="gradient-orb bottom-[-5rem] right-[-4rem] h-72 w-72 opacity-60" />
-        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-6 px-6">
+      <PageHero
+        breadcrumbs={
           <Breadcrumbs
             items={[
               { href: "/", label: "Home" },
               { href: canonical, label: "Packages" },
             ]}
           />
-          <SectionIntro
-            eyebrow="Packages"
-            title="Which setup is right for your event?"
-            quickAnswer={
-              <div className="quick-answer">
-                <h2 className="mb-1 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--gold-light)]">
-                  Quick answer
-                </h2>
-                <p>
-                  Sterling Event Rentals offers three package tiers for events of 25 to 300+ guests across Chicago and Chicagoland. Each package includes a tent, tables, chairs, and professional delivery, setup, and teardown. A $500 minimum applies. Request a quote to confirm pricing and availability for your date.
-                </p>
-              </div>
-            }
-          />
-          <div className="mt-8 flex flex-wrap items-center gap-4">
-            <a href="/contact" className="btn-primary">
-              Check Availability for Your Date
-            </a>
-            <a href="/services" className="btn-outline">
-              Browse Individual Services
-            </a>
-          </div>
-          <p className="mt-5 text-sm text-[var(--champagne)]/70">
+        }
+        eyebrow="Packages"
+        title="Which setup is right for your event?"
+        afterPhone={
+          <p className="text-sm text-[var(--champagne)]/70">
             <Link
               href="/packages/pricing"
               className="border-b border-[var(--gold)]/25 pb-0.5 text-[var(--gold-light)] transition-colors hover:border-[var(--gold)]"
@@ -206,8 +186,16 @@ export default function PackagesPage() {
               Full itemized price list (PDF) →
             </Link>
           </p>
+        }
+      />
+
+      <BelowHeroQuickAnswer>
+        <div className="quick-answer max-w-2xl rounded-xl border border-[var(--gold)]/30 bg-[var(--navy)]/60 p-6">
+          <p className="faq-answer text-base leading-relaxed text-[var(--champagne)]">
+            Sterling Event Rentals offers three package tiers for events of 25 to 300+ guests across Chicago and Chicagoland. Each package includes a tent, tables, chairs, and professional delivery, setup, and teardown. A $500 minimum applies. Request a quote to confirm pricing and availability for your date.
+          </p>
         </div>
-      </section>
+      </BelowHeroQuickAnswer>
 
       {/* PACKAGE CARDS */}
       <section className="bg-[var(--cream)] py-20">

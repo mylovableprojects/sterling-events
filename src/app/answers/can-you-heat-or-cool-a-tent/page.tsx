@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { SpeakableWebPageScript } from "@/components/SpeakableWebPageScript";
+import { AnswerPageHero } from "@/components/AnswerPageHero";
+import { BelowHeroQuickAnswer } from "@/components/BelowHeroQuickAnswer";
 import { AnswerSpokeLinks } from "@/components/AnswerSpokeLinks";
 import { ANSWER_SPOKE_CONFIG } from "@/lib/answerPages";
 
@@ -10,11 +12,13 @@ const canonical = `${BASE}/answers/${slug}`;
 
 export const metadata: Metadata = {
   title: "Can You Heat or Cool a Tent? | Sterling Event Rentals",
-  description: "Heating and cooling options are available for tented events in Chicago and Chicagoland. Ask Sterling about heaters for spring and fall events, and cooling solutions for hot summer dates.",
+  description:
+    "Heating and cooling options are available for tented events in Chicago and Chicagoland. Ask Sterling about heaters for spring and fall events, and cooling solutions for hot summer dates.",
   alternates: { canonical },
   openGraph: {
     title: "Can You Heat or Cool a Tent? | Sterling Event Rentals",
-    description: "Heating and cooling options are available for tented events in Chicago and Chicagoland. Ask Sterling about heaters for spring and fall events, and cooling solutions for hot summer dates.",
+    description:
+      "Heating and cooling options are available for tented events in Chicago and Chicagoland. Ask Sterling about heaters for spring and fall events, and cooling solutions for hot summer dates.",
     url: canonical,
     images: [
       {
@@ -28,7 +32,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Can You Heat or Cool a Tent? | Sterling Event Rentals",
-    description: "Heating and cooling options are available for tented events in Chicago and Chicagoland. Ask Sterling about heaters for spring and fall events, and cooling solutions for hot summer dates.",
+    description:
+      "Heating and cooling options are available for tented events in Chicago and Chicagoland. Ask Sterling about heaters for spring and fall events, and cooling solutions for hot summer dates.",
   },
 };
 
@@ -52,8 +57,18 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: BASE },
-    { "@type": "ListItem", position: 2, name: "Answers", item: `${BASE}/answers` },
-    { "@type": "ListItem", position: 3, name: "Tent heating/cooling", item: canonical },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Answers",
+      item: `${BASE}/answers`,
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Tent heating/cooling",
+      item: canonical,
+    },
   ],
 };
 
@@ -61,31 +76,25 @@ export default function AnswerPage() {
   const config = ANSWER_SPOKE_CONFIG[slug];
   return (
     <>
-      <Script id="ld-faq" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <Script
+        id="ld-faq"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Script
         id="ld-breadcrumbs"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <section className="gradient-hero relative min-h-[75vh]">
-        <div className="gradient-orb -left-24 top-10 h-56 w-56" />
-        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-6 px-6">
-          <Breadcrumbs
-            items={[
-              { href: "/", label: "Home" },
-              { href: "/answers", label: "Answers" },
-              { href: `/answers/${slug}`, label: config?.breadcrumbLabel ?? "Tent heating/cooling" },
-            ]}
-          />
-          <p className="section-eyebrow">Quick answer</p>
-          <h1 className="hero-headline text-[var(--cream)]">Can you heat or cool a tent?</h1>
-          <div className="quick-answer mt-6 max-w-2xl rounded-xl border-l-4 border-[var(--gold)]/50 bg-black/35 p-4 hero-subheadline text-[var(--champagne)]/85">
-            <p className="faq-answer">{quickAnswerText}</p>
-          </div>
-          <AnswerSpokeLinks slug={slug} />
+      <SpeakableWebPageScript pageUrl={canonical} />
+      <AnswerPageHero slug="can-you-heat-or-cool-a-tent" title="Can you heat or cool a tent?" lastCrumbLabel={config.breadcrumbLabel} />
+
+      <BelowHeroQuickAnswer>
+        <div className="quick-answer max-w-2xl rounded-xl border-l-4 border-[var(--gold)]/50 bg-black/35 p-4 hero-subheadline text-[var(--champagne)]/85">
+          <p className="faq-answer">{quickAnswerText}</p>
         </div>
-      </section>
+        <AnswerSpokeLinks slug={slug} />
+      </BelowHeroQuickAnswer>
     </>
   );
 }
-

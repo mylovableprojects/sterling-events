@@ -3,6 +3,8 @@ import Script from "next/script";
 import Link from "next/link";
 import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { PageHero } from "@/components/PageHero";
+import { BelowHeroQuickAnswer } from "@/components/BelowHeroQuickAnswer";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { TentPermitPathDiagram } from "@/components/TentPermitPathDiagram";
 
@@ -54,7 +56,12 @@ const articleSchema = {
     logo: { "@type": "ImageObject", url: `${BASE}/logo.png` },
   },
   datePublished: "2026-03-01",
-  dateModified: "2026-03-22",
+  dateModified: "2026-05-02",
+  mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: [".quick-answer", ".faq-answer"],
+  },
 };
 
 const faqItems = [
@@ -125,10 +132,8 @@ export default function ChicagoTentPermitsPage() {
       <Script id="ld-faq" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Script id="ld-bc" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
-      {/* ── HERO ── */}
-      <section className="gradient-hero relative min-h-[60vh]">
-        <div className="gradient-orb -left-24 top-10 h-56 w-56" />
-        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-6 px-6">
+      <PageHero
+        breadcrumbs={
           <Breadcrumbs
             items={[
               { href: "/", label: "Home" },
@@ -136,19 +141,42 @@ export default function ChicagoTentPermitsPage() {
               { href: "/resources/chicago-tent-permits", label: "Chicago Tent Permits" },
             ]}
           />
-          <p className="section-eyebrow text-[var(--gold-light)]">Resource Guide</p>
-          <h1 className="hero-headline text-[var(--cream)]">
-            Do you need a tent permit in Chicago?
-          </h1>
-          <p className="max-w-2xl text-lg leading-relaxed text-[var(--champagne)]/85" aria-label="Quick answer">
+        }
+        eyebrow="Resource Guide"
+        title="Do you need a tent permit in Chicago?"
+        subhead={tentPermitsDescription}
+        primaryCta={{ href: "/contact", label: "Get a Quote for Your Event" }}
+        secondaryCta={{ href: "/resources/tent-sizing-guide", label: "What size tent do I need? →" }}
+      />
+
+      <BelowHeroQuickAnswer>
+        <div className="max-w-2xl space-y-4">
+          <p className="quick-answer faq-answer text-lg leading-relaxed text-[var(--champagne)]/85">
             {quickAnswer}
           </p>
-          <div className="flex flex-wrap items-center gap-4">
-            <Link href="/contact" className="btn-primary">Get a Quote for Your Event</Link>
-            <Link href="/resources/tent-sizing-guide" className="btn-outline">What size tent do I need? →</Link>
-          </div>
+          <p className="text-sm leading-relaxed text-[var(--champagne)]/75">
+            For published thresholds and fees, rely on the{" "}
+            <a
+              href="https://www.chicago.gov/content/city/en/depts/bldgs/supp_info/tempstructures/tents.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-[var(--gold-light)] underline decoration-[var(--gold)]/50 underline-offset-2 hover:decoration-[var(--gold)]"
+            >
+              Chicago Department of Buildings — temporary tent procedures
+            </a>
+            . The city&apos;s Express Permit pathway for qualifying small temporary structures is outlined{" "}
+            <a
+              href="https://www.chicago.gov/city/en/sites/guide-to-building-permits/home/instructions/EPP/TEMP.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-[var(--gold-light)] underline decoration-[var(--gold)]/50 underline-offset-2 hover:decoration-[var(--gold)]"
+            >
+              here (EPP: small temporary structure)
+            </a>
+            — including timing rules (applications must be started at least a few days before install; do not start more than 180 days early). Fees and checklists change; confirm the current table on chicago.gov before you file.
+          </p>
         </div>
-      </section>
+      </BelowHeroQuickAnswer>
 
       {/* ── PERMIT THRESHOLD TIERS ── */}
       <section className="bg-[var(--cream)] py-14">
@@ -214,9 +242,38 @@ export default function ChicagoTentPermitsPage() {
             </p>
           </div>
 
-          <p className="mt-3 text-xs italic" style={{ color: "rgba(30,40,60,0.4)" }}>
-            Thresholds are for Chicago private property. Park District and other jurisdictions have separate rules. Confirm current requirements with the Chicago Department of Buildings before your event.
-          </p>
+          <div className="mt-5 rounded-xl border border-[var(--navy)]/12 bg-white px-5 py-4">
+            <p className="text-xs font-semibold uppercase tracking-widest text-[var(--navy)]/70">
+              Official sources
+            </p>
+            <ul className="mt-2 list-disc space-y-2 pl-5 text-sm leading-relaxed text-[var(--charcoal)]/85">
+              <li>
+                <a
+                  href="https://www.chicago.gov/content/city/en/depts/bldgs/supp_info/tempstructures/tents.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-[var(--navy)] underline decoration-[var(--gold)]/60 underline-offset-2 hover:decoration-[var(--gold)]"
+                >
+                  Chicago Department of Buildings — temporary tent permitting procedures
+                </a>{" "}
+                (400 sq ft / 15 ft thresholds, permit types, and fee tables as published by the city).
+              </li>
+              <li>
+                <a
+                  href="https://www.cityofchicago.org/city/en/depts/dca/supp_info/neighborhood_festivals.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-[var(--navy)] underline decoration-[var(--gold)]/60 underline-offset-2 hover:decoration-[var(--gold)]"
+                >
+                  DCASE — special events permit information
+                </a>{" "}
+                for outdoor festivals, athletic events, and other special events that may require a separate permit from the Department of Cultural Affairs and Special Events.
+              </li>
+            </ul>
+            <p className="mt-3 text-xs italic text-[var(--charcoal)]/50">
+              Thresholds on this page summarize common private-property cases. Park District and other jurisdictions have separate rules — confirm current requirements with the relevant agency before your event.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -256,7 +313,16 @@ export default function ChicagoTentPermitsPage() {
             <div>
               <h2 className={H2}>When is a tent permit required in Chicago?</h2>
               <p className={BODY}>
-                In Chicago, a building permit is required for any tent <strong>over 400 sq ft</strong> or <strong>taller than 15 ft</strong>. A standard 20×20 frame tent (400 sq ft) sits right at the threshold — typically no permit needed for private property events. A 20×30 or larger crosses into permit territory. Tents 600 sq ft and above require engineered drawings in addition to the standard permit, which adds paperwork and lead time.
+                In Chicago, a building permit is required for any tent <strong>over 400 sq ft</strong> or <strong>taller than 15 ft</strong>. A standard 20×20 frame tent (400 sq ft) sits right at the threshold — typically no permit needed for private property events. A 20×30 or larger crosses into permit territory. Tents 600 sq ft and above require engineered drawings in addition to the standard permit, which adds paperwork and lead time. The{" "}
+                <a
+                  href="https://www.chicago.gov/content/city/en/depts/bldgs/supp_info/tempstructures/tents.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-[var(--navy)] underline decoration-[var(--gold)]/60 underline-offset-2 hover:decoration-[var(--gold)]"
+                >
+                  Department of Buildings publishes the authoritative wording
+                </a>{" "}
+                for when a permit is required and which application path (EPP vs. engineered drawings) applies.
               </p>
               <p className="mt-3 text-sm leading-relaxed" style={{ color: "rgba(30,40,60,0.6)" }}>
                 Park venues and events involving public access or street closures may have additional or separate permit requirements regardless of tent size.

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import Link from "next/link";
+import { BelowHeroQuickAnswer } from "@/components/BelowHeroQuickAnswer";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { PageHero } from "@/components/PageHero";
 
 const BASE = "https://www.sterlingeventrentals.com";
 const canonical = `${BASE}/packages/pricing`;
@@ -98,56 +101,31 @@ export default function PackagesPricingPage() {
       <Script id="ld-pricing-bc" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Script id="ld-pricing-webpage" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
-      <section className="gradient-hero relative min-h-[48vh]">
-        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
-          <div
-            className="absolute -right-20 top-24 h-72 w-72 rounded-full opacity-[0.12]"
-            style={{
-              background: "radial-gradient(circle, rgba(201,168,76,0.9) 0%, transparent 70%)",
-              filter: "blur(40px)",
-            }}
+      <PageHero
+        breadcrumbs={
+          <Breadcrumbs
+            items={[
+              { href: "/", label: "Home" },
+              { href: "/packages", label: "Packages" },
+              { href: canonical, label: "Pricing" },
+            ]}
           />
-          <div
-            className="absolute bottom-0 left-1/4 h-px w-1/2 opacity-20"
-            style={{
-              background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.8), transparent)",
-            }}
-          />
-        </div>
-        <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
-          <nav className="mb-6 text-[0.7rem] tracking-[0.2em] text-[var(--champagne)]/55" aria-label="Breadcrumb">
-            <Link href="/" className="transition-colors hover:text-[var(--gold-light)]">
-              Home
-            </Link>
-            <span className="mx-2 text-[var(--champagne)]/35">/</span>
-            <Link href="/packages" className="transition-colors hover:text-[var(--gold-light)]">
-              Packages
-            </Link>
-            <span className="mx-2 text-[var(--champagne)]/35">/</span>
-            <span className="text-[var(--gold-light)]/90">Pricing</span>
-          </nav>
-          <p className="section-eyebrow text-[var(--gold-light)]">Packages</p>
-          <h1 className="hero-headline max-w-3xl text-[var(--cream)]">
-            Event rental pricing &amp; price list
-          </h1>
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[var(--champagne)]/88" id="quick-answer">
-            {quickAnswer}
-          </p>
-          <div className="mt-8 flex flex-wrap items-center gap-4">
-            <a
-              href={PDF_PATH}
-              download
-              className="btn-primary inline-flex items-center gap-2"
-            >
-              <span aria-hidden>↓</span>
-              Download PDF price list
-            </a>
-            <Link href="/contact" className="btn-outline">
-              Get a custom quote →
-            </Link>
-          </div>
-        </div>
-      </section>
+        }
+        eyebrow="Packages"
+        title="Event rental pricing & price list"
+        subhead={description}
+        primaryCta={{ href: PDF_PATH, label: "Download PDF price list", download: true }}
+        secondaryCta={{ href: "/contact", label: "Get a custom quote →" }}
+      />
+
+      <BelowHeroQuickAnswer>
+        <p
+          className="quick-answer faq-answer max-w-2xl text-lg leading-relaxed text-[var(--champagne)]/88"
+          id="quick-answer"
+        >
+          {quickAnswer}
+        </p>
+      </BelowHeroQuickAnswer>
 
       <section className="border-t border-[var(--navy)]/10 bg-[var(--cream)] py-14">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[1fr_1.1fr] lg:items-start">

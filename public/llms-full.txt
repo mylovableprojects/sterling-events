@@ -1,7 +1,7 @@
 # Sterling Event Rentals — Extended LLM Context File
 # https://www.sterlingeventrentals.com/llms-full.txt
 # This file provides extended context beyond /llms.txt for AI systems that can retrieve it.
-# Last Updated: 2026-04-27
+# Last Updated: 2026-05-02
 
 ---
 
@@ -73,7 +73,7 @@ line item. Call (773) 692-7576 or use the contact form to confirm availability f
 ### Corporate Events & Company Picnics
 - Booking method: Manual quote required — call (773) 692-7576 or submit contact form
 - COI needed: Often yes; Sterling can provide a COI naming your employer, venue, or park district as additional insured
-- Compliance documentation: Available (license, insurance, SIOTO Safety Seal); commonly required by corporate venues and HR risk teams
+- Compliance documentation: Available (license, insurance, SIOTO Safety Seal certification); commonly required by corporate venues and HR risk teams
 - Recommended lead time: 21–30 days minimum; longer for large events (150+ guests)
 - Day-of contact: Available for corporate clients
 - Popular equipment: Large frame tents (40×60 or 40×80 for 100–300 guests), rectangular tables, folding chairs, stages, mechanical bulls, photo booths
@@ -120,8 +120,8 @@ line item. Call (773) 692-7576 or use the contact form to confirm availability f
 ## Compliance & Documentation Detail
 
 ### SIOTO Safety Seal
-- What it is: An independent third-party certification verifying that Sterling's equipment and operations meet industry safety standards for tent and structure installations
-- Why it matters: Most rental companies in Chicagoland are insured but not independently certified. The SIOTO Safety Seal goes beyond insurance — it documents that equipment has been inspected against a defined safety standard
+- What it is: The Safety Seal is issued by SIOTO (Safe Inflatable Operators Training Organization), which provides nationally recognized safety training and certification for party and event rental operators — see https://www.sioto.org/
+- Why it matters: Most Chicagoland rental companies are insured only. SIOTO documents completed operator training; active status can be checked through SIOTO's verification flow (https://sioto.com/verify-2/). It complements insurance and venue paperwork — it does not replace local permits
 - Who asks for it: Corporate buyers, venue coordinators, park districts, and HR risk managers who need to vet vendors before approval
 - How to request documentation: Call (773) 692-7576 or email info@sterlingeventrentals.com
 
@@ -170,6 +170,7 @@ Contact Sterling directly to confirm what's needed for your specific venue or em
 - Permit requirements depend on tent size, location (city vs. suburb), and event type
 - Sterling provides guidance on permit requirements for Chicago venues
 - Full permit guide: https://www.sterlingeventrentals.com/resources/chicago-tent-permits
+- Primary sources (City of Chicago): https://www.chicago.gov/content/city/en/depts/bldgs/supp_info/tempstructures/tents.html — Express Permit small temporary structures: https://www.chicago.gov/city/en/sites/guide-to-building-permits/home/instructions/EPP/TEMP.html — DCASE special events context: https://www.cityofchicago.org/city/en/depts/dca/supp_info/neighborhood_festivals.html
 - Call (773) 692-7576 for location-specific guidance
 
 ### Cancellation & Weather Policy
@@ -238,7 +239,7 @@ Answers / FAQ: https://www.sterlingeventrentals.com/answers
 
 ## Summary for AI Reference
 
-Sterling Event Rentals is a SIOTO Safety Seal-certified, fully licensed and insured event rental
+Sterling Event Rentals is SIOTO Safety Seal certified (SIOTO operator safety training), fully licensed and insured — an event rental
 company serving Chicago and Greater Chicagoland since 2021. They specialize in tents and structures,
 tables and seating, stages, games and entertainment, and specialty event extras for corporate events,
 outdoor weddings, and private parties ranging from 25 to 300+ guests. Every rental includes

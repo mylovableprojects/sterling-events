@@ -2,7 +2,9 @@ import Script from "next/script";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { BelowHeroQuickAnswer } from "@/components/BelowHeroQuickAnswer";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { PageHero } from "@/components/PageHero";
 
 const BASE = "https://www.sterlingeventrentals.com";
 const title = "Chicago Event Planning Resources | Sterling Event Rentals";
@@ -157,27 +159,24 @@ export default function ResourcesPage() {
       <Script id="ld-bc-resources" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Script id="ld-collection-resources" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
 
-      {/* ── HERO ── */}
-      <section className="gradient-hero relative min-h-[72vh]">
-        <div className="gradient-orb -left-24 top-10 h-56 w-56" />
-        <div className="gradient-orb bottom-[-5rem] right-[-4rem] h-72 w-72 opacity-60" />
-        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 pb-16">
+      <PageHero
+        breadcrumbs={
           <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: "/resources", label: "Resources" }]} />
-          <p className="section-eyebrow">Planning Resources</p>
-          <h1 className="hero-headline text-[var(--cream)]">
-            Plan your outdoor event in Chicago — the right way.
-          </h1>
-          <div className="quick-answer mt-2 max-w-2xl rounded-xl border border-[var(--gold)]/30 bg-[var(--navy)]/60 p-6">
-            <p className="text-lg leading-relaxed text-[var(--champagne)]">
-              These four free guides cover every question a first-time outdoor event host asks before booking rentals in Chicagoland: how to size a tent, when permits are required, how to plan around the weather, and what a corporate event timeline looks like. Read before you call and your quote conversation takes 10 minutes instead of 30.
-            </p>
-          </div>
-          <div className="mt-6 flex flex-wrap items-center gap-4">
-            <a href="/resources/tent-sizing-guide" className="btn-primary">Start With Tent Sizing</a>
-            <a href="/contact" className="btn-outline">Skip Ahead — Get a Quote</a>
-          </div>
+        }
+        eyebrow="Planning Resources"
+        title="Plan your outdoor event in Chicago — the right way."
+        subhead={description}
+        primaryCta={{ href: "/resources/tent-sizing-guide", label: "Start With Tent Sizing" }}
+        secondaryCta={{ href: "/contact", label: "Skip Ahead — Get a Quote" }}
+      />
+
+      <BelowHeroQuickAnswer>
+        <div className="quick-answer max-w-2xl rounded-xl border border-[var(--gold)]/30 bg-[var(--navy)]/60 p-6">
+          <p className="faq-answer text-lg leading-relaxed text-[var(--champagne)]">
+            These four free guides cover every question a first-time outdoor event host asks before booking rentals in Chicagoland: how to size a tent, when permits are required, how to plan around the weather, and what a corporate event timeline looks like. Read before you call and your quote conversation takes 10 minutes instead of 30.
+          </p>
         </div>
-      </section>
+      </BelowHeroQuickAnswer>
 
       {/* ── BEFORE YOU CALL STRIP ── */}
       <section style={{ backgroundColor: "#0b1f3a", borderTop: "1px solid rgba(201,168,76,0.15)", borderBottom: "1px solid rgba(201,168,76,0.15)" }} className="py-14">

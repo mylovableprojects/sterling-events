@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
+import { PageHero } from "@/components/PageHero";
 
 const BASE = "https://www.sterlingeventrentals.com";
 
@@ -64,53 +66,34 @@ export default function ContactPage() {
     <>
       <Script id="ld-contact" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageSchema) }} />
       <Script id="ld-bc-contact" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contactBreadcrumbSchema) }} />
-      <section className="gradient-hero relative min-h-[75vh]">
-        <div className="gradient-orb -left-28 top-6 h-56 w-56" />
-        <div className="gradient-orb bottom-[-4rem] right-[-3rem] h-72 w-72 opacity-60" />
-
-        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 md:flex-row md:items-start">
-          <div className="flex-1 space-y-5">
-            <div className="section-eyebrow">Contact</div>
-            <h1 className="hero-headline text-[var(--cream)]">
-              Get a quote for your Chicago event.
-            </h1>
-            <p className="max-w-md hero-subheadline leading-relaxed text-[var(--champagne)]/80">
-              Tell us your event date, location, and guest count. We’ll confirm availability and send a full itemized
-              quote — usually within one business day. Summer and fall weekends book fast, so it’s worth reaching out
-              early.
-            </p>
-            <div className="mt-8 space-y-3">
-              <div className="flex items-center gap-3">
-                <span className="w-14 text-xs font-semibold uppercase tracking-widest text-[var(--gold)]">
-                  Email
-                </span>
-                <a
-                  href="mailto:info@sterlingeventrentals.com"
-                  className="text-base text-[var(--champagne)]/80 transition-colors hover:text-[var(--gold)]"
-                >
-                  info@sterlingeventrentals.com
-                </a>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="w-14 text-xs font-semibold uppercase tracking-widest text-[var(--gold)]">
-                  Phone
-                </span>
-                <a
-                  href="tel:+17736927576"
-                  className="text-base text-[var(--champagne)]/80 transition-colors hover:text-[var(--gold)]"
-                >
-                  (773) 692-7576
-                </a>
-              </div>
-            </div>
+      <PageHero
+        breadcrumbs={
+          <Breadcrumbs
+            items={[
+              { href: "/", label: "Home" },
+              { href: "/contact", label: "Contact" },
+            ]}
+          />
+        }
+        eyebrow="Contact"
+        title="Get a quote for your Chicago event."
+        subhead="Tell us your event date, location, and guest count. We’ll confirm availability and send a full itemized quote — usually within one business day. Summer and fall weekends book fast, so it’s worth reaching out early."
+        primaryCta={{ href: "#contact-form", label: "Jump to quote form" }}
+        secondaryCta={{ href: "/services", label: "Browse Our Services" }}
+        afterPhone={
+          <a
+            href="mailto:info@sterlingeventrentals.com"
+            className="inline-block text-sm text-[var(--champagne)]/70 transition-colors hover:text-[var(--gold-light)]"
+          >
+            info@sterlingeventrentals.com
+          </a>
+        }
+        trailingSlot={
+          <div id="contact-form" className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
+            <ContactForm />
           </div>
-          <div className="mt-6 flex-1 md:mt-0">
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
-              <ContactForm />
-            </div>
-          </div>
-        </div>
-      </section>
+        }
+      />
 
       <section className="bg-[var(--sand)] py-16">
         <div className="mx-auto max-w-6xl px-6">

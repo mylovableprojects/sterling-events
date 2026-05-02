@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { PageHero } from "@/components/PageHero";
 
 const BASE = "https://www.sterlingeventrentals.com";
 const canonical = `${BASE}/reviews`;
@@ -43,30 +43,12 @@ export default function ReviewsPage() {
   return (
     <>
       <Script id="ld-bc-reviews" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsBreadcrumbSchema) }} />
-      <section className="gradient-hero relative min-h-[75vh]">
-        <div className="gradient-orb -left-24 top-10 h-56 w-56" />
-        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-6 px-6">
-          <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: "/reviews", label: "Reviews" }]} />
-          <p className="section-eyebrow">Reviews</p>
-          <h1 className="hero-headline text-[var(--cream)]">
-            What clients say about Sterling Event Rentals
-          </h1>
-          <p className="mt-4 max-w-xl hero-subheadline text-[var(--champagne)]/80">
-            Corporate planners, wedding couples, and private hosts across Chicago and Chicagoland. The things they mention most: on-time delivery, no surprises on pricing, and equipment that&apos;s clean and in place before guests arrive.
-          </p>
-          <p className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
-            <a
-              href="tel:+17736927576"
-              className="text-[var(--gold-light)] font-medium hover:underline"
-            >
-              (773) 692-7576
-            </a>
-            <Link href="/contact" className="text-[var(--gold-light)] font-medium hover:underline">
-              Check availability for your date →
-            </Link>
-          </p>
-        </div>
-      </section>
+      <PageHero
+        breadcrumbs={<Breadcrumbs items={[{ href: "/", label: "Home" }, { href: "/reviews", label: "Reviews" }]} />}
+        eyebrow="Reviews"
+        title="What clients say about Sterling Event Rentals"
+        subhead="Corporate planners, wedding couples, and private hosts across Chicago and Chicagoland. The things they mention most: on-time delivery, no surprises on pricing, and equipment that's clean and in place before guests arrive."
+      />
     </>
   );
 }

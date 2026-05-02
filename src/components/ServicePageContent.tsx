@@ -1,8 +1,9 @@
 "use client";
 
 import { Fragment } from "react";
-import Image from "next/image";
 import { BreadcrumbNav } from "@/components/BreadcrumbNav";
+import { PageHeroEmbedded } from "@/components/PageHero";
+import { BelowHeroQuickAnswer } from "@/components/BelowHeroQuickAnswer";
 import { QuickAnswerBox } from "@/components/QuickAnswerBox";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { CTABlock } from "@/components/CTABlock";
@@ -31,52 +32,26 @@ export function ServicePageContent({ data, slug }: Props) {
 
   const sections: ServicePageSections = {
     hero: (
-      <>
-        {data.heroImageSrc ? (
-          <>
-            <div className="absolute inset-0 z-0">
-              <Image
-                src={data.heroImageSrc}
-                alt={data.heroImageAlt ?? `${data.label} — event rental photography`}
-                fill
-                priority
-                sizes="100vw"
-                className="object-cover object-center"
-              />
-            </div>
-            <div
-              className="absolute inset-0 z-[2] bg-gradient-to-b from-[#050915]/90 via-[#0b1f3a]/75 to-[#02030a]/92"
-              aria-hidden
-            />
-          </>
-        ) : null}
-        <div className="gradient-orb -left-24 top-10 h-56 w-56" />
-        <div className="gradient-orb bottom-[-5rem] right-[-4rem] h-72 w-72 opacity-60" />
-        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 md:max-w-3xl">
-          <BreadcrumbNav items={crumbs} baseUrl={BASE} schemaId="ld-breadcrumbs-service" />
-          <p className="section-eyebrow">Services · {data.label}</p>
-          <h1 className="hero-headline text-[var(--cream)]">
-            {data.h1}
-          </h1>
-          {data.heroSubheadline && (
-            <p className="hero-subheadline text-[var(--champagne)]/90">
-              {data.heroSubheadline}
-            </p>
-          )}
-          <QuickAnswerBox>{data.quickAnswer}</QuickAnswerBox>
-          <div className="flex flex-wrap gap-3">
-            <Link href="/contact" className="btn-primary">
-              {data.ctaCopy}
-            </Link>
-            <Link
-              href="/packages"
-              className="btn-outline border-[var(--cream)]/30 text-[var(--cream)] hover:border-[var(--gold)]/50 hover:bg-[var(--gold)]/10"
-            >
-              {data.packagesCta}
-            </Link>
-          </div>
-        </div>
-      </>
+      <PageHeroEmbedded
+        breadcrumbs={<BreadcrumbNav items={crumbs} baseUrl={BASE} schemaId="ld-breadcrumbs-service" />}
+        eyebrow={`Services · ${data.label}`}
+        title={data.h1}
+        subhead={data.heroSubheadline}
+        backgroundImage={
+          data.heroImageSrc
+            ? {
+                src: data.heroImageSrc,
+                alt: data.heroImageAlt ?? `${data.label} — event rental photography`,
+              }
+            : undefined
+        }
+      />
+    ),
+
+    quickAnswer: (
+      <BelowHeroQuickAnswer>
+        <QuickAnswerBox>{data.quickAnswer}</QuickAnswerBox>
+      </BelowHeroQuickAnswer>
     ),
 
     whatWeDo: (

@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { SpeakableWebPageScript } from "@/components/SpeakableWebPageScript";
+import { AnswerPageHero } from "@/components/AnswerPageHero";
+import { BelowHeroQuickAnswer } from "@/components/BelowHeroQuickAnswer";
 import { AnswerSpokeLinks } from "@/components/AnswerSpokeLinks";
 import { ANSWER_SPOKE_CONFIG } from "@/lib/answerPages";
 
 const slug = "how-far-in-advance-book-event-rentals";
 const BASE = "https://www.sterlingeventrentals.com";
 const canonical = `${BASE}/answers/${slug}`;
+
+const advanceBookingAnswer =
+  "For corporate events, 21–30 days in advance is typical — enough time to confirm availability, get a quote, and lock your date with a deposit. For weddings, prime summer Saturdays and in-demand venues often book 12+ months ahead; if your date or location is more flexible, confirming 3–6 months before the event usually works — sooner is always safer. Social and private parties are often fine around 2–3 weeks, though peak summer weekends fill faster. As soon as you have a date and guest count, call (773) 692-7576 or request a quote. A 50% deposit holds your date.";
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -17,7 +22,7 @@ const faqSchema = {
       name: "How far in advance should I book event rentals?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "For corporate events, 21–30 days in advance is typical — enough time to confirm availability, get a quote, and lock your date with a deposit. For weddings, book 12–18 months out; popular Chicago-area dates fill fast. Social and private events are more flexible, but summer and fall weekends go quickly. A 50% deposit holds your date; call (773) 692-7576 or request a quote as soon as you have a date and guest count.",
+        text: advanceBookingAnswer,
       },
     },
   ],
@@ -28,18 +33,30 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: BASE },
-    { "@type": "ListItem", position: 2, name: "Answers", item: `${BASE}/answers` },
-    { "@type": "ListItem", position: 3, name: "How far in advance should I book event rentals?", item: canonical },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Answers",
+      item: `${BASE}/answers`,
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "How far in advance should I book event rentals?",
+      item: canonical,
+    },
   ],
 };
 
 export const metadata: Metadata = {
   title: "How Far in Advance to Book Event Rentals? | Sterling Event Rentals",
-  description: "Book corporate event rentals 21–30 days out. Weddings: 3–6 months. Private parties: 2–3 weeks. Peak summer weekends in Chicago fill fast — the sooner you confirm with a deposit, the better.",
+  description:
+    "Corporate events: often 21–30 days. Weddings: peak dates may book 12+ months out; many confirm 3–6 months ahead when flexible. Private parties: often 2–3 weeks. Chicago summer weekends fill fast — confirm with a deposit as soon as you can.",
   alternates: { canonical },
   openGraph: {
     title: "How Far in Advance to Book Event Rentals? | Sterling Event Rentals",
-    description: "Book corporate event rentals 21–30 days out. Weddings: 3–6 months. Private parties: 2–3 weeks. Peak summer weekends in Chicago fill fast — the sooner you confirm with a deposit, the better.",
+    description:
+      "Corporate events: often 21–30 days. Weddings: peak dates may book 12+ months out; many confirm 3–6 months ahead when flexible. Private parties: often 2–3 weeks. Chicago summer weekends fill fast — confirm with a deposit as soon as you can.",
     url: canonical,
     images: [
       {
@@ -53,7 +70,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "How Far in Advance to Book Event Rentals? | Sterling Event Rentals",
-    description: "Book corporate event rentals 21–30 days out. Weddings: 3–6 months. Private parties: 2–3 weeks. Peak summer weekends in Chicago fill fast — the sooner you confirm with a deposit, the better.",
+    description:
+      "Corporate events: often 21–30 days. Weddings: peak dates may book 12+ months out; many confirm 3–6 months ahead when flexible. Private parties: often 2–3 weeks. Chicago summer weekends fill fast — confirm with a deposit as soon as you can.",
   },
 };
 
@@ -61,28 +79,25 @@ export default function AnswerPage() {
   const config = ANSWER_SPOKE_CONFIG[slug];
   return (
     <>
-      <Script id="ld-faq" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <Script id="ld-breadcrumbs" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <section className="gradient-hero relative min-h-[75vh]">
-        <div className="gradient-orb -left-24 top-10 h-56 w-56" />
-        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-6 px-6">
-          <Breadcrumbs
-            items={[
-              { href: "/", label: "Home" },
-              { href: "/answers", label: "Answers" },
-              { href: `/answers/${slug}`, label: config.breadcrumbLabel },
-            ]}
-          />
-          <p className="section-eyebrow">Quick answer</p>
-          <h1 className="hero-headline text-[var(--cream)]">
-            How far in advance should I book event rentals?
-          </h1>
-          <div className="quick-answer mt-6 max-w-2xl rounded-xl border-l-4 border-[var(--gold)]/50 bg-black/35 p-4 hero-subheadline text-[var(--champagne)]/85">
-            <p className="faq-answer">For corporate events, 21–30 days in advance is typical — enough time to confirm availability, get a quote, and lock your date with a deposit. For weddings, book 12–18 months out; popular Chicago-area dates fill fast. Social and private events are more flexible, but summer and fall weekends go quickly. The rule: as soon as you have a date and guest count, call (773) 692-7576 or request a quote. A 50% deposit holds your date.</p>
-          </div>
-          <AnswerSpokeLinks slug={slug} />
+      <Script
+        id="ld-faq"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <Script
+        id="ld-breadcrumbs"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <SpeakableWebPageScript pageUrl={canonical} />
+      <AnswerPageHero slug="how-far-in-advance-book-event-rentals" title="How far in advance should I book event rentals?" lastCrumbLabel={config.breadcrumbLabel} />
+
+      <BelowHeroQuickAnswer>
+        <div className="quick-answer max-w-2xl rounded-xl border-l-4 border-[var(--gold)]/50 bg-black/35 p-4 hero-subheadline text-[var(--champagne)]/85">
+          <p className="faq-answer">{advanceBookingAnswer}</p>
         </div>
-      </section>
+        <AnswerSpokeLinks slug={slug} />
+      </BelowHeroQuickAnswer>
     </>
   );
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { PageHero } from "@/components/PageHero";
 import { ImageBreak } from "@/components/ImageBreak";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { RentalCard, RentalCategory, RentalItem } from "@/components/RentalCard";
@@ -110,23 +111,17 @@ export default function CollectionPage() {
     <>
       <Script id="ld-collection-items" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionItemListSchema) }} />
       <Script id="ld-bc-collection" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionBreadcrumbSchema) }} />
-      <section className="gradient-hero relative min-h-[75vh]">
-        <div className="gradient-orb -left-28 top-4 h-56 w-56" />
-        <div className="gradient-orb bottom-[-4rem] right-[-3rem] h-72 w-72 opacity-60" />
+      <PageHero
+        eyebrow="The Collection"
+        title="Pieces composed for the camera and the room."
+        subhead="Browse an edited selection of our most-requested pieces. For full inventory and custom pulls, share your date, guest count, and venue details via our inquiry form."
+        primaryCta={{ href: "/contact", label: "Begin an Inquiry" }}
+        secondaryCta={{ href: "/services", label: "Explore Services" }}
+      />
 
-        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-6 px-6">
-          <div className="space-y-4 md:max-w-2xl">
-            <div className="section-eyebrow">The Collection</div>
-            <h1 className="hero-headline text-[var(--cream)]">
-              Pieces composed for the camera and the room.
-            </h1>
-            <p className="hero-subheadline leading-relaxed text-[var(--champagne)]/80">
-              Browse an edited selection of our most-requested pieces. For full inventory and custom pulls, share your
-              date, guest count, and venue details via our inquiry form.
-            </p>
-          </div>
-
-          <ScrollReveal className="mt-6 flex flex-wrap gap-3 text-[0.76rem]">
+      <section className="bg-[var(--navy)]/55 py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <ScrollReveal className="mb-8 flex flex-wrap gap-3 text-[0.76rem]">
             {categories.map((category) => (
               <button
                 key={category}
@@ -137,11 +132,6 @@ export default function CollectionPage() {
               </button>
             ))}
           </ScrollReveal>
-        </div>
-      </section>
-
-      <section className="bg-[var(--navy)]/55 py-16">
-        <div className="mx-auto max-w-6xl px-4">
           <ScrollReveal className="mb-8 flex items-end justify-between gap-4">
             <div className="space-y-2">
               <div className="section-eyebrow">Selections</div>

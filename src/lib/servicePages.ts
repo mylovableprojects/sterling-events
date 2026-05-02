@@ -94,7 +94,7 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
     heroSubheadline:
       "When the tent goes up right, the rest of the day falls into place.",
     introParagraph:
-      "We set up tents for corporate picnics, outdoor weddings, milestone parties, school events, and park district events across Chicago and the suburbs. Our crew brings the tent, sets it up, and tears it down—you don't lift a thing. When you're putting a structure over dozens or hundreds of people, that's why we're SIOTO Safety Seal certified: our equipment and operations are independently inspected and certified, not just insured.",
+      "We set up tents for corporate picnics, outdoor weddings, milestone parties, school events, and park district events across Chicago and the suburbs. Our crew brings the tent, sets it up, and tears it down—you don't lift a thing. When you're putting a structure over dozens or hundreds of people, that's why we're SIOTO Safety Seal certified: SIOTO (Safe Inflatable Operators Training Organization) documents nationally recognized operator safety training you can verify online — it complements insurance and venue paperwork; it does not replace local permits.",
     tentSizeTable: {
       rows: [
         { guestCount: "25–50 guests", size: "20×20", bestFor: "Backyard parties, small corporate gatherings" },
@@ -108,7 +108,7 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
     trustStrip: [
       {
         title: "SIOTO Safety Seal Certified",
-        body: "Our equipment and operations are independently inspected and certified — not just insured.",
+        body: "SIOTO (Safe Inflatable Operators Training Organization) operator safety training — verifiable at sioto.com. Complements insurance; not a substitute for venue permits.",
       },
       {
         title: "Full-Service Crew",
@@ -179,14 +179,14 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
     ],
     faqs: [
       {
-        question: "How much does tent rental cost in Chicago?",
+        question: "What is included in Sterling's tent rental quote?",
         answer:
-          "Pricing depends on tent size, rental window, and add-ons like sidewalls. A $500 minimum applies. We quote the full amount—including setup fee—before you confirm. Request a quote for your date and guest count.",
+          "Your quote covers the tent structure (or structures), professional delivery, full install, and post-event teardown by our crew — plus any add-ons you selected such as sidewalls. The setup fee is always its own line item next to equipment so nothing hides in a bundled total. A $500 company minimum applies. Permits remain your responsibility; we're happy to explain thresholds, but we do not file permits for you.",
       },
       {
         question: "What happens if the weather is bad on the day of my event?",
         answer:
-          "Sterling will not set up in forecasted unsafe conditions. If weather is unsafe before setup begins, we work with you to reschedule when possible. Once delivery and setup are complete, no refund is issued. For Chicago wind and rain, tent sidewalls are a practical add-on for weather protection during the event.",
+          "Sterling will not set up in forecasted unsafe conditions. If weather is unsafe before setup begins, we work with you to reschedule when possible. Once delivery and setup are complete, no refund is issued. For Chicago wind and rain, tent sidewalls are a practical add-on for weather protection during the event. Refund timing and exceptions are spelled out at /legal/cancellation-policy and in your written quote.",
       },
       {
         question: "Do you need a permit for a tent in Chicago?",
@@ -202,11 +202,6 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
         question: "Can you set up a tent on concrete, asphalt, or a driveway?",
         answer:
           "Often, yes — but it depends on your surface and the setup area. Hard surfaces can change what’s possible for anchoring and placement, and some venues have their own rules. Share your venue address and setup area details when you request a quote and we’ll confirm feasibility and recommend the right setup.",
-      },
-      {
-        question: "What is the weather cancellation policy?",
-        answer:
-          "Sterling will not set up in forecasted unsafe conditions. If weather is unsafe before setup, we work with you to reschedule. Once delivery and setup are complete, no refund is issued. Tent sidewalls add weather protection during the event.",
       },
       {
         question: "Can you heat or cool a tent for an event?",
@@ -259,8 +254,15 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       "Cocktail tables and seating",
       "Full room setup — corporate event",
     ],
+    section2PhotoGridSrcs: [
+      "/images/outdoor-event-planning/round-tables-seating.webp",
+      "/images/outdoor-event-planning/cocktail_tables.webp",
+      "/images/outdoor-event-planning/round_table_rentals_chicago.webp",
+    ],
     section3ImageLabel: "Table layout — chairs and linens",
+    section3ImageSrc: "/images/outdoor-event-planning/chairs-linens-chicago.webp",
     section6ImageLabel: "Crew setting up tables and chairs",
+    section6ImageSrc: "/images/outdoor-event-planning/sterling-event-rentals.webp",
     processBlock: {
       headline: "Here's exactly what happens when you book",
       steps: [
@@ -285,7 +287,7 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       { href: "/services", label: "See all services" },
     ],
     trustStrip: [
-      { title: "SIOTO Safety Seal Certified", body: "Our equipment and operations are independently inspected and certified — not just insured." },
+      { title: "SIOTO Safety Seal Certified", body: "SIOTO (Safe Inflatable Operators Training Organization) operator safety training — verifiable at sioto.com. Complements insurance; not a substitute for venue permits." },
       { title: "Full-Service Crew", body: "We deliver, set up, and tear down. You don't touch a thing." },
       { title: "Serving Chicagoland Since 2021", body: "Four years of corporate events, weddings, and private parties across the Chicago area." },
     ],
@@ -445,7 +447,7 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       { href: "/services", label: "See all services" },
     ],
     trustStrip: [
-      { title: "SIOTO Safety Seal Certified", body: "Our equipment and operations are independently inspected and certified — not just insured." },
+      { title: "SIOTO Safety Seal Certified", body: "SIOTO (Safe Inflatable Operators Training Organization) operator safety training — verifiable at sioto.com. Complements insurance; not a substitute for venue permits." },
       { title: "Full-Service Crew", body: "We deliver, set up, and tear down. You don't touch a thing." },
       { title: "Serving Chicagoland Since 2021", body: "Four years of corporate events, weddings, and private parties across the Chicago area." },
     ],
@@ -595,7 +597,7 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       { href: "/services", label: "See all services" },
     ],
     trustStrip: [
-      { title: "SIOTO Safety Seal Certified", body: "Our equipment and operations are independently inspected and certified — not just insured." },
+      { title: "SIOTO Safety Seal Certified", body: "SIOTO (Safe Inflatable Operators Training Organization) operator safety training — verifiable at sioto.com. Complements insurance; not a substitute for venue permits." },
       { title: "Full-Service Crew", body: "We deliver, set up, and tear down. You don't touch a thing." },
       { title: "Serving Chicagoland Since 2021", body: "Four years of corporate events, weddings, and private parties across the Chicago area." },
     ],
@@ -747,7 +749,7 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       { href: "/services", label: "See all services" },
     ],
     trustStrip: [
-      { title: "SIOTO Safety Seal Certified", body: "Our equipment and operations are independently inspected and certified — not just insured." },
+      { title: "SIOTO Safety Seal Certified", body: "SIOTO (Safe Inflatable Operators Training Organization) operator safety training — verifiable at sioto.com. Complements insurance; not a substitute for venue permits." },
       { title: "Full-Service Crew", body: "We deliver, set up, and tear down. You don't touch a thing." },
       { title: "Serving Chicagoland Since 2021", body: "Four years of corporate events, weddings, and private parties across the Chicago area." },
     ],
@@ -878,7 +880,7 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       { href: "/services", label: "See all services" },
     ],
     trustStrip: [
-      { title: "SIOTO Safety Seal Certified", body: "Our equipment and operations are independently inspected and certified — not just insured." },
+      { title: "SIOTO Safety Seal Certified", body: "SIOTO (Safe Inflatable Operators Training Organization) operator safety training — verifiable at sioto.com. Complements insurance; not a substitute for venue permits." },
       { title: "Full-Service Crew", body: "We deliver, set up, and tear down. You don't touch a thing." },
       { title: "Serving Chicagoland Since 2021", body: "Four years of corporate events, weddings, and private parties across the Chicago area." },
     ],
@@ -950,11 +952,6 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
           "Delivery cost depends on your location, site access, and what you’re renting. We include delivery, setup, and any access-related costs in your quote so you see the full number before you commit. Share your venue address (or zip code) and date and we’ll provide an exact total.",
       },
       {
-        question: "What is the typical delivery window?",
-        answer:
-          "We agree on a delivery window when you book. For a confirmed arrival time instead of a general window, priority scheduling is available as an add-on. We’ll confirm timing as the event approaches.",
-      },
-      {
         question: "What do I need to have ready before you arrive?",
         answer:
           "Clear access and a clear setup area. Make sure the crew can unload, gates are unlocked, and the setup area is free of vehicles and obstacles. For venues, share loading and access instructions (dock, service entrance, elevator/stairs, and on-site contact). Smooth access means smooth setup.",
@@ -992,12 +989,7 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       {
         question: "How long does setup take?",
         answer:
-          "It depends on the order—tent size, number of tables and chairs, stage, and site access. We’ll give you a realistic window when you book. Our crew works efficiently; we’ll coordinate so setup is complete before your event start.",
-      },
-      {
-        question: "What time will the crew arrive?",
-        answer:
-          "We confirm the delivery window when you book. For a specific arrival time, add priority scheduling. We’ll communicate as the date gets closer so you and your day-of contact know when to expect us.",
+          "It depends on the order—tent size, number of tables and chairs, stage, and site access. We’ll give you a realistic window when you book. Our crew works efficiently; we’ll coordinate so setup is complete before your event start. For arrival windows vs. a locked time, see the delivery & setup section above on priority scheduling.",
       },
     ],
     ctaHeadline: "Ready to confirm delivery and setup?",

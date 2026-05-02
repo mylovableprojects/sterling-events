@@ -6,10 +6,9 @@ import { motion } from "framer-motion";
 type Props = {
   eyebrow: string;
   title: string;
-  quickAnswer?: ReactNode;
 };
 
-export function SectionIntro({ eyebrow, title, quickAnswer }: Props) {
+export function SectionIntro({ eyebrow, title }: Props) {
   return (
     <motion.div
       initial="hidden"
@@ -26,12 +25,6 @@ export function SectionIntro({ eyebrow, title, quickAnswer }: Props) {
     >
       <p className="section-eyebrow">{eyebrow}</p>
       <h1 className="hero-headline text-[var(--cream)]">{title}</h1>
-      {quickAnswer && (
-        <div className="max-w-2xl rounded-xl bg-black/35 p-4 hero-subheadline text-[var(--champagne)]/85">
-          {quickAnswer}
-        </div>
-      )}
     </motion.div>
   );
 }
-

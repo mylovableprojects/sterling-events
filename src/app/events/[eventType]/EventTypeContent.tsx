@@ -8,6 +8,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BelowHeroQuickAnswer } from "@/components/BelowHeroQuickAnswer";
 import { RentalHighlightGrid } from "@/components/RentalHighlightGrid";
 import type { EventTypeData } from "@/lib/eventTypes";
+import { heroHeadlineStagger } from "@/lib/heroHeadlineMotion";
 
 function reveal(delay = 0) {
   return {
@@ -68,9 +69,9 @@ type Props = { data: EventTypeData; slug: string };
 export function EventTypeContent({ data, slug }: Props) {
   return (
     <>
-      {/* ── HERO ── */}
+      {/* ── HERO (layout aligned with `Hero` on the home page) ── */}
       <section
-        className="relative min-h-[65vh] overflow-hidden flex items-end pb-16"
+        className="relative flex min-h-[85vh] flex-col items-start overflow-hidden pt-[calc(var(--nav-height)+2.5rem)] pb-12 md:pt-[calc(var(--nav-height)+5rem)] md:pb-20"
         style={
           data.heroBackgroundImage
             ? { background: "#03030a" }
@@ -101,18 +102,8 @@ export function EventTypeContent({ data, slug }: Props) {
             />
           </>
         )}
-        <div
-          className={`absolute inset-0 opacity-[0.03] ${data.heroBackgroundImage ? "z-[2]" : ""}`}
-          style={{
-            backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")",
-          }}
-        />
-        <div
-          className={`absolute left-0 top-0 h-px w-full opacity-20 ${data.heroBackgroundImage ? "z-[3]" : ""}`}
-          style={{ background: "linear-gradient(90deg, transparent, #c9a84c 40%, transparent)" }}
-        />
 
-        <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pt-32">
+        <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col gap-6 px-6">
           <Breadcrumbs
             items={[
               { href: "/", label: "Home" },
@@ -120,34 +111,56 @@ export function EventTypeContent({ data, slug }: Props) {
               { href: `/events/${slug}`, label: data.name },
             ]}
           />
-          <motion.div
-            className="mt-6 max-w-3xl"
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-          >
-            <p className="section-eyebrow mb-4" style={{ color: "#e8c97a" }}>
+          <div className="space-y-4 md:space-y-6">
+            <motion.div custom={0} initial="hidden" animate="visible" variants={heroHeadlineStagger} className="section-eyebrow">
               {data.eyebrow}
-            </p>
-            <h1 className="hero-headline" style={{ color: "#f5f0e8" }}>
+            </motion.div>
+
+            <motion.h1 custom={1} initial="hidden" animate="visible" variants={heroHeadlineStagger} className="hero-headline text-[var(--cream)]">
               {data.h1}
-            </h1>
-          </motion.div>
-          <motion.div
-            className="mt-8 flex flex-wrap items-center gap-4"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-          >
-            <Link href="/contact" className="btn-primary">Get a Quote</Link>
-            <a href="tel:+17736927576" className="btn-outline">Call (773) 692-7576</a>
-          </motion.div>
+            </motion.h1>
+
+            <motion.p
+              custom={2}
+              initial="hidden"
+              animate="visible"
+              variants={heroHeadlineStagger}
+              className="max-w-xl hero-subheadline leading-relaxed text-[var(--champagne)]/80"
+            >
+              {data.tagline}
+            </motion.p>
+
+            <motion.div custom={3} initial="hidden" animate="visible" variants={heroHeadlineStagger} className="flex flex-wrap items-center gap-4 pt-4">
+              <Link href="/contact" className="btn-primary">
+                Check Availability for Your Date
+              </Link>
+              <Link href="/services" className="btn-outline">
+                Browse Our Services
+              </Link>
+            </motion.div>
+
+            <motion.div custom={4} initial="hidden" animate="visible" variants={heroHeadlineStagger}>
+              <a
+                href="tel:+17736927576"
+                className="inline-flex items-center gap-2 text-sm text-[var(--champagne)]/70 transition-colors hover:text-[var(--gold-light)]"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.1 11.82a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                (773) 692-7576 — call or text
+              </a>
+            </motion.div>
+          </div>
         </div>
 
-        <div
-          className={`pointer-events-none absolute inset-x-0 bottom-8 flex justify-center ${data.heroBackgroundImage ? "z-[3]" : ""}`}
-        >
-          <div className="flex flex-col items-center gap-3 text-[0.65rem] tracking-[0.3em] uppercase" style={{ color: "rgba(245,230,200,0.5)" }}>
+        <div className="pointer-events-none absolute inset-x-0 bottom-8 z-10 flex justify-center">
+          <div className="flex flex-col items-center gap-3 text-[0.65rem] tracking-[0.3em] text-[var(--champagne)]/70 uppercase">
             <span>Scroll</span>
             <div className="scroll-indicator" />
           </div>
@@ -155,8 +168,8 @@ export function EventTypeContent({ data, slug }: Props) {
       </section>
 
       <BelowHeroQuickAnswer>
-        <div className="quick-answer max-w-2xl rounded-xl border border-[#c9a84c]/25 bg-black/30 p-6">
-          <p className="faq-answer hero-subheadline max-w-2xl" style={{ color: "rgba(245,230,200,0.88)" }}>
+        <div className="quick-answer w-full max-w-2xl rounded-xl border border-[#c9a84c]/25 bg-black/30 p-6 md:max-w-3xl">
+          <p className="faq-answer hero-subheadline" style={{ color: "rgba(245,230,200,0.88)" }}>
             {data.quickAnswer}
           </p>
         </div>

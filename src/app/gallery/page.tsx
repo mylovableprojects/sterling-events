@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import Image from "next/image";
+import Script from "next/script";
+import { PageHero } from "@/components/PageHero";
 import { ImageBreak } from "@/components/ImageBreak";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
@@ -68,23 +69,11 @@ export default function GalleryPage() {
     <>
       <Script id="ld-gallery-page" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(galleryPageSchema) }} />
       <Script id="ld-bc-gallery" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(galleryBreadcrumbSchema) }} />
-      <section className="gradient-hero relative min-h-[75vh]">
-        <div className="gradient-orb -left-28 top-8 h-56 w-56" />
-        <div className="gradient-orb bottom-[-4rem] right-[-3rem] h-72 w-72 opacity-60" />
-
-        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-6 px-6">
-          <div className="space-y-4 md:max-w-2xl">
-            <div className="section-eyebrow">Gallery</div>
-            <h1 className="hero-headline text-[var(--cream)]">
-              Moments, textures, and the in-between.
-            </h1>
-            <p className="hero-subheadline leading-relaxed text-[var(--champagne)]/80">
-              A glimpse into celebrations we’ve had the honor of supporting—from candlelit dinners to brand
-              experiences, styled editorials, and everything in between.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Gallery"
+        title="Moments, textures, and the in-between."
+        subhead="A glimpse into celebrations we've had the honor of supporting—from candlelit dinners to brand experiences, styled editorials, and everything in between."
+      />
 
       <section className="bg-[var(--navy)]/55 py-16">
         <div className="mx-auto max-w-6xl px-4">

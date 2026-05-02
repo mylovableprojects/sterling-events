@@ -284,7 +284,7 @@ export default function Home() {
               },
               {
                 heading: "SIOTO Safety Seal Certified",
-                body: "The SIOTO Safety Seal is a third-party safety certification for tent and structure installations. Most rental companies in Chicagoland don't carry it. We do — and we can document it for your venue.",
+                body: "The seal comes from SIOTO (Safe Inflatable Operators Training Organization)—nationally recognized safety training for party and event rental operators. Most Chicagoland rental companies are insured only. We carry the seal and can document it for your venue. Verify any vendor at sioto.com.",
               },
               {
                 heading: "Licensed & insured in Illinois",

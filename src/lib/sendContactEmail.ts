@@ -56,14 +56,14 @@ function buildHtml(data: ContactEmailPayload): string {
 }
 
 /**
- * Sends a notification email when RESEND_API_KEY is set.
- * Defaults: CONTACT_EMAIL_TO = info@sterlingeventrentals.com.
- * CONTACT_EMAIL_FROM must be a Resend-verified sender (e.g. contact@yourdomain.com).
+ * Sends a notification email when RESEND_API_KEY and CONTACT_EMAIL_FROM are set.
+ * @returns `"sent"` if Resend accepted the message, `"skipped"` if email is not configured or incomplete config.
+ * @throws If Resend returns an error (invalid key, quota, etc.).
  */
-export async function sendContactNotificationEmail(data: ContactEmailPayload): Promise<void> {
+export async function sendContactNotificationEmail(data: ContactEmailPayload): Promise<"sent" | "skipped"> {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey?.trim()) {
-    return;
+    return "skipped";
   }
 
   const from = process.env.CONTACT_EMAIL_FROM?.trim();
@@ -71,7 +71,7 @@ export async function sendContactNotificationEmail(data: ContactEmailPayload): P
     console.error(
       "RESEND_API_KEY is set but CONTACT_EMAIL_FROM is missing. Add CONTACT_EMAIL_FROM (verified domain in Resend).",
     );
-    return;
+    return "skipped";
   }
 
   const toRaw = process.env.CONTACT_EMAIL_TO?.trim();
@@ -93,4 +93,5 @@ export async function sendContactNotificationEmail(data: ContactEmailPayload): P
   if (error) {
     throw new Error(error.message);
   }
+  return "sent";
 }

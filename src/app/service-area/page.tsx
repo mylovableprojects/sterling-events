@@ -3,6 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { BelowHeroQuickAnswer } from "@/components/BelowHeroQuickAnswer";
+import { PageHero } from "@/components/PageHero";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { SERVICE_AREA_DATA } from "@/lib/serviceAreas";
 
@@ -114,33 +116,22 @@ export default function ServiceAreaPage() {
         }}
       />
 
-      {/* ── HERO ── */}
-      <section className="gradient-hero relative min-h-[75vh] overflow-hidden">
-        <div className="gradient-orb -left-24 top-10 h-56 w-56" />
-        <div className="gradient-orb bottom-[-5rem] right-[-4rem] h-72 w-72 opacity-60" />
-        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 pb-16">
+      <PageHero
+        eyebrow="Service Area"
+        title="What suburbs does Sterling Event Rentals serve?"
+        subhead="Chicago, Evanston, Oak Park, Naperville, Schaumburg, Orland Park, and throughout Chicagoland — confirm your zip or venue in one call."
+        breadcrumbs={
           <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: "/service-area", label: "Service Area" }]} />
-          <p className="section-eyebrow">Service Area</p>
-          <h1 className="hero-headline text-[var(--cream)]">
-            What suburbs does Sterling Event Rentals serve?
-          </h1>
-          <div className="quick-answer mt-2 max-w-2xl rounded-xl border border-[var(--gold)]/30 bg-[var(--navy)]/60 p-6">
-            <p className="text-lg leading-relaxed text-[var(--champagne)]">
-              Sterling Event Rentals delivers to Chicago and across the Greater Chicagoland area — including Evanston, Oak Park, Naperville, Schaumburg, Orland Park, and surrounding suburbs. Call (773) 692-7576 with your zip code or venue address and we&apos;ll confirm delivery in one conversation.
-            </p>
-          </div>
-          <div className="mt-6 flex flex-wrap items-center gap-4">
-            <a href="/contact" className="btn-primary">Confirm Your Location</a>
-            <a href="/packages" className="btn-outline">See Our Packages</a>
-          </div>
+        }
+      />
+
+      <BelowHeroQuickAnswer>
+        <div className="quick-answer max-w-2xl rounded-xl border border-[var(--gold)]/30 bg-[var(--navy)]/60 p-6">
+          <p className="faq-answer text-lg leading-relaxed text-[var(--champagne)]">
+            Sterling Event Rentals delivers to Chicago and across the Greater Chicagoland area — including Evanston, Oak Park, Naperville, Schaumburg, Orland Park, and surrounding suburbs. Call (773) 692-7576 with your zip code or venue address and we&apos;ll confirm delivery in one conversation.
+          </p>
         </div>
-        <div className="pointer-events-none absolute inset-x-0 bottom-8 flex justify-center">
-          <div className="flex flex-col items-center gap-3 text-[0.65rem] tracking-[0.3em] text-[var(--champagne)]/70 uppercase">
-            <span>Scroll</span>
-            <div className="scroll-indicator" />
-          </div>
-        </div>
-      </section>
+      </BelowHeroQuickAnswer>
 
       {/* ── COVERAGE + PHOTO ── */}
       <section className="border-t border-[var(--navy)]/10 bg-[var(--sand)] py-20">

@@ -13,9 +13,11 @@ type Props = {
 export function BelowHeroQuickAnswer({ children, className = "" }: Props) {
   return (
     <section
-      className={`border-t border-white/10 bg-[var(--navy)] py-10 md:py-12 ${className}`.trim()}
+      className={`relative z-[1] border-t border-white/10 bg-[var(--navy)] py-10 md:py-12 ${className}`.trim()}
     >
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6">{children}</div>
+      <div className="mx-auto w-full max-w-6xl px-6">
+        <div className="flex w-full flex-col items-center gap-6">{children}</div>
+      </div>
     </section>
   );
 }

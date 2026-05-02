@@ -21,7 +21,7 @@ type Props = {
 const DEFAULT_ITEMS: TrustItem[] = [
   { label: "Licensed" },
   { label: "Insured" },
-  { label: "SIOTO Safety Seal Certified", detail: "(industry safety standard)" },
+  { label: "SIOTO Safety Seal Certified", detail: "(SIOTO operator training · sioto.com)" },
   { label: "Serving Chicagoland Since 2021" },
 ];
 

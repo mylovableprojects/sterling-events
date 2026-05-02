@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { EVENT_TYPE_DATA, EVENT_TYPE_SLUGS } from "@/lib/eventTypes";
+import { heroHeadlineStagger } from "@/lib/heroHeadlineMotion";
 
 function reveal(delay = 0) {
   return {
@@ -67,42 +68,58 @@ const ICONS: Record<string, string> = {
 export function EventsHubContent() {
   return (
     <>
-      {/* ── HERO ── */}
-      <section className="gradient-hero relative min-h-[55vh] overflow-hidden flex items-end pb-16">
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")",
-          }}
-        />
-        <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pt-32">
-          <motion.div
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-            className="max-w-3xl"
-          >
-            <p className="section-eyebrow mb-4 text-[var(--gold-light)]">Events We Serve</p>
-            <h1 className="hero-headline text-[var(--cream)]">
+      {/* ── HERO (layout aligned with home `Hero`) ── */}
+      <section className="gradient-hero relative flex min-h-[85vh] flex-col overflow-hidden">
+        <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col gap-6 px-6">
+          <div className="space-y-4 md:space-y-6">
+            <motion.div custom={0} initial="hidden" animate="visible" variants={heroHeadlineStagger} className="section-eyebrow">
+              Events We Serve
+            </motion.div>
+            <motion.h1 custom={1} initial="hidden" animate="visible" variants={heroHeadlineStagger} className="hero-headline text-[var(--cream)]">
               Every event, fully equipped.
-            </h1>
-            <p className="hero-subheadline mt-5 max-w-2xl text-[var(--champagne)]/82">
+            </motion.h1>
+            <motion.p
+              custom={2}
+              initial="hidden"
+              animate="visible"
+              variants={heroHeadlineStagger}
+              className="max-w-xl hero-subheadline leading-relaxed text-[var(--champagne)]/80"
+            >
               Sterling Event Rentals provides full-service tent, table, stage, and entertainment rentals for corporate events, weddings, and private parties across the Chicago area. Delivery, setup, and teardown on every order.
-            </p>
-          </motion.div>
-          <motion.div
-            className="mt-8 flex flex-wrap gap-4"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-          >
-            <Link href="/contact" className="btn-primary">
-              Get a Quote
-            </Link>
-            <a href="tel:+17736927576" className="btn-outline">
-              Call (773) 692-7576
-            </a>
-          </motion.div>
+            </motion.p>
+            <motion.div custom={3} initial="hidden" animate="visible" variants={heroHeadlineStagger} className="flex flex-wrap items-center gap-4 pt-4">
+              <Link href="/contact" className="btn-primary">
+                Check Availability for Your Date
+              </Link>
+              <Link href="/services" className="btn-outline">
+                Browse Our Services
+              </Link>
+            </motion.div>
+            <motion.div custom={4} initial="hidden" animate="visible" variants={heroHeadlineStagger}>
+              <a
+                href="tel:+17736927576"
+                className="inline-flex items-center gap-2 text-sm text-[var(--champagne)]/70 transition-colors hover:text-[var(--gold-light)]"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.1 11.82a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                (773) 692-7576 — call or text
+              </a>
+            </motion.div>
+          </div>
+        </div>
+
+        <div className="pointer-events-none absolute inset-x-0 bottom-8 z-10 flex justify-center">
+          <div className="flex flex-col items-center gap-3 text-[0.65rem] tracking-[0.3em] text-[var(--champagne)]/70 uppercase">
+            <span>Scroll</span>
+            <div className="scroll-indicator" />
+          </div>
         </div>
       </section>
 
@@ -164,7 +181,7 @@ export function EventsHubContent() {
                 {[
                   { title: "Full delivery, setup & teardown", body: "Our crew handles everything. You don't move a single chair." },
                   { title: "Upfront itemized pricing", body: "Equipment, delivery, and setup as named line items — before you confirm." },
-                  { title: "SIOTO Safety Seal certified", body: "Licensed, insured, and certified for tent and structure installations in Illinois." },
+                  { title: "SIOTO Safety Seal certified", body: "Licensed, insured, and SIOTO Safety Seal certified — SIOTO operator safety training, verifiable at sioto.com." },
                   { title: "Every event type", body: "Corporate picnics to black-tie weddings. Small backyard parties to 400-person events." },
                   { title: "All of Chicago metro", body: "City venues, north shore, Naperville, and throughout the suburbs." },
                 ].map((item) => (

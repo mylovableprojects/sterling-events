@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import Link from "next/link";
+import { PageHero } from "@/components/PageHero";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import {
   Gamepad2,
@@ -135,32 +136,12 @@ export default function ServicesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceHubSchema) }}
       />
 
-      {/* SECTION 1 — HERO */}
-      <section className="gradient-hero relative min-h-[75vh]">
-        <div className="gradient-orb -left-24 top-10 h-56 w-56" />
-        <div className="gradient-orb bottom-[-5rem] right-[-4rem] h-72 w-72 opacity-60" />
-
-        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-6 px-6">
-          <div className="space-y-4 md:max-w-2xl">
-            <div className="section-eyebrow">Services</div>
-            <h1 className="hero-headline text-[var(--cream)]">
-              Event Rental Services in Chicago &amp; Chicagoland
-            </h1>
-            <p className="hero-subheadline max-w-xl text-[var(--champagne)]/85">
-              Tents, tables, stages, and specialty installations — delivered, set up, and torn down by our crew.
-              You show up and host. We handle everything else.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a href="/contact" className="btn-primary">
-                Check Availability for Your Date
-              </a>
-              <a href="/packages" className="btn-outline">
-                See Our Packages
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Services"
+        title="Event Rental Services in Chicago & Chicagoland"
+        subhead="Tents, tables, stages, and specialty installations — delivered, set up, and torn down by our crew. You show up and host. We handle everything else."
+        secondaryCta={{ href: "/packages", label: "See Our Packages" }}
+      />
 
       {/* SECTION 2 — SERVICE CATEGORY CARDS (LIGHT) */}
       <section className="bg-[var(--sand)] py-20">

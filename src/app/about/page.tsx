@@ -62,12 +62,12 @@ export default function AboutPage() {
     <>
       <Script id="ld-about" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }} />
       <Script id="ld-bc-about" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutBreadcrumbSchema) }} />
-      <section className="gradient-hero relative min-h-[75vh]">
+      <section className="gradient-hero relative min-h-[85vh] overflow-hidden">
         <div className="gradient-orb -left-32 top-6 h-56 w-56" />
         <div className="gradient-orb bottom-[-5rem] right-[-4rem] h-72 w-72 opacity-60" />
 
         <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 md:flex-row md:items-center">
-          <div className="flex-1 space-y-6 md:max-w-2xl">
+          <div className="flex-1 space-y-4 md:max-w-4xl">
             <div className="section-eyebrow">About us</div>
             <h1 className="hero-headline text-[var(--cream)]">
               About Sterling Event Rentals
@@ -88,14 +88,29 @@ export default function AboutPage() {
                 SIOTO Safety Seal Certified
               </span>
             </div>
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a href="/contact" className="btn-primary">
-                Work With Us — Check Availability
-              </a>
-              <a href="/services" className="btn-outline">
+            <div className="mt-8 flex flex-wrap items-center gap-4 pt-4">
+              <Link href="/contact" className="btn-primary">
+                Check Availability for Your Date
+              </Link>
+              <Link href="/services" className="btn-outline">
                 Browse Our Services
-              </a>
+              </Link>
             </div>
+            <a
+              href="tel:+17736927576"
+              className="inline-flex items-center gap-2 text-sm text-[var(--champagne)]/70 transition-colors hover:text-[var(--gold-light)]"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.1 11.82a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              (773) 692-7576 — call or text
+            </a>
             <TrustBar className="mt-8" />
           </div>
           <div className="mt-4 flex-1 md:mt-0 md:flex md:justify-end">
@@ -149,7 +164,7 @@ export default function AboutPage() {
                 Safety-Certified. Not Just Insured.
               </h3>
               <p className="text-base leading-relaxed text-[var(--charcoal)]/80">
-                Sterling holds the SIOTO Safety Seal—an independent third-party certification that verifies equipment safety and operational standards. Competitors say &quot;fully insured.&quot; We can say certified. That distinction matters to corporate buyers and venue coordinators who need to verify vendor credentials.
+                Sterling holds the SIOTO Safety Seal from SIOTO (Safe Inflatable Operators Training Organization) — nationally recognized operator safety training you can verify on sioto.com. Competitors often stop at &quot;fully insured.&quot; We carry a credential many corporate buyers ask for by name. It complements insurance; it does not replace venue permits.
               </p>
             </ScrollReveal>
             <ScrollReveal className="space-y-3 rounded-2xl bg-white p-8 border-t-2 border-[var(--gold)]">
@@ -180,7 +195,7 @@ export default function AboutPage() {
               What the SIOTO Safety Seal means
             </h2>
             <p className="max-w-xl text-lg leading-relaxed text-[var(--charcoal)]/80 mt-6">
-              The SIOTO Safety Seal means our equipment and operations have been independently inspected and certified to meet industry safety standards—not just insured against accidents after they happen. That distinction matters to corporate buyers and venue coordinators who need to verify vendor credentials before they book.
+              The SIOTO Safety Seal reflects completed SIOTO operator safety training — a third-party program used across the party and event rental industry. Planners can confirm active credentials through SIOTO&apos;s verification tools. It is not a substitute for local permits or venue rules, but it is a concrete credential alongside insurance when buyers vet vendors.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <span className="inline-flex items-center rounded-full border border-[var(--gold)]/50 px-4 py-2 text-sm font-medium text-[var(--charcoal)] bg-white">

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { PageHero } from "@/components/PageHero";
+import { BelowHeroQuickAnswer } from "@/components/BelowHeroQuickAnswer";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { TentSizingDiagram } from "@/components/TentSizingDiagram";
 
@@ -46,8 +48,12 @@ const articleSchema = {
     logo: { "@type": "ImageObject", url: `${BASE}/og-image.jpg` },
   },
   datePublished: "2026-02-01",
-  dateModified: "2026-04-27",
+  dateModified: "2026-05-02",
   mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: [".quick-answer", ".faq-answer"],
+  },
 };
 
 const howToSchema = {
@@ -86,9 +92,9 @@ const faqItems = [
       "Yes. Tent sidewalls are available as an add-on. They provide wind and light rain protection and make a real difference for Chicago weather. Ask for sidewalls when you get your quote.",
   },
   {
-    question: "Do I need a permit for a tent in Chicago?",
+    question: "Can permit rules limit which tent size I can use in Chicago?",
     answer:
-      "In Chicago, tents over a certain size typically require a permit from the city or Chicago Park District. Permits are the customer's responsibility — Sterling does not pull permits on behalf of clients. See our Chicago tent permit guide for requirements and how to apply.",
+      "Sometimes. Chicago thresholds (for example 400 sq ft / 15 ft height) can mean a larger footprint needs a permit before install — which affects what you can place on a given lot or park site, not just guest count. Sterling does not pull permits; we help you size the tent for your layout. For legal thresholds and applications, use our Chicago tent permit guide.",
   },
   {
     question: "What is the minimum order for a tent rental?",
@@ -138,10 +144,8 @@ export default function TentSizingGuidePage() {
       <Script id="ld-faq" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Script id="ld-bc" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
-      {/* ── HERO ── */}
-      <section className="gradient-hero relative min-h-[60vh]">
-        <div className="gradient-orb -left-24 top-10 h-56 w-56" />
-        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-6 px-6">
+      <PageHero
+        breadcrumbs={
           <Breadcrumbs
             items={[
               { href: "/", label: "Home" },
@@ -149,27 +153,40 @@ export default function TentSizingGuidePage() {
               { href: "/resources/tent-sizing-guide", label: "Tent Sizing Guide" },
             ]}
           />
-          <p className="section-eyebrow text-[var(--gold-light)]">Resource Guide</p>
-          <h1 className="hero-headline text-[var(--cream)]">
-            What size tent do I need?
-          </h1>
-          {/* Speakable passage — marked for voice/AI extraction */}
-          <p
-            className="max-w-2xl text-lg leading-relaxed text-[var(--champagne)]/85"
-            aria-label="Quick answer"
-          >
+        }
+        eyebrow="Resource Guide"
+        title="What size tent do I need?"
+        subhead={tentSizingDescription}
+        primaryCta={{ href: "/contact", label: "Get a Tent Recommendation" }}
+        secondaryCta={{ href: "/resources/chicago-tent-permits", label: "Chicago permit guide →" }}
+      />
+
+      <BelowHeroQuickAnswer>
+        <div className="max-w-2xl space-y-4">
+          <p className="quick-answer faq-answer text-lg leading-relaxed text-[var(--champagne)]/85">
             {quickAnswer}
           </p>
-          <div className="flex flex-wrap items-center gap-4">
-            <Link href="/contact" className="btn-primary">
-              Get a Tent Recommendation
-            </Link>
-            <Link href="/resources/chicago-tent-permits" className="btn-outline">
-              Chicago permit guide →
-            </Link>
-          </div>
+          <p className="text-sm leading-relaxed text-[var(--champagne)]/75">
+            These pairings are planning rules of thumb for footprint and seating style — always confirm egress, catering paths, and any stage or dance floor with your venue. In Chicago, tent size can affect whether a{" "}
+            <a
+              href="https://www.chicago.gov/content/city/en/depts/bldgs/supp_info/tempstructures/tents.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-[var(--gold-light)] underline decoration-[var(--gold)]/50 underline-offset-2 hover:decoration-[var(--gold)]"
+            >
+              building permit
+            </a>{" "}
+            is required; see Sterling&apos;s{" "}
+            <Link
+              href="/resources/chicago-tent-permits"
+              className="font-medium text-[var(--gold-light)] underline decoration-[var(--gold)]/50 underline-offset-2 hover:decoration-[var(--gold)]"
+            >
+              Chicago tent permit guide
+            </Link>{" "}
+            for thresholds in plain language.
+          </p>
         </div>
-      </section>
+      </BelowHeroQuickAnswer>
 
       {/* ── TENT SIZING DIAGRAM ── */}
       <section className="bg-[var(--navy)] py-14">

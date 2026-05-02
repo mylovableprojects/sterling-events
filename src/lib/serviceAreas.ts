@@ -163,24 +163,14 @@ export const SERVICE_AREA_DATA: Record<ServiceAreaSlug, ServiceAreaData> = {
           "Sterling Event Rentals has a $500 minimum rental order. Delivery and setup are quoted as separate named line items — not bundled into the equipment total — so you see exactly what each cost is before you confirm.",
       },
       {
-        question: "Do you need a permit for a tent in Chicago?",
-        answer:
-          "Permits are typically required for tents on public property in Chicago, including Chicago Park District and Cook County Forest Preserve sites. We are SIOTO Safety Seal certified and can provide vendor documentation that many venues require. See our Chicago tent permit guide for specifics.",
-      },
-      {
         question: "Can you deliver to a Chicago Park District site?",
         answer:
           "Yes. We deliver to Chicago Park District sites. You are responsible for any permits the Park District requires before we can set up. We'll confirm your timeline and access requirements when you book.",
       },
       {
-        question: "How much does tent rental cost in Chicago?",
+        question: "What will my Chicago quote include as line items?",
         answer:
-          "Tent rental pricing depends on tent size, guest count, and any accessories. Sterling Event Rentals has a $500 minimum order. A small 20×20 frame tent starts lower than a large 40×80 structure. Delivery and setup are quoted as separate line items. Call (773) 692-7576 or submit the contact form for a quote for your specific event.",
-      },
-      {
-        question: "How far in advance should I book event rentals in Chicago?",
-        answer:
-          "We recommend 2–3 weeks minimum. Peak summer weekends (May–September) book faster — corporate clients often book 3–4 weeks out, and wedding couples 3–6 months ahead. Call (773) 692-7576 to check availability for your date.",
+          "Expect equipment (tent, tables, chairs, add-ons), delivery, and setup as separate named amounts — not a single bundled number that hides the setup fee. The $500 minimum still applies. Lakefront, rooftop, and tight urban sites may affect access time; we bake that into the quote when you share the address. For published ranges visit https://www.sterlingeventrentals.com/event-rental-pricing-chicago; for a tight summary of city tent minimums see https://www.sterlingeventrentals.com/answers/how-much-does-tent-rental-cost-chicago.",
       },
       {
         question: "What is the delivery fee for Chicago events?",
@@ -190,7 +180,7 @@ export const SERVICE_AREA_DATA: Record<ServiceAreaSlug, ServiceAreaData> = {
       {
         question: "Are you licensed and insured for events in Chicago?",
         answer:
-          "Yes. Sterling Event Rentals is fully licensed and insured in Illinois, and SIOTO Safety Seal certified for tent and structure installations. We can provide insurance documentation and certification records for venues that require vendor verification.",
+          "Yes. Sterling Event Rentals is fully licensed and insured in Illinois, and SIOTO Safety Seal certified (SIOTO operator safety training; verify at sioto.com). We can provide insurance documentation and certification records for venues that require vendor verification.",
       },
     ],
     schemaAreaNames: [
@@ -324,14 +314,9 @@ export const SERVICE_AREA_DATA: Record<ServiceAreaSlug, ServiceAreaData> = {
           "Sterling Event Rentals has a $500 minimum rental order. Delivery and setup are quoted as separate named line items on every estimate — not bundled into the equipment total — so you see exactly what each cost is before you confirm.",
       },
       {
-        question: "How much does event rental cost in the north suburbs?",
+        question: "What affects delivery fees for Schaumburg and northwest-corridor events?",
         answer:
-          "Pricing depends on tent size, guest count, and equipment selected. Sterling has a $500 minimum order. A small 20×20 tent setup costs significantly less than a large multi-structure event for 200+ guests. Every quote includes equipment, delivery, and setup as named line items. Call (773) 692-7576 for a quote for your specific event.",
-      },
-      {
-        question: "How far in advance should I book for a north suburb event?",
-        answer:
-          "We recommend 2–3 weeks minimum for most events. Large corporate events and peak summer dates (June–August) in the Schaumburg and Arlington Heights corridor book 4–6 weeks out. Call (773) 692-7576 to check availability for your date.",
+          "Distance from our Chicago base, order size (how many truck loads), and site access (office-park dock vs. residential backyard) shape the delivery line item. Most Schaumburg, Arlington Heights, and Rosemont venues fall in our standard zone, but delivery is still quoted separately from equipment before you sign. Call (773) 692-7576 with your zip and gate or dock instructions for an exact total.",
       },
       {
         question: "Do you serve corporate picnics in Schaumburg and Arlington Heights?",
@@ -346,7 +331,7 @@ export const SERVICE_AREA_DATA: Record<ServiceAreaSlug, ServiceAreaData> = {
       {
         question: "Are you licensed and insured for events in the north suburbs?",
         answer:
-          "Yes. Sterling Event Rentals is fully licensed and insured in Illinois and SIOTO Safety Seal certified for tent and structure installations. We can provide insurance and certification documentation for venues, corporate clients, and park districts that require vendor verification.",
+          "Yes. Sterling Event Rentals is fully licensed and insured in Illinois and SIOTO Safety Seal certified (SIOTO operator safety training; verify at sioto.com). We can provide insurance and certification documentation for venues, corporate clients, and park districts that require vendor verification.",
       },
     ],
     schemaAreaNames: [
@@ -480,9 +465,9 @@ export const SERVICE_AREA_DATA: Record<ServiceAreaSlug, ServiceAreaData> = {
           "Sterling Event Rentals has a $500 minimum rental order. Delivery and setup are quoted as separate named line items on every estimate — not bundled into the equipment total — so you see the full cost before you confirm.",
       },
       {
-        question: "How much does tent rental cost in Naperville and the southwest suburbs?",
+        question: "How does tent sizing differ on large southwest suburban lots?",
         answer:
-          "Pricing depends on tent size, guest count, and accessories. Sterling has a $500 minimum. A small 20×20 frame tent for a backyard party costs significantly less than a large 40×80 structure for a 200+ person event. Delivery and setup are quoted as separate line items. Call (773) 692-7576 for a quote for your specific event.",
+          "Bigger yards in Naperville, Plainfield, and Orland Park often mean you can fit a wider frame or add a buffet or stage wing without fighting alley access the way you might in the city. That can change which structure we recommend even at the same guest count. Share a rough layout when you call (773) 692-7576 — and skim the Tent sizing guide on https://www.sterlingeventrentals.com/resources/tent-sizing-guide for square-footage rules of thumb before we translate them into a package.",
       },
       {
         question: "Can you deliver to a Naperville Park District site?",
@@ -495,11 +480,6 @@ export const SERVICE_AREA_DATA: Record<ServiceAreaSlug, ServiceAreaData> = {
           "Yes. We serve Joliet, Plainfield, Mokena, New Lenox, Romeoville, and the far southwest suburbs. Delivery fees for farther locations are quoted upfront as a named line item. Call (773) 692-7576 with your venue address to confirm.",
       },
       {
-        question: "How far in advance should I book for a southwest suburb event?",
-        answer:
-          "We recommend 2–3 weeks minimum for most events. Summer peak season (June–August) books faster — especially for large backyard events and corporate picnics in Naperville and Orland Park. Call (773) 692-7576 to check availability for your date.",
-      },
-      {
         question: "Is there a delivery surcharge for southwest suburb locations?",
         answer:
           "Delivery fees are quoted as a named line item on every estimate before you confirm. Fees vary by distance and order size. Locations in Joliet, Plainfield, and the far southwest may carry a slightly higher delivery fee — always quoted upfront. Call (773) 692-7576 with your zip code for an exact number.",
@@ -507,7 +487,7 @@ export const SERVICE_AREA_DATA: Record<ServiceAreaSlug, ServiceAreaData> = {
       {
         question: "Are you licensed and insured for events in the southwest suburbs?",
         answer:
-          "Yes. Sterling Event Rentals is fully licensed and insured in Illinois and SIOTO Safety Seal certified for tent and structure installations. We can provide documentation for venues, park districts, and corporate clients that require vendor verification.",
+          "Yes. Sterling Event Rentals is fully licensed and insured in Illinois and SIOTO Safety Seal certified (SIOTO operator safety training; verify at sioto.com). We can provide documentation for venues, park districts, and corporate clients that require vendor verification.",
       },
     ],
     schemaAreaNames: [

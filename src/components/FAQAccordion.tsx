@@ -78,7 +78,7 @@ export function FAQAccordion({
             <p
               className={
                 isResourceArticle
-                  ? "mt-4 max-w-2xl text-base leading-relaxed text-[var(--champagne)]/80"
+                  ? "faq-answer mt-4 max-w-2xl text-base leading-relaxed text-[var(--champagne)]/80"
                   : "faq-answer mt-2 text-sm"
               }
               style={!isResourceArticle ? { color: isLight ? "var(--charcoal)" : "var(--champagne)" } : undefined}

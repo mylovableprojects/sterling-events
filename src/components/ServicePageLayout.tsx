@@ -4,6 +4,8 @@ import { ReactNode } from "react";
 
 export type ServicePageSections = {
   hero: ReactNode;
+  /** Summary / quick answer — rendered in its own section below the hero */
+  quickAnswer: ReactNode;
   whatWeDo: ReactNode;
   sizesAndIncluded: ReactNode;
   whoItsFor: ReactNode;
@@ -25,9 +27,11 @@ export function ServicePageLayout({ sections }: Props) {
   return (
     <>
       {/* Section 1 — Hero (dark) */}
-      <section className="gradient-hero relative min-h-[75vh] overflow-hidden">
+      <section className="gradient-hero relative flex min-h-[85vh] flex-col overflow-hidden">
         {sections.hero}
       </section>
+
+      {sections.quickAnswer}
 
       {/* Section 2 — What we do (light) */}
       <section className="border-t border-[var(--navy)]/10 bg-[var(--cream)] py-16">

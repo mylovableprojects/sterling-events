@@ -3,6 +3,8 @@ import Script from "next/script";
 import Link from "next/link";
 import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { PageHero } from "@/components/PageHero";
+import { BelowHeroQuickAnswer } from "@/components/BelowHeroQuickAnswer";
 import { FAQAccordion } from "@/components/FAQAccordion";
 
 const BASE = "https://www.sterlingeventrentals.com";
@@ -54,8 +56,12 @@ const articleSchema = {
     logo: { "@type": "ImageObject", url: `${BASE}/og-image.jpg` },
   },
   datePublished: "2026-03-01",
-  dateModified: "2026-04-27",
+  dateModified: "2026-05-02",
   mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: [".quick-answer", ".faq-answer"],
+  },
 };
 
 const howToSchema = {
@@ -80,7 +86,7 @@ const faqItems = [
   {
     question: "What is a SIOTO Safety Seal and why does it matter?",
     answer:
-      "The SIOTO Safety Seal is an independent third-party certification that verifies an event rental company's equipment and operations meet industry safety standards. It goes beyond basic liability insurance — it means the equipment has been inspected and the company has been evaluated for safe operating practices. For corporate buyers and venue coordinators who need to verify vendor credentials, it's a concrete signal. Sterling Event Rentals is licensed, insured, and SIOTO Safety Seal certified.",
+      "The SIOTO Safety Seal is issued by SIOTO (Safe Inflatable Operators Training Organization), which provides nationally recognized safety training and certification for party and event rental operators. The seal reflects certified training completion; planners can verify active credentials on SIOTO's site. It complements insurance—it does not replace permits. Sterling Event Rentals is licensed, insured, and SIOTO Safety Seal certified. Overview: https://www.sioto.org/ — verification: https://sioto.com/verify-2/",
   },
   {
     question: "Is setup and teardown included in corporate rental pricing?",
@@ -191,10 +197,8 @@ export default function CorporateEventChecklistPage() {
       <Script id="ld-faq" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Script id="ld-breadcrumbs" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
-      {/* ── HERO ── */}
-      <section className="gradient-hero relative min-h-[72vh]">
-        <div className="gradient-orb -left-24 top-10 h-56 w-56" />
-        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 pb-16">
+      <PageHero
+        breadcrumbs={
           <Breadcrumbs
             items={[
               { href: "/", label: "Home" },
@@ -202,19 +206,19 @@ export default function CorporateEventChecklistPage() {
               { href: "/resources/corporate-event-checklist", label: "Corporate Event Checklist" },
             ]}
           />
-          <p className="section-eyebrow">Planning Resource</p>
-          <h1 className="hero-headline text-[var(--cream)]">
-            Corporate Event Planning Checklist
-          </h1>
-          <div className="quick-answer mt-2 max-w-2xl rounded-xl border border-[var(--gold)]/30 bg-[var(--navy)]/60 p-6">
-            <p className="text-lg leading-relaxed text-[var(--champagne)]">{quickAnswerText}</p>
-          </div>
-          <div className="mt-6 flex flex-wrap items-center gap-4">
-            <a href="/contact" className="btn-primary">Get a Corporate Event Quote</a>
-            <a href="/packages" className="btn-outline">See packages →</a>
-          </div>
+        }
+        eyebrow="Planning Resource"
+        title="Corporate Event Planning Checklist"
+        subhead={corpChecklistDescription}
+        primaryCta={{ href: "/contact", label: "Get a Corporate Event Quote" }}
+        secondaryCta={{ href: "/packages", label: "See packages →" }}
+      />
+
+      <BelowHeroQuickAnswer>
+        <div className="quick-answer max-w-2xl rounded-xl border border-[var(--gold)]/30 bg-[var(--navy)]/60 p-6">
+          <p className="faq-answer text-lg leading-relaxed text-[var(--champagne)]">{quickAnswerText}</p>
         </div>
-      </section>
+      </BelowHeroQuickAnswer>
 
       {/* ── TIMELINE CARDS ── */}
       <section className="bg-white py-20">
@@ -296,7 +300,7 @@ export default function CorporateEventChecklistPage() {
                 What credentials should I verify before booking an event rental company?
               </h2>
               <p className="text-lg leading-relaxed" style={{ color: "rgba(26,26,26,0.8)" }}>
-                Your reputation is on the line if the vendor no-shows or the equipment fails. Verify the company is <strong>licensed and insured</strong> — that's the baseline. A <strong>safety certification</strong> such as the SIOTO Safety Seal goes further: it means equipment and operations have been independently inspected and certified, not just insured after the fact.
+                Your reputation is on the line if the vendor no-shows or the equipment fails. Verify the company is <strong>licensed and insured</strong> — that&apos;s the baseline. A <strong>safety certification</strong> such as the SIOTO Safety Seal goes further: SIOTO (Safe Inflatable Operators Training Organization) documents nationally recognized operator safety training you can verify online—not a substitute for permits, but a credential many corporate buyers ask for.
               </p>
               <p className="mt-4 text-lg leading-relaxed" style={{ color: "rgba(26,26,26,0.8)" }}>
                 That distinction matters to corporate buyers and venue coordinators who need to document vendor due diligence. Check years in business and, if possible, real event photos so you know they've handled events like yours. Finally, confirm cancellation and refund terms in plain language before you sign anything.
@@ -318,7 +322,7 @@ export default function CorporateEventChecklistPage() {
                 {[
                   { badge: "✓ Licensed", desc: "State of Illinois licensed contractor" },
                   { badge: "✓ Insured", desc: "Full liability insurance — COI available on request" },
-                  { badge: "✓ SIOTO Certified", desc: "Safety Seal — independent 3rd-party inspection of equipment and operations" },
+                  { badge: "✓ SIOTO Certified", desc: "Safety Seal — SIOTO operator training; verify active status on sioto.com" },
                   { badge: "✓ Established", desc: "Years of Chicago and Chicagoland event experience" },
                   { badge: "✓ Transparent pricing", desc: "Setup fee quoted with every order — no surprises" },
                 ].map((item, i) => (

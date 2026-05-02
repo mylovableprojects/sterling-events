@@ -4,6 +4,8 @@ import Script from "next/script";
 import Link from "next/link";
 import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { BelowHeroQuickAnswer } from "@/components/BelowHeroQuickAnswer";
+import { PageHero } from "@/components/PageHero";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import {
   SERVICE_AREA_SLUGS,
@@ -137,9 +139,11 @@ export default async function ServiceAreaRegionPage({ params }: Props) {
       <Script id="ld-service-area" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <Script id="ld-bc" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
-      {/* ── HERO ── */}
-      <section className="gradient-hero relative min-h-[60vh] overflow-hidden">
-        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-6 px-6">
+      <PageHero
+        eyebrow="Service Area"
+        title={data.h1}
+        subhead={data.tagline}
+        breadcrumbs={
           <Breadcrumbs
             items={[
               { href: "/", label: "Home" },
@@ -147,33 +151,16 @@ export default async function ServiceAreaRegionPage({ params }: Props) {
               { href: `/service-area/${region}`, label: data.name },
             ]}
           />
-          <div className="max-w-3xl">
-            <p className="section-eyebrow mb-4 text-[var(--gold-light)]">Service Area</p>
-            <h1 className="hero-headline text-[var(--cream)]">{data.h1}</h1>
-            {/* speakable — marked for voice search extraction */}
-            <p
-              className="hero-subheadline mt-4 max-w-2xl text-[var(--champagne)]/85"
-              aria-label="Quick answer"
-            >
-              {data.quickAnswer}
-            </p>
-          </div>
-          <div className="mt-4 flex flex-wrap items-center gap-4">
-            <Link href="/contact" className="btn-primary">
-              Confirm Your Location
-            </Link>
-            <a href="tel:+17736927576" className="btn-outline">
-              Call (773) 692-7576
-            </a>
-          </div>
+        }
+      />
+
+      <BelowHeroQuickAnswer>
+        <div className="quick-answer max-w-2xl rounded-xl border border-[var(--gold)]/30 bg-black/35 p-6">
+          <p className="faq-answer hero-subheadline max-w-2xl text-[var(--champagne)]/88">
+            {data.quickAnswer}
+          </p>
         </div>
-        <div className="pointer-events-none absolute inset-x-0 bottom-8 flex justify-center">
-          <div className="flex flex-col items-center gap-3 text-[0.65rem] tracking-[0.3em] text-[var(--champagne)]/70 uppercase">
-            <span>Scroll</span>
-            <div className="scroll-indicator" />
-          </div>
-        </div>
-      </section>
+      </BelowHeroQuickAnswer>
 
       {/* ── CITIES SERVED ── */}
       <section className="border-t border-[var(--navy)]/10 bg-[var(--cream)] py-16">
@@ -413,7 +400,7 @@ export default async function ServiceAreaRegionPage({ params }: Props) {
                   { title: "Full setup by our crew", body: "We assemble everything before your guests arrive. You don't touch a single chair." },
                   { title: "Teardown after your event", body: "We return after your event window and take everything down. You focus on hosting." },
                   { title: "Upfront pricing", body: "Equipment, setup, and delivery quoted as named line items before you confirm." },
-                  { title: "Licensed & SIOTO-certified", body: "Fully licensed and insured in Illinois. SIOTO Safety Seal certified for tent installations." },
+                  { title: "Licensed & SIOTO-certified", body: "Fully licensed and insured in Illinois. SIOTO Safety Seal certified — SIOTO operator safety training, verifiable at sioto.com." },
                 ].map((item) => (
                   <li key={item.title} className="flex gap-3">
                     <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[var(--gold)]/15 text-[0.6rem] font-bold text-[var(--gold)]">✓</span>

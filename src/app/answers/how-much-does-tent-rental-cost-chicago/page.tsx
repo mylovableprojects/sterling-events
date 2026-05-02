@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { SpeakableWebPageScript } from "@/components/SpeakableWebPageScript";
+import { AnswerPageHero } from "@/components/AnswerPageHero";
+import { BelowHeroQuickAnswer } from "@/components/BelowHeroQuickAnswer";
 import { AnswerSpokeLinks } from "@/components/AnswerSpokeLinks";
 import { ANSWER_SPOKE_CONFIG } from "@/lib/answerPages";
 
@@ -11,11 +13,14 @@ const canonical = `${BASE}/answers/${slug}`;
 
 export const metadata: Metadata = {
   title: "How Much Does Tent Rental Cost in Chicago? | Sterling Event Rentals",
-  description: "Tent rental in Chicago starts at $500. A 20x20 for small parties, 20x40 for 50–100 guests. Every Sterling quote includes equipment, setup, and delivery as named line items — no surprises.",
+  description:
+    "Tent rental in Chicago starts at $500. A 20x20 for small parties, 20x40 for 50–100 guests. Every Sterling quote includes equipment, setup, and delivery as named line items — no surprises.",
   alternates: { canonical },
   openGraph: {
-    title: "How Much Does Tent Rental Cost in Chicago? | Sterling Event Rentals",
-    description: "Tent rental in Chicago starts at $500. A 20x20 for small parties, 20x40 for 50–100 guests. Every Sterling quote includes equipment, setup, and delivery as named line items — no surprises.",
+    title:
+      "How Much Does Tent Rental Cost in Chicago? | Sterling Event Rentals",
+    description:
+      "Tent rental in Chicago starts at $500. A 20x20 for small parties, 20x40 for 50–100 guests. Every Sterling quote includes equipment, setup, and delivery as named line items — no surprises.",
     url: canonical,
     images: [
       {
@@ -28,8 +33,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "How Much Does Tent Rental Cost in Chicago? | Sterling Event Rentals",
-    description: "Tent rental in Chicago starts at $500. A 20x20 for small parties, 20x40 for 50–100 guests. Every Sterling quote includes equipment, setup, and delivery as named line items — no surprises.",
+    title:
+      "How Much Does Tent Rental Cost in Chicago? | Sterling Event Rentals",
+    description:
+      "Tent rental in Chicago starts at $500. A 20x20 for small parties, 20x40 for 50–100 guests. Every Sterling quote includes equipment, setup, and delivery as named line items — no surprises.",
   },
 };
 
@@ -48,53 +55,49 @@ const faqSchema = {
   ],
 };
 
-
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: BASE },
-    { "@type": "ListItem", position: 2, name: "Answers", item: `${BASE}/answers` },
-    { "@type": "ListItem", position: 3, name: "How much does tent rental cost in Chicago?", item: `${BASE}/answers/${slug}` },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Answers",
+      item: `${BASE}/answers`,
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "How much does tent rental cost in Chicago?",
+      item: `${BASE}/answers/${slug}`,
+    },
   ],
-};
-
-const speakableSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  speakable: {
-    "@type": "SpeakableSpecification",
-    cssSelector: [".quick-answer", ".faq-answer"],
-  },
 };
 
 export default function AnswerPage() {
   const config = ANSWER_SPOKE_CONFIG[slug];
   return (
     <>
-      <Script id="ld-faq" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <Script id="ld-breadcrumbs" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <Script id="ld-speakable" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
-      <section className="gradient-hero relative min-h-[75vh]">
-        <div className="gradient-orb -left-24 top-10 h-56 w-56" />
-        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-6 px-6">
-          <Breadcrumbs
-            items={[
-              { href: "/", label: "Home" },
-              { href: "/answers", label: "Answers" },
-              { href: `/answers/${slug}`, label: config.breadcrumbLabel },
-            ]}
-          />
-          <p className="section-eyebrow">Quick answer</p>
-          <h1 className="hero-headline text-[var(--cream)]">
-            How much does tent rental cost in Chicago?
-          </h1>
-          <div className="quick-answer mt-6 max-w-2xl rounded-xl border-l-4 border-[var(--gold)]/50 bg-black/35 p-4 hero-subheadline text-[var(--champagne)]/85">
-            <p className="faq-answer">{quickAnswerText}</p>
-          </div>
-          <AnswerSpokeLinks slug={slug} />
+      <Script
+        id="ld-faq"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <Script
+        id="ld-breadcrumbs"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <SpeakableWebPageScript pageUrl={canonical} />
+      <AnswerPageHero slug="how-much-does-tent-rental-cost-chicago" title="How much does tent rental cost in Chicago?" lastCrumbLabel={config.breadcrumbLabel} />
+
+      <BelowHeroQuickAnswer>
+        <div className="quick-answer max-w-2xl rounded-xl border-l-4 border-[var(--gold)]/50 bg-black/35 p-4 hero-subheadline text-[var(--champagne)]/85">
+          <p className="faq-answer">{quickAnswerText}</p>
         </div>
-      </section>
+        <AnswerSpokeLinks slug={slug} />
+      </BelowHeroQuickAnswer>
     </>
   );
 }

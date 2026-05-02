@@ -3,6 +3,8 @@ import Script from "next/script";
 import Link from "next/link";
 import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { PageHero } from "@/components/PageHero";
+import { BelowHeroQuickAnswer } from "@/components/BelowHeroQuickAnswer";
 import { FAQAccordion } from "@/components/FAQAccordion";
 
 const BASE = "https://www.sterlingeventrentals.com";
@@ -46,8 +48,12 @@ const articleSchema = {
     logo: { "@type": "ImageObject", url: `${BASE}/og-image.jpg` },
   },
   datePublished: "2026-02-15",
-  dateModified: "2026-04-27",
+  dateModified: "2026-05-02",
   mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: [".quick-answer", ".faq-answer"],
+  },
 };
 
 const howToSchema = {
@@ -59,7 +65,7 @@ const howToSchema = {
     { "@type": "HowToStep", name: "Set your date and headcount", text: "Lock in your event date and get a firm guest estimate. These two numbers drive every other decision." },
     { "@type": "HowToStep", name: "Choose your equipment", text: "Decide what you need: tent, tables and chairs, stage if needed, and entertainment add-ons." },
     { "@type": "HowToStep", name: "Check permit requirements", text: "Confirm whether your venue and tent size require a permit. Permits are the customer's responsibility." },
-    { "@type": "HowToStep", name: "Book your rentals", text: "Reserve equipment with a deposit — 21–30 days out for corporate, 3–6 months for weddings." },
+    { "@type": "HowToStep", name: "Book your rentals", text: "Reserve equipment with a deposit — typically 21–30 days out for corporate; for weddings, peak Saturdays often book 12+ months ahead, while flexible dates often confirm in the 3–6 month window." },
     { "@type": "HowToStep", name: "Plan for Chicago weather", text: "Add tent sidewalls for wind and rain protection. Know your rental company's weather policy before the event." },
   ],
 };
@@ -69,11 +75,6 @@ const faqItems = [
     question: "How much space do I need per guest at an outdoor event?",
     answer:
       "For a seated dinner with round tables, plan 12–15 sq ft per guest — enough for tables, chairs, and circulation. For cocktail or standing-style events, 8–10 sq ft per person works. A mix of seated and standing falls in between. Use our tent sizing guide to match your count to the right tent dimensions.",
-  },
-  {
-    question: "What permits might I need for a Chicago outdoor event?",
-    answer:
-      "In Chicago, tents over 400 sq ft or 15 ft tall typically require a permit — from the Department of Buildings for private property, or the Chicago Park District for park venues. Permits are the customer's responsibility. See our Chicago tent permit guide for current thresholds and how to apply.",
   },
   {
     question: "What's the best way to budget for outdoor event rentals?",
@@ -88,7 +89,7 @@ const faqItems = [
   {
     question: "Do I need a permit for an outdoor event in Chicago?",
     answer:
-      "It depends on your venue and tent size. Tents over 400 sq ft or 15 ft tall typically require a permit. Permits are the customer's responsibility — Sterling does not pull permits on behalf of clients. See our Chicago tent permit guide for details.",
+      "It depends on venue and structure size. On private property, the Department of Buildings handles tent permits when thresholds apply; Chicago Park District and some public sites have their own rules. Tents over 400 sq ft or 15 ft tall often trigger a building permit, and park or street events may need additional permits. Permits are the customer's responsibility — Sterling does not pull permits on behalf of clients. See our Chicago tent permit guide for thresholds and how to apply.",
   },
   {
     question: "How do I protect my event from rain?",
@@ -98,7 +99,7 @@ const faqItems = [
   {
     question: "How early should I confirm my event rental booking?",
     answer:
-      "Corporate events: 21–30 days in advance. Weddings: 3–6 months out. Social and private events are more flexible, but popular summer and fall weekends fill fast. The sooner you confirm with a deposit, the better your availability.",
+      "Corporate events: 21–30 days in advance is typical. Weddings: prime summer Saturdays and in-demand venues often book 12+ months ahead; if your date or location is more flexible, confirming 3–6 months before the event usually works — sooner is always safer. Social and private events are often comfortable around 2–3 weeks, but popular summer and fall weekends fill fast. The sooner you confirm with a deposit, the better your availability.",
   },
 ];
 
@@ -133,10 +134,8 @@ export default function OutdoorEventPlanningPage() {
       <Script id="ld-faq" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Script id="ld-bc" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
-      {/* ── HERO ── */}
-      <section className="gradient-hero relative min-h-[60vh]">
-        <div className="gradient-orb -left-24 top-10 h-56 w-56" />
-        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-6 px-6">
+      <PageHero
+        breadcrumbs={
           <Breadcrumbs
             items={[
               { href: "/", label: "Home" },
@@ -144,19 +143,18 @@ export default function OutdoorEventPlanningPage() {
               { href: "/resources/outdoor-event-planning", label: "Outdoor Event Planning" },
             ]}
           />
-          <p className="section-eyebrow text-[var(--gold-light)]">Resource Guide</p>
-          <h1 className="hero-headline text-[var(--cream)]">
-            How to plan an outdoor event in Chicago
-          </h1>
-          <p className="max-w-2xl text-lg leading-relaxed text-[var(--champagne)]/85" aria-label="Quick answer">
-            {quickAnswer}
-          </p>
-          <div className="flex flex-wrap items-center gap-4">
-            <Link href="/contact" className="btn-primary">Check Availability for Your Date</Link>
-            <Link href="/packages" className="btn-outline">See event packages →</Link>
-          </div>
-        </div>
-      </section>
+        }
+        eyebrow="Resource Guide"
+        title="How to plan an outdoor event in Chicago"
+        subhead={outdoorPlanningDescription}
+        secondaryCta={{ href: "/packages", label: "See event packages →" }}
+      />
+
+      <BelowHeroQuickAnswer>
+        <p className="quick-answer faq-answer max-w-2xl text-lg leading-relaxed text-[var(--champagne)]/85">
+          {quickAnswer}
+        </p>
+      </BelowHeroQuickAnswer>
 
       {/* ── BOOKING LEAD TIME CARDS ── */}
       <section className="bg-[var(--cream)] py-14">
@@ -188,7 +186,7 @@ export default function OutdoorEventPlanningPage() {
                 type: "Weddings",
                 lead: "3–6 months",
                 sub: "Ceremonies, receptions, rehearsal dinners",
-                note: "Summer Saturdays book earliest. Lock in your date with a deposit.",
+                note: "Peak Saturdays and popular venues often book 12+ months out — sooner is safer. Lock in with a deposit.",
                 accent: "#0b1f3a",
               },
             ].map((card) => (
