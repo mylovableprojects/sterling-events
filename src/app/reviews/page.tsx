@@ -6,13 +6,17 @@ import { PageHero } from "@/components/PageHero";
 const BASE = "https://www.sterlingeventrentals.com";
 const canonical = `${BASE}/reviews`;
 
+const reviewsTitle = "Chicago Event Rental Reviews | Sterling Event Rentals";
+const reviewsDescription =
+  "What planners, couples, and hosts say about Sterling—tent & table rentals, delivery, full setup across Chicago, Evanston, Oak Park, Naperville & Chicagoland.";
+
 export const metadata: Metadata = {
-  title: "Client Reviews | Sterling Event Rentals Chicago & Chicagoland",
-  description: "What corporate planners, wedding couples, and private hosts say about Sterling Event Rentals — tent rentals, delivery, setup, and teardown across Chicago, Evanston, Oak Park, Naperville, and Chicagoland.",
+  title: reviewsTitle,
+  description: reviewsDescription,
   alternates: { canonical },
   openGraph: {
-    title: "Client Reviews | Sterling Event Rentals Chicago & Chicagoland",
-    description: "What corporate planners, wedding couples, and private hosts say about Sterling Event Rentals — tent rentals, delivery, setup, and teardown across Chicago, Evanston, Oak Park, Naperville, and Chicagoland.",
+    title: reviewsTitle,
+    description: reviewsDescription,
     url: canonical,
     images: [
       {
@@ -25,8 +29,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Client Reviews | Sterling Event Rentals Chicago & Chicagoland",
-    description: "What corporate planners, wedding couples, and private hosts say about Sterling Event Rentals — tent rentals, delivery, setup, and teardown across Chicago, Evanston, Oak Park, Naperville, and Chicagoland.",
+    title: reviewsTitle,
+    description: reviewsDescription,
   },
 };
 

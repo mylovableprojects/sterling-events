@@ -19,7 +19,7 @@ const BASE = "https://www.sterlingeventrentals.com";
 
 const servicesTitle = "Chicagoland Event Rental Services | Sterling Event Rentals";
 const servicesDescription =
-  "Tents, tables, stages, and entertainment rentals for Chicago and Chicagoland — delivered, set up, and torn down by our crew. Serving Evanston, Oak Park, Naperville, Schaumburg, and beyond. Licensed, SIOTO-certified.";
+  "Chicago and Chicagoland event rentals for tents, tables, stages, and entertainment. Full delivery, setup, teardown by our SIOTO Safety Seal certified crew.";
 
 export const metadata: Metadata = {
   title: servicesTitle,

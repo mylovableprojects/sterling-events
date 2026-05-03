@@ -563,6 +563,8 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
     introParagraph:
       "We offer mechanical bulls and photo booths for corporate events, weddings, and private parties across Chicago and Chicagoland. Add one or both to your tent or package for guest engagement and memorable moments. Our crew delivers, sets up, and tears down.",
     heroImageLabel: "Interactive game — corporate event",
+    heroImageSrc: "/images/outdoor-event-planning/chicago-bull-rental.webp",
+    heroImageAlt: "Mechanical bull rental at a corporate event in Chicago",
     section2PhotoGridLabels: [
       "Mechanical bull — corporate event",
       "Photo booth — wedding reception",
@@ -572,7 +574,9 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       "/images/outdoor-event-planning/360-photobooth-chicago.webp",
     ],
     section3ImageLabel: "Interactive installation setup",
+    section3ImageSrc: "/images/outdoor-event-planning/bull-rental-chicago.webp",
     section6ImageLabel: "Crew setting up game installation",
+    section6ImageSrc: "/images/outdoor-event-planning/360-photobooth-chicago.webp",
     processBlock: {
       headline: "Here's exactly what happens when you book",
       steps: [
@@ -704,6 +708,8 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
     introParagraph:
       "We offer champagne walls, portable bars, and lounge furniture for weddings, corporate events, and private parties across Chicago and Chicagoland. These are the extras that elevate the atmosphere — a champagne wall for the cocktail hour, a portable bar for the reception, lounge seating for a more relaxed corporate gathering. Our crew delivers, sets up, and tears down.",
     heroImageLabel: "Event extras — champagne wall and bar setup",
+    heroImageSrc: "/images/outdoor-event-planning/champagne-wall.webp",
+    heroImageAlt: "Champagne wall rental at a wedding or corporate event in Chicago",
     section2PhotoGridLabels: [
       "Champagne wall — wedding reception",
       "Portable bar setup — event",
@@ -725,7 +731,9 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       "/images/outdoor-event-planning/Soft Play 02 (1).webp",
     ],
     section3ImageLabel: "Event extras — specialty rental setup",
+    section3ImageSrc: "/images/outdoor-event-planning/Portable Bar.webp",
     section6ImageLabel: "Crew setting up event extras",
+    section6ImageSrc: "/images/outdoor-event-planning/soft-play-micro-weddings.webp",
     processBlock: {
       headline: "Here's exactly what happens when you book",
       steps: [

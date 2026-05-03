@@ -61,9 +61,9 @@ const REGION_CARDS = [
   },
 ] as const;
 
-const metaTitle = "Event Rental Service Area | Chicagoland | Sterling Event Rentals";
+const metaTitle = "Chicago Event Rental Delivery Area | Sterling Event Rentals";
 const metaDescription =
-  "Sterling Event Rentals delivers to Chicago and across Chicagoland — Evanston, Oak Park, Naperville, Schaumburg, Orland Park, and surrounding suburbs. Call (773) 692-7576 to confirm delivery to your zip code or venue.";
+  "Event rental delivery across Chicagoland: Chicago, Evanston, Oak Park, Naperville, Schaumburg, Orland Park. Call (773) 692-7576 to confirm zip or venue.";
 
 export const metadata: Metadata = {
   title: metaTitle,

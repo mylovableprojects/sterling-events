@@ -8,15 +8,16 @@ import { CTABlock } from "@/components/CTABlock";
 
 const BASE = "https://www.sterlingeventrentals.com";
 
+const aboutDescription =
+  "Chicago event rental company since 2021—licensed, insured, SIOTO Safety Seal certified. Corporate planners, weddings, and private parties across Chicagoland.";
+
 export const metadata: Metadata = {
   title: "About Sterling Event Rentals | Chicago Event Rentals",
-  description:
-    "Sterling Event Rentals is a licensed, insured, SIOTO Safety Seal certified event rental company based in Chicago, serving corporate planners, wedding couples, and private hosts across Chicagoland — including Evanston, Oak Park, Naperville, Schaumburg, and Orland Park — since 2021.",
+  description: aboutDescription,
   alternates: { canonical: `${BASE}/about` },
   openGraph: {
     title: "About Sterling Event Rentals | Chicago Event Rentals",
-    description:
-      "Sterling Event Rentals is a licensed, insured, SIOTO Safety Seal certified event rental company based in Chicago, serving corporate planners, wedding couples, and private hosts across Chicagoland — including Evanston, Oak Park, Naperville, Schaumburg, and Orland Park — since 2021.",
+    description: aboutDescription,
     url: `${BASE}/about`,
     images: [
       {
@@ -30,8 +31,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "About Sterling Event Rentals | Chicago Event Rentals",
-    description:
-      "Sterling Event Rentals is a licensed, insured, SIOTO Safety Seal certified event rental company based in Chicago, serving corporate planners, wedding couples, and private hosts across Chicagoland — including Evanston, Oak Park, Naperville, Schaumburg, and Orland Park — since 2021.",
+    description: aboutDescription,
   },
 };
 

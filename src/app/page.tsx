@@ -9,9 +9,9 @@ import { ServicesBentoSection } from "@/components/ServicesBentoSection";
 
 const BASE = "https://www.sterlingeventrentals.com";
 
-const title = "Event Rentals Chicago | Sterling Event Rentals";
+const title = "Chicago Event Rentals | Tents, Tables & Stages | Sterling";
 const description =
-  "Chicago's full-service event rental company. Tents, tables, stages, and specialty rentals for corporate events, weddings, and parties across Chicagoland. Licensed, SIOTO-certified. Get a quote.";
+  "Tents, tables, stages & add-ons for Chicago and Chicagoland events—corporate, wedding, private. Licensed, insured, SIOTO-certified crew. Request a quote.";
 
 export const metadata: Metadata = {
   title,

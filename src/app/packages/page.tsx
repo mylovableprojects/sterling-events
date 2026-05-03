@@ -60,7 +60,7 @@ const PACKAGE_FAQS = [
 ];
 
 const description =
-  "Three event rental packages for 25–300+ guests in Chicago and Chicagoland. Tent, tables, chairs, delivery, setup, and teardown included. $500 minimum. Get an itemized quote.";
+  "Chicago event packages for 25–300+ guests—tent, tables, chairs, delivery, setup, teardown. $500 minimum; add-ons optional. Itemized quote before you book.";
 const canonical = `${BASE}/packages`;
 
 const ADDONS = [

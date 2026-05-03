@@ -6,9 +6,9 @@ import { PageHero } from "@/components/PageHero";
 
 const BASE = "https://www.sterlingeventrentals.com";
 
-const contactTitle = "Get a Quote for Chicago Event Rentals | Sterling Event Rentals";
+const contactTitle = "Chicago Event Rental Quote | Sterling Event Rentals";
 const contactDescription =
-  "Request a quote for tent, table, stage, and event rentals in Chicago, Evanston, Oak Park, Naperville, Schaumburg, and across Chicagoland. Share your date, venue, and guest count — full itemized quote within one business day.";
+  "Quote tents, tables, stages, packages in Chicago & Chicagoland. Send date, venue, guest count for an itemized quote—typically within one business day.";
 
 export const metadata: Metadata = {
   title: contactTitle,

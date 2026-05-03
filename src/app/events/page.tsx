@@ -5,9 +5,9 @@ import { EventsHubContent } from "./EventsHubContent";
 const BASE = "https://www.sterlingeventrentals.com";
 const canonical = `${BASE}/events`;
 
-const eventsTitle = "Event Rentals by Event Type Chicago | Sterling Event Rentals";
+const eventsTitle = "Chicago Event Rentals by Type | Sterling Event Rentals";
 const eventsDescription =
-  "Tent, table, stage, and entertainment rentals for corporate events, weddings, and private parties across Chicago and Chicagoland. Full delivery, setup, and teardown on every order.";
+  "Tents, tables, stages, entertainment by event type—corporate, wedding, private parties across Chicago & Chicagoland. Delivery, setup, teardown included.";
 
 export const metadata: Metadata = {
   title: eventsTitle,

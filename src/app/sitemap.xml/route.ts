@@ -46,7 +46,8 @@ function buildUrls(): string[] {
   return Array.from(urls).sort();
 }
 
-const LAST_MOD = "2026-04-27";
+/** Bump when you ship meaningful URL/content changes (honest freshness for crawlers). */
+const LAST_MOD = "2026-05-02";
 
 export function GET() {
   const urls = buildUrls();

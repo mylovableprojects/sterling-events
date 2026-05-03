@@ -9,7 +9,7 @@ import { PageHero } from "@/components/PageHero";
 const BASE = "https://www.sterlingeventrentals.com";
 const title = "Chicago Event Planning Resources | Sterling Event Rentals";
 const description =
-  "Free guides on tent sizing, Chicago tent permits, outdoor event planning, and corporate event checklists for events in Chicago, Evanston, Oak Park, Naperville, Schaumburg, and across Chicagoland.";
+  "Free Chicagoland planning guides: tent sizing, Chicago tent permits, outdoor setup, corporate checklists for weddings & events. Sterling Event Rentals, Chicago.";
 const canonical = `${BASE}/resources`;
 
 export const metadata: Metadata = {
@@ -41,7 +41,7 @@ const collectionSchema = {
   "@type": "CollectionPage",
   name: "Event Planning Resources — Sterling Event Rentals",
   description:
-    "Free guides covering tent sizing, Chicago tent permits, outdoor event planning, and corporate event checklists for Chicagoland events.",
+    "Free Chicagoland planning guides: tent sizing, Chicago tent permits, outdoor setup, corporate checklists for weddings and events.",
   url: `${BASE}/resources`,
   publisher: {
     "@type": "LocalBusiness",
