@@ -211,7 +211,7 @@ export default function OutdoorEventPlanningPage() {
         <div className="mx-auto max-w-4xl px-4">
           <div className="relative h-56 w-full overflow-hidden rounded-2xl md:h-64">
             <Image
-              src="/images/outdoor-event-planning/Elegant%20Outdoor%20Event%20with%20City%20Views.webp"
+              src="/images/outdoor-event-planning/tent-rentals-in-chicago-area.webp"
               alt="White event tent with dining tables on a lawn, Chicago skyline and Lake Michigan in the background."
               fill
               className="object-cover"
@@ -422,7 +422,7 @@ export default function OutdoorEventPlanningPage() {
             </div>
             <div className="relative h-48 w-full overflow-hidden rounded-2xl">
               <Image
-                src="/images/outdoor-event-planning/Outdoor%20Graduation%20Celebration%202024.webp"
+                src="/images/outdoor-event-planning/graduation-chicago.webp"
                 alt="Outdoor graduation ceremony with Class of 2024 marquee letters and tent on a turf field, Chicago skyline beyond."
                 fill
                 className="object-cover"

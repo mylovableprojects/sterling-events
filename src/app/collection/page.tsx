@@ -43,7 +43,7 @@ const sampleItems: RentalItem[] = [
     category: "Tables",
     description: "Hand-finished oak with soft beveled edges, ideal for head tables and intimate feasts.",
     pricePerDay: 320,
-    imageUrl: "https://picsum.photos/seed/sterling-table-1/900/700",
+    imageUrl: "/images/outdoor-event-planning/round_table_rentals_chicago.webp",
     featured: true,
   },
   {
@@ -51,35 +51,35 @@ const sampleItems: RentalItem[] = [
     category: "Chairs",
     description: "Sculptural silhouette with upholstered seat for elevated comfort and clean lines.",
     pricePerDay: 28,
-    imageUrl: "https://picsum.photos/seed/sterling-chair-1/900/700",
+    imageUrl: "/images/outdoor-event-planning/wedding_chairs_chicago.webp",
   },
   {
     name: "Champagne Linen Ensemble",
     category: "Linens",
     description: "Layered linen collection in champagne and cream, designed to drape and pool beautifully.",
     pricePerDay: 85,
-    imageUrl: "https://picsum.photos/seed/sterling-linen-1/900/700",
+    imageUrl: "/images/outdoor-event-planning/chairs-linens-chicago.webp",
   },
   {
     name: "Luminous Taper Candle Suite",
     category: "Décor",
     description: "Assorted heights of taper holders in brushed brass for cinematic candlelight.",
     pricePerDay: 60,
-    imageUrl: "https://picsum.photos/seed/sterling-decor-1/900/700",
+    imageUrl: "/images/outdoor-event-planning/champagne-wall.webp",
   },
   {
     name: "Midnight Glass Charger",
     category: "Tableware",
     description: "Smoky glass chargers that frame each place setting with a subtle, polished edge.",
     pricePerDay: 16,
-    imageUrl: "https://picsum.photos/seed/sterling-tableware-1/900/700",
+    imageUrl: "/images/outdoor-event-planning/cocktail_tables.webp",
   },
   {
     name: "Napa Glow Lantern Cluster",
     category: "Lighting",
     description: "Mixed-scale lanterns for pathways, terraces, and pool surrounds.",
     pricePerDay: 140,
-    imageUrl: "https://picsum.photos/seed/sterling-lighting-1/900/700",
+    imageUrl: "/images/outdoor-event-planning/wedding_tent_rentals_chicago.webp",
   },
 ];
 
@@ -154,8 +154,8 @@ export default function CollectionPage() {
       </section>
 
       <ImageBreak
-        src="https://picsum.photos/seed/sterling-collection-01/1600/900"
-        alt="Overhead view of a table setting with layered glassware and candlelight"
+        src="/images/outdoor-event-planning/outdoor-wedding.webp"
+        alt="Outdoor wedding reception under a white tent with banquet tables"
         overlayText="“The right rentals disappear into the story—they simply make everything feel inevitable.”"
       />
 

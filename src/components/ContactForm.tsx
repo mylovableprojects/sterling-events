@@ -165,7 +165,6 @@ export function ContactForm() {
             <option value="Wedding">Wedding</option>
             <option value="Corporate">Corporate</option>
             <option value="Social">Social / Private</option>
-            <option value="Styled Shoot">Styled Shoot</option>
           </select>
         </div>
         <div className="md:col-span-2">

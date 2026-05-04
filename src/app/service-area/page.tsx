@@ -46,7 +46,7 @@ const VENUE_CARDS = [
 const REGION_CARDS = [
   {
     slug: "chicago",
-    image: "/images/outdoor-event-planning/Elegant%20Outdoor%20Event%20with%20City%20Views.webp",
+    image: "/images/outdoor-event-planning/tent-rentals-in-chicago-area.webp",
     imageAlt: "Elegant outdoor event with Chicago city views",
   },
   {
@@ -56,7 +56,7 @@ const REGION_CARDS = [
   },
   {
     slug: "southwest-suburbs",
-    image: "/images/outdoor-event-planning/Global%20Corp%20Picnic%20Bash.png",
+    image: "/images/outdoor-event-planning/corporate_events.webp",
     imageAlt: "Corporate company picnic under a white event tent in the southwest suburbs",
   },
 ] as const;

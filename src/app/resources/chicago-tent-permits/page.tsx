@@ -13,7 +13,7 @@ const canonical = `${BASE}/resources/chicago-tent-permits`;
 
 /** WebP in public/images/outdoor-event-planning/Elegant Outdoor Wedding Scene.webp */
 const IMG_ELEGANT_OUTDOOR_WEDDING_WEBP =
-  "/images/outdoor-event-planning/Elegant%20Outdoor%20Wedding%20Scene.webp";
+  "/images/outdoor-event-planning/backyard-chicago-wedding.webp";
 /** preparing-chicago-tent-permit-essentials.webp (source: Preparing for a Chicago Event Tent Permit Essentials) */
 const IMG_PREPARING_TENT_PERMIT_ESSENTIALS_WEBP =
   "/images/outdoor-event-planning/preparing-chicago-tent-permit-essentials.webp";

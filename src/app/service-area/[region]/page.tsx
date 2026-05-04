@@ -15,7 +15,7 @@ import {
 
 const REGION_IMAGES: Record<string, { src: string; alt: string }> = {
   "chicago": {
-    src: "/images/outdoor-event-planning/Elegant%20Outdoor%20Event%20with%20City%20Views.webp",
+    src: "/images/outdoor-event-planning/tent-rentals-in-chicago-area.webp",
     alt: "Elegant outdoor event tent setup with Chicago city views in the background",
   },
   "north-suburbs": {
@@ -23,7 +23,7 @@ const REGION_IMAGES: Record<string, { src: string; alt: string }> = {
     alt: "Outdoor graduation celebration under a tent in the Chicago north suburbs",
   },
   "southwest-suburbs": {
-    src: "/images/outdoor-event-planning/Global%20Corp%20Picnic%20Bash.png",
+    src: "/images/outdoor-event-planning/corporate_events.webp",
     alt: "Corporate company picnic under a white event tent in the Chicago southwest suburbs",
   },
 };

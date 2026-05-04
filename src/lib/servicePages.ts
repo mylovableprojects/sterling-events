@@ -159,7 +159,7 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       "/images/outdoor-event-planning/Setting-up-for-an-outdoor%20event.webp",
     ],
     section3ImageLabel: "Tent interior — tables and chairs setup",
-    section3ImageSrc: "/images/outdoor-event-planning/Global%20Corp%20Picnic%20Bash.png",
+    section3ImageSrc: "/images/outdoor-event-planning/corporate_events.webp",
     section6ImageLabel: "Crew setup — tent installation in progress",
     section6ImageSrc: "/images/outdoor-event-planning/tent-setup.webp",
     ctaFooterLinks: [
@@ -858,13 +858,22 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
     introParagraph:
       "Every Sterling rental includes professional delivery, full setup, and teardown by our crew. This is not self-service—we bring the equipment, set it up, and take it down. The setup fee is separate from unit cost and quoted upfront so there are no surprises.",
     heroImageLabel: "Delivery and setup — event rental",
+    heroImageSrc: "/images/outdoor-event-planning/sterling-event-rentals.webp",
+    heroImageAlt: "Sterling Event Rentals equipment and crew at an outdoor Chicago-area event",
     section2PhotoGridLabels: [
       "Crew unloading equipment",
       "Setup in progress — tent",
       "Teardown — post event",
     ],
+    section2PhotoGridSrcs: [
+      "/images/outdoor-event-planning/stage-setup-chicago.webp",
+      "/images/outdoor-event-planning/tent-setup.webp",
+      "/images/outdoor-event-planning/Setting-up-for-an-outdoor%20event.webp",
+    ],
     section3ImageLabel: "Full delivery and setup — event",
+    section3ImageSrc: "/images/outdoor-event-planning/corporate_events.webp",
     section6ImageLabel: "Crew on-site — delivery window",
+    section6ImageSrc: "/images/outdoor-event-planning/tent-stage-rentals-chicago.webp",
     processBlock: {
       headline: "Here's exactly what happens when you book",
       steps: [

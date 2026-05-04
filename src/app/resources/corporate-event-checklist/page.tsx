@@ -12,11 +12,11 @@ const canonical = `${BASE}/resources/corporate-event-checklist`;
 
 /** Assets in public/images/outdoor-event-planning/ */
 const IMG_CORPORATE_TENT_BANQUET =
-  "/images/outdoor-event-planning/Elegant%20Outdoor%20Event%20Tent.webp";
+  "/images/outdoor-event-planning/tent-stage-rentals-chicago.webp";
 const IMG_CORPORATE_PICNIC =
-  "/images/outdoor-event-planning/Global%20Corp%20Picnic%20Bash.png";
+  "/images/outdoor-event-planning/corporate_events.webp";
 const IMG_CITYSCAPE_GALA =
-  "/images/outdoor-event-planning/Elegant%20Cityscape%20Event%20Setup.webp";
+  "/images/outdoor-event-planning/wedding_chairs_chicago.webp";
 
 const corpChecklistTitle = "Corporate Outdoor Event Checklist Chicago | Sterling Event Rentals";
 const corpChecklistDescription =

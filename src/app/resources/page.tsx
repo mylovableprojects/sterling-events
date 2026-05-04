@@ -93,7 +93,7 @@ const featuredResource = {
   href: "/resources/tent-sizing-guide",
   readTime: "5 min read",
   topics: ["Guest count", "Tent footprints", "Layout math"],
-  image: "/images/outdoor-event-planning/Elegant%20Outdoor%20Event%20Tent.webp",
+  image: "/images/outdoor-event-planning/tent-stage-rentals-chicago.webp",
   imageAlt: "Elegant outdoor event tent setup with banquet tables and string lights",
 };
 
@@ -117,7 +117,7 @@ const secondaryResources = [
     href: "/resources/outdoor-event-planning",
     readTime: "7 min read",
     topics: ["Chicago seasons", "Lead times", "Space planning"],
-    image: "/images/outdoor-event-planning/Elegant%20Outdoor%20Event%20with%20City%20Views.webp",
+    image: "/images/outdoor-event-planning/tent-rentals-in-chicago-area.webp",
     imageAlt: "Outdoor corporate event with city views and professional tent setup",
   },
   {
@@ -128,7 +128,7 @@ const secondaryResources = [
     href: "/resources/corporate-event-checklist",
     readTime: "4 min read",
     topics: ["Timeline", "Credentials", "Day-of logistics"],
-    image: "/images/outdoor-event-planning/Elegant%20Cityscape%20Event%20Setup.webp",
+    image: "/images/outdoor-event-planning/wedding_chairs_chicago.webp",
     imageAlt: "Elegant corporate event setup with cityscape views — Chicago outdoor gala",
   },
 ];
@@ -432,7 +432,7 @@ export default function ResourcesPage() {
           >
             <div className="relative h-52 w-full">
               <Image
-                src="/images/outdoor-event-planning/Global%20Corp%20Picnic%20Bash.png"
+                src="/images/outdoor-event-planning/corporate_events.webp"
                 alt="Corporate company picnic under a white tent with catering tables — Sterling Event Rentals Chicago"
                 fill
                 className="object-cover"

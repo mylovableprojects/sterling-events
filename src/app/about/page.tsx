@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import Link from "next/link";
+import Image from "next/image";
 import { ImageBreak } from "@/components/ImageBreak";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { TrustBar } from "@/components/TrustBar";
@@ -114,13 +115,15 @@ export default function AboutPage() {
             <TrustBar className="mt-8" />
           </div>
           <div className="mt-4 flex-1 md:mt-0 md:flex md:justify-end">
-            <div
-              className="relative aspect-[3/4] w-full max-w-sm overflow-hidden rounded-2xl border border-[var(--gold)]/20 bg-[var(--navy)]"
-              data-photo-slot="Steve Rangel or crew — candid at event setup"
-            >
-              <p className="absolute inset-0 flex items-center justify-center text-xs text-[var(--champagne)]/30">
-                📸 Photo: Steve or crew at event
-              </p>
+            <div className="relative aspect-[3/4] w-full max-w-sm overflow-hidden rounded-2xl border border-[var(--gold)]/20 bg-[var(--navy)]">
+              <Image
+                src="/images/outdoor-event-planning/sterling-event-rentals.webp"
+                alt="Sterling Event Rentals crew and equipment at an outdoor Chicago-area event"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 384px"
+                priority
+              />
             </div>
           </div>
         </div>
@@ -138,13 +141,14 @@ export default function AboutPage() {
             </p>
           </ScrollReveal>
           <div className="md:w-1/2">
-            <div
-              className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-[var(--navy)]/10 bg-[var(--navy)]/5"
-              data-photo-slot="Event setup — wide shot, tent or tables in place"
-            >
-              <p className="absolute inset-0 flex items-center justify-center text-xs text-[var(--charcoal)]/30">
-                📸 Photo: Event setup
-              </p>
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-[var(--navy)]/10 bg-[var(--navy)]/5">
+              <Image
+                src="/images/outdoor-event-planning/tent-setup.webp"
+                alt="Outdoor event tent and equipment setup at a Chicagoland venue"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
           </div>
         </div>
@@ -210,17 +214,24 @@ export default function AboutPage() {
             </div>
           </ScrollReveal>
           <div className="md:w-1/2">
-            <div
-              className="flex aspect-square w-full max-w-xs items-center justify-center rounded-2xl border-2 border-[var(--gold)]/30 bg-white mx-auto"
-              data-photo-slot="SIOTO Safety Seal badge image"
-            >
-              <div className="text-center">
-                <p className="mb-2 text-4xl">🏅</p>
-                <p className="text-sm text-[var(--charcoal)]/40 font-medium uppercase tracking-widest">
+            <div className="relative mx-auto flex aspect-square w-full max-w-xs flex-col items-center justify-end overflow-hidden rounded-2xl border-2 border-[var(--gold)]/30 bg-[var(--navy)]">
+              <Image
+                src="/images/outdoor-event-planning/corporate_events.webp"
+                alt="Professional outdoor corporate event under a tent, representing Sterling's certified crew and standards"
+                fill
+                className="object-cover"
+                sizes="320px"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--charcoal)]/90 via-[var(--charcoal)]/20 to-transparent" aria-hidden />
+              <div className="relative z-10 p-5 text-center">
+                <p className="mb-1 text-2xl" aria-hidden>
+                  🏅
+                </p>
+                <p className="text-sm font-medium uppercase tracking-widest text-[var(--cream)]">
                   SIOTO Safety Seal
                 </p>
-                <p className="mt-1 text-xs text-[var(--charcoal)]/30">
-                  Badge image — request from Steve
+                <p className="mt-2 text-xs leading-relaxed text-[var(--champagne)]/90">
+                  Nationally recognized operator safety training — verify credentials at sioto.com
                 </p>
               </div>
             </div>

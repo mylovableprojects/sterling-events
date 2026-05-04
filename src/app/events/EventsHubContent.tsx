@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { EVENT_TYPE_DATA, EVENT_TYPE_SLUGS } from "@/lib/eventTypes";
 import { heroHeadlineStagger } from "@/lib/heroHeadlineMotion";
@@ -142,12 +143,24 @@ export function EventsHubContent() {
                     href={`/events/${slug}`}
                     className="group flex flex-col overflow-hidden rounded-2xl border border-[var(--navy)]/10 bg-white transition-all duration-200 hover:border-[var(--gold)]/40 hover:shadow-lg hover:-translate-y-0.5"
                   >
-                    <ImgPlaceholder
-                      label={`${d.name} Photo`}
-                      gradFrom={d.heroGradient.from}
-                      gradTo={d.heroGradient.to}
-                      className="h-44"
-                    />
+                    <div className="relative h-44 w-full flex-shrink-0 overflow-hidden bg-[var(--navy)]/10">
+                      {d.heroBackgroundImage ? (
+                        <Image
+                          src={d.heroBackgroundImage.src}
+                          alt={d.heroBackgroundImage.alt}
+                          fill
+                          className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                        />
+                      ) : (
+                        <ImgPlaceholder
+                          label={`${d.name} Photo`}
+                          gradFrom={d.heroGradient.from}
+                          gradTo={d.heroGradient.to}
+                          className="h-full w-full"
+                        />
+                      )}
+                    </div>
                     <div className="flex flex-col gap-3 p-6">
                       <span className="text-2xl" aria-hidden>{ICONS[slug]}</span>
                       <h3 className="font-[var(--font-display)] text-lg text-[var(--navy)]">
@@ -201,12 +214,13 @@ export function EventsHubContent() {
               </ul>
             </motion.div>
 
-            <motion.div {...reveal(0.12)}>
-              <ImgPlaceholder
-                label="Sterling Event Rentals Setup Photo"
-                gradFrom="#0b1f3a"
-                gradTo="#030d1c"
-                className="w-full h-80 rounded-2xl"
+            <motion.div {...reveal(0.12)} className="relative h-80 w-full overflow-hidden rounded-2xl border border-white/10 bg-[var(--navy)]/40">
+              <Image
+                src="/images/outdoor-event-planning/tent-stage-rentals-chicago.webp"
+                alt="Tent, stage, and table setup for a Chicagoland outdoor event by Sterling Event Rentals"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </motion.div>
           </div>

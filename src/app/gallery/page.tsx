@@ -36,15 +36,47 @@ export const metadata: Metadata = {
 };
 
 const galleryItems = [
-  { seed: "sterling-gallery-1", category: "Weddings" },
-  { seed: "sterling-gallery-2", category: "Corporate" },
-  { seed: "sterling-gallery-3", category: "Social" },
-  { seed: "sterling-gallery-4", category: "Styled Shoots" },
-  { seed: "sterling-gallery-5", category: "Weddings" },
-  { seed: "sterling-gallery-6", category: "Corporate" },
-  { seed: "sterling-gallery-7", category: "Social" },
-  { seed: "sterling-gallery-8", category: "Styled Shoots" },
-];
+  {
+    src: "/images/outdoor-event-planning/outdoor-wedding.webp",
+    category: "Weddings",
+    alt: "Outdoor wedding reception under a tent with tables and lighting",
+  },
+  {
+    src: "/images/outdoor-event-planning/corporate_events.webp",
+    category: "Corporate",
+    alt: "Corporate event under a white tent with banquet tables",
+  },
+  {
+    src: "/images/outdoor-event-planning/private-parties-backyard.webp",
+    category: "Social",
+    alt: "Backyard private party with tent and seating",
+  },
+  {
+    src: "/images/outdoor-event-planning/champagne-wall.webp",
+    category: "Styled Shoots",
+    alt: "Champagne wall display at an upscale event",
+  },
+  {
+    src: "/images/outdoor-event-planning/tent-stage-rentals-chicago.webp",
+    category: "Weddings",
+    alt: "Tent and stage rental setup for an outdoor event",
+  },
+  {
+    src: "/images/outdoor-event-planning/round-tables-seating.webp",
+    category: "Corporate",
+    alt: "Round tables and seating under event lighting",
+  },
+  {
+    src: "/images/outdoor-event-planning/stage_in_chicago.webp",
+    category: "Social",
+    alt: "Stage rental setup for a Chicago outdoor event",
+  },
+  {
+    src: "/images/outdoor-event-planning/cocktail_tables.webp",
+    category: "Styled Shoots",
+    alt: "Cocktail tables and high-top seating at an event",
+  },
+] as const;
 
 const galleryPageSchema = {
   "@context": "https://schema.org",
@@ -91,12 +123,12 @@ export default function GalleryPage() {
 
           <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
             {galleryItems.map((item) => (
-              <div key={item.seed} className="mb-4 break-inside-avoid">
+              <div key={item.src} className="mb-4 break-inside-avoid">
                 <ScrollReveal className="relative overflow-hidden rounded-2xl border border-white/10">
                   <div className="relative h-64 md:h-72">
                     <Image
-                      src={`https://picsum.photos/seed/${item.seed}/900/1200`}
-                      alt={`${item.category} event vignette`}
+                      src={item.src}
+                      alt={item.alt}
                       fill
                       sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
                       className="object-cover transition-transform duration-700 hover:scale-105"
@@ -114,8 +146,8 @@ export default function GalleryPage() {
       </section>
 
       <ImageBreak
-        src="https://picsum.photos/seed/sterling-gallery-hero/1600/900"
-        alt="A wide shot of an evening reception with glowing candlelight"
+        src="/images/outdoor-event-planning/wedding_tent_rentals_chicago.webp"
+        alt="Evening outdoor wedding tent with warm lighting and guest seating"
         overlayText="“What we remember most are the way the room felt, the light, the laughter between courses.”"
       />
 

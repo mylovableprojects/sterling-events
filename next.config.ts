@@ -15,14 +15,6 @@ const nextConfig: NextConfig = {
     // Prevent Next from inferring the wrong workspace root when multiple lockfiles exist.
     root: __dirname,
   },
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "picsum.photos",
-      },
-    ],
-  },
   async redirects() {
     const slugRedirects = LEGACY_SERVICE_SLUGS.map((slug) => ({
       source: `/services/${slug}`,
