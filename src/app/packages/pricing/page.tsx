@@ -241,7 +241,7 @@ export default function PackagesPricingPage() {
             <Link href="/contact" className="btn-primary">
               Request a quote
             </Link>
-            <Link href="/packages" className="btn-outline">
+            <Link href="/packages" className="btn-outline-light">
               Back to packages
             </Link>
           </div>

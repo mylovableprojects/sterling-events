@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { connectToDatabase } from "@/lib/mongodb";
 import { Inquiry } from "@/lib/models/Inquiry";
+import { forwardContactToHighLevel } from "@/lib/highLevelContact";
 import { sendContactNotificationEmail } from "@/lib/sendContactEmail";
 
 export async function POST(req: NextRequest) {
@@ -41,6 +42,18 @@ export async function POST(req: NextRequest) {
       console.warn("Contact API: MONGODB_URI is not set — inquiry not saved to the database.");
     }
 
+    const highLevelOk = await forwardContactToHighLevel({
+      name,
+      email,
+      phone,
+      eventDate,
+      eventType,
+      guestCount,
+      message,
+      consentTransactional: !!consentTransactional,
+      consentMarketing: !!consentMarketing,
+    });
+
     let emailSent: "sent" | "skipped" = "skipped";
     try {
       emailSent = await sendContactNotificationEmail({
@@ -56,7 +69,7 @@ export async function POST(req: NextRequest) {
       });
     } catch (emailErr) {
       console.error("Contact API: notification email failed:", emailErr);
-      if (!savedToDatabase) {
+      if (!savedToDatabase && !highLevelOk) {
         return NextResponse.json(
           {
             error:
@@ -67,7 +80,7 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    if (!savedToDatabase && emailSent === "skipped") {
+    if (!savedToDatabase && emailSent === "skipped" && !highLevelOk) {
       return NextResponse.json(
         {
           error:
