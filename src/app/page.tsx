@@ -6,6 +6,7 @@ import { ScrollReveal } from "../components/ScrollReveal";
 import { TrustBar } from "@/components/TrustBar";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { ServicesBentoSection } from "@/components/ServicesBentoSection";
+import { ChicagolandMapEmbed } from "@/components/ChicagolandMapEmbed";
 
 const BASE = "https://www.sterlingeventrentals.com";
 
@@ -309,8 +310,8 @@ export default function Home() {
       {/* 8. Service area — kept as AEO question heading */}
       <section className="bg-[var(--cream)] py-20" aria-labelledby="area-heading">
         <div className="mx-auto max-w-6xl px-4">
-          <ScrollReveal className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-            <div className="space-y-3">
+          <ScrollReveal className="flex flex-col gap-8 md:flex-row md:items-stretch md:justify-between md:gap-10">
+            <div className="flex flex-1 flex-col space-y-3 md:max-w-xl">
               <h2 id="area-heading" className="heading-2 text-[var(--charcoal)]">
                 What areas do you serve in Chicagoland?
               </h2>
@@ -321,11 +322,11 @@ export default function Home() {
                 </a>{" "}
                 and we'll confirm in one conversation.
               </p>
-              <Link href="/service-area" className="btn-primary mt-4 inline-block">
+              <Link href="/service-area" className="btn-primary mt-4 inline-block w-fit">
                 See full service area &amp; delivery details →
               </Link>
             </div>
-            <div className="h-48 w-full max-w-md rounded-xl bg-[var(--navy)]/10 md:h-56" aria-hidden />
+            <ChicagolandMapEmbed className="min-h-[220px] w-full flex-1 md:min-h-[280px] md:max-w-lg" />
           </ScrollReveal>
         </div>
       </section>

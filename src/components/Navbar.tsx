@@ -73,8 +73,8 @@ export function Navbar() {
               <div className="text-[0.7rem] tracking-[0.35em] text-[var(--champagne)]/80 uppercase">
                 Sterling
               </div>
-              <div className="text-[1.15rem] font-semibold tracking-[0.18em] text-[var(--gold)] uppercase">
-                Events
+              <div className="text-[0.95rem] font-semibold tracking-[0.12em] text-[var(--gold)] uppercase sm:text-[1.05rem] sm:tracking-[0.14em]">
+                Event Rentals
               </div>
             </div>
           </Link>
