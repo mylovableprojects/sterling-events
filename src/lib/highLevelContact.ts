@@ -1,6 +1,12 @@
+import type { AttributionSnapshot } from "./attribution";
+
 /**
  * Forwards contact form submissions to Go High Level (LeadConnector) inbound webhook.
  * Set HIGHLEVEL_CONTACT_WEBHOOK_URL in env to override the default trigger URL.
+ *
+ * Custom contact fields to create in HighLevel (map webhook JSON keys — all optional text):
+ * utm_source, utm_medium, utm_campaign, utm_term, utm_content,
+ * gclid, fbclid, msclkid, attribution_landing_page, attribution_captured_at
  */
 const DEFAULT_WEBHOOK =
   "https://services.leadconnectorhq.com/hooks/1rucOoZ7U4YprPxXG1g8/webhook-trigger/d76520b5-3ed2-455c-a86a-457ba7c7f89b";
@@ -15,7 +21,24 @@ export type HighLevelContactPayload = {
   message: string;
   consentTransactional: boolean;
   consentMarketing: boolean;
+  attribution?: AttributionSnapshot;
 };
+
+function attributionToWebhookFields(a: AttributionSnapshot | undefined): Record<string, string> {
+  if (!a) return {};
+  const o: Record<string, string> = {};
+  if (a.utmSource) o.utm_source = a.utmSource;
+  if (a.utmMedium) o.utm_medium = a.utmMedium;
+  if (a.utmCampaign) o.utm_campaign = a.utmCampaign;
+  if (a.utmTerm) o.utm_term = a.utmTerm;
+  if (a.utmContent) o.utm_content = a.utmContent;
+  if (a.gclid) o.gclid = a.gclid;
+  if (a.fbclid) o.fbclid = a.fbclid;
+  if (a.msclkid) o.msclkid = a.msclkid;
+  if (a.attributionLandingPage) o.attribution_landing_page = a.attributionLandingPage;
+  if (a.attributionCapturedAt) o.attribution_captured_at = a.attributionCapturedAt;
+  return o;
+}
 
 function splitName(full: string): { first_name: string; last_name: string } {
   const trimmed = full.trim();
@@ -46,6 +69,7 @@ export async function forwardContactToHighLevel(data: HighLevelContactPayload): 
     consent_transactional: data.consentTransactional,
     consent_marketing: data.consentMarketing,
     source: "sterlingeventrentals.com_contact_form",
+    ...attributionToWebhookFields(data.attribution),
   };
 
   try {

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { getAttributionSnapshot } from "@/lib/attribution";
 
 type FormState = {
   name: string;
@@ -60,7 +61,10 @@ export function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          ...form,
+          attribution: getAttributionSnapshot(),
+        }),
       });
 
       const data = await res.json().catch(() => ({}));

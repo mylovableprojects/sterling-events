@@ -3,6 +3,7 @@
 import { ReactNode, useEffect, useRef } from "react";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
+import { AttributionCapture } from "./AttributionCapture";
 
 type Props = {
   children: ReactNode;
@@ -49,6 +50,7 @@ export function ClientRoot({ children }: Props) {
 
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_top,_#10142a_0,_#02030a_55%,_#010108_100%)] text-[var(--cream)]">
+      <AttributionCapture />
       <Navbar />
       <main className="pt-20">{children}</main>
       <Footer />

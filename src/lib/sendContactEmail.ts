@@ -1,4 +1,5 @@
 import { Resend } from "resend";
+import type { AttributionSnapshot } from "./attribution";
 
 const DEFAULT_TO = "info@sterlingeventrentals.com";
 
@@ -12,6 +13,7 @@ export type ContactEmailPayload = {
   message: string;
   consentTransactional?: boolean;
   consentMarketing: boolean;
+  attribution?: AttributionSnapshot;
 };
 
 function escapeHtml(text: string): string {
@@ -20,6 +22,23 @@ function escapeHtml(text: string): string {
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
+}
+
+function formatAttributionPlain(a: AttributionSnapshot | undefined): string[] {
+  if (!a) return [];
+  const lines: string[] = [];
+  if (a.utmSource) lines.push(`utm_source: ${a.utmSource}`);
+  if (a.utmMedium) lines.push(`utm_medium: ${a.utmMedium}`);
+  if (a.utmCampaign) lines.push(`utm_campaign: ${a.utmCampaign}`);
+  if (a.utmTerm) lines.push(`utm_term: ${a.utmTerm}`);
+  if (a.utmContent) lines.push(`utm_content: ${a.utmContent}`);
+  if (a.gclid) lines.push(`gclid: ${a.gclid}`);
+  if (a.fbclid) lines.push(`fbclid: ${a.fbclid}`);
+  if (a.msclkid) lines.push(`msclkid: ${a.msclkid}`);
+  if (a.attributionLandingPage) lines.push(`Landing URL: ${a.attributionLandingPage}`);
+  if (a.attributionCapturedAt) lines.push(`Captured at: ${a.attributionCapturedAt}`);
+  if (lines.length === 0) return [];
+  return ["", "Attribution:", ...lines];
 }
 
 function buildPlainText(data: ContactEmailPayload): string {
@@ -32,6 +51,7 @@ function buildPlainText(data: ContactEmailPayload): string {
     `Event date: ${data.eventDate?.trim() || "(not provided)"}`,
     `Event type: ${data.eventType?.trim() || "(not provided)"}`,
     `Guest count: ${data.guestCount?.trim() || "(not provided)"}`,
+    ...formatAttributionPlain(data.attribution),
     "",
     "Message:",
     data.message,
@@ -42,6 +62,25 @@ function buildPlainText(data: ContactEmailPayload): string {
   return lines.join("\n");
 }
 
+function attributionHtmlRows(a: AttributionSnapshot | undefined): string {
+  if (!a) return "";
+  const pairs: [string, string][] = [];
+  if (a.utmSource) pairs.push(["utm_source", a.utmSource]);
+  if (a.utmMedium) pairs.push(["utm_medium", a.utmMedium]);
+  if (a.utmCampaign) pairs.push(["utm_campaign", a.utmCampaign]);
+  if (a.utmTerm) pairs.push(["utm_term", a.utmTerm]);
+  if (a.utmContent) pairs.push(["utm_content", a.utmContent]);
+  if (a.gclid) pairs.push(["gclid", a.gclid]);
+  if (a.fbclid) pairs.push(["fbclid", a.fbclid]);
+  if (a.msclkid) pairs.push(["msclkid", a.msclkid]);
+  if (a.attributionLandingPage) pairs.push(["Landing URL", a.attributionLandingPage]);
+  if (a.attributionCapturedAt) pairs.push(["Captured at", a.attributionCapturedAt]);
+  if (pairs.length === 0) return "";
+  const row = (label: string, value: string) =>
+    `<tr><td style="padding:6px 12px 6px 0;font-weight:600;vertical-align:top;color:#1a1a1a">${escapeHtml(label)}</td><td style="padding:6px 0;color:#333;word-break:break-all">${escapeHtml(value)}</td></tr>`;
+  return `<p style="margin:16px 0 8px;font-weight:600">Attribution</p><table style="border-collapse:collapse;margin-bottom:16px">${pairs.map(([l, v]) => row(l, v)).join("")}</table>`;
+}
+
 function buildHtml(data: ContactEmailPayload): string {
   const row = (label: string, value: string) =>
     `<tr><td style="padding:6px 12px 6px 0;font-weight:600;vertical-align:top;color:#1a1a1a">${escapeHtml(label)}</td><td style="padding:6px 0;color:#333">${escapeHtml(value)}</td></tr>`;
@@ -49,6 +88,7 @@ function buildHtml(data: ContactEmailPayload): string {
   return `<!DOCTYPE html><html><body style="font-family:system-ui,sans-serif;line-height:1.5;color:#333">
 <p style="margin:0 0 16px;font-size:16px">New quote request from the website contact form.</p>
 <table style="border-collapse:collapse;margin-bottom:16px">${row("Name", data.name)}${row("Email", data.email)}${row("Phone", data.phone?.trim() || "—")}${row("Event date", data.eventDate?.trim() || "—")}${row("Event type", data.eventType?.trim() || "—")}${row("Guest count", data.guestCount?.trim() || "—")}</table>
+${attributionHtmlRows(data.attribution)}
 <p style="margin:0 0 8px;font-weight:600">Message</p>
 <p style="margin:0 0 16px;white-space:pre-wrap">${escapeHtml(data.message)}</p>
 <p style="margin:0;font-size:13px;color:#666">Call/text consent (if phone provided): ${data.phone?.trim() ? (data.consentTransactional ? "yes" : "no") : "n/a"}<br/>Promotional SMS: ${data.consentMarketing ? "yes" : "no"}</p>

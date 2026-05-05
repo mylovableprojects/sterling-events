@@ -3,11 +3,25 @@ import { connectToDatabase } from "@/lib/mongodb";
 import { Inquiry } from "@/lib/models/Inquiry";
 import { forwardContactToHighLevel } from "@/lib/highLevelContact";
 import { sendContactNotificationEmail } from "@/lib/sendContactEmail";
+import { sanitizeAttributionPayload } from "@/lib/attribution";
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { name, email, phone, eventDate, eventType, guestCount, message, consentTransactional, consentMarketing } = body;
+    const {
+      name,
+      email,
+      phone,
+      eventDate,
+      eventType,
+      guestCount,
+      message,
+      consentTransactional,
+      consentMarketing,
+      attribution: attributionRaw,
+    } = body;
+
+    const attribution = sanitizeAttributionPayload(attributionRaw);
 
     if (!name || !email || !message) {
       return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
@@ -33,6 +47,7 @@ export async function POST(req: NextRequest) {
           message,
           consentTransactional: phone?.trim() ? !!consentTransactional : undefined,
           consentMarketing: !!consentMarketing,
+          ...attribution,
         });
         savedToDatabase = true;
       } catch (dbErr) {
@@ -52,6 +67,7 @@ export async function POST(req: NextRequest) {
       message,
       consentTransactional: !!consentTransactional,
       consentMarketing: !!consentMarketing,
+      attribution,
     });
 
     let emailSent: "sent" | "skipped" = "skipped";
@@ -66,6 +82,7 @@ export async function POST(req: NextRequest) {
         message,
         consentTransactional: !!consentTransactional,
         consentMarketing: !!consentMarketing,
+        attribution,
       });
     } catch (emailErr) {
       console.error("Contact API: notification email failed:", emailErr);
