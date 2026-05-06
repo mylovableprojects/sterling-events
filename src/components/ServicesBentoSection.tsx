@@ -13,6 +13,23 @@ function reveal(delay = 0) {
   };
 }
 
+/**
+ * `sizes` for bento cards — must match the grid (max-w-6xl + col-spans), not raw `vw`,
+ * or the browser over-fetches wide srcset candidates on large monitors (Lighthouse
+ * "larger than it needs to be").
+ */
+function bentoCardSizes(cardIndex: number) {
+  if (cardIndex < 3) {
+    // lg: 2/6 width (~⅓ row); sm: half width; mobile: full width
+    return "(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 380px";
+  }
+  if (cardIndex === 3) {
+    return "(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 560px";
+  }
+  // Index 4: sm+ full row (col-span-2), lg half row
+  return "(max-width: 639px) 100vw, (max-width: 1023px) 100vw, 560px";
+}
+
 /** Top-of-card photo; falls back to a subtle gradient placeholder when src is null. */
 function CardImage({
   src,
@@ -57,8 +74,9 @@ function CardImage({
         src={src}
         alt={alt}
         fill
+        quality={72}
         className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-        sizes={sizes ?? "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"}
+        sizes={sizes ?? "(max-width: 639px) 100vw, 50vw, 400px"}
       />
     </div>
   );
@@ -160,6 +178,7 @@ export function ServicesBentoSection() {
                   placeholderLabel={`${s.title} Photo`}
                   gradFrom={s.gradFrom}
                   gradTo={s.gradTo}
+                  sizes={bentoCardSizes(i)}
                 />
                 <div className="flex flex-1 flex-col gap-2 p-5">
                   <h3 className="font-[var(--font-display)] text-lg text-[var(--navy)]">
@@ -203,6 +222,7 @@ export function ServicesBentoSection() {
                   src="/images/outdoor-event-planning/delivery-setup.webp"
                   alt="Sterling crew delivering and setting up rental equipment at a venue"
                   fill
+                  quality={72}
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   sizes="(max-width: 1024px) 224px, 288px"
                 />

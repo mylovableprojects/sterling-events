@@ -15,6 +15,13 @@ const nextConfig: NextConfig = {
     // Prevent Next from inferring the wrong workspace root when multiple lockfiles exist.
     root: __dirname,
   },
+  // Inlines app-router CSS into the HTML in production so the browser does not wait on a
+  // second critical request for `/_next/static/chunks/*.css` (Lighthouse network dependency chain).
+  experimental: {
+    inlineCss: true,
+    /** Tree-shake barrel imports (smaller client chunks for icons). */
+    optimizePackageImports: ["lucide-react"],
+  },
   async redirects() {
     const slugRedirects = LEGACY_SERVICE_SLUGS.map((slug) => ({
       source: `/services/${slug}`,

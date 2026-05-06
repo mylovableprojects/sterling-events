@@ -51,7 +51,7 @@ export function TrustBar({
             <li key={i} className="flex items-center gap-2">
               <span className={`font-medium ${isLight ? "text-[var(--navy)]" : "text-[var(--gold-light)]"}`}>{item.label}</span>
               {item.detail && (
-                <span className={isLight ? "text-[var(--charcoal)]/60" : "text-[var(--champagne)]/60"}>— {item.detail}</span>
+                <span className={isLight ? "text-[var(--charcoal)]/75" : "text-[var(--champagne)]/75"}>— {item.detail}</span>
               )}
             </li>
           ))}
@@ -62,7 +62,7 @@ export function TrustBar({
             <li key={i} className="flex items-center gap-2">
               <span className={`font-medium ${isLight ? "text-[var(--navy)]" : "text-[var(--gold-light)]"}`}>{item.label}</span>
               {item.detail && (
-                <span className={`text-[0.8rem] ${isLight ? "text-[var(--charcoal)]/60" : "text-[var(--champagne)]/60"}`}>{item.detail}</span>
+                <span className={`text-[0.8rem] ${isLight ? "text-[var(--charcoal)]/75" : "text-[var(--champagne)]/75"}`}>{item.detail}</span>
               )}
             </li>
           ))}

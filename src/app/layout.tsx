@@ -65,21 +65,6 @@ export default function RootLayout({
       <head>
         {IS_PROD && (
           <>
-            {/* Google Tag Manager */}
-            <Script
-              id="gtm-datalayer"
-              strategy="beforeInteractive"
-              dangerouslySetInnerHTML={{
-                __html: `window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});`,
-              }}
-            />
-            <Script
-              id="gtm-src"
-              strategy="beforeInteractive"
-              src={`https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`}
-            />
-
             <Script
               id="ld-website"
               type="application/ld+json"
@@ -102,14 +87,29 @@ window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});`,
       </head>
       <body className={`${display.variable} ${body.variable} antialiased`}>
         {IS_PROD && (
-          <noscript>
-            <iframe
-              src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-              height="0"
-              width="0"
-              style={{ display: "none", visibility: "hidden" }}
+          <>
+            <Script
+              id="gtm-datalayer"
+              strategy="lazyOnload"
+              dangerouslySetInnerHTML={{
+                __html: `window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});`,
+              }}
             />
-          </noscript>
+            <Script
+              id="gtm-src"
+              strategy="lazyOnload"
+              src={`https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`}
+            />
+            <noscript>
+              <iframe
+                src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+                height="0"
+                width="0"
+                style={{ display: "none", visibility: "hidden" }}
+              />
+            </noscript>
+          </>
         )}
         <ClientRoot>{children}</ClientRoot>
       </body>

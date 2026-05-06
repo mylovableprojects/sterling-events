@@ -32,6 +32,10 @@ const packageLinks = [
   { href: "/packages/pricing", label: "Pricing & price list" },
 ];
 
+/** Minimum 44×44px tap area for dropdown rows (WCAG / Lighthouse). */
+const navDropdownLinkBase =
+  "flex min-h-11 w-full items-center rounded-md px-2 py-2";
+
 export function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
@@ -88,14 +92,14 @@ export function Navbar() {
                 Services ▾
               </button>
               <div className="invisible absolute left-0 top-full mt-3 w-64 rounded-2xl border border-white/10 bg-black/90 p-3 text-[0.75rem] opacity-0 shadow-[0_18px_60px_rgba(0,0,0,0.8)] transition-all group-hover:visible group-hover:opacity-100">
-                <ul className="space-y-1">
+                <ul className="space-y-2">
                   {serviceLinks.map((link) => {
                     const active = pathname === link.href;
                     return (
                       <li key={link.href}>
                         <Link
                           href={link.href}
-                          className={`flex items-center justify-between rounded-md px-2 py-1.5 ${
+                          className={`${navDropdownLinkBase} justify-between ${
                             active ? "text-[var(--gold)]" : "text-[var(--champagne)]/80 hover:text-[var(--gold)]"
                           }`}
                         >
@@ -120,14 +124,14 @@ export function Navbar() {
                 Events ▾
               </button>
               <div className="invisible absolute left-0 top-full mt-3 w-72 rounded-2xl border border-white/10 bg-black/90 p-3 text-[0.75rem] opacity-0 shadow-[0_18px_60px_rgba(0,0,0,0.8)] transition-all group-hover:visible group-hover:opacity-100">
-                <ul className="space-y-1">
+                <ul className="space-y-2">
                   {eventLinks.map((link) => {
                     const active = pathname === link.href;
                     return (
                       <li key={link.href}>
                         <Link
                           href={link.href}
-                          className={`flex items-center rounded-md px-2 py-1.5 ${
+                          className={`${navDropdownLinkBase} ${
                             active ? "text-[var(--gold)]" : "text-[var(--champagne)]/80 hover:text-[var(--gold)]"
                           }`}
                         >
@@ -152,14 +156,14 @@ export function Navbar() {
                 Packages ▾
               </button>
               <div className="invisible absolute left-0 top-full mt-3 w-64 rounded-2xl border border-white/10 bg-black/90 p-3 text-[0.75rem] opacity-0 shadow-[0_18px_60px_rgba(0,0,0,0.8)] transition-all group-hover:visible group-hover:opacity-100">
-                <ul className="space-y-1">
+                <ul className="space-y-2">
                   {packageLinks.map((link) => {
                     const active = pathname === link.href;
                     return (
                       <li key={link.href}>
                         <Link
                           href={link.href}
-                          className={`flex items-center rounded-md px-2 py-1.5 ${
+                          className={`${navDropdownLinkBase} ${
                             active ? "text-[var(--gold)]" : "text-[var(--champagne)]/80 hover:text-[var(--gold)]"
                           }`}
                         >
@@ -184,14 +188,14 @@ export function Navbar() {
                 Service Area ▾
               </button>
               <div className="invisible absolute left-0 top-full mt-3 w-64 rounded-2xl border border-white/10 bg-black/90 p-3 text-[0.75rem] opacity-0 shadow-[0_18px_60px_rgba(0,0,0,0.8)] transition-all group-hover:visible group-hover:opacity-100">
-                <ul className="space-y-1">
+                <ul className="space-y-2">
                   {serviceAreaLinks.map((link) => {
                     const active = pathname === link.href;
                     return (
                       <li key={link.href}>
                         <Link
                           href={link.href}
-                          className={`flex items-center rounded-md px-2 py-1.5 ${
+                          className={`${navDropdownLinkBase} ${
                             active ? "text-[var(--gold)]" : "text-[var(--champagne)]/80 hover:text-[var(--gold)]"
                           }`}
                         >
@@ -204,10 +208,10 @@ export function Navbar() {
               </div>
             </div>
 
-            <div className="flex flex-col items-start gap-1">
+            <div className="flex flex-col items-start gap-2">
               <Link
                 href="/about"
-                className={`nav-link-underline text-xs tracking-[0.28em] uppercase ${
+                className={`nav-link-underline inline-flex min-h-11 items-center text-xs tracking-[0.28em] uppercase ${
                   pathname === "/about" ? "nav-link-underline-active text-[var(--gold)]" : "text-[var(--champagne)]/80"
                 }`}
               >
@@ -215,7 +219,7 @@ export function Navbar() {
               </Link>
               <Link
                 href="/contact"
-                className={`nav-link-underline text-xs tracking-[0.28em] uppercase ${
+                className={`nav-link-underline inline-flex min-h-11 items-center text-xs tracking-[0.28em] uppercase ${
                   pathname === "/contact" ? "nav-link-underline-active text-[var(--gold)]" : "text-[var(--champagne)]/80"
                 }`}
               >
@@ -226,7 +230,8 @@ export function Navbar() {
           </nav>
 
           <button
-            className="relative flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-[var(--champagne)] md:hidden"
+            type="button"
+            className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/15 text-[var(--champagne)] md:hidden"
             onClick={() => setOpen((prev) => !prev)}
             aria-label="Toggle navigation"
           >
@@ -256,7 +261,7 @@ export function Navbar() {
               <nav className="flex-1 space-y-4 overflow-y-auto text-sm">
                 <Link
                   href="/"
-                  className={`block text-lg tracking-[0.25em] uppercase ${
+                  className={`flex min-h-11 items-center text-lg tracking-[0.25em] uppercase ${
                     pathname === "/" ? "text-[var(--gold)]" : "text-[var(--champagne)]"
                   }`}
                 >
@@ -266,7 +271,7 @@ export function Navbar() {
                 <button
                   type="button"
                   onClick={() => setServicesOpenMobile((prev) => !prev)}
-                  className="flex w-full items-center justify-between text-lg tracking-[0.25em] uppercase text-[var(--champagne)]"
+                  className="flex min-h-11 w-full items-center justify-between text-lg tracking-[0.25em] uppercase text-[var(--champagne)]"
                 >
                   <span>Services</span>
                   <span>{servicesOpenMobile ? "−" : "+"}</span>
@@ -277,7 +282,7 @@ export function Navbar() {
                       <li key={link.href}>
                         <Link
                           href={link.href}
-                          className={`block tracking-[0.2em] uppercase ${
+                          className={`flex min-h-11 items-center tracking-[0.2em] uppercase ${
                             pathname === link.href ? "text-[var(--gold)]" : "text-[var(--champagne)]/85"
                           }`}
                         >
@@ -291,7 +296,7 @@ export function Navbar() {
                 <button
                   type="button"
                   onClick={() => setEventsOpenMobile((prev) => !prev)}
-                  className="flex w-full items-center justify-between text-lg tracking-[0.25em] uppercase text-[var(--champagne)]"
+                  className="flex min-h-11 w-full items-center justify-between text-lg tracking-[0.25em] uppercase text-[var(--champagne)]"
                 >
                   <span>Events</span>
                   <span>{eventsOpenMobile ? "−" : "+"}</span>
@@ -302,7 +307,7 @@ export function Navbar() {
                       <li key={link.href}>
                         <Link
                           href={link.href}
-                          className={`block tracking-[0.2em] uppercase ${
+                          className={`flex min-h-11 items-center tracking-[0.2em] uppercase ${
                             pathname === link.href ? "text-[var(--gold)]" : "text-[var(--champagne)]/85"
                           }`}
                         >
@@ -316,7 +321,7 @@ export function Navbar() {
                 <button
                   type="button"
                   onClick={() => setPackagesOpenMobile((prev) => !prev)}
-                  className={`flex w-full items-center justify-between text-lg tracking-[0.25em] uppercase ${
+                  className={`flex min-h-11 w-full items-center justify-between text-lg tracking-[0.25em] uppercase ${
                     pathname.startsWith("/packages") ? "text-[var(--gold)]" : "text-[var(--champagne)]"
                   }`}
                 >
@@ -329,7 +334,7 @@ export function Navbar() {
                       <li key={link.href}>
                         <Link
                           href={link.href}
-                          className={`block tracking-[0.2em] uppercase ${
+                          className={`flex min-h-11 items-center tracking-[0.2em] uppercase ${
                             pathname === link.href ? "text-[var(--gold)]" : "text-[var(--champagne)]/85"
                           }`}
                         >
@@ -343,7 +348,7 @@ export function Navbar() {
                 <button
                   type="button"
                   onClick={() => setServiceAreaOpenMobile((prev) => !prev)}
-                  className="flex w-full items-center justify-between text-lg tracking-[0.25em] uppercase text-[var(--champagne)]"
+                  className="flex min-h-11 w-full items-center justify-between text-lg tracking-[0.25em] uppercase text-[var(--champagne)]"
                 >
                   <span>Service Area</span>
                   <span>{serviceAreaOpenMobile ? "−" : "+"}</span>
@@ -354,7 +359,7 @@ export function Navbar() {
                       <li key={link.href}>
                         <Link
                           href={link.href}
-                          className={`block tracking-[0.2em] uppercase ${
+                          className={`flex min-h-11 items-center tracking-[0.2em] uppercase ${
                             pathname === link.href ? "text-[var(--gold)]" : "text-[var(--champagne)]/85"
                           }`}
                         >
@@ -367,7 +372,7 @@ export function Navbar() {
 
                 <Link
                   href="/about"
-                  className={`block text-lg tracking-[0.25em] uppercase ${
+                  className={`flex min-h-11 items-center text-lg tracking-[0.25em] uppercase ${
                     pathname === "/about" ? "text-[var(--gold)]" : "text-[var(--champagne)]"
                   }`}
                 >
@@ -376,7 +381,7 @@ export function Navbar() {
 
                 <Link
                   href="/contact"
-                  className={`block text-lg tracking-[0.25em] uppercase ${
+                  className={`flex min-h-11 items-center text-lg tracking-[0.25em] uppercase ${
                     pathname === "/contact" ? "text-[var(--gold)]" : "text-[var(--champagne)]"
                   }`}
                 >

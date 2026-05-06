@@ -1,5 +1,9 @@
 import Link from "next/link";
 
+/** WCAG / Lighthouse: ≥44×44px tap targets with spacing between adjacent links */
+const footLink =
+  "flex min-h-11 w-full max-w-full items-center rounded-sm leading-snug hover:text-[var(--gold)]";
+
 export function Footer() {
   return (
     <footer className="border-t border-[var(--gold)]/35 bg-black/50 pt-10 pb-6 text-xs text-[var(--champagne)]/80">
@@ -25,26 +29,26 @@ export function Footer() {
         <div className="flex flex-1 flex-col gap-8 md:flex-row md:justify-end">
           <div className="space-y-3">
             <div className="section-eyebrow">Services</div>
-            <div className="flex flex-col gap-1 text-[0.8rem]">
-              <Link href="/services" className="hover:text-[var(--gold)]">
+            <div className="flex flex-col gap-2 text-[0.8rem]">
+              <Link href="/services" className={footLink}>
                 All Services
               </Link>
-              <Link href="/services/tents-structures-chicago" className="hover:text-[var(--gold)]">
+              <Link href="/services/tents-structures-chicago" className={footLink}>
                 Tents &amp; Structures
               </Link>
-              <Link href="/services/tables-seating-chicago" className="hover:text-[var(--gold)]">
+              <Link href="/services/tables-seating-chicago" className={footLink}>
                 Tables &amp; Seating
               </Link>
-              <Link href="/services/stages-presentation-chicago" className="hover:text-[var(--gold)]">
+              <Link href="/services/stages-presentation-chicago" className={footLink}>
                 Stages &amp; Presentation
               </Link>
-              <Link href="/services/games-entertainment-chicago" className="hover:text-[var(--gold)]">
+              <Link href="/services/games-entertainment-chicago" className={footLink}>
                 Games &amp; Entertainment
               </Link>
-              <Link href="/services/event-extras-chicago" className="hover:text-[var(--gold)]">
+              <Link href="/services/event-extras-chicago" className={footLink}>
                 Event Extras
               </Link>
-              <Link href="/services/delivery-setup-teardown-chicago" className="hover:text-[var(--gold)]">
+              <Link href="/services/delivery-setup-teardown-chicago" className={footLink}>
                 Delivery &amp; Setup
               </Link>
             </div>
@@ -52,14 +56,14 @@ export function Footer() {
 
           <div className="space-y-3">
             <div className="section-eyebrow">Plan Your Event</div>
-            <div className="flex flex-col gap-1 text-[0.8rem]">
-              <Link href="/packages" className="hover:text-[var(--gold)]">
+            <div className="flex flex-col gap-2 text-[0.8rem]">
+              <Link href="/packages" className={footLink}>
                 Packages
               </Link>
-              <Link href="/event-rental-pricing-chicago" className="hover:text-[var(--gold)]">
+              <Link href="/event-rental-pricing-chicago" className={footLink}>
                 Pricing Guide
               </Link>
-              <Link href="/service-area" className="hover:text-[var(--gold)]">
+              <Link href="/service-area" className={footLink}>
                 Service Area
               </Link>
             </div>
@@ -67,20 +71,20 @@ export function Footer() {
 
           <div className="space-y-3">
             <div className="section-eyebrow">Resources</div>
-            <div className="flex flex-col gap-1 text-[0.8rem]">
-              <Link href="/resources" className="hover:text-[var(--gold)]">
+            <div className="flex flex-col gap-2 text-[0.8rem]">
+              <Link href="/resources" className={footLink}>
                 All Resources
               </Link>
-              <Link href="/resources/tent-sizing-guide" className="hover:text-[var(--gold)]">
+              <Link href="/resources/tent-sizing-guide" className={footLink}>
                 Tent Sizing Guide
               </Link>
-              <Link href="/resources/chicago-tent-permits" className="hover:text-[var(--gold)]">
+              <Link href="/resources/chicago-tent-permits" className={footLink}>
                 Chicago Tent Permits
               </Link>
-              <Link href="/resources/outdoor-event-planning" className="hover:text-[var(--gold)]">
+              <Link href="/resources/outdoor-event-planning" className={footLink}>
                 Outdoor Event Planning
               </Link>
-              <Link href="/resources/corporate-event-checklist" className="hover:text-[var(--gold)]">
+              <Link href="/resources/corporate-event-checklist" className={footLink}>
                 Corporate Event Checklist
               </Link>
             </div>
@@ -88,23 +92,23 @@ export function Footer() {
 
           <div className="space-y-3">
             <div className="section-eyebrow">Company</div>
-            <div className="flex flex-col gap-1 text-[0.8rem]">
-              <Link href="/about" className="hover:text-[var(--gold)]">
+            <div className="flex flex-col gap-2 text-[0.8rem]">
+              <Link href="/about" className={footLink}>
                 About Sterling
               </Link>
-              <Link href="/contact" className="hover:text-[var(--gold)]">
+              <Link href="/contact" className={footLink}>
                 Contact
               </Link>
-              <Link href="/reviews" className="hover:text-[var(--gold)]">
+              <Link href="/reviews" className={footLink}>
                 Client Reviews
               </Link>
-              <Link href="/legal/privacy-policy" className="hover:text-[var(--gold)]">
+              <Link href="/legal/privacy-policy" className={footLink}>
                 Privacy Policy
               </Link>
-              <Link href="/legal/terms-of-service" className="hover:text-[var(--gold)]">
+              <Link href="/legal/terms-of-service" className={footLink}>
                 Terms of Service
               </Link>
-              <Link href="/legal/cancellation-policy" className="hover:text-[var(--gold)]">
+              <Link href="/legal/cancellation-policy" className={footLink}>
                 Cancellation Policy
               </Link>
             </div>
@@ -139,7 +143,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Sterling Event Rentals on Instagram"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-[var(--champagne)]/70 transition-colors hover:border-[var(--gold)]/40 hover:text-[var(--gold)]"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-[var(--champagne)]/70 transition-colors hover:border-[var(--gold)]/40 hover:text-[var(--gold)]"
             >
               <svg
                 width="16"
@@ -172,7 +176,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Sterling Event Rentals on Facebook"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-[var(--champagne)]/70 transition-colors hover:border-[var(--gold)]/40 hover:text-[var(--gold)]"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-[var(--champagne)]/70 transition-colors hover:border-[var(--gold)]/40 hover:text-[var(--gold)]"
             >
               <svg
                 width="16"
