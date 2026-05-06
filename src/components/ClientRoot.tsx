@@ -1,9 +1,11 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { ReactNode, useEffect, useRef } from "react";
-import { Navbar } from "./Navbar";
-import { Footer } from "./Footer";
 import { AttributionCapture } from "./AttributionCapture";
+
+const Navbar = dynamic(() => import("./Navbar").then((m) => m.Navbar));
+const Footer = dynamic(() => import("./Footer").then((m) => m.Footer));
 
 type Props = {
   children: ReactNode;

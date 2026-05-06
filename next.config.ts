@@ -11,6 +11,15 @@ const LEGACY_SERVICE_SLUGS = [
 ] as const;
 
 const nextConfig: NextConfig = {
+  /** Lets same-origin links participate in DNS prefetch when hints exist (e.g. layout dns-prefetch). */
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [{ key: "X-DNS-Prefetch-Control", value: "on" }],
+      },
+    ];
+  },
   /**
    * Extra widths so `sizes`≈380px at 2× DPR (~760px) maps to a ~760 derivative instead of
    * jumping 750→828 (Lighthouse “larger than it needs to be” on bento cards).
@@ -30,7 +39,7 @@ const nextConfig: NextConfig = {
   experimental: {
     inlineCss: true,
     /** Tree-shake barrel imports (smaller client chunks for icons). */
-    optimizePackageImports: ["lucide-react"],
+    optimizePackageImports: ["lucide-react", "framer-motion"],
   },
   async redirects() {
     const slugRedirects = LEGACY_SERVICE_SLUGS.map((slug) => ({

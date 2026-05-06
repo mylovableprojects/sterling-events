@@ -3,6 +3,7 @@ import Script from "next/script";
 import { Cormorant_Garamond, Jost } from "next/font/google";
 import "./globals.css";
 import { ClientRoot } from "../components/ClientRoot";
+import { GoogleTagManager } from "../components/GoogleTagManager";
 
 const display = Cormorant_Garamond({
   subsets: ["latin"],
@@ -65,6 +66,8 @@ export default function RootLayout({
       <head>
         {IS_PROD && (
           <>
+            {/* Warm DNS for deferred GTM (tiny cost vs full preconnect on critical path) */}
+            <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
             <Script
               id="ld-website"
               type="application/ld+json"
@@ -88,19 +91,7 @@ export default function RootLayout({
       <body className={`${display.variable} ${body.variable} antialiased`}>
         {IS_PROD && (
           <>
-            <Script
-              id="gtm-datalayer"
-              strategy="lazyOnload"
-              dangerouslySetInnerHTML={{
-                __html: `window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});`,
-              }}
-            />
-            <Script
-              id="gtm-src"
-              strategy="lazyOnload"
-              src={`https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`}
-            />
+            <GoogleTagManager />
             <noscript>
               <iframe
                 src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}

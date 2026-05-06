@@ -1,0 +1,7 @@
+# Align with Next.js 16 supported browsers (see nextjs.org/docs/architecture/supported-browsers).
+# Ensures SWC/postcss don’t target legacy engines — reduces unnecessary polyfill helpers in bundles.
+chrome 111
+edge 111
+firefox 111
+safari 16.4
+ios_saf 16.4
