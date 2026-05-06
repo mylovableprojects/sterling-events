@@ -11,6 +11,16 @@ const LEGACY_SERVICE_SLUGS = [
 ] as const;
 
 const nextConfig: NextConfig = {
+  /**
+   * Extra widths so `sizes`≈380px at 2× DPR (~760px) maps to a ~760 derivative instead of
+   * jumping 750→828 (Lighthouse “larger than it needs to be” on bento cards).
+   */
+  images: {
+    deviceSizes: [
+      360, 384, 400, 420, 480, 560, 640, 750, 760, 828, 1080, 1120, 1200, 1920, 2048, 3840,
+    ],
+    formats: ["image/avif", "image/webp"],
+  },
   turbopack: {
     // Prevent Next from inferring the wrong workspace root when multiple lockfiles exist.
     root: __dirname,

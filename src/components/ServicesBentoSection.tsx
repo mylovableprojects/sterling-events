@@ -20,13 +20,12 @@ function reveal(delay = 0) {
  */
 function bentoCardSizes(cardIndex: number) {
   if (cardIndex < 3) {
-    // lg: 2/6 width (~⅓ row); sm: half width; mobile: full width
+    // lg: 2/6 on max-w-6xl → ~378–384px wide; 380×2 ≈ 760 → needs `760` in `images.deviceSizes`
     return "(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 380px";
   }
   if (cardIndex === 3) {
     return "(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 560px";
   }
-  // Index 4: sm+ full row (col-span-2), lg half row
   return "(max-width: 639px) 100vw, (max-width: 1023px) 100vw, 560px";
 }
 
@@ -74,7 +73,7 @@ function CardImage({
         src={src}
         alt={alt}
         fill
-        quality={72}
+        quality={60}
         className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
         sizes={sizes ?? "(max-width: 639px) 100vw, 50vw, 400px"}
       />
@@ -222,9 +221,9 @@ export function ServicesBentoSection() {
                   src="/images/outdoor-event-planning/delivery-setup.webp"
                   alt="Sterling crew delivering and setting up rental equipment at a venue"
                   fill
-                  quality={72}
+                  quality={60}
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                  sizes="(max-width: 1024px) 224px, 288px"
+                  sizes="(max-width: 767px) 224px, (max-width: 1023px) 224px, 288px"
                 />
               </div>
             </Link>

@@ -68,7 +68,7 @@ function HeroBackground({ backgroundImage }: { backgroundImage?: { src: string; 
           fill
           priority
           fetchPriority="high"
-          quality={70}
+          quality={58}
           sizes="100vw"
           className="object-cover object-center"
         />
