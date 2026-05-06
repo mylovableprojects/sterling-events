@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Link from "next/link";
 import { getAttributionSnapshot } from "@/lib/attribution";
 
@@ -90,7 +90,7 @@ export function ContactForm() {
     "mb-1.5 block text-xs font-semibold uppercase tracking-widest text-[var(--gold)]";
 
   return (
-    <motion.form
+    <m.form
       onSubmit={handleSubmit}
       className="space-y-4"
       initial={{ opacity: 0, y: 24 }}
@@ -258,7 +258,7 @@ export function ContactForm() {
           </span>
         )}
       </div>
-    </motion.form>
+    </m.form>
   );
 }
 

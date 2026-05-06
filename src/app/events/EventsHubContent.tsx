@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { EVENT_TYPE_DATA, EVENT_TYPE_SLUGS } from "@/lib/eventTypes";
 import { heroHeadlineStagger } from "@/lib/heroHeadlineMotion";
 
@@ -73,13 +73,13 @@ export function EventsHubContent() {
       <section className="gradient-hero relative flex min-h-[85vh] flex-col overflow-hidden">
         <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col gap-6 px-6">
           <div className="space-y-4 md:space-y-6">
-            <motion.div custom={0} initial="hidden" animate="visible" variants={heroHeadlineStagger} className="section-eyebrow">
+            <m.div custom={0} initial="hidden" animate="visible" variants={heroHeadlineStagger} className="section-eyebrow">
               Events We Serve
-            </motion.div>
-            <motion.h1 custom={1} initial="hidden" animate="visible" variants={heroHeadlineStagger} className="hero-headline text-[var(--cream)]">
+            </m.div>
+            <m.h1 custom={1} initial="hidden" animate="visible" variants={heroHeadlineStagger} className="hero-headline text-[var(--cream)]">
               Every event, fully equipped.
-            </motion.h1>
-            <motion.p
+            </m.h1>
+            <m.p
               custom={2}
               initial="hidden"
               animate="visible"
@@ -87,16 +87,16 @@ export function EventsHubContent() {
               className="max-w-xl hero-subheadline leading-relaxed text-[var(--champagne)]/80"
             >
               Sterling Event Rentals provides full-service tent, table, stage, and entertainment rentals for corporate events, weddings, and private parties across the Chicago area. Delivery, setup, and teardown on every order.
-            </motion.p>
-            <motion.div custom={3} initial="hidden" animate="visible" variants={heroHeadlineStagger} className="flex flex-wrap items-center gap-4 pt-4">
+            </m.p>
+            <m.div custom={3} initial="hidden" animate="visible" variants={heroHeadlineStagger} className="flex flex-wrap items-center gap-4 pt-4">
               <Link href="/contact" className="btn-primary">
                 Check Availability for Your Date
               </Link>
               <Link href="/services" className="btn-outline">
                 Browse Our Services
               </Link>
-            </motion.div>
-            <motion.div custom={4} initial="hidden" animate="visible" variants={heroHeadlineStagger}>
+            </m.div>
+            <m.div custom={4} initial="hidden" animate="visible" variants={heroHeadlineStagger}>
               <a
                 href="tel:+17736927576"
                 className="inline-flex items-center gap-2 text-sm text-[var(--champagne)]/70 transition-colors hover:text-[var(--gold-light)]"
@@ -112,7 +112,7 @@ export function EventsHubContent() {
                 </svg>
                 (773) 692-7576 — call or text
               </a>
-            </motion.div>
+            </m.div>
           </div>
         </div>
 
@@ -127,18 +127,18 @@ export function EventsHubContent() {
       {/* ── EVENT TYPE CARDS ── */}
       <section className="border-t border-[var(--navy)]/10 bg-[var(--cream)] py-20">
         <div className="mx-auto max-w-6xl px-4">
-          <motion.div {...reveal(0)}>
+          <m.div {...reveal(0)}>
             <p className="section-eyebrow mb-3 text-[var(--gold)]">Event Types</p>
             <h2 className="heading-2 mb-12 text-[var(--charcoal)]">
               What type of event are you planning?
             </h2>
-          </motion.div>
+          </m.div>
 
           <div className="grid gap-6 md:grid-cols-3">
             {EVENT_TYPE_SLUGS.map((slug, i) => {
               const d = EVENT_TYPE_DATA[slug];
               return (
-                <motion.div key={slug} {...reveal(i * 0.1)}>
+                <m.div key={slug} {...reveal(i * 0.1)}>
                   <Link
                     href={`/events/${slug}`}
                     className="group flex flex-col overflow-hidden rounded-2xl border border-[var(--navy)]/10 bg-white transition-all duration-200 hover:border-[var(--gold)]/40 hover:shadow-lg hover:-translate-y-0.5"
@@ -174,7 +174,7 @@ export function EventsHubContent() {
                       </span>
                     </div>
                   </Link>
-                </motion.div>
+                </m.div>
               );
             })}
           </div>
@@ -185,7 +185,7 @@ export function EventsHubContent() {
       <section className="border-t border-white/10 bg-[var(--navy)] py-20">
         <div className="mx-auto max-w-6xl px-4">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-center">
-            <motion.div {...reveal(0)}>
+            <m.div {...reveal(0)}>
               <p className="section-eyebrow mb-3" style={{ color: "#e8c97a" }}>Why Sterling</p>
               <h2 className="heading-2 mb-6" style={{ color: "#f5f0e8" }}>
                 One vendor. One call. Everything handled.
@@ -212,9 +212,9 @@ export function EventsHubContent() {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </m.div>
 
-            <motion.div {...reveal(0.12)} className="relative h-80 w-full overflow-hidden rounded-2xl border border-white/10 bg-[var(--navy)]/40">
+            <m.div {...reveal(0.12)} className="relative h-80 w-full overflow-hidden rounded-2xl border border-white/10 bg-[var(--navy)]/40">
               <Image
                 src="/images/outdoor-event-planning/tent-stage-rentals-chicago.webp"
                 alt="Tent, stage, and table setup for a Chicagoland outdoor event by Sterling Event Rentals"
@@ -222,7 +222,7 @@ export function EventsHubContent() {
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </section>
@@ -230,7 +230,7 @@ export function EventsHubContent() {
       {/* ── CTA ── */}
       <section className="border-t border-[var(--navy)]/10 bg-[var(--cream)] py-20">
         <div className="mx-auto max-w-3xl px-4 text-center">
-          <motion.div {...reveal(0)}>
+          <m.div {...reveal(0)}>
             <h2 className="heading-2 mb-4 text-[var(--charcoal)]">
               Tell us about your event.
             </h2>
@@ -248,7 +248,7 @@ export function EventsHubContent() {
                 (773) 692-7576
               </a>
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </section>
     </>

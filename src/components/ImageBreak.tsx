@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 type Props = {
   src: string;
@@ -12,7 +12,7 @@ type Props = {
 export function ImageBreak({ src, alt, overlayText }: Props) {
   return (
     <section className="relative">
-      <motion.div
+      <m.div
         className="image-break relative"
         initial={{ opacity: 0, scale: 1.02 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -38,7 +38,7 @@ export function ImageBreak({ src, alt, overlayText }: Props) {
             </div>
           </div>
         )}
-      </motion.div>
+      </m.div>
     </section>
   );
 }

@@ -6,7 +6,7 @@ import { ScrollReveal } from "../components/ScrollReveal";
 import { TrustBar } from "@/components/TrustBar";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { ServicesBentoSection } from "@/components/ServicesBentoSection";
-import { ChicagolandMapEmbed } from "@/components/ChicagolandMapEmbed";
+import { DeferredChicagolandMapEmbed } from "@/components/DeferredChicagolandMapEmbed";
 
 const BASE = "https://www.sterlingeventrentals.com";
 
@@ -326,7 +326,7 @@ export default function Home() {
                 See full service area &amp; delivery details →
               </Link>
             </div>
-            <ChicagolandMapEmbed className="min-h-[220px] w-full flex-1 md:min-h-[280px] md:max-w-lg" />
+            <DeferredChicagolandMapEmbed className="min-h-[220px] w-full flex-1 md:min-h-[280px] md:max-w-lg" />
           </ScrollReveal>
         </div>
       </section>

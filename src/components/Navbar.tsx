@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 
 const serviceLinks = [
   { href: "/services", label: "All Services" },
@@ -60,7 +60,7 @@ export function Navbar() {
 
   return (
     <>
-      <motion.header
+      <m.header
         className="fixed inset-x-0 top-0 z-40 flex items-center justify-center"
         initial={{ opacity: 0, y: -16 }}
         animate={{ opacity: 1, y: 0 }}
@@ -235,23 +235,23 @@ export function Navbar() {
             onClick={() => setOpen((prev) => !prev)}
             aria-label="Toggle navigation"
           >
-            <motion.span
+            <m.span
               className="absolute h-px w-4 bg-[var(--champagne)]"
               animate={open ? { rotate: 45, y: 0 } : { rotate: 0, y: -3 }}
               transition={{ duration: 0.18 }}
             />
-            <motion.span
+            <m.span
               className="absolute h-px w-4 bg-[var(--champagne)]"
               animate={open ? { rotate: -45, y: 0 } : { rotate: 0, y: 3 }}
               transition={{ duration: 0.18 }}
             />
           </button>
         </div>
-      </motion.header>
+      </m.header>
 
       <AnimatePresence>
         {open && (
-          <motion.div
+          <m.div
             className="fixed inset-0 z-30 bg-[radial-gradient(circle_at_top,_#101432_0,_#02030a_55%,_#010108_100%)] md:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -390,7 +390,7 @@ export function Navbar() {
               </nav>
 
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </>

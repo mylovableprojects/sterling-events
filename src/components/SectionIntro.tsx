@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactNode } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 type Props = {
   eyebrow: string;
@@ -10,7 +10,7 @@ type Props = {
 
 export function SectionIntro({ eyebrow, title }: Props) {
   return (
-    <motion.div
+    <m.div
       initial="hidden"
       animate="visible"
       variants={{
@@ -25,6 +25,6 @@ export function SectionIntro({ eyebrow, title }: Props) {
     >
       <p className="section-eyebrow">{eyebrow}</p>
       <h1 className="hero-headline text-[var(--cream)]">{title}</h1>
-    </motion.div>
+    </m.div>
   );
 }

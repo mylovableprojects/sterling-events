@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import type { ReactNode } from "react";
 import { heroHeadlineStagger } from "@/lib/heroHeadlineMotion";
 
@@ -68,7 +68,7 @@ function HeroBackground({ backgroundImage }: { backgroundImage?: { src: string; 
           fill
           priority
           fetchPriority="high"
-          quality={58}
+          quality={50}
           sizes="100vw"
           className="object-cover object-center"
         />
@@ -137,14 +137,14 @@ function HeroMain({
     <div className={shellClass}>
       {breadcrumbs}
       <div className="space-y-4 md:space-y-6">
-        <motion.div custom={0} initial="hidden" animate="visible" variants={heroHeadlineStagger} className="section-eyebrow">
+        <m.div custom={0} initial="hidden" animate="visible" variants={heroHeadlineStagger} className="section-eyebrow">
           {eyebrow}
-        </motion.div>
-        <motion.h1 custom={1} initial="hidden" animate="visible" variants={heroHeadlineStagger} className="hero-headline text-[var(--cream)]">
+        </m.div>
+        <m.h1 custom={1} initial="hidden" animate="visible" variants={heroHeadlineStagger} className="hero-headline text-[var(--cream)]">
           {title}
-        </motion.h1>
+        </m.h1>
         {subhead ? (
-          <motion.p
+          <m.p
             custom={2}
             initial="hidden"
             animate="visible"
@@ -152,10 +152,10 @@ function HeroMain({
             className="max-w-xl hero-subheadline leading-relaxed text-[var(--champagne)]/80"
           >
             {subhead}
-          </motion.p>
+          </m.p>
         ) : null}
         {hasCtas ? (
-          <motion.div
+          <m.div
             custom={ctaStart}
             initial="hidden"
             animate="visible"
@@ -178,12 +178,12 @@ function HeroMain({
                 {s.label}
               </Link>
             ) : null}
-          </motion.div>
+          </m.div>
         ) : null}
         {showPhone ? (
-          <motion.div custom={phoneCustom} initial="hidden" animate="visible" variants={heroHeadlineStagger}>
+          <m.div custom={phoneCustom} initial="hidden" animate="visible" variants={heroHeadlineStagger}>
             <PhoneLink />
-          </motion.div>
+          </m.div>
         ) : null}
         {afterPhone ? <div className="pt-1">{afterPhone}</div> : null}
       </div>

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BelowHeroQuickAnswer } from "@/components/BelowHeroQuickAnswer";
@@ -112,15 +112,15 @@ export function EventTypeContent({ data, slug }: Props) {
             ]}
           />
           <div className="space-y-4 md:space-y-6">
-            <motion.div custom={0} initial="hidden" animate="visible" variants={heroHeadlineStagger} className="section-eyebrow">
+            <m.div custom={0} initial="hidden" animate="visible" variants={heroHeadlineStagger} className="section-eyebrow">
               {data.eyebrow}
-            </motion.div>
+            </m.div>
 
-            <motion.h1 custom={1} initial="hidden" animate="visible" variants={heroHeadlineStagger} className="hero-headline text-[var(--cream)]">
+            <m.h1 custom={1} initial="hidden" animate="visible" variants={heroHeadlineStagger} className="hero-headline text-[var(--cream)]">
               {data.h1}
-            </motion.h1>
+            </m.h1>
 
-            <motion.p
+            <m.p
               custom={2}
               initial="hidden"
               animate="visible"
@@ -128,18 +128,18 @@ export function EventTypeContent({ data, slug }: Props) {
               className="max-w-xl hero-subheadline leading-relaxed text-[var(--champagne)]/80"
             >
               {data.tagline}
-            </motion.p>
+            </m.p>
 
-            <motion.div custom={3} initial="hidden" animate="visible" variants={heroHeadlineStagger} className="flex flex-wrap items-center gap-4 pt-4">
+            <m.div custom={3} initial="hidden" animate="visible" variants={heroHeadlineStagger} className="flex flex-wrap items-center gap-4 pt-4">
               <Link href="/contact" className="btn-primary">
                 Check Availability for Your Date
               </Link>
               <Link href="/services" className="btn-outline">
                 Browse Our Services
               </Link>
-            </motion.div>
+            </m.div>
 
-            <motion.div custom={4} initial="hidden" animate="visible" variants={heroHeadlineStagger}>
+            <m.div custom={4} initial="hidden" animate="visible" variants={heroHeadlineStagger}>
               <a
                 href="tel:+17736927576"
                 className="inline-flex items-center gap-2 text-sm text-[var(--champagne)]/70 transition-colors hover:text-[var(--gold-light)]"
@@ -155,7 +155,7 @@ export function EventTypeContent({ data, slug }: Props) {
                 </svg>
                 (773) 692-7576 — call or text
               </a>
-            </motion.div>
+            </m.div>
           </div>
         </div>
 
@@ -179,7 +179,7 @@ export function EventTypeContent({ data, slug }: Props) {
       <section className="border-t border-[var(--navy)]/10 bg-[var(--cream)] py-20">
         <div className="mx-auto max-w-6xl px-4">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-center">
-            <motion.div {...reveal(0)}>
+            <m.div {...reveal(0)}>
               <p className="section-eyebrow mb-3 text-[var(--gold)]">About This Service</p>
               <h2 className="heading-2 mb-6 text-[var(--charcoal)]">{data.tagline}</h2>
               <div className="flex flex-col gap-4">
@@ -193,8 +193,8 @@ export function EventTypeContent({ data, slug }: Props) {
                   Browse all services →
                 </Link>
               </div>
-            </motion.div>
-            <motion.div {...reveal(0.12)} className="min-h-0">
+            </m.div>
+            <m.div {...reveal(0.12)} className="min-h-0">
               {data.aboutSectionImage ? (
                 <div className="relative h-80 w-full overflow-hidden rounded-2xl">
                   <Image
@@ -214,7 +214,7 @@ export function EventTypeContent({ data, slug }: Props) {
                   className="w-full h-80 rounded-2xl"
                 />
               )}
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </section>
@@ -222,15 +222,15 @@ export function EventTypeContent({ data, slug }: Props) {
       {/* ── EQUIPMENT PACKAGES ── */}
       <section className="border-t border-white/10 bg-[var(--navy)] py-20">
         <div className="mx-auto max-w-6xl px-4">
-          <motion.div {...reveal(0)}>
+          <m.div {...reveal(0)}>
             <p className="section-eyebrow mb-3" style={{ color: "#e8c97a" }}>What We Provide</p>
             <h2 className="heading-2 mb-12" style={{ color: "#f5f0e8" }}>
               Everything your {data.name.toLowerCase()} needs.
             </h2>
-          </motion.div>
+          </m.div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {data.packages.map((pkg, i) => (
-              <motion.div
+              <m.div
                 key={pkg.title}
                 {...reveal(i * 0.07)}
                 className="rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-200 hover:border-[#c9a84c]/30"
@@ -238,10 +238,10 @@ export function EventTypeContent({ data, slug }: Props) {
                 <span className="mb-3 block text-2xl" aria-hidden>{pkg.icon}</span>
                 <h3 className="mb-2 font-medium" style={{ color: "#f5f0e8" }}>{pkg.title}</h3>
                 <p className="text-sm leading-relaxed" style={{ color: "rgba(245,230,200,0.72)" }}>{pkg.body}</p>
-              </motion.div>
+              </m.div>
             ))}
           </div>
-          <motion.div className="mt-10 text-center" {...reveal(0.5)}>
+          <m.div className="mt-10 text-center" {...reveal(0.5)}>
             <Link
               href="/services"
               className="inline-block font-medium underline underline-offset-4 hover:opacity-80"
@@ -249,7 +249,7 @@ export function EventTypeContent({ data, slug }: Props) {
             >
               Browse all equipment categories →
             </Link>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
@@ -263,7 +263,7 @@ export function EventTypeContent({ data, slug }: Props) {
       {/* ── IMAGE BREAK ── */}
       <section className="bg-[var(--cream)] py-12">
         <div className="mx-auto max-w-6xl px-4">
-          <motion.div {...reveal(0)} className="min-h-0">
+          <m.div {...reveal(0)} className="min-h-0">
             {data.midBreakImage ? (
               <div className="relative h-64 w-full overflow-hidden rounded-2xl md:h-72">
                 <Image
@@ -282,19 +282,19 @@ export function EventTypeContent({ data, slug }: Props) {
                 className="w-full h-64 rounded-2xl md:h-72"
               />
             )}
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* ── AEO: H2 QUESTION SECTIONS ── */}
       <section className="border-t border-[var(--navy)]/10 bg-[var(--cream)] py-16">
         <div className="mx-auto max-w-4xl px-4">
-          <motion.div {...reveal(0)}>
+          <m.div {...reveal(0)}>
             <p className="section-eyebrow mb-3 text-[var(--gold)]">Common Questions</p>
-          </motion.div>
+          </m.div>
           <div className="flex flex-col gap-14">
             {data.h2Sections.map((section, i) => (
-              <motion.div key={section.question} {...reveal(i * 0.08)}>
+              <m.div key={section.question} {...reveal(i * 0.08)}>
                 <h2 className="heading-2 mb-4 text-[var(--charcoal)]">{section.question}</h2>
                 <p className="max-w-3xl text-base leading-relaxed text-[var(--charcoal)]/80">
                   {section.answer}
@@ -307,7 +307,7 @@ export function EventTypeContent({ data, slug }: Props) {
                     {section.resourceLink.label}
                   </Link>
                 )}
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>
@@ -316,7 +316,7 @@ export function EventTypeContent({ data, slug }: Props) {
       {/* ── PRICING NOTE ── */}
       <section className="border-t border-white/10 bg-[var(--navy)] py-14">
         <div className="mx-auto max-w-4xl px-4">
-          <motion.div
+          <m.div
             {...reveal(0)}
             className="flex flex-col gap-5 rounded-2xl border border-white/10 bg-white/5 p-8 md:flex-row md:items-center md:gap-10"
           >
@@ -338,7 +338,7 @@ export function EventTypeContent({ data, slug }: Props) {
                 Get a quote →
               </Link>
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
@@ -346,7 +346,7 @@ export function EventTypeContent({ data, slug }: Props) {
       <section className="border-t border-[var(--navy)]/10 bg-[var(--cream)] py-20">
         <div className="mx-auto max-w-6xl px-4">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-start">
-            <motion.div {...reveal(0)} className="flex flex-col gap-6">
+            <m.div {...reveal(0)} className="flex flex-col gap-6">
               {data.detailsSectionImage ? (
                 <div className="relative h-56 w-full overflow-hidden rounded-2xl">
                   <Image
@@ -384,9 +384,9 @@ export function EventTypeContent({ data, slug }: Props) {
                   ))}
                 </ul>
               </div>
-            </motion.div>
+            </m.div>
 
-            <motion.div {...reveal(0.1)}>
+            <m.div {...reveal(0.1)}>
               <p className="section-eyebrow mb-3 text-[var(--gold)]">Full-Service Rentals</p>
               <h2 className="heading-2 mb-6 text-[var(--charcoal)]">What&apos;s included on every order</h2>
               <ul className="space-y-4">
@@ -412,7 +412,7 @@ export function EventTypeContent({ data, slug }: Props) {
                   View packages →
                 </Link>
               </div>
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </section>
@@ -423,7 +423,7 @@ export function EventTypeContent({ data, slug }: Props) {
         style={{ background: `radial-gradient(ellipse at bottom right, ${data.heroGradient.from} 0%, #02030a 65%)` }}
       >
         <div className="mx-auto max-w-3xl px-4 text-center">
-          <motion.div {...reveal(0)}>
+          <m.div {...reveal(0)}>
             <h2 className="heading-2 mb-4" style={{ color: "#f5f0e8" }}>
               Ready to plan your {data.name.toLowerCase()}?
             </h2>
@@ -444,16 +444,16 @@ export function EventTypeContent({ data, slug }: Props) {
             <p className="mt-10 text-sm tracking-[0.15em]" style={{ color: "rgba(245,230,200,0.55)" }}>
               Licensed · Insured · SIOTO Safety Seal Certified
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* ── FAQ ── */}
       <section className="border-t border-[var(--navy)]/10 bg-[var(--cream)] py-16">
         <div className="mx-auto max-w-3xl px-4">
-          <motion.div {...reveal(0)}>
+          <m.div {...reveal(0)}>
             <h2 className="heading-2 mb-6 text-[var(--charcoal)]">Frequently asked questions</h2>
-          </motion.div>
+          </m.div>
           <FAQAccordion
             items={data.faqs}
             withSchema

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import {
   getHighlightsForAudience,
   type CatalogAudience,
@@ -64,13 +64,13 @@ export function RentalHighlightGrid({ audience }: Props) {
   return (
     <section className={sectionClass} aria-labelledby="rental-highlights-heading">
       <div className="mx-auto max-w-6xl px-4">
-        <motion.div {...reveal(0)} className="mb-10 max-w-3xl">
+        <m.div {...reveal(0)} className="mb-10 max-w-3xl">
           <p className={`section-eyebrow mb-2 ${eyebrowClass}`}>{meta.eyebrow}</p>
           <h2 id="rental-highlights-heading" className={`heading-2 mb-4 ${headingClass}`}>
             {meta.title}
           </h2>
           <p className={`text-base leading-relaxed ${bodyClass}`}>{meta.intro}</p>
-        </motion.div>
+        </m.div>
 
         <div
           className={`grid gap-5 ${
@@ -78,7 +78,7 @@ export function RentalHighlightGrid({ audience }: Props) {
           }`}
         >
           {items.map((item, i) => (
-            <motion.article
+            <m.article
               key={item.id}
               {...reveal(0.06 + i * 0.05)}
               className={cardClass}
@@ -95,11 +95,11 @@ export function RentalHighlightGrid({ audience }: Props) {
               <p className={`mt-4 text-xs italic ${isLight ? "text-[var(--charcoal)]/45" : "text-[var(--champagne)]/40"}`}>
                 Photos coming soon — ask for this item by name when you request a quote.
               </p>
-            </motion.article>
+            </m.article>
           ))}
         </div>
 
-        <motion.div {...reveal(0.35)} className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
+        <m.div {...reveal(0.35)} className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
           <div className={`flex flex-wrap gap-x-4 gap-y-2 text-sm ${bodyClass}`}>
             <Link
               href="/packages/pricing"
@@ -142,7 +142,7 @@ export function RentalHighlightGrid({ audience }: Props) {
               See corporate event ideas →
             </Link>
           )}
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

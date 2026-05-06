@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 function reveal(delay = 0) {
   return {
@@ -73,7 +73,7 @@ function CardImage({
         src={src}
         alt={alt}
         fill
-        quality={60}
+        quality={50}
         className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
         sizes={sizes ?? "(max-width: 639px) 100vw, 50vw, 400px"}
       />
@@ -148,18 +148,18 @@ export function ServicesBentoSection() {
       <div className="mx-auto max-w-6xl px-4">
 
         {/* Heading */}
-        <motion.div {...reveal(0)}>
+        <m.div {...reveal(0)}>
           <div className="section-eyebrow mb-4 text-[var(--gold)]">What We Provide</div>
           <h2 id="services-heading" className="heading-2 text-[var(--charcoal)]">
             Everything your event needs.{" "}
             <span className="italic">One vendor. One call.</span>
           </h2>
-        </motion.div>
+        </m.div>
 
         {/* ── 5 Service Cards: 6-col grid → top row 3×col-span-2, bottom row 2×col-span-3 ── */}
         <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-6">
           {services.map((s, i) => (
-            <motion.div
+            <m.div
               key={s.href}
               {...reveal(s.delay)}
               className={
@@ -191,11 +191,11 @@ export function ServicesBentoSection() {
                   </span>
                 </div>
               </Link>
-            </motion.div>
+            </m.div>
           ))}
 
           {/* ── Delivery — full-width banner ── */}
-          <motion.div className="sm:col-span-2 lg:col-span-6" {...reveal(0.4)}>
+          <m.div className="sm:col-span-2 lg:col-span-6" {...reveal(0.4)}>
             <Link
               href="/services/delivery-setup-teardown-chicago"
               className="group flex overflow-hidden rounded-2xl border border-[var(--navy)]/10 bg-white transition-all duration-200 hover:border-[var(--gold)]/40 hover:shadow-lg hover:-translate-y-0.5"
@@ -221,17 +221,17 @@ export function ServicesBentoSection() {
                   src="/images/outdoor-event-planning/delivery-setup.webp"
                   alt="Sterling crew delivering and setting up rental equipment at a venue"
                   fill
-                  quality={60}
+                  quality={50}
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   sizes="(max-width: 767px) 224px, (max-width: 1023px) 224px, 288px"
                 />
               </div>
             </Link>
-          </motion.div>
+          </m.div>
         </div>
 
         {/* Browse all link */}
-        <motion.div
+        <m.div
           className="mt-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -244,7 +244,7 @@ export function ServicesBentoSection() {
           >
             Browse all services →
           </Link>
-        </motion.div>
+        </m.div>
 
       </div>
     </section>

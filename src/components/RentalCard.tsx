@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 export type RentalCategory = "Tables" | "Chairs" | "Linens" | "Lighting" | "Décor" | "Tableware";
 
@@ -22,7 +22,7 @@ type Props = {
 
 export function RentalCard({ item, onInquire }: Props) {
   return (
-    <motion.article
+    <m.article
       className="group flex flex-col overflow-hidden rounded-2xl border border-white/8 bg-[var(--navy-light)]/60 shadow-[0_20px_60px_rgba(0,0,0,0.7)]"
       whileHover={{ y: -6 }}
       transition={{ type: "spring", stiffness: 260, damping: 26 }}
@@ -69,7 +69,7 @@ export function RentalCard({ item, onInquire }: Props) {
           </button>
         </div>
       </div>
-    </motion.article>
+    </m.article>
   );
 }
 
