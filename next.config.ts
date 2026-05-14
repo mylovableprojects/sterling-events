@@ -25,6 +25,8 @@ const nextConfig: NextConfig = {
    * jumping 750→828 (Lighthouse “larger than it needs to be” on bento cards).
    */
   images: {
+    /** Allow `quality={50}` on `<Image />` (PageHero, ServicesBentoSection); default list is [75] only in Next 15+. */
+    qualities: [50, 75],
     deviceSizes: [
       360, 384, 400, 420, 480, 560, 640, 750, 760, 828, 1080, 1120, 1200, 1280, 1360, 1400, 1440,
       1536, 1600, 1920, 2048, 3840,
