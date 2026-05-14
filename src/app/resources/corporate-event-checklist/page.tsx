@@ -86,7 +86,7 @@ const faqItems = [
   {
     question: "What is a SIOTO Safety Seal and why does it matter?",
     answer:
-      "The SIOTO Safety Seal is issued by SIOTO (Safe Inflatable Operators Training Organization), which provides nationally recognized safety training and certification for party and event rental operators. The seal reflects certified training completion; planners can verify active credentials on SIOTO's site. It complements insurance—it does not replace permits. Sterling Event Rentals is licensed, insured, and SIOTO Safety Seal certified. Overview: https://www.sioto.org/ — verification: https://sioto.com/verify-2/",
+      "The SIOTO Safety Seal is issued by SIOTO (Safe Inflatable Operators Training Organization), which provides nationally recognized safety training and certification for party and event rental operators. The seal reflects certified training completion; planners can verify active credentials on SIOTO's site. It complements insurance—it does not replace permits. Sterling Event Rentals is licensed, insured, and Safety Certified by SIOTO. Overview: https://www.sioto.org/ — verification: https://sioto.com/verify-2/",
   },
   {
     question: "Is setup and teardown included in corporate rental pricing?",
@@ -150,7 +150,7 @@ const timelinePhases = [
       "Get vendor quotes — include date, head count, and full equipment list",
       "Nail down a guest count estimate — drives tent size and table/chair quantities",
       "Book rentals and pay 50% deposit to hold your date",
-      "Verify vendor credentials — licensed, insured, SIOTO Safety Seal certified",
+      "Verify vendor credentials — licensed, insured, Safety Certified by SIOTO",
     ],
   },
   {

@@ -194,7 +194,7 @@ export function EventsHubContent() {
                 {[
                   { title: "Full delivery, setup & teardown", body: "Our crew handles everything. You don't move a single chair." },
                   { title: "Upfront itemized pricing", body: "Equipment, delivery, and setup as named line items — before you confirm." },
-                  { title: "SIOTO Safety Seal certified", body: "Licensed, insured, and SIOTO Safety Seal certified — SIOTO operator safety training, verifiable at sioto.com." },
+                  { title: "Safety Certified by SIOTO", body: "Licensed, insured, and Safety Certified by SIOTO — SIOTO operator safety training, verifiable at sioto.com." },
                   { title: "Every event type", body: "Corporate picnics to black-tie weddings. Small backyard parties to 400-person events." },
                   { title: "All of Chicago metro", body: "City venues, north shore, Naperville, and throughout the suburbs." },
                 ].map((item) => (

@@ -98,7 +98,7 @@ const faqItems = [
   {
     question: "Can Sterling provide insurance documentation for my permit application?",
     answer:
-      "Yes. Sterling Event Rentals is fully licensed and insured in Illinois and SIOTO Safety Seal certified for tent installations. We can provide certificates of insurance and certification records on request for permit applications, park districts, and venues that require vendor documentation.",
+      "Yes. Sterling Event Rentals is fully licensed and insured in Illinois and Safety Certified by SIOTO for tent installations. We can provide certificates of insurance and certification records on request for permit applications, park districts, and venues that require vendor documentation.",
   },
 ];
 

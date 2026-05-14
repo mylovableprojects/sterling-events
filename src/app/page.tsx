@@ -1,12 +1,41 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Script from "next/script";
 import Link from "next/link";
 import { Hero } from "../components/Hero";
 import { ScrollReveal } from "../components/ScrollReveal";
 import { TrustBar } from "@/components/TrustBar";
 import { FAQAccordion } from "@/components/FAQAccordion";
-import { ServicesBentoSection } from "@/components/ServicesBentoSection";
 import { ChicagolandMapEmbed } from "@/components/ChicagolandMapEmbed";
+
+/** Below-the-fold: split Framer Motion + bento images into a separate chunk (helps mobile “unused JS” coverage). */
+const ServicesBentoSection = dynamic(
+  () => import("@/components/ServicesBentoSection").then((m) => m.ServicesBentoSection),
+  {
+    loading: () => (
+      <section
+        className="bg-[var(--cream)] py-20"
+        aria-busy="true"
+        aria-label="Loading services"
+      >
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="mb-4 h-4 w-36 animate-pulse rounded bg-[var(--navy)]/10" />
+          <div className="h-10 max-w-xl animate-pulse rounded bg-[var(--navy)]/10" />
+          <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-6">
+            {[0, 1, 2, 3, 4].map((i) => (
+              <div
+                key={i}
+                className={`min-h-[240px] animate-pulse rounded-2xl bg-[var(--navy)]/[0.07] ${
+                  i < 3 ? "sm:col-span-1 lg:col-span-2" : "sm:col-span-2 lg:col-span-3"
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+    ),
+  },
+);
 
 const BASE = "https://www.sterlingeventrentals.com";
 
@@ -284,7 +313,7 @@ export default function Home() {
                 body: "Your quote includes equipment cost, setup fee, and delivery — as named line items — before you confirm. No phone call required to find out what it really costs. No bill that looks different at delivery.",
               },
               {
-                heading: "SIOTO Safety Seal Certified",
+                heading: "Safety Certified by SIOTO",
                 body: "The seal comes from SIOTO (Safe Inflatable Operators Training Organization)—nationally recognized safety training for party and event rental operators. Most Chicagoland rental companies are insured only. We carry the seal and can document it for your venue. Verify any vendor at sioto.com.",
               },
               {

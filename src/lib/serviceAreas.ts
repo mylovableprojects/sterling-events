@@ -43,7 +43,7 @@ export const SERVICE_AREA_DATA: Record<ServiceAreaSlug, ServiceAreaData> = {
       "Sterling Event Rentals delivers tents, tables, chairs, stages, and entertainment rentals throughout Chicago, IL and near suburbs — Oak Park, Evanston, Berwyn, Skokie. SIOTO-certified, $500 minimum, upfront pricing. Call (773) 692-7576.",
     h1: "Event rentals in Chicago, IL — delivery, setup & teardown included",
     quickAnswer:
-      "Sterling Event Rentals is a full-service event rental company based in Chicago, IL. We deliver tents, tables, chairs, stages, and entertainment rentals to all Chicago neighborhoods and inner-ring suburbs including Oak Park, Evanston, Berwyn, Cicero, and Skokie. Every order includes professional delivery, full setup, and teardown by our crew. The minimum rental order is $500. We are licensed, insured, and SIOTO Safety Seal certified. Call (773) 692-7576 to confirm delivery to your venue or zip code.",
+      "Sterling Event Rentals is a full-service event rental company based in Chicago, IL. We deliver tents, tables, chairs, stages, and entertainment rentals to all Chicago neighborhoods and inner-ring suburbs including Oak Park, Evanston, Berwyn, Cicero, and Skokie. Every order includes professional delivery, full setup, and teardown by our crew. The minimum rental order is $500. We are licensed, insured, and Safety Certified by SIOTO. Call (773) 692-7576 to confirm delivery to your venue or zip code.",
     pricingNote:
       "Sterling Event Rentals has a $500 minimum rental order for Chicago and near-suburb events. Delivery and setup are quoted as separate named line items on every estimate — before you confirm. No hidden fees at delivery.",
     cities: [
@@ -92,7 +92,7 @@ export const SERVICE_AREA_DATA: Record<ServiceAreaSlug, ServiceAreaData> = {
       {
         question: "Do you need a permit for a tent in Chicago?",
         answer:
-          "In most cases, yes — a permit is required for tents on public property in Chicago, including Chicago Park District sites and Cook County Forest Preserve locations. Requirements vary by site, tent size, and intended use. Sterling Event Rentals is SIOTO Safety Seal certified, and we can provide documentation that many venues and park districts require from vendors. Permit applications are the customer's responsibility, but we'll give you the information you need to file correctly.",
+          "In most cases, yes — a permit is required for tents on public property in Chicago, including Chicago Park District sites and Cook County Forest Preserve locations. Requirements vary by site, tent size, and intended use. Sterling Event Rentals is Safety Certified by SIOTO, and we can provide documentation that many venues and park districts require from vendors. Permit applications are the customer's responsibility, but we'll give you the information you need to file correctly.",
         resourceLink: {
           href: "/resources/chicago-tent-permits",
           label: "Read the Chicago tent permit guide →",
@@ -180,7 +180,7 @@ export const SERVICE_AREA_DATA: Record<ServiceAreaSlug, ServiceAreaData> = {
       {
         question: "Are you licensed and insured for events in Chicago?",
         answer:
-          "Yes. Sterling Event Rentals is fully licensed and insured in Illinois, and SIOTO Safety Seal certified (SIOTO operator safety training; verify at sioto.com). We can provide insurance documentation and certification records for venues that require vendor verification.",
+          "Yes. Sterling Event Rentals is fully licensed and insured in Illinois, and Safety Certified by SIOTO (SIOTO operator safety training; verify at sioto.com). We can provide insurance documentation and certification records for venues that require vendor verification.",
       },
     ],
     schemaAreaNames: [
@@ -204,7 +204,7 @@ export const SERVICE_AREA_DATA: Record<ServiceAreaSlug, ServiceAreaData> = {
       "Sterling Event Rentals delivers tents, tables, chairs, stages, and entertainment rentals to the north and northwest suburbs of Chicago, IL — Schaumburg, Arlington Heights, Palatine, Wilmette, Northbrook, Glenview. SIOTO-certified, $500 minimum. Call (773) 692-7576.",
     h1: "Event rentals in the north and northwest suburbs of Chicago, IL",
     quickAnswer:
-      "Sterling Event Rentals is a full-service event rental company delivering to the north and northwest suburbs of Chicago, IL — including Schaumburg, Arlington Heights, Palatine, Des Plaines, Wilmette, Northbrook, Glenview, Rolling Meadows, Elk Grove Village, and Mount Prospect. Every order includes professional delivery, full setup, and teardown. The minimum rental order is $500. We are licensed, insured, and SIOTO Safety Seal certified. Call (773) 692-7576 with your venue address to confirm delivery and get a quote.",
+      "Sterling Event Rentals is a full-service event rental company delivering to the north and northwest suburbs of Chicago, IL — including Schaumburg, Arlington Heights, Palatine, Des Plaines, Wilmette, Northbrook, Glenview, Rolling Meadows, Elk Grove Village, and Mount Prospect. Every order includes professional delivery, full setup, and teardown. The minimum rental order is $500. We are licensed, insured, and Safety Certified by SIOTO. Call (773) 692-7576 with your venue address to confirm delivery and get a quote.",
     pricingNote:
       "Sterling Event Rentals has a $500 minimum rental order for north and northwest suburb events. Delivery and setup are quoted as separate named line items on every estimate — before you confirm. Most locations in this corridor fall within our standard delivery zone.",
     cities: [
@@ -331,7 +331,7 @@ export const SERVICE_AREA_DATA: Record<ServiceAreaSlug, ServiceAreaData> = {
       {
         question: "Are you licensed and insured for events in the north suburbs?",
         answer:
-          "Yes. Sterling Event Rentals is fully licensed and insured in Illinois and SIOTO Safety Seal certified (SIOTO operator safety training; verify at sioto.com). We can provide insurance and certification documentation for venues, corporate clients, and park districts that require vendor verification.",
+          "Yes. Sterling Event Rentals is fully licensed and insured in Illinois and Safety Certified by SIOTO (SIOTO operator safety training; verify at sioto.com). We can provide insurance and certification documentation for venues, corporate clients, and park districts that require vendor verification.",
       },
     ],
     schemaAreaNames: [
@@ -356,7 +356,7 @@ export const SERVICE_AREA_DATA: Record<ServiceAreaSlug, ServiceAreaData> = {
       "Sterling Event Rentals delivers tents, tables, chairs, stages, and entertainment rentals to the south and southwest suburbs of Chicago, IL — Naperville, Orland Park, Downers Grove, Bolingbrook, Joliet, Tinley Park. SIOTO-certified, $500 minimum. Call (773) 692-7576.",
     h1: "Event rentals in the south and southwest suburbs of Chicago, IL",
     quickAnswer:
-      "Sterling Event Rentals is a full-service event rental company delivering to the south and southwest suburbs of Chicago, IL — including Naperville, Orland Park, Downers Grove, Bolingbrook, Joliet, Plainfield, Tinley Park, Mokena, Aurora, and Homer Glen. Every order includes professional delivery, full setup, and teardown. The minimum rental order is $500. We are licensed, insured, and SIOTO Safety Seal certified. Call (773) 692-7576 with your venue address to confirm delivery and get a quote.",
+      "Sterling Event Rentals is a full-service event rental company delivering to the south and southwest suburbs of Chicago, IL — including Naperville, Orland Park, Downers Grove, Bolingbrook, Joliet, Plainfield, Tinley Park, Mokena, Aurora, and Homer Glen. Every order includes professional delivery, full setup, and teardown. The minimum rental order is $500. We are licensed, insured, and Safety Certified by SIOTO. Call (773) 692-7576 with your venue address to confirm delivery and get a quote.",
     pricingNote:
       "Sterling Event Rentals has a $500 minimum rental order for south and southwest suburb events. Delivery and setup are quoted as separate named line items on every estimate — before you confirm. Delivery fees for farther southwest locations are quoted upfront with no surprises at delivery.",
     cities: [
@@ -403,7 +403,7 @@ export const SERVICE_AREA_DATA: Record<ServiceAreaSlug, ServiceAreaData> = {
       {
         question: "Do you need a permit for a tent at a Naperville Park District site?",
         answer:
-          "In most cases, yes. Naperville Park District sites require vendor permits and may have specific rules about tent size, anchoring, and event duration. You are responsible for obtaining the required permits before we can set up. Sterling Event Rentals is SIOTO Safety Seal certified and can provide vendor documentation that many park districts and venues require. We'll confirm your access requirements and timing when you book.",
+          "In most cases, yes. Naperville Park District sites require vendor permits and may have specific rules about tent size, anchoring, and event duration. You are responsible for obtaining the required permits before we can set up. Sterling Event Rentals is Safety Certified by SIOTO and can provide vendor documentation that many park districts and venues require. We'll confirm your access requirements and timing when you book.",
         resourceLink: {
           href: "/resources/chicago-tent-permits",
           label: "Read the tent permit guide →",
@@ -487,7 +487,7 @@ export const SERVICE_AREA_DATA: Record<ServiceAreaSlug, ServiceAreaData> = {
       {
         question: "Are you licensed and insured for events in the southwest suburbs?",
         answer:
-          "Yes. Sterling Event Rentals is fully licensed and insured in Illinois and SIOTO Safety Seal certified (SIOTO operator safety training; verify at sioto.com). We can provide documentation for venues, park districts, and corporate clients that require vendor verification.",
+          "Yes. Sterling Event Rentals is fully licensed and insured in Illinois and Safety Certified by SIOTO (SIOTO operator safety training; verify at sioto.com). We can provide documentation for venues, park districts, and corporate clients that require vendor verification.",
       },
     ],
     schemaAreaNames: [

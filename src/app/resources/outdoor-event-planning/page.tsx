@@ -385,7 +385,7 @@ export default function OutdoorEventPlanningPage() {
               <div className="space-y-3">
                 {[
                   { q: "Are you licensed and insured?", note: "Ask for documentation — Sterling provides both." },
-                  { q: "Do you hold a safety certification?", note: "Sterling is SIOTO Safety Seal certified." },
+                  { q: "Do you hold a safety certification?", note: "Sterling is Safety Certified by SIOTO." },
                   { q: "Is setup included or extra?", note: "Sterling includes delivery, setup & teardown; quoted as a line item." },
                   { q: "What is your weather policy?", note: "Sterling won't set up in unsafe conditions; will reschedule." },
                   { q: "What is the cancellation policy?", note: "Full refund if cancelled 21+ days before event." },

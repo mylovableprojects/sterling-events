@@ -13,13 +13,14 @@ import {
   Sparkles,
   Tent,
   Truck,
+  Wind,
 } from "lucide-react";
 
 const BASE = "https://www.sterlingeventrentals.com";
 
 const servicesTitle = "Chicagoland Event Rental Services | Sterling Event Rentals";
 const servicesDescription =
-  "Chicago and Chicagoland event rentals for tents, tables, stages, and entertainment. Full delivery, setup, teardown by our SIOTO Safety Seal certified crew.";
+  "Chicago and Chicagoland event rentals for tents, tables, stages, and entertainment. Full delivery, setup, teardown by our Safety Certified by SIOTO crew.";
 
 export const metadata: Metadata = {
   title: servicesTitle,
@@ -119,6 +120,13 @@ const SERVICE_CARDS = [
     description:
       "Every order includes professional delivery, full setup, and teardown by our crew. You don't move a single chair. We arrive on time, build it out, and disappear after.",
     Icon: Truck,
+  },
+  {
+    title: "White Bounce House Rental",
+    href: "/services/white-bounce-house-rental-chicago",
+    description:
+      "Modern white inflatables for weddings, baby showers, and birthday parties. Neutral palette that coordinates with any color scheme and photographs cleanly. Delivery, setup, and teardown included.",
+    Icon: Wind,
   },
 ] as const;
 
@@ -252,7 +260,7 @@ export default function ServicesPage() {
                 <ShieldCheck className="h-6 w-6 inline-block" aria-hidden />
               </div>
               <h3 className="font-[var(--font-display)] text-xl text-[var(--charcoal)] mb-2">
-                SIOTO Safety Seal Certified
+                Safety Certified by SIOTO
               </h3>
               <p className="text-base leading-relaxed text-[var(--charcoal)]/65">
                 Independently inspected and certified — not just insured. Credentials you can verify before you book.

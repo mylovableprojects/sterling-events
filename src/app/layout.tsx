@@ -4,6 +4,8 @@ import { Cormorant_Garamond, Jost } from "next/font/google";
 import "./globals.css";
 import { ClientRoot } from "../components/ClientRoot";
 import { GoogleTagManager } from "../components/GoogleTagManager";
+import { MetaPixel } from "../components/MetaPixel";
+import { getMetaPixelInlineSnippet, META_PIXEL_ID } from "../lib/metaPixel";
 
 const display = Cormorant_Garamond({
   subsets: ["latin"],
@@ -25,6 +27,9 @@ const defaultDescription =
 
 const GTM_ID = "GTM-WP3BV94Z";
 const IS_PROD = process.env.NODE_ENV === "production";
+/** Pixel in prod always; in dev only if `.env.local` has NEXT_PUBLIC_META_PIXEL_DEV=true (for Meta Pixel Helper on localhost). */
+const META_PIXEL_ENABLED =
+  IS_PROD || process.env.NEXT_PUBLIC_META_PIXEL_DEV === "true";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -64,6 +69,21 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {META_PIXEL_ENABLED && (
+          <>
+            <link rel="dns-prefetch" href="https://connect.facebook.net" />
+            <link rel="dns-prefetch" href="https://www.facebook.com" />
+            {/*
+              beforeInteractive = snippet in first HTML document (Meta Pixel Helper detects this).
+              Do not add a second copy of this snippet in a client component.
+            */}
+            <Script
+              id="meta-pixel-base"
+              strategy="beforeInteractive"
+              dangerouslySetInnerHTML={{ __html: getMetaPixelInlineSnippet() }}
+            />
+          </>
+        )}
         {IS_PROD && (
           <>
             {/* Warm DNS for deferred GTM (tiny cost vs full preconnect on critical path) */}
@@ -98,6 +118,20 @@ export default function RootLayout({
                 height="0"
                 width="0"
                 style={{ display: "none", visibility: "hidden" }}
+              />
+            </noscript>
+          </>
+        )}
+        {META_PIXEL_ENABLED && (
+          <>
+            <MetaPixel />
+            <noscript>
+              <img
+                height={1}
+                width={1}
+                style={{ display: "none" }}
+                src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
+                alt=""
               />
             </noscript>
           </>

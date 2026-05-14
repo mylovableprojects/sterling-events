@@ -16,7 +16,7 @@ export function Footer() {
             Events
           </div>
           <p className="max-w-xs text-[0.78rem] leading-relaxed text-[var(--champagne)]/70">
-            Tent, table, stage, and specialty event rentals for Chicago and Chicagoland. Licensed, insured, SIOTO Safety Seal Certified.
+            Tent, table, stage, and specialty event rentals for Chicago and Chicagoland. Licensed, insured, Safety Certified by SIOTO.
           </p>
           <address className="mt-2 not-italic text-[0.75rem] leading-relaxed text-[var(--champagne)]/55">
             Chicago, IL · Serving Chicagoland<br />
@@ -132,7 +132,7 @@ export function Footer() {
               </a>
             </p>
             <p className="tracking-[0.22em] uppercase">
-              Licensed · Insured · SIOTO Safety Seal Certified
+              Licensed · Insured · Safety Certified by SIOTO
             </p>
           </div>
 

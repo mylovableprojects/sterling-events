@@ -361,7 +361,7 @@ export default function ServiceAreaPage() {
             Submit your venue via the contact form →
           </Link>
           <p className="text-sm tracking-[0.15em]" style={{ color: "rgba(245,230,200,0.6)" }}>
-            Licensed · Insured · SIOTO Safety Seal Certified
+            Licensed · Insured · Safety Certified by SIOTO
           </p>
         </div>
       </section>

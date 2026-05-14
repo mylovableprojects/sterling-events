@@ -10,7 +10,7 @@ import { CTABlock } from "@/components/CTABlock";
 const BASE = "https://www.sterlingeventrentals.com";
 
 const aboutDescription =
-  "Chicago event rental company since 2021—licensed, insured, SIOTO Safety Seal certified. Corporate planners, weddings, and private parties across Chicagoland.";
+  "Chicago event rental company since 2021—licensed, insured, Safety Certified by SIOTO. Corporate planners, weddings, and private parties across Chicagoland.";
 
 export const metadata: Metadata = {
   title: "About Sterling Event Rentals | Chicago Event Rentals",
@@ -40,7 +40,7 @@ const aboutPageSchema = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
   name: "About Sterling Event Rentals",
-  description: "Sterling Event Rentals is a Chicago event rental company founded by Steve Rangel in 2021. Licensed, insured, SIOTO Safety Seal certified. Serves corporate planners, weddings, and private hosts across Chicago and Chicagoland.",
+  description: "Sterling Event Rentals is a Chicago event rental company founded by Steve Rangel in 2021. Licensed, insured, Safety Certified by SIOTO. Serves corporate planners, weddings, and private hosts across Chicago and Chicagoland.",
   mainEntity: {
     "@type": "LocalBusiness",
     name: "Sterling Event Rentals",
@@ -74,7 +74,7 @@ export default function AboutPage() {
               About Sterling Event Rentals
             </h1>
             <p className="max-w-2xl hero-subheadline leading-relaxed text-[var(--champagne)]/90">
-              Chicago-based event rental company serving corporate planners, wedding couples, and private hosts across Chicagoland since 2021. Tents, tables, stages, and specialty installations — delivered, set up, and torn down by our crew. Licensed, insured, and SIOTO Safety Seal certified.
+              Chicago-based event rental company serving corporate planners, wedding couples, and private hosts across Chicagoland since 2021. Tents, tables, stages, and specialty installations — delivered, set up, and torn down by our crew. Licensed, insured, and Safety Certified by SIOTO.
             </p>
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2 pt-2">
               <span className="inline-flex items-center gap-1.5 text-[var(--gold)] text-sm font-medium tracking-wide uppercase">
@@ -86,7 +86,7 @@ export default function AboutPage() {
               </span>
               <span className="text-[var(--gold)]/40">·</span>
               <span className="inline-flex items-center gap-1.5 text-[var(--gold)] text-sm font-medium tracking-wide uppercase">
-                SIOTO Safety Seal Certified
+                Safety Certified by SIOTO
               </span>
             </div>
             <div className="mt-8 flex flex-wrap items-center gap-4 pt-4">
@@ -209,7 +209,7 @@ export default function AboutPage() {
                 Insured
               </span>
               <span className="inline-flex items-center rounded-full border border-[var(--gold)]/50 px-4 py-2 text-sm font-medium text-[var(--charcoal)] bg-white">
-                SIOTO Safety Seal Certified
+                Safety Certified by SIOTO
               </span>
             </div>
           </ScrollReveal>

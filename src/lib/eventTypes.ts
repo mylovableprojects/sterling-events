@@ -166,7 +166,7 @@ export const EVENT_TYPE_DATA: Record<EventTypeSlug, EventTypeData> = {
       {
         question: "Are you insured for corporate events and vendor requirements?",
         answer:
-          "Yes. Sterling Event Rentals is fully licensed and insured in Illinois, and SIOTO Safety Seal certified (SIOTO operator safety training; verify at sioto.com). We can provide certificates of insurance and vendor documentation for corporate venues, hotels, and park districts that require it.",
+          "Yes. Sterling Event Rentals is fully licensed and insured in Illinois, and Safety Certified by SIOTO (SIOTO operator safety training; verify at sioto.com). We can provide certificates of insurance and vendor documentation for corporate venues, hotels, and park districts that require it.",
       },
       {
         question: "Do you serve Chicago and suburban corporate locations?",
@@ -328,7 +328,7 @@ export const EVENT_TYPE_DATA: Record<EventTypeSlug, EventTypeData> = {
       {
         question: "Are you insured for wedding venue requirements?",
         answer:
-          "Yes. Sterling Event Rentals is fully licensed and insured in Illinois and SIOTO Safety Seal certified (SIOTO operator safety training; verify at sioto.com). We can provide certificates of insurance and certification documentation for wedding venues, country clubs, and park districts that require vendor verification.",
+          "Yes. Sterling Event Rentals is fully licensed and insured in Illinois and Safety Certified by SIOTO (SIOTO operator safety training; verify at sioto.com). We can provide certificates of insurance and certification documentation for wedding venues, country clubs, and park districts that require vendor verification.",
       },
     ],
     resourceLinks: [

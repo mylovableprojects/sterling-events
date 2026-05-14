@@ -395,7 +395,7 @@ export function EventTypeContent({ data, slug }: Props) {
                   { title: "Full setup by our crew", body: "We assemble everything before your event begins. You don't manage logistics." },
                   { title: "Teardown after your event", body: "We return after your event window and take everything down." },
                   { title: "Upfront itemized pricing", body: "Equipment, delivery, and setup quoted as named line items before you confirm." },
-                  { title: "Licensed & SIOTO-certified", body: "Fully licensed and insured in Illinois. SIOTO Safety Seal certified — SIOTO operator safety training, verifiable at sioto.com." },
+                  { title: "Licensed & SIOTO-certified", body: "Fully licensed and insured in Illinois. Safety Certified by SIOTO — SIOTO operator safety training, verifiable at sioto.com." },
                 ].map((item) => (
                   <li key={item.title} className="flex gap-3">
                     <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[var(--gold)]/15 text-[0.6rem] font-bold text-[var(--gold)]">✓</span>
@@ -442,7 +442,7 @@ export function EventTypeContent({ data, slug }: Props) {
               Submit your event details →
             </Link>
             <p className="mt-10 text-sm tracking-[0.15em]" style={{ color: "rgba(245,230,200,0.55)" }}>
-              Licensed · Insured · SIOTO Safety Seal Certified
+              Licensed · Insured · Safety Certified by SIOTO
             </p>
           </m.div>
         </div>

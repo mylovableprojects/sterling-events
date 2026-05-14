@@ -12,6 +12,7 @@ const serviceLinks = [
   { href: "/services/stages-presentation-chicago", label: "Stages & Presentation" },
   { href: "/services/games-entertainment-chicago", label: "Games & Entertainment" },
   { href: "/services/event-extras-chicago", label: "Event Extras" },
+  { href: "/services/white-bounce-house-rental-chicago", label: "White Bounce House" },
 ];
 
 const serviceAreaLinks = [
@@ -83,11 +84,11 @@ export function Navbar() {
             </div>
           </Link>
 
-          <nav className="hidden items-center gap-8 md:flex">
+          <nav className="hidden flex-nowrap items-center gap-8 md:flex">
             <div className="relative group">
               <button
                 type="button"
-                className="nav-link-underline text-xs tracking-[0.28em] uppercase text-[var(--champagne)]/80"
+                className="nav-link-underline inline-flex min-h-11 items-center text-xs tracking-[0.28em] uppercase text-[var(--champagne)]/80"
               >
                 Services ▾
               </button>
@@ -115,7 +116,7 @@ export function Navbar() {
             <div className="relative group">
               <button
                 type="button"
-                className={`nav-link-underline text-xs tracking-[0.28em] uppercase ${
+                className={`nav-link-underline inline-flex min-h-11 items-center text-xs tracking-[0.28em] uppercase ${
                   pathname.startsWith("/events")
                     ? "nav-link-underline-active text-[var(--gold)]"
                     : "text-[var(--champagne)]/80"
@@ -147,7 +148,7 @@ export function Navbar() {
             <div className="relative group">
               <button
                 type="button"
-                className={`nav-link-underline text-xs tracking-[0.28em] uppercase ${
+                className={`nav-link-underline inline-flex min-h-11 items-center text-xs tracking-[0.28em] uppercase ${
                   pathname.startsWith("/packages")
                     ? "nav-link-underline-active text-[var(--gold)]"
                     : "text-[var(--champagne)]/80"
@@ -179,7 +180,7 @@ export function Navbar() {
             <div className="relative group">
               <button
                 type="button"
-                className={`nav-link-underline text-xs tracking-[0.28em] uppercase ${
+                className={`nav-link-underline inline-flex min-h-11 items-center text-xs tracking-[0.28em] uppercase ${
                   pathname.startsWith("/service-area")
                     ? "nav-link-underline-active text-[var(--gold)]"
                     : "text-[var(--champagne)]/80"
@@ -208,24 +209,22 @@ export function Navbar() {
               </div>
             </div>
 
-            <div className="flex flex-col items-start gap-2">
-              <Link
-                href="/about"
-                className={`nav-link-underline inline-flex min-h-11 items-center text-xs tracking-[0.28em] uppercase ${
-                  pathname === "/about" ? "nav-link-underline-active text-[var(--gold)]" : "text-[var(--champagne)]/80"
-                }`}
-              >
-                About
-              </Link>
-              <Link
-                href="/contact"
-                className={`nav-link-underline inline-flex min-h-11 items-center text-xs tracking-[0.28em] uppercase ${
-                  pathname === "/contact" ? "nav-link-underline-active text-[var(--gold)]" : "text-[var(--champagne)]/80"
-                }`}
-              >
-                Contact
-              </Link>
-            </div>
+            <Link
+              href="/about"
+              className={`nav-link-underline inline-flex min-h-11 items-center text-xs tracking-[0.28em] uppercase ${
+                pathname === "/about" ? "nav-link-underline-active text-[var(--gold)]" : "text-[var(--champagne)]/80"
+              }`}
+            >
+              About
+            </Link>
+            <Link
+              href="/contact"
+              className={`nav-link-underline inline-flex min-h-11 items-center text-xs tracking-[0.28em] uppercase ${
+                pathname === "/contact" ? "nav-link-underline-active text-[var(--gold)]" : "text-[var(--champagne)]/80"
+              }`}
+            >
+              Contact
+            </Link>
 
           </nav>
 

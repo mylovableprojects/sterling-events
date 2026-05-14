@@ -148,7 +148,7 @@ export default function ContactPage() {
             <span className="text-[var(--gold)]/30">·</span>
             <span>Insured</span>
             <span className="text-[var(--gold)]/30">·</span>
-            <span>SIOTO Safety Seal Certified</span>
+            <span>Safety Certified by SIOTO</span>
             <span className="text-[var(--gold)]/30">·</span>
             <span>Serving Chicagoland Since 2021</span>
           </div>

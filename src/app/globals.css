@@ -87,7 +87,8 @@ a {
 
 .nav-link-underline {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
 }
 
 .nav-link-underline::after {

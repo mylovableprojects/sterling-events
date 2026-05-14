@@ -5,6 +5,7 @@ export const SERVICE_SLUGS = [
   "games-entertainment-chicago",
   "event-extras-chicago",
   "delivery-setup-teardown-chicago",
+  "white-bounce-house-rental-chicago",
 ] as const;
 
 export type ServiceSlug = (typeof SERVICE_SLUGS)[number];
@@ -94,7 +95,7 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
     heroSubheadline:
       "When the tent goes up right, the rest of the day falls into place.",
     introParagraph:
-      "We set up tents for corporate picnics, outdoor weddings, milestone parties, school events, and park district events across Chicago and the suburbs. Our crew brings the tent, sets it up, and tears it down—you don't lift a thing. When you're putting a structure over dozens or hundreds of people, that's why we're SIOTO Safety Seal certified: SIOTO (Safe Inflatable Operators Training Organization) documents nationally recognized operator safety training you can verify online — it complements insurance and venue paperwork; it does not replace local permits.",
+      "We set up tents for corporate picnics, outdoor weddings, milestone parties, school events, and park district events across Chicago and the suburbs. Our crew brings the tent, sets it up, and tears it down—you don't lift a thing. When you're putting a structure over dozens or hundreds of people, that's why we're Safety Certified by SIOTO: SIOTO (Safe Inflatable Operators Training Organization) documents nationally recognized operator safety training you can verify online — it complements insurance and venue paperwork; it does not replace local permits.",
     tentSizeTable: {
       rows: [
         { guestCount: "25–50 guests", size: "20×20", bestFor: "Backyard parties, small corporate gatherings" },
@@ -107,7 +108,7 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
     },
     trustStrip: [
       {
-        title: "SIOTO Safety Seal Certified",
+        title: "Safety Certified by SIOTO",
         body: "SIOTO (Safe Inflatable Operators Training Organization) operator safety training — verifiable at sioto.com. Complements insurance; not a substitute for venue permits.",
       },
       {
@@ -287,7 +288,7 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       { href: "/services", label: "See all services" },
     ],
     trustStrip: [
-      { title: "SIOTO Safety Seal Certified", body: "SIOTO (Safe Inflatable Operators Training Organization) operator safety training — verifiable at sioto.com. Complements insurance; not a substitute for venue permits." },
+      { title: "Safety Certified by SIOTO", body: "SIOTO (Safe Inflatable Operators Training Organization) operator safety training — verifiable at sioto.com. Complements insurance; not a substitute for venue permits." },
       { title: "Full-Service Crew", body: "We deliver, set up, and tear down. You don't touch a thing." },
       { title: "Serving Chicagoland Since 2021", body: "Four years of corporate events, weddings, and private parties across the Chicago area." },
     ],
@@ -447,7 +448,7 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       { href: "/services", label: "See all services" },
     ],
     trustStrip: [
-      { title: "SIOTO Safety Seal Certified", body: "SIOTO (Safe Inflatable Operators Training Organization) operator safety training — verifiable at sioto.com. Complements insurance; not a substitute for venue permits." },
+      { title: "Safety Certified by SIOTO", body: "SIOTO (Safe Inflatable Operators Training Organization) operator safety training — verifiable at sioto.com. Complements insurance; not a substitute for venue permits." },
       { title: "Full-Service Crew", body: "We deliver, set up, and tear down. You don't touch a thing." },
       { title: "Serving Chicagoland Since 2021", body: "Four years of corporate events, weddings, and private parties across the Chicago area." },
     ],
@@ -601,7 +602,7 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       { href: "/services", label: "See all services" },
     ],
     trustStrip: [
-      { title: "SIOTO Safety Seal Certified", body: "SIOTO (Safe Inflatable Operators Training Organization) operator safety training — verifiable at sioto.com. Complements insurance; not a substitute for venue permits." },
+      { title: "Safety Certified by SIOTO", body: "SIOTO (Safe Inflatable Operators Training Organization) operator safety training — verifiable at sioto.com. Complements insurance; not a substitute for venue permits." },
       { title: "Full-Service Crew", body: "We deliver, set up, and tear down. You don't touch a thing." },
       { title: "Serving Chicagoland Since 2021", body: "Four years of corporate events, weddings, and private parties across the Chicago area." },
     ],
@@ -757,7 +758,7 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       { href: "/services", label: "See all services" },
     ],
     trustStrip: [
-      { title: "SIOTO Safety Seal Certified", body: "SIOTO (Safe Inflatable Operators Training Organization) operator safety training — verifiable at sioto.com. Complements insurance; not a substitute for venue permits." },
+      { title: "Safety Certified by SIOTO", body: "SIOTO (Safe Inflatable Operators Training Organization) operator safety training — verifiable at sioto.com. Complements insurance; not a substitute for venue permits." },
       { title: "Full-Service Crew", body: "We deliver, set up, and tear down. You don't touch a thing." },
       { title: "Serving Chicagoland Since 2021", body: "Four years of corporate events, weddings, and private parties across the Chicago area." },
     ],
@@ -897,7 +898,7 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
       { href: "/services", label: "See all services" },
     ],
     trustStrip: [
-      { title: "SIOTO Safety Seal Certified", body: "SIOTO (Safe Inflatable Operators Training Organization) operator safety training — verifiable at sioto.com. Complements insurance; not a substitute for venue permits." },
+      { title: "Safety Certified by SIOTO", body: "SIOTO (Safe Inflatable Operators Training Organization) operator safety training — verifiable at sioto.com. Complements insurance; not a substitute for venue permits." },
       { title: "Full-Service Crew", body: "We deliver, set up, and tear down. You don't touch a thing." },
       { title: "Serving Chicagoland Since 2021", body: "Four years of corporate events, weddings, and private parties across the Chicago area." },
     ],
@@ -1024,6 +1025,164 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
     crossLinks: [
       { href: "/packages", label: "See full service packages →" },
       { href: "/service-area", label: "Learn about our service area →" },
+    ],
+  },
+  "white-bounce-house-rental-chicago": {
+    title: "White Bounce House Rental Chicago | Sterling Event Rentals",
+    description:
+      "White bounce house rentals for weddings, baby showers, and birthday parties in Chicago, Evanston, Oak Park, Naperville, Schaumburg, and across Chicagoland. Modern, elegant inflatables that coordinate with any color palette. Full delivery, setup, and teardown. Safety Certified by SIOTO.",
+    label: "White Bounce House Rental",
+    h1: "White Bounce House Rental in Chicago",
+    serviceName: "White Bounce House Rental Chicago",
+    serviceType: "Inflatable Bounce House Rental",
+    heroSubheadline:
+      "A modern white bounce house that fits your event's look — and gives guests of all ages something to love.",
+    quickAnswer:
+      "Sterling Event Rentals provides white bounce house rentals for weddings, baby showers, birthday parties, and private events across Chicago and Chicagoland. White inflatables are the modern alternative to standard bright-colored jumpers — they photograph cleanly, coordinate with any color palette, and work for kids and adults alike. Full delivery, setup, and teardown by our Safety Certified by SIOTO crew.",
+    introParagraph:
+      "Standard bounce houses are loud colors that fight your décor. White inflatables are the opposite — a neutral backdrop that coordinates with florals, linens, and your event color palette without clashing. That's why they've become the go-to for weddings, baby showers, and upscale birthday parties where the look of the event matters as much as the activity. We deliver, set up, and tear down across Chicago and Chicagoland. You don't touch a thing.",
+    heroImageSrc: "/images/outdoor-event-planning/white-bounce-house-chicago.webp",
+    heroImageAlt: "White bounce house rental at an outdoor event in Chicago",
+    heroImageLabel: "White bounce house — outdoor event setup",
+    section2PhotoGridLabels: [
+      "White bounce house — outdoor setup",
+      "White bounce house rental — party",
+      "Soft play — kids event",
+      "Soft play setup — private party",
+    ],
+    section2PhotoGridSrcs: [
+      "/images/outdoor-event-planning/white-bounce-house-chicago.webp",
+      "/images/outdoor-event-planning/white-bounce-house-rental.webp",
+      "/images/outdoor-event-planning/Soft-Play-01-_1_.webp",
+      "/images/outdoor-event-planning/Soft-Play-04-_1_.webp",
+    ],
+    section3ImageLabel: "White bounce house — event rental",
+    section3ImageSrc: "/images/outdoor-event-planning/white-bounce-house-rental.webp",
+    section6ImageLabel: "Crew setting up bounce house",
+    section6ImageSrc: "/images/outdoor-event-planning/Soft-Play-01-_1_.webp",
+    trustStrip: [
+      {
+        title: "Safety Certified by SIOTO",
+        body: "SIOTO (Safe Inflatable Operators Training Organization) operator safety training — verifiable at sioto.com. Complements insurance; not a substitute for venue permits.",
+      },
+      {
+        title: "Full-Service Crew",
+        body: "We deliver, set up, and tear down. You don't touch a thing.",
+      },
+      {
+        title: "Serving Chicagoland Since 2021",
+        body: "Four years of corporate events, weddings, and private parties across the Chicago area.",
+      },
+    ],
+    processBlock: {
+      headline: "Here's exactly what happens when you book",
+      steps: [
+        {
+          title: "You book and we confirm",
+          body: "Call or fill out the form with your date, venue, and space details. We confirm availability and send a full quote — setup fee included, no surprises.",
+        },
+        {
+          title: "Our crew handles everything on-site",
+          body: "We arrive before your event window, deliver the inflatable, and set it up so it's ready when your guests arrive. Stakes or sandbags are used based on your surface.",
+        },
+        {
+          title: "We come back and take it all down",
+          body: "After your event, our crew returns for teardown and removal. You walk away — we handle the rest.",
+        },
+      ],
+      note: "Setup fee is separate from the equipment rental cost and is quoted upfront. No hidden fees added after booking.",
+    },
+    h2Sections: [
+      {
+        question: "Why rent a white bounce house instead of a standard one?",
+        answer:
+          "Standard bounce houses come in primary colors — they're bright, they clash with florals and linens, and they stand out in photos whether you want them to or not. White inflatables are the modern alternative: a neutral backdrop that coordinates with any color palette and photographs cleanly regardless of your event's aesthetic. They're the same activity, just designed for hosts who care about how everything looks together. If you're planning a wedding, baby shower, or upscale birthday party, white is the obvious call.",
+      },
+      {
+        question: "Are white bounce house rentals available for outdoor weddings and baby showers in Chicago?",
+        answer:
+          "Yes — both are a natural fit. For weddings, a white bounce house keeps younger guests entertained without competing with the event's look; it sits alongside your tent, florals, and linens without clashing. For baby showers, the neutral white palette works with any theme or color scheme. We can place the inflatable in a designated area separate from the main event flow. Share your venue and layout when you request a quote and we'll confirm placement and sizing.",
+      },
+      {
+        question: "What space do I need for a white bounce house rental?",
+        answer:
+          "You need a clear, level area — typically at least 15×15 feet of open space, though exact requirements depend on the unit. We also need overhead clearance and access for our delivery truck. Grass, concrete, and asphalt setups are all possible; the anchoring method (stakes vs. sandbags) depends on your surface. Share your venue address and setup area when you request a quote and we'll confirm feasibility.",
+      },
+      {
+        question: "Can a bounce house be set up under a tent?",
+        answer:
+          "Sometimes, depending on tent height and footprint. Most inflatables need significant overhead clearance. In many cases, the bounce house is placed just outside the tent or in an adjacent open area while the main event runs under the tent. Share your tent dimensions and event layout when you book and we'll advise on the best placement.",
+      },
+    ],
+    whoItsFor: [
+      "Wedding couples and coordinators who want a white bounce house that coordinates with the event's color palette, photographs cleanly, and gives younger guests a dedicated activity area without breaking the aesthetic.",
+      "Baby shower hosts and birthday party planners who want a modern, classy inflatable that looks intentional in photos — not like an afterthought — and works for kids and adults alike.",
+      "Corporate event planners and private hosts running family-friendly events who want an inflatable that fits a polished, professional look without the standard neon color clash.",
+    ],
+    whatsIncluded: [
+      "White bounce house rental — clean, elegant inflatable suitable for weddings, birthdays, and private events.",
+      "Delivery, setup, and teardown by Sterling's crew (setup fee is separate from unit cost and quoted upfront). Stakes or sandbags used based on surface.",
+      "Safety Certified by SIOTO operators. Permits for public venues are the customer's responsibility.",
+    ],
+    faqs: [
+      {
+        question: "Do you rent white bounce houses for weddings and baby showers in Chicago?",
+        answer:
+          "Yes. White bounce house rentals are popular for outdoor weddings and baby showers across Chicago and Chicagoland. For weddings, they coordinate with the color palette and tent setup and give younger guests a dedicated space. For baby showers, the neutral white works with any theme. Share your date, venue, and layout when you request a quote — we'll confirm placement and availability.",
+      },
+      {
+        question: "How much does a white bounce house rental cost in Chicago?",
+        answer:
+          "Pricing depends on rental duration, site access, and delivery location. A $500 company minimum applies to all orders. Many clients pair a bounce house with a tent or other rentals. Contact us with your date and venue and we'll send an itemized quote upfront.",
+      },
+      {
+        question: "Can you set up a white bounce house on concrete or asphalt?",
+        answer:
+          "Yes, in most cases. Hard surfaces require sandbag anchoring instead of stakes. Share your venue address and surface type when you request a quote and we'll confirm the setup method.",
+      },
+      {
+        question: "Do I need a permit for a bounce house in Chicago?",
+        answer:
+          "For private residential events, permits are typically not required. For events in parks or public spaces, permits are the customer's responsibility — Sterling does not pull permits on behalf of clients. We'll advise based on your venue when you request a quote.",
+      },
+      {
+        question: "How far in advance should I book a white bounce house?",
+        answer:
+          "For peak-season weekends (May–September) and wedding dates, we recommend booking 4–8 weeks in advance. We'll confirm availability when you contact us. Last-minute requests are sometimes possible — call (773) 692-7576 to check.",
+      },
+      {
+        question: "Can a bounce house rental be added to a tent or package order?",
+        answer:
+          "Yes. A white bounce house can be added as an add-on to any tent or package booking. If you've already reserved a tent, contact us to add the inflatable to your order and we'll update the quote.",
+      },
+      {
+        question: "What is the minimum age for a bounce house?",
+        answer:
+          "Typically children ages 2–12 are the primary users. We recommend adult supervision at all times. Specific weight and age limits depend on the unit — we'll share the safety specs when you book.",
+      },
+    ],
+    keyTakeaways: "",
+    processSteps: [],
+    proofCopy: "",
+    ctaHeadline: "Ready to book your white bounce house?",
+    ctaSubheadline:
+      "Tell us your date, venue, and event details — we'll confirm availability and send a full quote.",
+    ctaCopy: "Check Availability for Your Date",
+    packagesCta: "See packages →",
+    secondaryCta: { href: "/packages", label: "See Our Packages →" },
+    ctaFooterLinks: [
+      { href: "/services/event-extras-chicago", label: "Event Extras" },
+      { href: "/services/games-entertainment-chicago", label: "Games & Entertainment" },
+      { href: "/services", label: "See all services" },
+    ],
+    siblingServices: [
+      { href: "/services/event-extras-chicago", label: "Event Extras" },
+      { href: "/services/tents-structures-chicago", label: "Tents & Structures" },
+      { href: "/services/games-entertainment-chicago", label: "Games & Entertainment" },
+    ],
+    crossLinks: [
+      { href: "/services/event-extras-chicago", label: "Browse all event extras →" },
+      { href: "/services/tents-structures-chicago", label: "Pair with a tent rental for full weather coverage →" },
     ],
   },
 };
