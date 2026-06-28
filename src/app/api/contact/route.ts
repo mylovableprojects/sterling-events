@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
 
     const mongoUri = process.env.MONGODB_URI?.trim();
     let savedToDatabase = false;
-    let submissionId = randomUUID();
+    let submissionId: string = randomUUID();
 
     if (mongoUri) {
       try {
