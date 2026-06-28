@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { randomUUID } from "crypto";
 import { connectToDatabase } from "@/lib/mongodb";
 import { Inquiry } from "@/lib/models/Inquiry";
 import { forwardContactToHighLevel } from "@/lib/highLevelContact";
@@ -33,11 +34,12 @@ export async function POST(req: NextRequest) {
 
     const mongoUri = process.env.MONGODB_URI?.trim();
     let savedToDatabase = false;
+    let submissionId = randomUUID();
 
     if (mongoUri) {
       try {
         await connectToDatabase();
-        await Inquiry.create({
+        const doc = await Inquiry.create({
           name,
           email,
           phone: phone?.trim() || undefined,
@@ -49,6 +51,7 @@ export async function POST(req: NextRequest) {
           consentMarketing: !!consentMarketing,
           ...attribution,
         });
+        submissionId = String(doc._id);
         savedToDatabase = true;
       } catch (dbErr) {
         console.error("Contact API: failed to save inquiry to MongoDB:", dbErr);
@@ -107,7 +110,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    return NextResponse.json({ ok: true });
+    return NextResponse.json({ ok: true, submissionId });
   } catch (error) {
     console.error("Contact API error:", error);
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });

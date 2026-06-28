@@ -6,6 +6,7 @@ import { ClientRoot } from "../components/ClientRoot";
 import { GoogleTagManager } from "../components/GoogleTagManager";
 import { MetaPixel } from "../components/MetaPixel";
 import { getMetaPixelInlineSnippet, META_PIXEL_ID } from "../lib/metaPixel";
+import { BOUNCETRACK_PUBLIC_KEY, BOUNCETRACK_TRACK_SCRIPT } from "../lib/bouncetrack";
 
 const display = Cormorant_Garamond({
   subsets: ["latin"],
@@ -88,6 +89,13 @@ export default function RootLayout({
           <>
             {/* Warm DNS for deferred GTM (tiny cost vs full preconnect on critical path) */}
             <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+            <link rel="dns-prefetch" href="https://bouncetrack.co" />
+            <Script
+              id="bouncetrack"
+              src={BOUNCETRACK_TRACK_SCRIPT}
+              data-key={BOUNCETRACK_PUBLIC_KEY}
+              strategy="afterInteractive"
+            />
             <Script
               id="ld-website"
               type="application/ld+json"

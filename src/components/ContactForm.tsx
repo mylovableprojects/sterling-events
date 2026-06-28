@@ -4,6 +4,9 @@ import { useState } from "react";
 import { m } from "framer-motion";
 import Link from "next/link";
 import { getAttributionSnapshot } from "@/lib/attribution";
+import { BounceTrackConversionPixel } from "@/components/BounceTrackConversionPixel";
+
+const IS_PROD = process.env.NODE_ENV === "production";
 
 type FormState = {
   name: string;
@@ -34,6 +37,9 @@ export function ContactForm() {
   const [submitting, setSubmitting] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [conversion, setConversion] = useState<{ submissionId: string; email: string } | null>(
+    null,
+  );
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement | HTMLInputElement>,
@@ -56,6 +62,7 @@ export function ContactForm() {
     }
     setSubmitting(true);
     setStatus("idle");
+    setConversion(null);
 
     try {
       const res = await fetch("/api/contact", {
@@ -73,7 +80,15 @@ export function ContactForm() {
         setErrorMessage(data.error || "Something went wrong. Please try again.");
         return;
       }
+      const submittedEmail = form.email.trim();
+      const submissionId =
+        typeof data.submissionId === "string" && data.submissionId.length > 0
+          ? data.submissionId
+          : crypto.randomUUID();
       setStatus("success");
+      if (IS_PROD) {
+        setConversion({ submissionId, email: submittedEmail });
+      }
       setForm(initialState);
       setErrorMessage("");
     } catch {
@@ -249,6 +264,12 @@ export function ContactForm() {
         </button>
         {status === "success" && (
           <span className="text-[var(--gold-light)]">Thank you—our team will be in touch shortly.</span>
+        )}
+        {conversion && (
+          <BounceTrackConversionPixel
+            submissionId={conversion.submissionId}
+            email={conversion.email}
+          />
         )}
         {status === "error" && (
           <span className="text-red-300">
