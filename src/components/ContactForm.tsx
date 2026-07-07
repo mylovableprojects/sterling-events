@@ -5,6 +5,7 @@ import { m } from "framer-motion";
 import Link from "next/link";
 import { getAttributionSnapshot } from "@/lib/attribution";
 import { BounceTrackConversionPixel } from "@/components/BounceTrackConversionPixel";
+import { EventTypeSelect } from "@/components/EventTypeSelect";
 
 const IS_PROD = process.env.NODE_ENV === "production";
 
@@ -42,7 +43,7 @@ export function ContactForm() {
   );
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement | HTMLInputElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value, type } = e.target;
     const checked = (e.target as HTMLInputElement).checked;
@@ -107,7 +108,7 @@ export function ContactForm() {
   return (
     <m.form
       onSubmit={handleSubmit}
-      className="space-y-4"
+      className="space-y-4 [color-scheme:dark]"
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
@@ -173,18 +174,12 @@ export function ContactForm() {
           <label className={labelClass} htmlFor="eventType">
             Event Type
           </label>
-          <select
+          <EventTypeSelect
             id="eventType"
-            name="eventType"
             value={form.eventType}
-            onChange={handleChange}
-            className={`${inputClass} cursor-pointer appearance-none`}
-          >
-            <option value="">Select one</option>
-            <option value="Wedding">Wedding</option>
-            <option value="Corporate">Corporate</option>
-            <option value="Social">Social / Private</option>
-          </select>
+            onChange={(eventType) => setForm((prev) => ({ ...prev, eventType }))}
+            className={inputClass}
+          />
         </div>
         <div className="md:col-span-2">
           <label className={labelClass} htmlFor="guestCount">
