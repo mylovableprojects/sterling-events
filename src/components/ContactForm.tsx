@@ -6,8 +6,9 @@ import Link from "next/link";
 import { getAttributionSnapshot } from "@/lib/attribution";
 import { BounceTrackConversionPixel } from "@/components/BounceTrackConversionPixel";
 import { EventTypeSelect } from "@/components/EventTypeSelect";
+import { isBounceTrackEnabled } from "@/lib/bouncetrack";
 
-const IS_PROD = process.env.NODE_ENV === "production";
+const BOUNCETRACK_ENABLED = isBounceTrackEnabled();
 
 type FormState = {
   name: string;
@@ -87,7 +88,7 @@ export function ContactForm() {
           ? data.submissionId
           : crypto.randomUUID();
       setStatus("success");
-      if (IS_PROD) {
+      if (BOUNCETRACK_ENABLED) {
         setConversion({ submissionId, email: submittedEmail });
       }
       setForm(initialState);

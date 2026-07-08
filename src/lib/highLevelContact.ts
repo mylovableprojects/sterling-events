@@ -9,7 +9,7 @@ import type { AttributionSnapshot } from "./attribution";
  * gclid, fbclid, msclkid, attribution_landing_page, attribution_captured_at
  */
 const DEFAULT_WEBHOOK =
-  "https://services.leadconnectorhq.com/hooks/1rucOoZ7U4YprPxXG1g8/webhook-trigger/d76520b5-3ed2-455c-a86a-457ba7c7f89b";
+  "https://services.leadconnectorhq.com/hooks/5P9kvVrajkXseVVhgg0m/webhook-trigger/79a6d468-6a8e-4201-9c1f-7198c6030957";
 
 export type HighLevelContactPayload = {
   name: string;

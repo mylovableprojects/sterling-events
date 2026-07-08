@@ -6,7 +6,7 @@ import { ClientRoot } from "../components/ClientRoot";
 import { GoogleTagManager } from "../components/GoogleTagManager";
 import { MetaPixel } from "../components/MetaPixel";
 import { getMetaPixelInlineSnippet, META_PIXEL_ID } from "../lib/metaPixel";
-import { BOUNCETRACK_PUBLIC_KEY, BOUNCETRACK_TRACK_SCRIPT } from "../lib/bouncetrack";
+import { BOUNCETRACK_PUBLIC_KEY, BOUNCETRACK_TRACK_SCRIPT, isBounceTrackEnabled } from "../lib/bouncetrack";
 
 const display = Cormorant_Garamond({
   subsets: ["latin"],
@@ -28,6 +28,7 @@ const defaultDescription =
 
 const GTM_ID = "GTM-WP3BV94Z";
 const IS_PROD = process.env.NODE_ENV === "production";
+const BOUNCETRACK_ENABLED = isBounceTrackEnabled();
 /** Pixel in prod always; in dev only if `.env.local` has NEXT_PUBLIC_META_PIXEL_DEV=true (for Meta Pixel Helper on localhost). */
 const META_PIXEL_ENABLED =
   IS_PROD || process.env.NEXT_PUBLIC_META_PIXEL_DEV === "true";
@@ -85,17 +86,22 @@ export default function RootLayout({
             />
           </>
         )}
-        {IS_PROD && (
+        {BOUNCETRACK_ENABLED && (
           <>
-            {/* Warm DNS for deferred GTM (tiny cost vs full preconnect on critical path) */}
-            <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-            <link rel="dns-prefetch" href="https://bouncetrack.co" />
+            <link rel="preconnect" href="https://bouncetrack.co" crossOrigin="" />
             <Script
               id="bouncetrack"
               src={BOUNCETRACK_TRACK_SCRIPT}
               data-key={BOUNCETRACK_PUBLIC_KEY}
               strategy="afterInteractive"
+              async
             />
+          </>
+        )}
+        {IS_PROD && (
+          <>
+            {/* Warm DNS for deferred GTM (tiny cost vs full preconnect on critical path) */}
+            <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
             <Script
               id="ld-website"
               type="application/ld+json"
