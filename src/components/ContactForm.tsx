@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { m } from "framer-motion";
 import Link from "next/link";
 import { getAttributionSnapshot } from "@/lib/attribution";
@@ -42,6 +42,13 @@ export function ContactForm() {
   const [conversion, setConversion] = useState<{ submissionId: string; email: string } | null>(
     null,
   );
+  const successRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (status === "success") {
+      successRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+  }, [status]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -59,7 +66,7 @@ export function ContactForm() {
     const hasPhone = form.phone.trim().length > 0;
     if (hasPhone && !form.consentTransactional) {
       setStatus("error");
-      setSubmitting(false);
+      setErrorMessage("Please agree to be contacted by call or text if you provide a phone number.");
       return;
     }
     setSubmitting(true);
@@ -105,6 +112,49 @@ export function ContactForm() {
     "w-full rounded-xl border border-white/20 bg-white/8 px-4 py-3 text-base text-[var(--cream)] placeholder:text-[var(--champagne)]/40 focus:border-[var(--gold)]/60 focus:outline-none focus:ring-1 focus:ring-[var(--gold)]/30 transition-colors";
   const labelClass =
     "mb-1.5 block text-xs font-semibold uppercase tracking-widest text-[var(--gold)]";
+
+  if (status === "success") {
+    return (
+      <m.div
+        ref={successRef}
+        role="status"
+        aria-live="polite"
+        className="space-y-5 py-4 text-center"
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
+        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-[var(--gold)]/40 bg-[var(--gold)]/10 text-2xl text-[var(--gold-light)]">
+          ✓
+        </div>
+        <div className="space-y-2">
+          <h3 className="font-[var(--font-display)] text-2xl text-[var(--cream)]">
+            Thank you — your quote request was received
+          </h3>
+          <p className="mx-auto max-w-sm text-sm leading-relaxed text-[var(--champagne)]/85">
+            Our team will review your event details and be in touch shortly, usually within one
+            business day.
+          </p>
+        </div>
+        <button
+          type="button"
+          onClick={() => {
+            setStatus("idle");
+            setConversion(null);
+          }}
+          className="text-sm font-medium text-[var(--gold-light)] underline decoration-[var(--gold)] underline-offset-4 hover:decoration-[var(--gold-light)]"
+        >
+          Submit another request
+        </button>
+        {conversion && (
+          <BounceTrackConversionPixel
+            submissionId={conversion.submissionId}
+            email={conversion.email}
+          />
+        )}
+      </m.div>
+    );
+  }
 
   return (
     <m.form
@@ -250,7 +300,18 @@ export function ContactForm() {
         </label>
       </div>
 
-      <div className="flex flex-col gap-2 pt-2 text-[0.8rem]">
+      <div className="flex flex-col gap-3 pt-2 text-[0.8rem]">
+        {status === "error" && (
+          <div
+            role="alert"
+            className="rounded-xl border border-red-400/30 bg-red-950/40 px-4 py-3 text-sm text-red-200"
+          >
+            {errorMessage ||
+              (form.phone.trim() && !form.consentTransactional
+                ? "Please agree to be contacted by call or text if you provide a phone number."
+                : "Something went wrong. Please try again.")}
+          </div>
+        )}
         <button
           type="submit"
           disabled={submitting}
@@ -258,22 +319,6 @@ export function ContactForm() {
         >
           {submitting ? "Sending..." : "Request a Quote →"}
         </button>
-        {status === "success" && (
-          <span className="text-[var(--gold-light)]">Thank you—our team will be in touch shortly.</span>
-        )}
-        {conversion && (
-          <BounceTrackConversionPixel
-            submissionId={conversion.submissionId}
-            email={conversion.email}
-          />
-        )}
-        {status === "error" && (
-          <span className="text-red-300">
-            {form.phone.trim() && !form.consentTransactional
-              ? "Please agree to be contacted by call or text if you provide a phone number."
-              : errorMessage}
-          </span>
-        )}
       </div>
     </m.form>
   );
