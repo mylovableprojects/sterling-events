@@ -56,7 +56,7 @@ export default function NotFound() {
         </div>
       </section>
 
-      <section className="border-t border-[var(--navy)]/10 bg-[var(--cream)] py-16">
+      <section className="border-t border-[var(--navy)]/10 bg-[var(--cream)] py-16 text-[var(--charcoal)]">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h2 className="font-[var(--font-display)] text-2xl text-[var(--navy)] md:text-3xl">
             Popular destinations
@@ -69,7 +69,8 @@ export default function NotFound() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="inline-block rounded-full border border-[var(--navy)]/12 bg-white px-5 py-2.5 text-sm font-medium text-[var(--navy)] transition-colors hover:border-[var(--gold)]/50 hover:text-[var(--navy)]"
+                  className="inline-flex items-center rounded-full bg-white px-5 py-2.5 text-sm font-medium transition-colors hover:border-[var(--gold)] hover:text-[var(--gold)]"
+                  style={{ color: "#0b1f3a", border: "1px solid rgba(11,31,58,0.25)" }}
                 >
                   {link.label}
                 </Link>
@@ -80,7 +81,8 @@ export default function NotFound() {
             Prefer to talk it through? Call{" "}
             <a
               href="tel:+17736927576"
-              className="font-medium text-[var(--navy)] underline decoration-[var(--gold)] underline-offset-2 hover:decoration-[var(--gold-light)]"
+              className="font-medium underline decoration-[var(--gold)] underline-offset-2 hover:decoration-[var(--gold-light)]"
+              style={{ color: "#0b1f3a" }}
             >
               (773) 692-7576
             </a>
