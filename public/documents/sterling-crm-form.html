@@ -2,11 +2,7 @@
      Sterling Event Rentals — SIOTO CRM contact form (reference embed)
 
      Production site: /contact uses the React form → POST /api/contact → SIOTO.
-     Use this file only for standalone embeds (Custom HTML, etc.).
-
-     Before use, set ENDPOINT, KEY, and INTAKE_KEY below from your SIOTO/Supabase
-     dashboard (same values as SIOTO_SUPABASE_URL, SIOTO_SUPABASE_PUBLISHABLE_KEY,
-     SIOTO_INTAKE_KEY in Vercel). Do not commit real keys to git.
+     Use this file for standalone embeds (Custom HTML, etc.). No env vars needed.
      ============================================================ -->
 <div class="ster">
   <style>
@@ -80,9 +76,9 @@
     var root=document.currentScript.closest(".ster");
     var form=root.querySelector(".ster-form"), btn=form.querySelector("button"), msg=form.querySelector(".msg");
     var g=function(n){ return form.querySelector('[name="'+n+'"]'); };
-    var ENDPOINT="YOUR_SIOTO_SUPABASE_URL/rest/v1/rpc/submit_lead";
-    var KEY="YOUR_SIOTO_SUPABASE_PUBLISHABLE_KEY";
-    var INTAKE_KEY="YOUR_SIOTO_INTAKE_KEY";
+    var ENDPOINT="https://ttqqwggnqxoktuuhhbyc.supabase.co/rest/v1/rpc/submit_lead";
+    var KEY="sb_publishable__rs-8FcQ9xOX8YVVAD5hAA_3opYc9W-";
+    var INTAKE_KEY="c184dd01930e2585a30ea8ff";
     function show(k,t){ msg.className="msg "+k; msg.textContent=t; }
     form.addEventListener("submit",async function(e){
       e.preventDefault();

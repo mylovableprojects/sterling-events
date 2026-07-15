@@ -1,6 +1,10 @@
 import type { AttributionSnapshot } from "./attribution";
 
-const DEFAULT_SUPABASE_URL = "https://ttqqwggnqxoktuuhhbyc.supabase.co";
+/** Public SIOTO CRM embed credentials (same as sterling-crm-form.html). */
+const SIOTO_SUPABASE_URL = "https://ttqqwggnqxoktuuhhbyc.supabase.co";
+const SIOTO_PUBLISHABLE_KEY = "sb_publishable__rs-8FcQ9xOX8YVVAD5hAA_3opYc9W-";
+const SIOTO_INTAKE_KEY = "c184dd01930e2585a30ea8ff";
+
 const LEAD_SOURCE = "Sterling Event Rentals - Website form";
 const LEAD_BRAND = "Sterling Event Rentals";
 
@@ -16,18 +20,6 @@ export type SiotoContactPayload = {
   consentMarketing: boolean;
   attribution?: AttributionSnapshot;
 };
-
-function getSiotoConfig(): {
-  url: string;
-  key: string;
-  intakeKey: string;
-} | null {
-  const url = process.env.SIOTO_SUPABASE_URL?.trim() || DEFAULT_SUPABASE_URL;
-  const key = process.env.SIOTO_SUPABASE_PUBLISHABLE_KEY?.trim();
-  const intakeKey = process.env.SIOTO_INTAKE_KEY?.trim();
-  if (!key || !intakeKey) return null;
-  return { url, key, intakeKey };
-}
 
 function attributionToNoteLines(a: AttributionSnapshot | undefined): string[] {
   if (!a) return [];
@@ -73,15 +65,9 @@ function buildLeadNotes(data: SiotoContactPayload): string | null {
  * POSTs a lead to SIOTO CRM via Supabase RPC submit_lead. Returns true on 2xx.
  */
 export async function forwardContactToSiotoCrm(data: SiotoContactPayload): Promise<boolean> {
-  const config = getSiotoConfig();
-  if (!config) {
-    console.error("SIOTO CRM: SIOTO_SUPABASE_PUBLISHABLE_KEY or SIOTO_INTAKE_KEY is not set.");
-    return false;
-  }
-
-  const endpoint = `${config.url.replace(/\/$/, "")}/rest/v1/rpc/submit_lead`;
+  const endpoint = `${SIOTO_SUPABASE_URL}/rest/v1/rpc/submit_lead`;
   const body = {
-    intake_key: config.intakeKey,
+    intake_key: SIOTO_INTAKE_KEY,
     lead_name: data.name.trim(),
     lead_phone: (data.phone ?? "").trim() || null,
     lead_email: data.email.trim() || null,
@@ -95,8 +81,8 @@ export async function forwardContactToSiotoCrm(data: SiotoContactPayload): Promi
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        apikey: config.key,
-        Authorization: `Bearer ${config.key}`,
+        apikey: SIOTO_PUBLISHABLE_KEY,
+        Authorization: `Bearer ${SIOTO_PUBLISHABLE_KEY}`,
       },
       body: JSON.stringify(body),
       signal: AbortSignal.timeout(15_000),
