@@ -5,8 +5,13 @@ import { useCallback, useEffect, useId, useRef, useState } from "react";
 const OPTIONS = [
   { value: "", label: "Select one" },
   { value: "Wedding", label: "Wedding" },
-  { value: "Corporate", label: "Corporate" },
-  { value: "Social", label: "Social / Private" },
+  { value: "Corporate event", label: "Corporate event" },
+  { value: "Birthday", label: "Birthday" },
+  { value: "Anniversary", label: "Anniversary" },
+  { value: "Graduation", label: "Graduation" },
+  { value: "Holiday party", label: "Holiday party" },
+  { value: "Fundraiser / gala", label: "Fundraiser / gala" },
+  { value: "Other", label: "Other" },
 ] as const;
 
 type Props = {

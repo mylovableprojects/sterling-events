@@ -3,10 +3,7 @@
  * - Reads utm_* and ad click IDs on each load; merges into session (last in-URL values win).
  * - Persists across same-tab navigation until the tab closes.
  *
- * Go HighLevel inbound webhook receives these as snake_case JSON keys — create matching
- * custom fields on the contact (or map in your workflow): utm_source, utm_medium,
- * utm_campaign, utm_term, utm_content, gclid, fbclid, msclkid, attribution_landing_page,
- * attribution_captured_at.
+ * Included in SIOTO CRM lead_notes when a contact form is submitted.
  */
 
 const STORAGE_KEY = "ser_contact_attribution_v1";

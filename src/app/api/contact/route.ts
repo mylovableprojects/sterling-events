@@ -1,9 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { randomUUID } from "crypto";
-import { connectToDatabase } from "@/lib/mongodb";
-import { Inquiry } from "@/lib/models/Inquiry";
-import { forwardContactToHighLevel } from "@/lib/highLevelContact";
-import { sendContactNotificationEmail } from "@/lib/sendContactEmail";
+import { forwardContactToSiotoCrm } from "@/lib/siotoCrm";
 import { sanitizeAttributionPayload } from "@/lib/attribution";
 
 export async function POST(req: NextRequest) {
@@ -20,7 +17,12 @@ export async function POST(req: NextRequest) {
       consentTransactional,
       consentMarketing,
       attribution: attributionRaw,
+      companyWebsite,
     } = body;
+
+    if (companyWebsite?.trim()) {
+      return NextResponse.json({ ok: true, submissionId: randomUUID() });
+    }
 
     const attribution = sanitizeAttributionPayload(attributionRaw);
 
@@ -29,38 +31,13 @@ export async function POST(req: NextRequest) {
     }
 
     if (phone && phone.trim() && !consentTransactional) {
-      return NextResponse.json({ error: "Consent to contact by call or text is required when providing a phone number." }, { status: 400 });
+      return NextResponse.json(
+        { error: "Consent to contact by call or text is required when providing a phone number." },
+        { status: 400 },
+      );
     }
 
-    const mongoUri = process.env.MONGODB_URI?.trim();
-    let savedToDatabase = false;
-    let submissionId: string = randomUUID();
-
-    if (mongoUri) {
-      try {
-        await connectToDatabase();
-        const doc = await Inquiry.create({
-          name,
-          email,
-          phone: phone?.trim() || undefined,
-          eventDate,
-          eventType,
-          guestCount,
-          message,
-          consentTransactional: phone?.trim() ? !!consentTransactional : undefined,
-          consentMarketing: !!consentMarketing,
-          ...attribution,
-        });
-        submissionId = String(doc._id);
-        savedToDatabase = true;
-      } catch (dbErr) {
-        console.error("Contact API: failed to save inquiry to MongoDB:", dbErr);
-      }
-    } else {
-      console.warn("Contact API: MONGODB_URI is not set — inquiry not saved to the database.");
-    }
-
-    const highLevelOk = await forwardContactToHighLevel({
+    const siotoOk = await forwardContactToSiotoCrm({
       name,
       email,
       phone,
@@ -73,47 +50,19 @@ export async function POST(req: NextRequest) {
       attribution,
     });
 
-    let emailSent: "sent" | "skipped" = "skipped";
-    try {
-      emailSent = await sendContactNotificationEmail({
-        name,
-        email,
-        phone,
-        eventDate,
-        eventType,
-        guestCount,
-        message,
-        consentTransactional: !!consentTransactional,
-        consentMarketing: !!consentMarketing,
-        attribution,
-      });
-    } catch (emailErr) {
-      console.error("Contact API: notification email failed:", emailErr);
-      if (!savedToDatabase && !highLevelOk) {
-        return NextResponse.json(
-          {
-            error:
-              "We could not save your message. Please call (773) 692-7576 or email info@sterlingeventrentals.com.",
-          },
-          { status: 503 },
-        );
-      }
-    }
-
-    if (!savedToDatabase && emailSent === "skipped" && !highLevelOk) {
+    if (!siotoOk) {
       return NextResponse.json(
         {
           error:
-            "This form is not fully configured yet. Please call (773) 692-7576 or email info@sterlingeventrentals.com.",
+            "We could not save your message. Please call (773) 692-7576 or email info@sterlingeventrentals.com.",
         },
         { status: 503 },
       );
     }
 
-    return NextResponse.json({ ok: true, submissionId });
+    return NextResponse.json({ ok: true, submissionId: randomUUID() });
   } catch (error) {
     console.error("Contact API error:", error);
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }
-

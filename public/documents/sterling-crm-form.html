@@ -1,0 +1,122 @@
+<!-- ============================================================
+     Sterling Event Rentals — SIOTO CRM contact form (reference embed)
+
+     Production site: /contact uses the React form → POST /api/contact → SIOTO.
+     Use this file only for standalone embeds (Custom HTML, etc.).
+
+     Before use, set ENDPOINT, KEY, and INTAKE_KEY below from your SIOTO/Supabase
+     dashboard (same values as SIOTO_SUPABASE_URL, SIOTO_SUPABASE_PUBLISHABLE_KEY,
+     SIOTO_INTAKE_KEY in Vercel). Do not commit real keys to git.
+     ============================================================ -->
+<div class="ster">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap');
+    .ster{--gold:#c9a24a;--gold2:#e6c874;--ink:#ece7d8;box-sizing:border-box;max-width:620px;margin:0 auto;padding:30px 26px;background:#0e0e16;border:1px solid rgba(201,162,74,.25);border-radius:20px;font-family:Jost,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink)}
+    .ster *{box-sizing:border-box}
+    .ster .wm{letter-spacing:.32em;font-size:13px;color:var(--gold);font-weight:400;margin:0}
+    .ster .wm b{display:block;letter-spacing:.16em;font-size:22px;font-weight:700;color:var(--gold2);margin-top:2px}
+    .ster .rule{height:1px;background:linear-gradient(90deg,transparent,rgba(201,162,74,.5),transparent);margin:18px 0 24px}
+    .ster label.fl{display:block;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:18px 0 7px}
+    .ster label.fl span{color:#9a8f78;font-weight:400}
+    .ster input,.ster select,.ster textarea{
+      width:100%;padding:14px 15px;font-size:16px;font-family:inherit;color:var(--ink);background:rgba(255,255,255,.04);
+      border:1px solid rgba(201,162,74,.28);border-radius:12px;outline:none;transition:border-color .15s,box-shadow .15s}
+    .ster input::placeholder,.ster textarea::placeholder{color:#7d7663}
+    .ster input:focus,.ster select:focus,.ster textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,74,.18)}
+    .ster select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%23c9a24a' stroke-width='1.6' fill='none'/></svg>");background-repeat:no-repeat;background-position:right 16px center}
+    .ster select option{background:#0e0e16;color:var(--ink)}
+    .ster textarea{min-height:120px;resize:vertical}
+    .ster .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+    .ster button{margin-top:24px;width:100%;padding:15px;font-family:inherit;font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#161207;background:linear-gradient(180deg,var(--gold2),var(--gold));border:0;border-radius:12px;cursor:pointer}
+    .ster button:disabled{opacity:.6;cursor:default}
+    .ster .msg{margin-top:16px;padding:14px 16px;border-radius:12px;font-size:14px;display:none}
+    .ster .msg.ok{display:block;background:rgba(46,160,90,.12);color:#7fe0a6;border:1px solid rgba(46,160,90,.4)}
+    .ster .msg.err{display:block;background:rgba(200,60,60,.12);color:#f0a0a0;border:1px solid rgba(200,60,60,.4)}
+  </style>
+
+  <p class="wm">STERLING<b>EVENT RENTALS</b></p>
+  <div class="rule"></div>
+
+  <form class="ster-form" data-phone="" novalidate>
+    <label class="fl">Name</label>
+    <input name="name" type="text" placeholder="First & last name" autocomplete="name">
+
+    <label class="fl">Email</label>
+    <input name="email" type="email" placeholder="you@example.com" autocomplete="email">
+
+    <label class="fl">Phone <span>(optional)</span></label>
+    <input name="phone" type="tel" inputmode="tel" placeholder="(555) 555-5555" autocomplete="tel">
+
+    <label class="fl">Event date</label>
+    <input name="event_date" type="date">
+
+    <label class="fl">Event type</label>
+    <select name="event_type">
+      <option value="">Select one</option>
+      <option>Wedding</option>
+      <option>Corporate event</option>
+      <option>Birthday</option>
+      <option>Anniversary</option>
+      <option>Graduation</option>
+      <option>Holiday party</option>
+      <option>Fundraiser / gala</option>
+      <option>Other</option>
+    </select>
+
+    <label class="fl">Guest count</label>
+    <input name="guest_count" type="text" inputmode="numeric" placeholder="Approximate number of guests">
+
+    <label class="fl">Tell us about your event</label>
+    <textarea name="message" placeholder="Venue name or address, what equipment you need, any questions about setup or logistics..."></textarea>
+
+    <div class="hp"><label>Company website</label><input name="company_website" type="text" tabindex="-1" autocomplete="off"></div>
+
+    <button type="submit">Send inquiry</button>
+    <div class="msg"></div>
+  </form>
+
+  <script>
+  (function(){
+    var root=document.currentScript.closest(".ster");
+    var form=root.querySelector(".ster-form"), btn=form.querySelector("button"), msg=form.querySelector(".msg");
+    var g=function(n){ return form.querySelector('[name="'+n+'"]'); };
+    var ENDPOINT="YOUR_SIOTO_SUPABASE_URL/rest/v1/rpc/submit_lead";
+    var KEY="YOUR_SIOTO_SUPABASE_PUBLISHABLE_KEY";
+    var INTAKE_KEY="YOUR_SIOTO_INTAKE_KEY";
+    function show(k,t){ msg.className="msg "+k; msg.textContent=t; }
+    form.addEventListener("submit",async function(e){
+      e.preventDefault();
+      if(g("company_website").value){ show("ok","Thank you \u2014 your inquiry was received."); form.reset(); return; }
+      var name=g("name").value.trim();
+      if(!name){ show("err","Please enter your name."); g("name").focus(); return; }
+      if(!g("email").value.trim() && !g("phone").value.trim()){ show("err","Please add an email or phone so we can reach you."); return; }
+      var notes=[];
+      if(g("event_date").value) notes.push("Event date: "+g("event_date").value);
+      if(g("event_type").value) notes.push("Event type: "+g("event_type").value);
+      if(g("guest_count").value.trim()) notes.push("Guest count: "+g("guest_count").value.trim());
+      if(g("message").value.trim()) notes.push(g("message").value.trim());
+      btn.disabled=true; var old=btn.textContent; btn.textContent="Sending...";
+      try{
+        var res=await fetch(ENDPOINT,{method:"POST",
+          headers:{"Content-Type":"application/json","apikey":KEY,"Authorization":"Bearer "+KEY},
+          body:JSON.stringify({
+            intake_key:INTAKE_KEY,
+            lead_name:name,
+            lead_phone:g("phone").value.trim()||null,
+            lead_email:g("email").value.trim()||null,
+            lead_source:"Sterling Event Rentals - Website form",
+            lead_notes:notes.length?notes.join("\n"):null,
+            lead_brand:"Sterling Event Rentals"
+          })});
+        if(!res.ok) throw new Error("HTTP "+res.status);
+        show("ok","Thank you! Your inquiry was received and we'll be in touch shortly.");
+        form.reset();
+      }catch(err){
+        var ph=form.getAttribute("data-phone");
+        show("err","Sorry, something went wrong."+(ph?" Please try again or call us at "+ph+".":" Please try again in a moment."));
+        btn.disabled=false; btn.textContent=old;
+      }
+    });
+  })();
+  </script>
+</div>
